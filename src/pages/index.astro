@@ -1,5 +1,30 @@
 ---
 import "../styles/global.css";
+
+const features = [
+  {
+    title: "AI Flashcards",
+    pl: "Twórz fiszki wspólnie z AI.",
+    en: "Create flashcards with AI.",
+  },
+  {
+    title: "Smart Repetition",
+    pl: "Powtarzaj słowa dokładnie wtedy, kiedy trzeba.",
+    en: "Review vocabulary at the perfect moment.",
+  },
+  {
+    title: "Multiple Languages",
+    pl: "Ucz się wielu języków w jednej aplikacji.",
+    en: "Learn multiple languages in one app.",
+  },
+  {
+    title: "Audio Learning",
+    pl: "Słuchaj swoich lekcji i ucz się bez patrzenia na ekran.",
+    en: "Listen to your lessons anytime.",
+  },
+];
+
+const previewCards = ["Vocabulary", "Practice", "Audio"];
 ---
 
 <!doctype html>
@@ -7,24 +32,237 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TripleTalk landing page." />
-    <title>TripleTalk</title>
+    <meta
+      name="description"
+      content="TripleTalk helps you learn languages faster with AI flashcards, smart repetition and audio lessons."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tripletalk.app/" />
+    <meta property="og:title" content="TripleTalk - Learn languages faster with AI" />
+    <meta
+      property="og:description"
+      content="Create your own flashcards, learn with smart repetition and build your vocabulary every day."
+    />
+    <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TripleTalk - Learn languages faster with AI" />
+    <meta
+      name="twitter:description"
+      content="Create your own flashcards, learn with smart repetition and build your vocabulary every day."
+    />
+    <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
+    <title>TripleTalk - Learn languages faster with AI</title>
+    <link rel="canonical" href="https://tripletalk.app/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
-    <main class="grid min-h-screen place-items-center bg-gradient-to-br from-white via-slate-50 to-sky-50 px-6 text-slate-950">
-      <div class="flex flex-col items-center gap-7">
-        <img
-          src="/assets/tripletalk-logo.png"
-          alt="TripleTalk logo"
-          class="h-40 w-40 object-contain sm:h-52 sm:w-52"
-          width="1024"
-          height="1024"
-        />
-        <h1 class="text-center text-5xl font-bold tracking-normal sm:text-7xl">
-          <span class="text-[#071632]">Triple</span><span class="text-[#05c7b2]">Talk</span>
-        </h1>
-      </div>
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="TripleTalk home">
+          <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
+          <span><span>Triple</span><span>Talk</span></span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span class="sr-only">Open menu</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="site-menu">
+          <a href="#features">Features</a>
+          <a href="#download">Download</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <div class="language-switcher" aria-label="Language switcher">
+            <button type="button" data-lang-switch="pl">PL</button>
+            <button type="button" data-lang-switch="en">EN</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">TripleTalk</p>
+            <h1 data-i18n="heroTitle">Learn languages faster with AI.</h1>
+            <p class="hero-description" data-i18n="heroDescription">
+              Create your own flashcards, learn with smart repetition and build your vocabulary every day.
+            </p>
+            <div class="store-actions" aria-label="Download app">
+              <a href="TODO" aria-label="Download on the App Store">App Store</a>
+              <a href="TODO" aria-label="Get it on Google Play">Google Play</a>
+            </div>
+          </div>
+
+          <div class="phone-mockup" aria-label="TripleTalk app preview placeholder">
+            <div class="phone-frame">
+              <div class="phone-speaker"></div>
+              <div class="app-screen">
+                <div class="screen-top">
+                  <span>Today</span>
+                  <strong>24</strong>
+                </div>
+                <div class="lesson-card">
+                  <span>Flashcard</span>
+                  <strong>conversation</strong>
+                  <p>rozmowa</p>
+                </div>
+                <div class="mini-list">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Features</p>
+            <h2 id="features-title">Simple tools for daily language learning.</h2>
+          </div>
+          <div class="feature-grid">
+            {
+              features.map((feature) => (
+                <article class="feature-card">
+                  <h3>{feature.title}</h3>
+                  <p data-pl={feature.pl} data-en={feature.en}>{feature.en}</p>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section class="section preview-section" aria-labelledby="preview-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">App Preview</p>
+            <h2 id="preview-title">A clear space for future screenshots.</h2>
+          </div>
+          <div class="preview-scroll" aria-label="App screenshot placeholders">
+            {
+              previewCards.map((title, index) => (
+                <div class="screenshot-placeholder">
+                  <div class="placeholder-status"></div>
+                  <div class="placeholder-card">
+                    <span>0{index + 1}</span>
+                    <strong>{title}</strong>
+                  </div>
+                  <div class="placeholder-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section class="download" id="download" aria-labelledby="download-title">
+        <div class="container download-inner">
+          <div>
+            <p class="eyebrow">Download</p>
+            <h2 id="download-title" data-i18n="downloadTitle">Download TripleTalk</h2>
+          </div>
+          <div class="store-actions">
+            <a href="TODO" aria-label="Download on the App Store">App Store</a>
+            <a href="TODO" aria-label="Get it on Google Play">Google Play</a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>TripleTalk</strong>
+          <p>© TripleTalk</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="mailto:TODO">Support</a>
+          <a href="mailto:TODO">TODO</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const translations = {
+        pl: {
+          heroTitle: "Ucz się języków szybciej z pomocą AI.",
+          heroDescription:
+            "Twórz własne fiszki, ucz się z inteligentnymi powtórkami i rozwijaj słownictwo każdego dnia.",
+          downloadTitle: "Pobierz TripleTalk",
+        },
+        en: {
+          heroTitle: "Learn languages faster with AI.",
+          heroDescription:
+            "Create your own flashcards, learn with smart repetition and build your vocabulary every day.",
+          downloadTitle: "Download TripleTalk",
+        },
+      };
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      const languageButtons = document.querySelectorAll("[data-lang-switch]");
+      const translatedNodes = document.querySelectorAll("[data-i18n]");
+      const featureTexts = document.querySelectorAll("[data-pl][data-en]");
+
+      const browserLanguage = navigator.language?.toLowerCase().startsWith("pl") ? "pl" : "en";
+      const savedLanguage = localStorage.getItem("tripletalk-language");
+      const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : browserLanguage;
+
+      function setLanguage(language) {
+        document.documentElement.lang = language;
+
+        translatedNodes.forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          node.textContent = translations[language][key];
+        });
+
+        featureTexts.forEach((node) => {
+          node.textContent = node.getAttribute(`data-${language}`);
+        });
+
+        languageButtons.forEach((button) => {
+          const isActive = button.getAttribute("data-lang-switch") === language;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        localStorage.setItem("tripletalk-language", language);
+      }
+
+      menuToggle?.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+        navLinks?.classList.toggle("open", !expanded);
+      });
+
+      navLinks?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle?.setAttribute("aria-expanded", "false");
+          navLinks.classList.remove("open");
+        });
+      });
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.getAttribute("data-lang-switch")));
+      });
+
+      setLanguage(initialLanguage);
+    </script>
   </body>
 </html>
