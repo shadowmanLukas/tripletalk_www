@@ -492,14 +492,15 @@ h3 {
   gap: 24px;
 }
 
-.footer-inner strong {
-  color: #071632;
-  font-size: 1.08rem;
+.footer-inner p {
+  margin: 0;
+  color: #66778a;
+  font-size: 0.96rem;
+  font-weight: 700;
 }
 
-.footer-inner p {
-  margin: 8px 0 0;
-  color: #66778a;
+.footer-inner p a:hover {
+  color: #057f72;
 }
 
 .footer-inner nav {
@@ -569,6 +570,7 @@ h3 {
 
 .legal-hero-copy h1 {
   font-size: clamp(2rem, 7vw, 3.35rem);
+  font-weight: 900;
   line-height: 1.08;
 }
 
@@ -578,7 +580,7 @@ h3 {
   gap: 8px;
 }
 
-.legal-toolbar a {
+.legal-toolbar button {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
@@ -587,11 +589,13 @@ h3 {
   border-radius: 8px;
   background: #ffffff;
   color: #334357;
+  cursor: pointer;
+  font: inherit;
   font-weight: 800;
 }
 
-.legal-toolbar a.active,
-.legal-toolbar a:hover {
+.legal-toolbar button.active,
+.legal-toolbar button:hover {
   border-color: #05a996;
   background: #e7fbf7;
   color: #057f72;
@@ -725,7 +729,7 @@ h3 {
     flex-wrap: wrap;
   }
 
-  .legal-toolbar a {
+  .legal-toolbar button {
     min-width: 92px;
   }
 }

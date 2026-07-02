@@ -145,7 +145,7 @@ const englishSections: LegalSection[] = [
   {
     title: "General Information",
     paragraphs: [
-      "These Terms of Service govern the use of the TripleTalk mobile application and related services provided by craftapp (\"Operator\", \"we\", \"our\").",
+      "These Terms of Service govern the use of the TripleTalk mobile application and related services provided by craftapp (\"Operator\").",
       "For any questions regarding the application, you can contact us at contact@craftapp.pl.",
       "By creating an account or using TripleTalk, you agree to these Terms and the Privacy Policy.",
     ],
@@ -272,7 +272,7 @@ const englishSections: LegalSection[] = [
   {
     title: "Contact",
     paragraphs: ["For any questions regarding these Terms, please contact:"],
-    closing: ["craftapp", "contact@craftapp.pl"],
+    closing: ["contact@craftapp.pl"],
   },
 ];
 
@@ -332,9 +332,14 @@ const documents = [
           <div class="legal-toolbar" aria-label="Terms language selector">
             {
               documents.map((document, index) => (
-                <a class={index === 0 ? "active" : ""} href={`#${document.id}`}>
+                <button
+                  class={index === 0 ? "active" : ""}
+                  type="button"
+                  data-legal-language={document.id}
+                  aria-pressed={String(index === 0)}
+                >
                   {document.label}
-                </a>
+                </button>
               ))
             }
           </div>
@@ -342,8 +347,8 @@ const documents = [
 
         <div class="legal-documents">
           {
-            documents.map((document) => (
-              <article class="legal-document" id={document.id} lang={document.id}>
+            documents.map((document, index) => (
+              <article class="legal-document" id={document.id} lang={document.id} hidden={index !== 0}>
                 <div class="legal-document-header">
                   <div>
                     <h2>{document.title}</h2>
@@ -380,5 +385,27 @@ const documents = [
         </div>
       </div>
     </main>
+    <script>
+      const legalLanguageButtons = document.querySelectorAll("[data-legal-language]");
+      const legalDocuments = document.querySelectorAll(".legal-document");
+
+      function setLegalLanguage(language) {
+        legalLanguageButtons.forEach((button) => {
+          const isActive = button.getAttribute("data-legal-language") === language;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        legalDocuments.forEach((document) => {
+          document.hidden = document.id !== language;
+        });
+      }
+
+      legalLanguageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setLegalLanguage(button.getAttribute("data-legal-language"));
+        });
+      });
+    </script>
   </body>
 </html>

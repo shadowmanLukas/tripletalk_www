@@ -174,7 +174,7 @@ const polishSections: LegalSection[] = [
   {
     title: "Kontakt",
     paragraphs: ["W przypadku pytań dotyczących przetwarzania danych osobowych prosimy o kontakt:"],
-    closing: ["craftapp", "contact@craftapp.pl"],
+    closing: ["contact@craftapp.pl"],
   },
 ];
 
@@ -182,7 +182,7 @@ const englishSections: LegalSection[] = [
   {
     title: "Data Controller",
     paragraphs: [
-      "This Privacy Policy explains how craftapp (\"we\", \"our\", \"us\") collects, uses and protects personal data when you use the TripleTalk mobile application.",
+      "This Privacy Policy explains how craftapp collects, uses and protects personal data when you use the TripleTalk mobile application.",
       "If you have any questions regarding this Privacy Policy or your personal data, please contact us at:",
     ],
     closing: ["contact@craftapp.pl"],
@@ -353,7 +353,7 @@ const englishSections: LegalSection[] = [
   {
     title: "Contact",
     paragraphs: ["If you have any questions regarding this Privacy Policy or your personal data, please contact:"],
-    closing: ["craftapp", "contact@craftapp.pl"],
+    closing: ["contact@craftapp.pl"],
   },
 ];
 
@@ -413,9 +413,14 @@ const documents = [
           <div class="legal-toolbar" aria-label="Privacy policy language selector">
             {
               documents.map((document, index) => (
-                <a class={index === 0 ? "active" : ""} href={`#${document.id}`}>
+                <button
+                  class={index === 0 ? "active" : ""}
+                  type="button"
+                  data-legal-language={document.id}
+                  aria-pressed={String(index === 0)}
+                >
                   {document.label}
-                </a>
+                </button>
               ))
             }
           </div>
@@ -423,8 +428,8 @@ const documents = [
 
         <div class="legal-documents">
           {
-            documents.map((document) => (
-              <article class="legal-document" id={document.id} lang={document.id}>
+            documents.map((document, index) => (
+              <article class="legal-document" id={document.id} lang={document.id} hidden={index !== 0}>
                 <div class="legal-document-header">
                   <div>
                     <h2>{document.title}</h2>
@@ -471,5 +476,27 @@ const documents = [
         </div>
       </div>
     </main>
+    <script>
+      const legalLanguageButtons = document.querySelectorAll("[data-legal-language]");
+      const legalDocuments = document.querySelectorAll(".legal-document");
+
+      function setLegalLanguage(language) {
+        legalLanguageButtons.forEach((button) => {
+          const isActive = button.getAttribute("data-legal-language") === language;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        legalDocuments.forEach((document) => {
+          document.hidden = document.id !== language;
+        });
+      }
+
+      legalLanguageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setLegalLanguage(button.getAttribute("data-legal-language"));
+        });
+      });
+    </script>
   </body>
 </html>
