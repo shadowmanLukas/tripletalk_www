@@ -4,27 +4,35 @@ import "../styles/global.css";
 const features = [
   {
     title: "AI Flashcards",
+    titlePl: "Fiszki AI",
     pl: "Twórz fiszki wspólnie z AI.",
     en: "Create flashcards with AI.",
   },
   {
     title: "Smart Repetition",
+    titlePl: "Inteligentne powtórki",
     pl: "Powtarzaj słowa dokładnie wtedy, kiedy trzeba.",
     en: "Review vocabulary at the perfect moment.",
   },
   {
     title: "Multiple Languages",
+    titlePl: "Wiele języków",
     pl: "Ucz się wielu języków w jednej aplikacji.",
     en: "Learn multiple languages in one app.",
   },
   {
     title: "Audio Learning",
+    titlePl: "Nauka z audio",
     pl: "Słuchaj swoich lekcji i ucz się bez patrzenia na ekran.",
     en: "Listen to your lessons anytime.",
   },
 ];
 
-const previewCards = ["Vocabulary", "Practice", "Audio"];
+const previewCards = [
+  { en: "Vocabulary", pl: "Słownictwo" },
+  { en: "Practice", pl: "Ćwiczenia" },
+  { en: "Audio", pl: "Audio" },
+];
 ---
 
 <!doctype html>
@@ -73,8 +81,8 @@ const previewCards = ["Vocabulary", "Practice", "Audio"];
         </button>
 
         <div class="nav-links" id="site-menu">
-          <a href="#features">Features</a>
-          <a href="#download">Download</a>
+          <a href="#features" data-i18n="navFeatures">Features</a>
+          <a href="#download" data-i18n="navDownload">Download</a>
           <div class="language-switcher" aria-label="Language switcher">
             <button type="button" data-lang-switch="pl">PL</button>
             <button type="button" data-lang-switch="en">EN</button>
@@ -103,11 +111,11 @@ const previewCards = ["Vocabulary", "Practice", "Audio"];
               <div class="phone-speaker"></div>
               <div class="app-screen">
                 <div class="screen-top">
-                  <span>Today</span>
+                  <span data-i18n="phoneToday">Today</span>
                   <strong>24</strong>
                 </div>
                 <div class="lesson-card">
-                  <span>Flashcard</span>
+                  <span data-i18n="phoneFlashcard">Flashcard</span>
                   <strong>conversation</strong>
                   <p>rozmowa</p>
                 </div>
@@ -125,14 +133,14 @@ const previewCards = ["Vocabulary", "Practice", "Audio"];
       <section class="section" id="features" aria-labelledby="features-title">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Features</p>
-            <h2 id="features-title">Simple tools for daily language learning.</h2>
+            <p class="eyebrow" data-i18n="featuresEyebrow">Features</p>
+            <h2 id="features-title" data-i18n="featuresTitle">Simple tools for daily language learning.</h2>
           </div>
           <div class="feature-grid">
             {
               features.map((feature) => (
                 <article class="feature-card">
-                  <h3>{feature.title}</h3>
+                  <h3 data-pl={feature.titlePl} data-en={feature.title}>{feature.title}</h3>
                   <p data-pl={feature.pl} data-en={feature.en}>{feature.en}</p>
                 </article>
               ))
@@ -144,8 +152,8 @@ const previewCards = ["Vocabulary", "Practice", "Audio"];
       <section class="section preview-section" aria-labelledby="preview-title">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">App Preview</p>
-            <h2 id="preview-title">A clear space for future screenshots.</h2>
+            <p class="eyebrow" data-i18n="previewEyebrow">App Preview</p>
+            <h2 id="preview-title" data-i18n="previewTitle">A clear space for future screenshots.</h2>
           </div>
           <div class="preview-scroll" aria-label="App screenshot placeholders">
             {
@@ -154,7 +162,7 @@ const previewCards = ["Vocabulary", "Practice", "Audio"];
                   <div class="placeholder-status"></div>
                   <div class="placeholder-card">
                     <span>0{index + 1}</span>
-                    <strong>{title}</strong>
+                    <strong data-pl={title.pl} data-en={title.en}>{title.en}</strong>
                   </div>
                   <div class="placeholder-lines">
                     <span></span>
@@ -171,7 +179,7 @@ const previewCards = ["Vocabulary", "Practice", "Audio"];
       <section class="download" id="download" aria-labelledby="download-title">
         <div class="container download-inner">
           <div>
-            <p class="eyebrow">Download</p>
+            <p class="eyebrow" data-i18n="downloadEyebrow">Download</p>
             <h2 id="download-title" data-i18n="downloadTitle">Download TripleTalk</h2>
           </div>
           <div class="store-actions">
@@ -188,8 +196,8 @@ const previewCards = ["Vocabulary", "Practice", "Audio"];
           <p>© 2026 <a href="https://craftapp.pl/">craftapp.pl</a></p>
         </div>
         <nav aria-label="Footer navigation">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
+          <a href="/privacy" data-i18n="footerPrivacy">Privacy Policy</a>
+          <a href="/terms" data-i18n="footerTerms">Terms of Service</a>
         </nav>
       </div>
     </footer>
@@ -197,16 +205,38 @@ const previewCards = ["Vocabulary", "Practice", "Audio"];
     <script>
       const translations = {
         pl: {
+          navFeatures: "Funkcje",
+          navDownload: "Pobierz",
           heroTitle: "Ucz się języków szybciej z pomocą AI.",
           heroDescription:
             "Twórz własne fiszki, ucz się z inteligentnymi powtórkami i rozwijaj słownictwo każdego dnia.",
+          phoneToday: "Dzisiaj",
+          phoneFlashcard: "Fiszka",
+          featuresEyebrow: "Funkcje",
+          featuresTitle: "Proste narzędzia do codziennej nauki języków.",
+          previewEyebrow: "Podgląd aplikacji",
+          previewTitle: "Miejsce na przyszłe zrzuty ekranu.",
+          downloadEyebrow: "Pobierz",
           downloadTitle: "Pobierz TripleTalk",
+          footerPrivacy: "Polityka Prywatności",
+          footerTerms: "Regulamin",
         },
         en: {
+          navFeatures: "Features",
+          navDownload: "Download",
           heroTitle: "Learn languages faster with AI.",
           heroDescription:
             "Create your own flashcards, learn with smart repetition and build your vocabulary every day.",
+          phoneToday: "Today",
+          phoneFlashcard: "Flashcard",
+          featuresEyebrow: "Features",
+          featuresTitle: "Simple tools for daily language learning.",
+          previewEyebrow: "App Preview",
+          previewTitle: "A clear space for future screenshots.",
+          downloadEyebrow: "Download",
           downloadTitle: "Download TripleTalk",
+          footerPrivacy: "Privacy Policy",
+          footerTerms: "Terms of Service",
         },
       };
 
