@@ -495,7 +495,7 @@ h3 {
 .footer-inner p {
   margin: 0;
   color: #66778a;
-  font-size: 0.96rem;
+  font-size: 0.88rem;
   font-weight: 700;
 }
 
@@ -507,6 +507,7 @@ h3 {
   display: grid;
   gap: 12px;
   color: #334357;
+  font-size: 0.88rem;
   font-weight: 700;
 }
 
