@@ -1,5 +1,297 @@
 ---
 import "../styles/global.css";
+
+type LegalSection = {
+  title: string;
+  paragraphs?: string[];
+  items?: string[];
+  closing?: string[];
+};
+
+const polishSections: LegalSection[] = [
+  {
+    title: "Informacje ogólne",
+    paragraphs: [
+      "Niniejszy Regulamin określa zasady korzystania z aplikacji mobilnej TripleTalk oraz usług świadczonych przez craftapp (\"Operator\").",
+      "Kontakt z Operatorem jest możliwy pod adresem e-mail: contact@craftapp.pl.",
+      "Korzystanie z aplikacji oznacza akceptację niniejszego Regulaminu oraz Polityki Prywatności.",
+    ],
+  },
+  {
+    title: "Konto użytkownika",
+    paragraphs: [
+      "Korzystanie z większości funkcji aplikacji wymaga utworzenia konta.",
+      "Rejestracja jest możliwa przy użyciu:",
+    ],
+    items: ["adresu e-mail i hasła", "konta Google", "konta Apple"],
+    closing: [
+      "Użytkownik zobowiązuje się do podawania prawdziwych danych oraz zabezpieczenia dostępu do swojego konta.",
+      "Użytkownik może w każdej chwili zmienić adres e-mail, zresetować hasło lub usunąć konto z poziomu aplikacji.",
+    ],
+  },
+  {
+    title: "Funkcje aplikacji",
+    paragraphs: ["TripleTalk służy do nauki języków obcych i umożliwia między innymi:"],
+    items: [
+      "tworzenie własnych lekcji",
+      "tworzenie i edycję fiszek",
+      "naukę z wykorzystaniem systemu powtórek",
+      "śledzenie postępów",
+      "generowanie tłumaczeń, przykładów oraz informacji językowych z wykorzystaniem sztucznej inteligencji",
+      "dodawanie fiszek ze zdjęć tekstu",
+      "generowanie oraz odtwarzanie nagrań audio",
+      "synchronizację danych pomiędzy urządzeniami",
+    ],
+    closing: ["Operator może rozwijać, zmieniać lub usuwać poszczególne funkcje aplikacji."],
+  },
+  {
+    title: "TripleTalk AI",
+    paragraphs: ["Aplikacja wykorzystuje modele sztucznej inteligencji do:"],
+    items: [
+      "analizy zdjęć",
+      "rozpoznawania tekstu",
+      "generowania tłumaczeń",
+      "tworzenia przykładów użycia",
+      "uzupełniania informacji językowych",
+      "generowania nagrań audio",
+    ],
+    closing: [
+      "Wyniki wygenerowane przez TripleTalk AI mają charakter pomocniczy.",
+      "Mimo stosowania nowoczesnych modeli AI wygenerowane treści mogą zawierać błędy, nieścisłości lub niepełne informacje.",
+      "Użytkownik powinien samodzielnie zweryfikować poprawność treści przed wykorzystaniem ich do nauki lub innych celów.",
+      "Operator nie ponosi odpowiedzialności za skutki wykorzystania treści wygenerowanych przez AI.",
+    ],
+  },
+  {
+    title: "Treści użytkownika",
+    paragraphs: [
+      "Użytkownik pozostaje właścicielem treści dodawanych do aplikacji.",
+      "Użytkownik odpowiada za treści, które wprowadza lub przesyła do aplikacji.",
+      "Zabronione jest przesyłanie:",
+    ],
+    items: [
+      "treści naruszających prawo",
+      "danych osobowych osób trzecich bez ich zgody",
+      "materiałów naruszających prawa autorskie",
+      "treści obraźliwych lub nielegalnych",
+    ],
+    closing: [
+      "Dodając treści do aplikacji użytkownik udziela Operatorowi niewyłącznej, bezpłatnej licencji na ich przetwarzanie w zakresie niezbędnym do świadczenia usług TripleTalk.",
+    ],
+  },
+  {
+    title: "Zdjęcia i materiały przesyłane do AI",
+    paragraphs: [
+      "Zdjęcia przesłane przez użytkownika są wykorzystywane wyłącznie do analizy tekstu oraz tworzenia propozycji fiszek.",
+      "Zdjęcia mogą zostać przekazane usługom AI wykorzystywanym przez TripleTalk wyłącznie w celu realizacji tej funkcji.",
+      "Użytkownik powinien przesyłać wyłącznie zdjęcia, do których posiada odpowiednie prawa.",
+    ],
+  },
+  {
+    title: "Audio",
+    paragraphs: [
+      "TripleTalk umożliwia generowanie oraz odtwarzanie nagrań wymowy.",
+      "W celu optymalizacji działania aplikacji identyczne nagrania mogą być współdzielone pomiędzy użytkownikami, bez powiązania z ich tożsamością.",
+    ],
+  },
+  {
+    title: "Usunięcie fiszek, lekcji i konta",
+    paragraphs: [
+      "Użytkownik może w dowolnym momencie usunąć fiszki, lekcje lub całe konto.",
+      "Usunięcie konta powoduje usunięcie danych konta użytkownika wykorzystywanych do logowania oraz zakończenie możliwości korzystania z usług.",
+      "Usunięte fiszki i lekcje mogą zostać przeniesione do wewnętrznego archiwum TripleTalk w postaci pozbawionej danych identyfikujących użytkownika.",
+      "Zarchiwizowane treści mogą być wykorzystywane przez Operatora w celu:",
+    ],
+    items: [
+      "rozwijania aplikacji",
+      "tworzenia ogólnodostępnych kolekcji edukacyjnych",
+      "poprawy jakości materiałów",
+      "rozwijania funkcji opartych na sztucznej inteligencji",
+    ],
+    closing: ["Wykorzystywane treści nie będą zawierały informacji pozwalających na identyfikację użytkownika."],
+  },
+  {
+    title: "Premium",
+    paragraphs: [
+      "Operator może udostępniać funkcje Premium.",
+      "Zakres funkcji Premium może ulegać zmianie.",
+      "Szczegółowe zasady korzystania z płatnych usług zostaną opublikowane przed ich uruchomieniem.",
+    ],
+  },
+  {
+    title: "Odpowiedzialność",
+    paragraphs: [
+      "TripleTalk jest narzędziem wspomagającym naukę języków.",
+      "Operator nie gwarantuje osiągnięcia określonych rezultatów nauki.",
+      "Operator dokłada starań, aby aplikacja działała nieprzerwanie, jednak nie gwarantuje ciągłej dostępności usług ani działania usług podmiotów zewnętrznych, takich jak Google czy Apple.",
+    ],
+  },
+  {
+    title: "Zmiany Regulaminu",
+    paragraphs: [
+      "Operator może zmieniać niniejszy Regulamin.",
+      "O istotnych zmianach użytkownicy zostaną poinformowani w aplikacji lub drogą elektroniczną.",
+      "Dalsze korzystanie z aplikacji po wejściu zmian w życie oznacza ich akceptację.",
+    ],
+  },
+  {
+    title: "Kontakt",
+    paragraphs: ["W sprawach związanych z korzystaniem z aplikacji można kontaktować się z Operatorem pod adresem:"],
+    closing: ["contact@craftapp.pl"],
+  },
+];
+
+const englishSections: LegalSection[] = [
+  {
+    title: "General Information",
+    paragraphs: [
+      "These Terms of Service govern the use of the TripleTalk mobile application and related services provided by craftapp (\"Operator\", \"we\", \"our\").",
+      "For any questions regarding the application, you can contact us at contact@craftapp.pl.",
+      "By creating an account or using TripleTalk, you agree to these Terms and the Privacy Policy.",
+    ],
+  },
+  {
+    title: "User Account",
+    paragraphs: ["Most features of TripleTalk require a user account.", "You may register using:"],
+    items: ["Email and password", "Google Sign-In", "Sign in with Apple"],
+    closing: [
+      "You are responsible for maintaining the security of your account and keeping your login credentials confidential.",
+      "You may update your email address, reset your password or permanently delete your account at any time through the application.",
+    ],
+  },
+  {
+    title: "Application Features",
+    paragraphs: [
+      "TripleTalk is designed to help users learn foreign languages.",
+      "The application allows users to:",
+    ],
+    items: [
+      "create and manage lessons",
+      "create, edit and delete flashcards",
+      "study using a spaced repetition system",
+      "track learning progress and statistics",
+      "generate translations, examples and language information using AI",
+      "create flashcards from text photos",
+      "generate and play pronunciation audio",
+      "synchronize learning data across devices",
+    ],
+    closing: ["We may modify, improve or discontinue features at any time."],
+  },
+  {
+    title: "TripleTalk AI",
+    paragraphs: ["TripleTalk uses artificial intelligence to:"],
+    items: [
+      "analyze uploaded images",
+      "recognize text",
+      "generate translations",
+      "create example sentences",
+      "provide grammar and language information",
+      "generate pronunciation audio",
+    ],
+    closing: [
+      "AI-generated content is intended solely as educational assistance.",
+      "Although we strive for high-quality results, AI-generated content may contain inaccuracies, omissions or errors.",
+      "Users are responsible for verifying AI-generated content before relying on it for learning or any other purpose.",
+      "craftapp is not responsible for decisions made based on AI-generated content.",
+    ],
+  },
+  {
+    title: "User Content",
+    paragraphs: [
+      "Users retain ownership of the content they create within TripleTalk.",
+      "Users are solely responsible for any content they upload or create.",
+      "Users must not upload content that:",
+    ],
+    items: [
+      "violates applicable laws",
+      "infringes intellectual property rights",
+      "contains unlawful or offensive material",
+      "includes personal information of third parties without authorization",
+    ],
+    closing: [
+      "By using TripleTalk, you grant craftapp a non-exclusive, worldwide, royalty-free license to process your content solely for the purpose of providing and improving the Service.",
+    ],
+  },
+  {
+    title: "Images and AI Processing",
+    paragraphs: [
+      "Photos uploaded by users are processed only to extract text and generate flashcard suggestions.",
+      "Uploaded content may be securely processed by AI service providers only as required to perform the requested feature.",
+      "Users should upload only content they have the legal right to use.",
+    ],
+  },
+  {
+    title: "Audio",
+    paragraphs: [
+      "TripleTalk generates pronunciation audio for words and example sentences.",
+      "To improve efficiency, identical audio recordings may be shared between users without linking them to any personal identity.",
+    ],
+  },
+  {
+    title: "Deleting Flashcards, Lessons and Accounts",
+    paragraphs: [
+      "Users may delete flashcards, lessons or their account at any time.",
+      "Deleting an account removes the authentication data required to access TripleTalk.",
+      "Deleted flashcards and lessons may be transferred to an internal TripleTalk archive after removing information that could identify the original user.",
+      "Archived educational content may be used to:",
+    ],
+    items: [
+      "improve TripleTalk",
+      "develop public educational collections",
+      "improve educational quality",
+      "enhance AI-powered features",
+    ],
+    closing: [
+      "Published collections may include content created, combined, modified or generated from anonymized archived materials in a way that does not identify the original author.",
+    ],
+  },
+  {
+    title: "Premium Features",
+    paragraphs: [
+      "Some features may be available only through a Premium subscription.",
+      "Premium services and pricing may change over time.",
+      "Additional subscription terms will be published before Premium services become commercially available.",
+    ],
+  },
+  {
+    title: "Disclaimer of Warranties",
+    paragraphs: [
+      "TripleTalk is an educational tool intended to support language learning.",
+      "We do not guarantee any specific learning outcomes.",
+      "We also cannot guarantee uninterrupted availability of services provided by third-party providers including Google and Apple.",
+    ],
+  },
+  {
+    title: "Changes to these Terms",
+    paragraphs: [
+      "We may update these Terms from time to time.",
+      "Material changes will be communicated within the application or by other appropriate means.",
+      "Continued use of TripleTalk after changes become effective constitutes acceptance of the updated Terms.",
+    ],
+  },
+  {
+    title: "Contact",
+    paragraphs: ["For any questions regarding these Terms, please contact:"],
+    closing: ["craftapp", "contact@craftapp.pl"],
+  },
+];
+
+const documents = [
+  {
+    id: "pl",
+    label: "PL",
+    title: "Regulamin korzystania z aplikacji TripleTalk",
+    effectiveDate: "Data obowiązywania: 2 lipca 2026",
+    sections: polishSections,
+  },
+  {
+    id: "en",
+    label: "EN",
+    title: "TripleTalk Terms of Service",
+    effectiveDate: "Effective date: July 2, 2026",
+    sections: englishSections,
+  },
+];
 ---
 
 <!doctype html>
@@ -7,26 +299,86 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TripleTalk Terms of Service placeholder." />
+    <meta
+      name="description"
+      content="TripleTalk Terms of Service and Polish terms for the TripleTalk mobile application."
+    />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tripletalk.app/terms" />
+    <meta property="og:url" content="https://tripletalk.app/terms/" />
     <meta property="og:title" content="Terms of Service - TripleTalk" />
-    <meta property="og:description" content="Terms of Service placeholder for TripleTalk." />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:description" content="Terms of Service for the TripleTalk mobile application." />
+    <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Terms of Service - TripleTalk" />
+    <meta name="twitter:description" content="Terms of Service for the TripleTalk mobile application." />
+    <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
     <title>Terms of Service - TripleTalk</title>
-    <link rel="canonical" href="https://tripletalk.app/terms" />
+    <link rel="canonical" href="https://tripletalk.app/terms/" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
   </head>
   <body>
-    <main class="legal-page">
-      <article class="container legal-content">
-        <a class="back-link" href="/">Back to TripleTalk</a>
-        <h1>Terms of Service</h1>
-        <p>This is placeholder content for the TripleTalk Terms of Service.</p>
-        <p>Replace this text with the final terms before launch.</p>
-      </article>
+    <main class="legal-page legal-page--terms">
+      <div class="container legal-shell">
+        <header class="legal-hero">
+          <a class="brand legal-brand" href="/" aria-label="TripleTalk home">
+            <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
+            <span><span>Triple</span><span>Talk</span></span>
+          </a>
+          <div class="legal-hero-copy">
+            <h1>TripleTalk Terms of Service</h1>
+          </div>
+          <div class="legal-toolbar" aria-label="Terms language selector">
+            {
+              documents.map((document, index) => (
+                <a class={index === 0 ? "active" : ""} href={`#${document.id}`}>
+                  {document.label}
+                </a>
+              ))
+            }
+          </div>
+        </header>
+
+        <div class="legal-documents">
+          {
+            documents.map((document) => (
+              <article class="legal-document" id={document.id} lang={document.id}>
+                <div class="legal-document-header">
+                  <div>
+                    <h2>{document.title}</h2>
+                    <p>{document.effectiveDate}</p>
+                  </div>
+                </div>
+
+                <div class="legal-sections">
+                  {
+                    document.sections.map((section, index) => (
+                      <section class="legal-section" id={`${document.id}-${index + 1}`}>
+                        <h3>
+                          <span>{index + 1}</span>
+                          {section.title}
+                        </h3>
+                        {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+                        {
+                          section.items && (
+                            <ul>
+                              {section.items.map((item) => (
+                                <li>{item}</li>
+                              ))}
+                            </ul>
+                          )
+                        }
+                        {section.closing?.map((paragraph) => <p>{paragraph}</p>)}
+                      </section>
+                    ))
+                  }
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
     </main>
   </body>
 </html>

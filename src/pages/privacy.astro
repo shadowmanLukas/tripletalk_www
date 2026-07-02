@@ -1,5 +1,378 @@
 ---
 import "../styles/global.css";
+
+type LegalSection = {
+  title: string;
+  paragraphs?: string[];
+  items?: string[];
+  closing?: string[];
+  secondaryItems?: string[];
+  final?: string[];
+};
+
+const polishSections: LegalSection[] = [
+  {
+    title: "Administrator danych",
+    paragraphs: [
+      "Administratorem danych osobowych przetwarzanych w związku z korzystaniem z aplikacji TripleTalk jest craftapp.",
+      "Kontakt w sprawach związanych z ochroną danych osobowych:",
+    ],
+    closing: ["contact@craftapp.pl"],
+  },
+  {
+    title: "Jakie dane przetwarzamy",
+    paragraphs: ["W zależności od sposobu korzystania z aplikacji możemy przetwarzać:"],
+    items: [
+      "identyfikator użytkownika (Firebase UID)",
+      "adres e-mail",
+      "informacje o sposobie logowania (e-mail, Google lub Apple)",
+      "datę akceptacji Regulaminu i Polityki Prywatności",
+      "ustawienia aplikacji (język aplikacji, języki nauki, ustawienia audio i preferencje użytkownika)",
+      "lekcje i fiszki utworzone przez użytkownika",
+      "statystyki nauki oraz historię powtórek",
+      "zdjęcia przesłane do funkcji TripleTalk AI",
+      "wyniki analizy AI i wygenerowane materiały edukacyjne",
+      "token urządzenia wykorzystywany do wysyłania powiadomień push",
+      "informacje techniczne dotyczące działania aplikacji, błędów oraz bezpieczeństwa",
+    ],
+    closing: [
+      "Nie przetwarzamy szczególnych kategorii danych osobowych, chyba że użytkownik dobrowolnie umieści je w treściach dodawanych do aplikacji.",
+    ],
+  },
+  {
+    title: "W jakim celu wykorzystujemy dane",
+    paragraphs: ["Przetwarzamy dane wyłącznie w celu:"],
+    items: [
+      "utworzenia i obsługi konta użytkownika",
+      "synchronizacji danych pomiędzy urządzeniami",
+      "tworzenia, przechowywania i edycji lekcji oraz fiszek",
+      "planowania powtórek i prezentowania postępów nauki",
+      "analizy zdjęć i generowania fiszek przez TripleTalk AI",
+      "generowania tłumaczeń, przykładów, informacji językowych oraz nagrań audio",
+      "wysyłania opcjonalnych powiadomień push",
+      "zapewnienia bezpieczeństwa aplikacji",
+      "wykrywania błędów i zapobiegania nadużyciom",
+      "rozwijania funkcjonalności aplikacji",
+    ],
+  },
+  {
+    title: "Podstawy prawne przetwarzania",
+    paragraphs: ["Dane przetwarzamy na podstawie:"],
+    items: [
+      "wykonania umowy polegającej na świadczeniu usług aplikacji TripleTalk",
+      "zgody użytkownika (np. powiadomienia push, aparat, galeria zdjęć)",
+      "uzasadnionego interesu Administratora, obejmującego bezpieczeństwo usług, diagnostykę oraz rozwój aplikacji",
+      "obowiązków wynikających z obowiązujących przepisów prawa, jeśli będą miały zastosowanie",
+    ],
+  },
+  {
+    title: "TripleTalk AI",
+    paragraphs: ["TripleTalk wykorzystuje rozwiązania oparte na sztucznej inteligencji do:"],
+    items: [
+      "analizy zdjęć tekstu",
+      "rozpoznawania słów",
+      "generowania tłumaczeń",
+      "tworzenia przykładów zdań",
+      "uzupełniania informacji językowych",
+      "generowania nagrań audio",
+    ],
+    closing: [
+      "Treści przesłane przez użytkownika mogą zostać przekazane dostawcom usług AI wyłącznie w zakresie niezbędnym do wykonania wybranej funkcji.",
+      "Treści generowane przez AI mają charakter pomocniczy i mogą zawierać błędy lub nieścisłości. Zalecamy ich samodzielną weryfikację.",
+    ],
+  },
+  {
+    title: "Dostawcy usług",
+    paragraphs: ["W celu świadczenia usług TripleTalk korzysta z usług zewnętrznych dostawców, w szczególności:"],
+    items: [
+      "Google Firebase (Authentication, Firestore, Cloud Storage, Cloud Functions oraz Cloud Messaging)",
+      "Google Gemini",
+      "Google Cloud Text-to-Speech",
+      "Apple Sign In",
+      "Google Sign-In",
+    ],
+    closing: ["Lista dostawców może ulegać zmianom wraz z rozwojem aplikacji."],
+  },
+  {
+    title: "Przekazywanie danych poza Europejski Obszar Gospodarczy",
+    paragraphs: [
+      "Niektóre wykorzystywane usługi mogą wiązać się z przetwarzaniem danych poza Europejskim Obszarem Gospodarczym.",
+      "W takich przypadkach stosowane są odpowiednie zabezpieczenia wymagane przez obowiązujące przepisy prawa, w tym standardowe klauzule umowne lub inne mechanizmy przewidziane przez RODO.",
+    ],
+  },
+  {
+    title: "Uprawnienia aplikacji",
+    paragraphs: ["Aplikacja może poprosić o dostęp do:"],
+    items: [
+      "aparatu - w celu wykonania zdjęcia tekstu",
+      "galerii zdjęć - w celu wyboru zdjęcia",
+      "internetu - w celu synchronizacji danych",
+      "powiadomień - w celu przypominania o nauce",
+    ],
+    closing: ["Każde z tych uprawnień można wyłączyć w ustawieniach urządzenia."],
+  },
+  {
+    title: "Usuwanie danych i archiwizacja",
+    paragraphs: ["Użytkownik może w dowolnym momencie:"],
+    items: ["usunąć fiszki", "usunąć lekcje", "usunąć konto"],
+    closing: [
+      "Usunięcie konta powoduje usunięcie danych konta użytkownika oraz zakończenie możliwości korzystania z aplikacji.",
+      "W celu dalszego rozwoju TripleTalk usunięte fiszki i lekcje mogą zostać przeniesione do wewnętrznego archiwum w postaci pozbawionej danych umożliwiających identyfikację użytkownika.",
+      "Zarchiwizowane treści mogą zostać wykorzystane wyłącznie do:",
+    ],
+    secondaryItems: [
+      "tworzenia nowych kolekcji edukacyjnych",
+      "ulepszania jakości materiałów",
+      "rozwijania funkcji aplikacji",
+      "doskonalenia funkcji opartych na sztucznej inteligencji",
+    ],
+    final: ["Administrator nie wykorzystuje w tym celu danych identyfikujących użytkownika."],
+  },
+  {
+    title: "Okres przechowywania danych",
+    paragraphs: [
+      "Dane konta przechowujemy przez okres korzystania z aplikacji.",
+      "Po usunięciu konta dane identyfikujące użytkownika są usuwane, natomiast zanonimizowane treści edukacyjne mogą zostać zachowane zgodnie z zasadami opisanymi w niniejszej Polityce Prywatności.",
+    ],
+  },
+  {
+    title: "Prawa użytkownika",
+    paragraphs: ["Użytkownik ma prawo do:"],
+    items: [
+      "dostępu do swoich danych",
+      "sprostowania danych",
+      "usunięcia danych",
+      "ograniczenia przetwarzania",
+      "przeniesienia danych",
+      "wniesienia sprzeciwu wobec przetwarzania",
+      "cofnięcia udzielonej zgody",
+      "wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych",
+    ],
+    closing: ["W celu realizacji swoich praw należy skontaktować się z Administratorem."],
+  },
+  {
+    title: "Bezpieczeństwo",
+    paragraphs: [
+      "Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony danych użytkowników przed utratą, nieuprawnionym dostępem oraz nieuprawnioną modyfikacją.",
+      "Dostęp do danych użytkownika jest ograniczony wyłącznie do właściciela konta oraz usług niezbędnych do działania aplikacji.",
+    ],
+  },
+  {
+    title: "Anonimowa analityka",
+    paragraphs: [
+      "TripleTalk może zbierać anonimowe statystyki użytkowania, raporty awarii oraz informacje o wydajności w celu poprawy stabilności aplikacji, doświadczenia użytkownika oraz rozwoju funkcji.",
+      "Statystyki te nie pozwalają na identyfikację poszczególnych użytkowników.",
+    ],
+  },
+  {
+    title: "Zmiany Polityki Prywatności",
+    paragraphs: [
+      "Polityka Prywatności może być okresowo aktualizowana.",
+      "Aktualna wersja jest zawsze dostępna na stronie internetowej TripleTalk oraz w aplikacji.",
+    ],
+  },
+  {
+    title: "Kontakt",
+    paragraphs: ["W przypadku pytań dotyczących przetwarzania danych osobowych prosimy o kontakt:"],
+    closing: ["craftapp", "contact@craftapp.pl"],
+  },
+];
+
+const englishSections: LegalSection[] = [
+  {
+    title: "Data Controller",
+    paragraphs: [
+      "This Privacy Policy explains how craftapp (\"we\", \"our\", \"us\") collects, uses and protects personal data when you use the TripleTalk mobile application.",
+      "If you have any questions regarding this Privacy Policy or your personal data, please contact us at:",
+    ],
+    closing: ["contact@craftapp.pl"],
+  },
+  {
+    title: "Information We Collect",
+    paragraphs: ["Depending on how you use TripleTalk, we may collect and process:"],
+    items: [
+      "Firebase User ID (UID)",
+      "email address",
+      "authentication method (Email, Google or Apple)",
+      "acceptance of the Terms of Service and Privacy Policy",
+      "application settings, including language preferences and audio settings",
+      "lessons and flashcards created by you",
+      "learning progress and study statistics",
+      "images uploaded for AI analysis",
+      "AI-generated educational content",
+      "push notification tokens",
+      "technical information required to operate, secure and improve the application",
+    ],
+    closing: [
+      "We do not intentionally collect special categories of personal data unless you voluntarily include such information in content you create.",
+    ],
+  },
+  {
+    title: "Why We Process Your Data",
+    paragraphs: ["Your data is processed to:"],
+    items: [
+      "create and manage your account",
+      "synchronize your data across devices",
+      "store and manage lessons and flashcards",
+      "provide spaced repetition and learning statistics",
+      "analyze uploaded images using TripleTalk AI",
+      "generate translations, examples, language information and pronunciation audio",
+      "send optional push notifications",
+      "maintain application security",
+      "detect errors and prevent abuse",
+      "improve and develop TripleTalk",
+    ],
+  },
+  {
+    title: "Legal Basis",
+    paragraphs: ["Depending on the purpose, we process personal data based on:"],
+    items: [
+      "performance of our agreement with you by providing the TripleTalk service",
+      "your consent (for example, notifications, camera or photo library access)",
+      "our legitimate interests, including security, diagnostics and service improvement",
+      "legal obligations where required by applicable law",
+    ],
+  },
+  {
+    title: "TripleTalk AI",
+    paragraphs: ["TripleTalk uses artificial intelligence to:"],
+    items: [
+      "recognize text from images",
+      "generate translations",
+      "create example sentences",
+      "enrich flashcards with language information",
+      "generate pronunciation audio",
+    ],
+    closing: [
+      "Your uploaded content may be securely processed by AI providers only to deliver the requested functionality.",
+      "AI-generated content is intended solely as educational assistance.",
+      "Although we continuously improve our AI features, generated content may contain inaccuracies or mistakes. Users should independently verify important information before relying on it.",
+      "AI-generated content does not constitute professional linguistic advice.",
+    ],
+  },
+  {
+    title: "Third-Party Service Providers",
+    paragraphs: ["To provide our services, TripleTalk relies on trusted third-party providers, including:"],
+    items: [
+      "Google Firebase Authentication",
+      "Google Firestore",
+      "Google Cloud Storage",
+      "Google Cloud Functions",
+      "Firebase Cloud Messaging",
+      "Google Gemini",
+      "Google Cloud Text-to-Speech",
+      "Google Sign-In",
+      "Sign in with Apple",
+    ],
+    closing: ["This list may change as the application evolves."],
+  },
+  {
+    title: "International Data Transfers",
+    paragraphs: [
+      "Some of our service providers operate internationally.",
+      "As a result, your personal data may be processed outside the European Economic Area (EEA).",
+      "Where required, appropriate safeguards such as Standard Contractual Clauses or equivalent legal mechanisms are used to protect your personal data.",
+    ],
+  },
+  {
+    title: "Device Permissions",
+    paragraphs: ["TripleTalk may request access to:"],
+    items: [
+      "Camera - to capture text for AI processing",
+      "Photo Library - to select existing images",
+      "Internet - to synchronize your learning data",
+      "Notifications - to send optional learning reminders",
+    ],
+    closing: ["You may revoke these permissions at any time through your device settings."],
+  },
+  {
+    title: "Deleting Data and Archived Educational Content",
+    paragraphs: [
+      "You may delete individual flashcards, lessons or permanently delete your account at any time.",
+      "Deleting your account removes your authentication data and access to TripleTalk.",
+      "To support the continued development of TripleTalk, deleted flashcards and lessons may be transferred to an internal archive after removing information that could identify you.",
+      "Archived educational content may be used exclusively to:",
+    ],
+    items: [
+      "improve educational quality",
+      "develop new learning collections",
+      "improve application functionality",
+      "enhance AI-powered educational features",
+    ],
+    closing: [
+      "Educational collections published by TripleTalk may contain content created, combined, modified or generated from anonymized archived materials. Such collections are designed so they cannot identify the original author.",
+    ],
+  },
+  {
+    title: "Data Retention",
+    paragraphs: [
+      "Personal account information is retained while your account remains active.",
+      "After account deletion, personally identifiable account information is removed.",
+      "Anonymized educational content may continue to be stored for the purposes described in this Privacy Policy.",
+      "Shared pronunciation audio may also remain available as part of the application's global audio library where it cannot be linked to an individual user.",
+    ],
+  },
+  {
+    title: "Your Rights",
+    paragraphs: ["Subject to applicable law, you have the right to:"],
+    items: [
+      "access your personal data",
+      "correct inaccurate data",
+      "request deletion of your data",
+      "restrict processing",
+      "receive a copy of your personal data",
+      "object to certain processing activities",
+      "withdraw consent where processing is based on consent",
+      "lodge a complaint with your local data protection authority",
+    ],
+    closing: ["To exercise any of these rights, please contact us at:", "contact@craftapp.pl"],
+  },
+  {
+    title: "Data Security",
+    paragraphs: [
+      "We use appropriate technical and organizational measures to protect your personal data.",
+      "Access to user data is restricted to the account owner and to the services necessary to operate TripleTalk.",
+      "We continuously monitor and improve the security of our systems.",
+    ],
+  },
+  {
+    title: "Anonymous Analytics",
+    paragraphs: [
+      "TripleTalk may collect anonymous usage statistics, crash reports and performance information to improve application stability, user experience and feature development.",
+      "These statistics do not identify individual users.",
+    ],
+  },
+  {
+    title: "Changes to this Privacy Policy",
+    paragraphs: [
+      "We may update this Privacy Policy from time to time.",
+      "The latest version will always be available within the application and on the official TripleTalk website.",
+      "Continued use of TripleTalk after changes become effective constitutes acceptance of the updated Privacy Policy.",
+    ],
+  },
+  {
+    title: "Contact",
+    paragraphs: ["If you have any questions regarding this Privacy Policy or your personal data, please contact:"],
+    closing: ["craftapp", "contact@craftapp.pl"],
+  },
+];
+
+const documents = [
+  {
+    id: "pl",
+    label: "PL",
+    title: "Polityka Prywatności TripleTalk",
+    effectiveDate: "Data obowiązywania: 2 lipca 2026",
+    sections: polishSections,
+  },
+  {
+    id: "en",
+    label: "EN",
+    title: "TripleTalk Privacy Policy",
+    effectiveDate: "Effective date: July 2, 2026",
+    sections: englishSections,
+  },
+];
 ---
 
 <!doctype html>
@@ -7,26 +380,96 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TripleTalk Privacy Policy placeholder." />
+    <meta
+      name="description"
+      content="TripleTalk Privacy Policy and Polish privacy policy for the TripleTalk mobile application."
+    />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tripletalk.app/privacy" />
+    <meta property="og:url" content="https://tripletalk.app/privacy/" />
     <meta property="og:title" content="Privacy Policy - TripleTalk" />
-    <meta property="og:description" content="Privacy Policy placeholder for TripleTalk." />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:description" content="Privacy Policy for the TripleTalk mobile application." />
+    <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Privacy Policy - TripleTalk" />
+    <meta name="twitter:description" content="Privacy Policy for the TripleTalk mobile application." />
+    <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
     <title>Privacy Policy - TripleTalk</title>
-    <link rel="canonical" href="https://tripletalk.app/privacy" />
+    <link rel="canonical" href="https://tripletalk.app/privacy/" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
   </head>
   <body>
-    <main class="legal-page">
-      <article class="container legal-content">
-        <a class="back-link" href="/">Back to TripleTalk</a>
-        <h1>Privacy Policy</h1>
-        <p>This is placeholder content for the TripleTalk Privacy Policy.</p>
-        <p>Replace this text with the final privacy policy before launch.</p>
-      </article>
+    <main class="legal-page legal-page--privacy">
+      <div class="container legal-shell">
+        <header class="legal-hero">
+          <a class="brand legal-brand" href="/" aria-label="TripleTalk home">
+            <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
+            <span><span>Triple</span><span>Talk</span></span>
+          </a>
+          <div class="legal-hero-copy">
+            <h1>TripleTalk Privacy Policy</h1>
+          </div>
+          <div class="legal-toolbar" aria-label="Privacy policy language selector">
+            {
+              documents.map((document, index) => (
+                <a class={index === 0 ? "active" : ""} href={`#${document.id}`}>
+                  {document.label}
+                </a>
+              ))
+            }
+          </div>
+        </header>
+
+        <div class="legal-documents">
+          {
+            documents.map((document) => (
+              <article class="legal-document" id={document.id} lang={document.id}>
+                <div class="legal-document-header">
+                  <div>
+                    <h2>{document.title}</h2>
+                    <p>{document.effectiveDate}</p>
+                  </div>
+                </div>
+
+                <div class="legal-sections">
+                  {
+                    document.sections.map((section, index) => (
+                      <section class="legal-section" id={`${document.id}-${index + 1}`}>
+                        <h3>
+                          <span>{index + 1}</span>
+                          {section.title}
+                        </h3>
+                        {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+                        {
+                          section.items && (
+                            <ul>
+                              {section.items.map((item) => (
+                                <li>{item}</li>
+                              ))}
+                            </ul>
+                          )
+                        }
+                        {section.closing?.map((paragraph) => <p>{paragraph}</p>)}
+                        {
+                          section.secondaryItems && (
+                            <ul>
+                              {section.secondaryItems.map((item) => (
+                                <li>{item}</li>
+                              ))}
+                            </ul>
+                          )
+                        }
+                        {section.final?.map((paragraph) => <p>{paragraph}</p>)}
+                      </section>
+                    ))
+                  }
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
     </main>
   </body>
 </html>
