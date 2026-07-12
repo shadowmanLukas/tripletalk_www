@@ -1,0 +1,139 @@
+---
+import "../styles/global.css";
+
+const supportEmail = "contact@craftapp.pl";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact TripleTalk support by email for help with the app, accounts, privacy or data requests."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tripletalk.app/support/" />
+    <meta property="og:title" content="TripleTalk Support" />
+    <meta
+      property="og:description"
+      content="Need help with TripleTalk? Contact support by email."
+    />
+    <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TripleTalk Support" />
+    <meta
+      name="twitter:description"
+      content="Need help with TripleTalk? Contact support by email."
+    />
+    <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
+    <title>TripleTalk Support</title>
+    <link rel="canonical" href="https://tripletalk.app/support/" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a class="brand" href="/" aria-label="TripleTalk home">
+          <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
+          <span><span>Triple</span><span>Talk</span></span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span class="sr-only">Open menu</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="site-menu">
+          <a href="/#features">Features</a>
+          <a href="/#download">Download</a>
+          <a href="/terms">Terms</a>
+          <a href="/privacy">Privacy</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="support-page">
+      <section class="support-hero" aria-labelledby="support-title">
+        <div class="container support-shell">
+          <div class="support-copy">
+            <p class="eyebrow">TripleTalk Support</p>
+            <h1 id="support-title">Support / Pomoc</h1>
+            <p>
+              Need help with TripleTalk? Contact us about the app, your account, privacy or data requests.
+            </p>
+            <p>
+              Potrzebujesz pomocy? Napisz do nas w sprawie aplikacji, konta, prywatności lub danych.
+            </p>
+          </div>
+
+          <aside class="support-contact" aria-label="Support email">
+            <span>Email</span>
+            <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
+            <p>We reply as soon as possible.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section support-section" aria-labelledby="support-details-title">
+        <div class="container support-grid">
+          <article class="support-panel">
+            <h2 id="support-details-title">What to include</h2>
+            <ul>
+              <li>Your device model and operating system.</li>
+              <li>The email address used in TripleTalk, if the request concerns your account.</li>
+              <li>A short description of the issue and steps that led to it.</li>
+            </ul>
+          </article>
+
+          <article class="support-panel">
+            <h2>Account and data</h2>
+            <p>
+              For account deletion, privacy questions or data requests, contact us by email. You can also review the
+              current privacy policy and terms of service.
+            </p>
+            <div class="support-actions">
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms of Service</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <p>© 2026 <a href="https://craftapp.pl/">craftapp.pl</a></p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      menuToggle?.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+        navLinks?.classList.toggle("open", !expanded);
+      });
+
+      navLinks?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle?.setAttribute("aria-expanded", "false");
+          navLinks.classList.remove("open");
+        });
+      });
+    </script>
+  </body>
+</html>

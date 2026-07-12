@@ -691,6 +691,139 @@ h3 {
   padding-left: 22px;
 }
 
+.support-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, #f7fbfd 0%, #ffffff 360px),
+    #ffffff;
+}
+
+.support-hero {
+  padding: 56px 0 20px;
+}
+
+.support-shell {
+  display: grid;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.support-copy {
+  max-width: 740px;
+}
+
+.support-copy h1 {
+  font-size: clamp(2.4rem, 12vw, 4.2rem);
+}
+
+.support-copy p {
+  max-width: 680px;
+  margin: 18px 0 0;
+  color: #4b5c70;
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.support-copy p + p {
+  margin-top: 8px;
+}
+
+.support-contact,
+.support-panel {
+  border: 1px solid #dfe9f0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(7, 22, 50, 0.06);
+}
+
+.support-contact {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  padding: 24px;
+}
+
+.support-contact span {
+  color: #057f72;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.support-contact a {
+  color: #071632;
+  font-size: clamp(1.28rem, 6vw, 2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.support-contact a:hover,
+.support-actions a:hover {
+  color: #057f72;
+}
+
+.support-contact p,
+.support-panel p,
+.support-panel li {
+  color: #4b5c70;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.support-contact p {
+  margin: 0;
+}
+
+.support-section {
+  padding-top: 28px;
+}
+
+.support-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.support-panel {
+  padding: 24px;
+}
+
+.support-panel h2 {
+  font-size: clamp(1.55rem, 7vw, 2.45rem);
+}
+
+.support-panel p {
+  margin: 18px 0 0;
+}
+
+.support-panel ul {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding-left: 22px;
+}
+
+.support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.support-actions a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d8e4ec;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #334357;
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
 @media (min-width: 620px) {
   .store-actions {
     display: flex;
@@ -732,6 +865,11 @@ h3 {
 
   .legal-toolbar button {
     min-width: 92px;
+  }
+
+  .support-contact,
+  .support-panel {
+    padding: 28px;
   }
 }
 
@@ -835,5 +973,22 @@ h3 {
   .legal-section p,
   .legal-section li {
     font-size: 1.04rem;
+  }
+
+  .support-hero {
+    padding: 86px 0 24px;
+  }
+
+  .support-shell {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.58fr);
+    gap: 32px;
+  }
+
+  .support-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .support-panel {
+    min-height: 300px;
   }
 }
