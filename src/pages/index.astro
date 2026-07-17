@@ -256,12 +256,14 @@ const previewCards = [
       const savedLanguage = localStorage.getItem("tripletalk-language");
       const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : browserLanguage;
 
-      function setLanguage(language) {
+      function setLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
 
         translatedNodes.forEach((node) => {
           const key = node.getAttribute("data-i18n");
-          node.textContent = translations[language][key];
+          if (key && key in translations[language]) {
+            node.textContent = translations[language][key as keyof (typeof translations)["pl"]];
+          }
         });
 
         featureTexts.forEach((node) => {
@@ -291,7 +293,10 @@ const previewCards = [
       });
 
       languageButtons.forEach((button) => {
-        button.addEventListener("click", () => setLanguage(button.getAttribute("data-lang-switch")));
+        button.addEventListener("click", () => {
+          const language = button.getAttribute("data-lang-switch");
+          if (language === "pl" || language === "en") setLanguage(language);
+        });
       });
 
       setLanguage(initialLanguage);

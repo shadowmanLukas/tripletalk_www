@@ -1,0 +1,33 @@
+diff --git a/firestore.rules b/firestore.rules
+--- a/firestore.rules
++++ b/firestore.rules
+@@ -7,6 +7,10 @@ service cloud.firestore {
+       return request.auth != null;
+     }
+ 
++    function isAdmin() {
++      return signedIn() && request.auth.token.admin == true;
++    }
++
+     function owns(userId) {
+       return signedIn() && request.auth.uid == userId;
+     }
+@@ -151,7 +155,17 @@ service cloud.firestore {
+              validFeedbackAttachment(
+                request.resource.data.attachments[2], feedbackId
+              ))));
+-      allow read, update, delete: if false;
++      allow read, delete: if isAdmin();
++      allow update: if isAdmin() &&
++        request.resource.data.diff(resource.data).affectedKeys().hasOnly([
++          'status', 'completedAt', 'completedBy'
++        ]) &&
++        request.resource.data.status in ['open', 'done'] &&
++        ((request.resource.data.status == 'done' &&
++          request.resource.data.completedAt == request.time &&
++          request.resource.data.completedBy == request.auth.uid) ||
++         (request.resource.data.status == 'open' &&
++          !request.resource.data.keys().hasAny(['completedAt', 'completedBy'])));
+     }
+ 
+     match /commonFlashcards/{collectionId} {

@@ -421,7 +421,7 @@ const documents = [
                   class={index === 0 ? "active" : ""}
                   type="button"
                   data-legal-language={document.id}
-                  aria-pressed={String(index === 0)}
+                  aria-pressed={index === 0}
                 >
                   {document.label}
                 </button>
@@ -482,10 +482,10 @@ const documents = [
     </main>
     <script>
       const legalLanguageButtons = document.querySelectorAll("[data-legal-language]");
-      const legalDocuments = document.querySelectorAll(".legal-document");
+      const legalDocuments = document.querySelectorAll<HTMLElement>(".legal-document");
       const legalTitle = document.querySelector("[data-legal-title]");
 
-      function setLegalLanguage(language) {
+      function setLegalLanguage(language: string) {
         document.documentElement.lang = language;
 
         legalLanguageButtons.forEach((button) => {
@@ -494,7 +494,7 @@ const documents = [
           button.setAttribute("aria-pressed", String(isActive));
         });
 
-        legalDocuments.forEach((document) => {
+        legalDocuments.forEach((document: HTMLElement) => {
           document.hidden = document.id !== language;
         });
 
@@ -505,7 +505,8 @@ const documents = [
 
       legalLanguageButtons.forEach((button) => {
         button.addEventListener("click", () => {
-          setLegalLanguage(button.getAttribute("data-legal-language"));
+          const language = button.getAttribute("data-legal-language");
+          if (language) setLegalLanguage(language);
         });
       });
     </script>

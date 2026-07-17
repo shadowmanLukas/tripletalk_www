@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["https://tripletalk.app", "http://localhost:4321"],
+    "method": ["GET", "HEAD", "DELETE"],
+    "responseHeader": ["Content-Type", "Content-Length"],
+    "maxAgeSeconds": 3600
+  }
+]

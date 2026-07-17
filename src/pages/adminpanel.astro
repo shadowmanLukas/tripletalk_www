@@ -1,0 +1,101 @@
+---
+import "../styles/global.css";
+import "../styles/admin.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>TripleTalk Admin</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+  </head>
+  <body class="admin-body">
+    <main class="admin-auth-loading" id="auth-loading" aria-live="polite">
+      <img src="/assets/tripletalk-logo.png" alt="" width="56" height="56" />
+      <p>Checking administrator session…</p>
+    </main>
+
+    <main class="admin-login-shell" id="login-view" hidden>
+      <section class="admin-login-card" aria-labelledby="login-title">
+        <a class="brand login-brand" href="/" aria-label="TripleTalk home">
+          <img src="/assets/tripletalk-logo.png" alt="" width="48" height="48" />
+          <span><span>Triple</span><span>Talk</span></span>
+        </a>
+        <p class="eyebrow">Administration</p>
+        <h1 id="login-title">TripleTalk Admin</h1>
+        <form id="admin-login-form">
+          <label>
+            Login
+            <input name="login" type="text" autocomplete="username" required maxlength="64" />
+          </label>
+          <label>
+            Password
+            <input
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              maxlength="4096"
+            />
+          </label>
+          <button class="admin-button primary" type="submit">Sign in</button>
+          <p class="form-error" id="login-error" role="alert" hidden></p>
+        </form>
+      </section>
+    </main>
+
+    <div id="panel-view" hidden>
+      <header class="admin-header">
+        <div class="admin-shell admin-header-inner">
+          <a class="brand" href="/" aria-label="TripleTalk home">
+            <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
+            <span><span>Triple</span><span>Talk</span> Admin</span>
+          </a>
+          <button class="admin-button secondary" id="logout-button" type="button">Logout</button>
+        </div>
+      </header>
+      <main class="admin-shell admin-main">
+        <div class="admin-title-row">
+          <div>
+            <p class="eyebrow">Feedback</p>
+            <h1>User reports</h1>
+          </div>
+          <button class="admin-button secondary" id="refresh-button" type="button">Refresh</button>
+        </div>
+        <div id="feedback-message" class="admin-state" role="status">Loading feedback…</div>
+        <div class="admin-table-wrap" id="feedback-table-wrap" hidden>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Status</th><th>Date</th><th>Category</th><th>Title</th><th>Platform</th
+                ><th>Version</th><th>User ID</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="feedback-rows"></tbody>
+          </table>
+        </div>
+        <div class="feedback-cards" id="feedback-cards" hidden></div>
+        <button class="admin-button load-more" id="load-more-button" type="button" hidden>
+          Load more
+        </button>
+      </main>
+    </div>
+
+    <dialog class="admin-dialog" id="details-dialog" aria-labelledby="details-title">
+      <div class="dialog-header">
+        <h2 id="details-title">Feedback details</h2>
+        <button class="icon-button" id="close-details-button" type="button" aria-label="Close details">
+          ×
+        </button>
+      </div>
+      <div id="details-content"></div>
+    </dialog>
+    <div class="admin-toast" id="admin-toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="../scripts/admin-panel.ts"></script>
+  </body>
+</html>
