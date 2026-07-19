@@ -252,9 +252,8 @@ const previewCards = [
       const translatedNodes = document.querySelectorAll("[data-i18n]");
       const featureTexts = document.querySelectorAll("[data-pl][data-en]");
 
-      const browserLanguage = navigator.language?.toLowerCase().startsWith("pl") ? "pl" : "en";
       const savedLanguage = localStorage.getItem("tripletalk-language");
-      const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : browserLanguage;
+      const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : "en";
 
       function setLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;

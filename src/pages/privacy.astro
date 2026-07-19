@@ -411,17 +411,17 @@ const documents = [
           </a>
           <div class="legal-hero-copy">
             <h1 data-legal-title data-pl={documents[0].pageTitle} data-en={documents[1].pageTitle}>
-              {documents[0].pageTitle}
+              {documents[1].pageTitle}
             </h1>
           </div>
           <div class="legal-toolbar" aria-label="Privacy policy language selector">
             {
-              documents.map((document, index) => (
+              documents.map((document) => (
                 <button
-                  class={index === 0 ? "active" : ""}
+                  class={document.id === "en" ? "active" : ""}
                   type="button"
                   data-legal-language={document.id}
-                  aria-pressed={index === 0}
+                  aria-pressed={document.id === "en"}
                 >
                   {document.label}
                 </button>
@@ -432,8 +432,8 @@ const documents = [
 
         <div class="legal-documents">
           {
-            documents.map((document, index) => (
-              <article class="legal-document" id={document.id} lang={document.id} hidden={index !== 0}>
+            documents.map((document) => (
+              <article class="legal-document" id={document.id} lang={document.id} hidden={document.id !== "en"}>
                 <div class="legal-document-header">
                   <div>
                     <h2>{document.title}</h2>
@@ -484,6 +484,8 @@ const documents = [
       const legalLanguageButtons = document.querySelectorAll("[data-legal-language]");
       const legalDocuments = document.querySelectorAll<HTMLElement>(".legal-document");
       const legalTitle = document.querySelector("[data-legal-title]");
+      const savedLegalLanguage = localStorage.getItem("tripletalk-language");
+      const initialLegalLanguage = savedLegalLanguage === "pl" || savedLegalLanguage === "en" ? savedLegalLanguage : "en";
 
       function setLegalLanguage(language: string) {
         document.documentElement.lang = language;
@@ -501,6 +503,8 @@ const documents = [
         if (legalTitle) {
           legalTitle.textContent = legalTitle.getAttribute(`data-${language}`);
         }
+
+        localStorage.setItem("tripletalk-language", language);
       }
 
       legalLanguageButtons.forEach((button) => {
@@ -509,6 +513,8 @@ const documents = [
           if (language) setLegalLanguage(language);
         });
       });
+
+      setLegalLanguage(initialLegalLanguage);
     </script>
   </body>
 </html>
