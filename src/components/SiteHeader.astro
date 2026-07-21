@@ -1,0 +1,39 @@
+---
+type Page = "home" | "terms" | "privacy" | "support";
+
+interface Props {
+  currentPage?: Page;
+}
+
+const { currentPage = "home" } = Astro.props;
+const sectionPrefix = currentPage === "home" ? "" : "/";
+---
+
+<header class="site-header">
+  <nav class="container nav" aria-label="Main navigation">
+    <a class="brand" href="/" aria-label="TripleTalk home">
+      <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
+      <span><span>Triple</span><span>Talk</span></span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      <span class="sr-only">Open menu</span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links" id="site-menu">
+      <a href={`${sectionPrefix}#features`} data-i18n="navFeatures">Features</a>
+      <a href={`${sectionPrefix}#download`} data-i18n="navDownload">Download</a>
+      <a href="/terms" data-i18n="navTerms" aria-current={currentPage === "terms" ? "page" : undefined}>Terms</a>
+      <a href="/privacy" data-i18n="navPrivacy" aria-current={currentPage === "privacy" ? "page" : undefined}>
+        Privacy
+      </a>
+      <div class="language-switcher" aria-label="Language switcher">
+        <button type="button" data-lang-switch="pl">PL</button>
+        <button type="button" data-lang-switch="en">EN</button>
+      </div>
+    </div>
+  </nav>
+</header>

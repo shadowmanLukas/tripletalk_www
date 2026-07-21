@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
-
-const supportEmail = "contact@craftapp.pl";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 ---
 
 <!doctype html>
@@ -11,7 +11,7 @@ const supportEmail = "contact@craftapp.pl";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contact TripleTalk support by email for help with the app, accounts, privacy or data requests."
+      content="Need help with TripleTalk? Contact us about the app, your account, privacy or data requests."
     />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
@@ -19,14 +19,14 @@ const supportEmail = "contact@craftapp.pl";
     <meta property="og:title" content="TripleTalk Support" />
     <meta
       property="og:description"
-      content="Need help with TripleTalk? Contact support by email."
+      content="Need help with TripleTalk? Contact us about the app, your account, privacy or data requests."
     />
     <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="TripleTalk Support" />
     <meta
       name="twitter:description"
-      content="Need help with TripleTalk? Contact support by email."
+      content="Need help with TripleTalk? Contact us about the app, your account, privacy or data requests."
     />
     <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
     <title>TripleTalk Support</title>
@@ -34,93 +34,94 @@ const supportEmail = "contact@craftapp.pl";
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
   </head>
-  <body>
-    <header class="site-header">
-      <nav class="container nav" aria-label="Main navigation">
-        <a class="brand" href="/" aria-label="TripleTalk home">
-          <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
-          <span><span>Triple</span><span>Talk</span></span>
-        </a>
-
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
-          <span class="sr-only">Open menu</span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div class="nav-links" id="site-menu">
-          <a href="/#features">Features</a>
-          <a href="/#download">Download</a>
-          <a href="/terms">Terms</a>
-          <a href="/privacy">Privacy</a>
-        </div>
-      </nav>
-    </header>
+  <body class="support-body">
+    <SiteHeader currentPage="support" />
 
     <main class="support-page">
       <section class="support-hero" aria-labelledby="support-title">
-        <div class="container support-shell">
-          <div class="support-copy">
-            <p class="eyebrow">TripleTalk Support</p>
-            <h1 id="support-title">Support / Pomoc</h1>
-            <p>
+        <div class="container">
+          <div class="support-card">
+            <p class="eyebrow" data-i18n="supportEyebrow">TripleTalk Support</p>
+            <h1 id="support-title" data-i18n="supportTitle">How can we help?</h1>
+            <p class="support-intro" data-i18n="supportIntro">
               Need help with TripleTalk? Contact us about the app, your account, privacy or data requests.
             </p>
-            <p>
-              Potrzebujesz pomocy? Napisz do nas w sprawie aplikacji, konta, prywatności lub danych.
-            </p>
-          </div>
 
-          <aside class="support-contact" aria-label="Support email">
-            <span>Email</span>
-            <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
-            <p>We reply as soon as possible.</p>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section support-section" aria-labelledby="support-details-title">
-        <div class="container support-grid">
-          <article class="support-panel">
-            <h2 id="support-details-title">What to include</h2>
-            <ul>
-              <li>Your device model and operating system.</li>
-              <li>The email address used in TripleTalk, if the request concerns your account.</li>
-              <li>A short description of the issue and steps that led to it.</li>
-            </ul>
-          </article>
-
-          <article class="support-panel">
-            <h2>Account and data</h2>
-            <p>
-              For account deletion, privacy questions or data requests, contact us by email. You can also review the
-              current privacy policy and terms of service.
-            </p>
-            <div class="support-actions">
-              <a href="/privacy">Privacy Policy</a>
-              <a href="/terms">Terms of Service</a>
+            <div class="support-contact" aria-label="Support email">
+              <span data-i18n="emailLabel">Email</span>
+              <strong class="support-email">support@tripletalk.app</strong>
+              <p class="support-response" data-i18n="responseTime">We usually reply within 1–2 business days.</p>
             </div>
-          </article>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <p>© 2026 <a href="https://craftapp.pl/">craftapp.pl</a></p>
-        </div>
-        <nav aria-label="Footer navigation">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
-        </nav>
-      </div>
-    </footer>
+    <SiteFooter currentPage="support" />
 
     <script>
+      const translations = {
+        pl: {
+          navFeatures: "Funkcje",
+          navDownload: "Pobierz",
+          navTerms: "Regulamin",
+          navPrivacy: "Prywatność",
+          supportEyebrow: "Pomoc TripleTalk",
+          supportTitle: "Jak możemy pomóc?",
+          supportIntro:
+            "Potrzebujesz pomocy z TripleTalk? Skontaktuj się z nami w sprawie aplikacji, konta, prywatności lub wniosków dotyczących danych.",
+          emailLabel: "E-mail",
+          responseTime: "Zwykle odpowiadamy w ciągu 1–2 dni roboczych.",
+          footerPrivacy: "Polityka Prywatności",
+          footerTerms: "Regulamin",
+          footerSupport: "Pomoc",
+          pageTitle: "Pomoc TripleTalk",
+        },
+        en: {
+          navFeatures: "Features",
+          navDownload: "Download",
+          navTerms: "Terms",
+          navPrivacy: "Privacy",
+          supportEyebrow: "TripleTalk Support",
+          supportTitle: "How can we help?",
+          supportIntro:
+            "Need help with TripleTalk? Contact us about the app, your account, privacy or data requests.",
+          emailLabel: "Email",
+          responseTime: "We usually reply within 1–2 business days.",
+          footerPrivacy: "Privacy Policy",
+          footerTerms: "Terms of Service",
+          footerSupport: "Support",
+          pageTitle: "TripleTalk Support",
+        },
+      };
+
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
+      const languageButtons = document.querySelectorAll("[data-lang-switch]");
+      const translatedNodes = document.querySelectorAll("[data-i18n]");
+
+      const savedLanguage = localStorage.getItem("tripletalk-language");
+      const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : "en";
+
+      function setLanguage(language: "pl" | "en") {
+        document.documentElement.lang = language;
+        document.title = translations[language].pageTitle;
+
+        translatedNodes.forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          if (key && key in translations[language]) {
+            node.textContent = translations[language][key as keyof (typeof translations)["pl"]];
+          }
+        });
+
+        languageButtons.forEach((button) => {
+          const isActive = button.getAttribute("data-lang-switch") === language;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        localStorage.setItem("tripletalk-language", language);
+      }
 
       menuToggle?.addEventListener("click", () => {
         const expanded = menuToggle.getAttribute("aria-expanded") === "true";
@@ -134,6 +135,15 @@ const supportEmail = "contact@craftapp.pl";
           navLinks.classList.remove("open");
         });
       });
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const language = button.getAttribute("data-lang-switch");
+          if (language === "pl" || language === "en") setLanguage(language);
+        });
+      });
+
+      setLanguage(initialLanguage);
     </script>
   </body>
 </html>

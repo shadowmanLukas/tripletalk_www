@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 
 type LegalSection = {
   title: string;
@@ -339,31 +341,14 @@ const documents = [
     <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
   </head>
   <body>
+    <SiteHeader currentPage="terms" />
     <main class="legal-page legal-page--terms">
       <div class="container legal-shell">
         <header class="legal-hero">
-          <a class="brand legal-brand" href="/" aria-label="TripleTalk home">
-            <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
-            <span><span>Triple</span><span>Talk</span></span>
-          </a>
           <div class="legal-hero-copy">
             <h1 data-legal-title data-pl={documents[0].pageTitle} data-en={documents[1].pageTitle}>
               {documents[1].pageTitle}
             </h1>
-          </div>
-          <div class="legal-toolbar" aria-label="Terms language selector">
-            {
-              documents.map((document) => (
-                <button
-                  class={document.id === "en" ? "active" : ""}
-                  type="button"
-                  data-legal-language={document.id}
-                  aria-pressed={document.id === "en"}
-                >
-                  {document.label}
-                </button>
-              ))
-            }
           </div>
         </header>
 
@@ -407,18 +392,53 @@ const documents = [
         </div>
       </div>
     </main>
+    <SiteFooter currentPage="terms" />
     <script>
-      const legalLanguageButtons = document.querySelectorAll("[data-legal-language]");
+      const translations = {
+        pl: {
+          navFeatures: "Funkcje",
+          navDownload: "Pobierz",
+          navTerms: "Regulamin",
+          navPrivacy: "Prywatność",
+          footerPrivacy: "Polityka Prywatności",
+          footerTerms: "Regulamin",
+          footerSupport: "Pomoc",
+          pageTitle: "Regulamin - TripleTalk",
+        },
+        en: {
+          navFeatures: "Features",
+          navDownload: "Download",
+          navTerms: "Terms",
+          navPrivacy: "Privacy",
+          footerPrivacy: "Privacy Policy",
+          footerTerms: "Terms of Service",
+          footerSupport: "Support",
+          pageTitle: "Terms of Service - TripleTalk",
+        },
+      };
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      const legalLanguageButtons = document.querySelectorAll("[data-lang-switch]");
+      const translatedNodes = document.querySelectorAll("[data-i18n]");
       const legalDocuments = document.querySelectorAll<HTMLElement>(".legal-document");
       const legalTitle = document.querySelector("[data-legal-title]");
       const savedLegalLanguage = localStorage.getItem("tripletalk-language");
       const initialLegalLanguage = savedLegalLanguage === "pl" || savedLegalLanguage === "en" ? savedLegalLanguage : "en";
 
-      function setLegalLanguage(language: string) {
+      function setLegalLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
+        document.title = translations[language].pageTitle;
+
+        translatedNodes.forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          if (key && key in translations[language]) {
+            node.textContent = translations[language][key as keyof (typeof translations)["pl"]];
+          }
+        });
 
         legalLanguageButtons.forEach((button) => {
-          const isActive = button.getAttribute("data-legal-language") === language;
+          const isActive = button.getAttribute("data-lang-switch") === language;
           button.classList.toggle("active", isActive);
           button.setAttribute("aria-pressed", String(isActive));
         });
@@ -434,10 +454,23 @@ const documents = [
         localStorage.setItem("tripletalk-language", language);
       }
 
+      menuToggle?.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+        navLinks?.classList.toggle("open", !expanded);
+      });
+
+      navLinks?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle?.setAttribute("aria-expanded", "false");
+          navLinks.classList.remove("open");
+        });
+      });
+
       legalLanguageButtons.forEach((button) => {
         button.addEventListener("click", () => {
-          const language = button.getAttribute("data-legal-language");
-          if (language) setLegalLanguage(language);
+          const language = button.getAttribute("data-lang-switch");
+          if (language === "pl" || language === "en") setLegalLanguage(language);
         });
       });
 

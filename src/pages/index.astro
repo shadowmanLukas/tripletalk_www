@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 
 const features = [
   {
@@ -66,32 +68,7 @@ const previewCards = [
     <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
   </head>
   <body>
-    <header class="site-header">
-      <nav class="container nav" aria-label="Main navigation">
-        <a class="brand" href="/" aria-label="TripleTalk home">
-          <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
-          <span><span>Triple</span><span>Talk</span></span>
-        </a>
-
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
-          <span class="sr-only">Open menu</span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div class="nav-links" id="site-menu">
-          <a href="#features" data-i18n="navFeatures">Features</a>
-          <a href="#download" data-i18n="navDownload">Download</a>
-          <a href="/terms" data-i18n="navTerms">Terms</a>
-          <a href="/privacy" data-i18n="navPrivacy">Privacy</a>
-          <div class="language-switcher" aria-label="Language switcher">
-            <button type="button" data-lang-switch="pl">PL</button>
-            <button type="button" data-lang-switch="en">EN</button>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <SiteHeader currentPage="home" />
 
     <main>
       <section class="hero">
@@ -192,17 +169,7 @@ const previewCards = [
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <p>© 2026 craftapp</p>
-        </div>
-        <nav aria-label="Footer navigation">
-          <a href="/privacy" data-i18n="footerPrivacy">Privacy Policy</a>
-          <a href="/terms" data-i18n="footerTerms">Terms of Service</a>
-        </nav>
-      </div>
-    </footer>
+    <SiteFooter currentPage="home" />
 
     <script>
       const translations = {
@@ -224,6 +191,7 @@ const previewCards = [
           downloadTitle: "Pobierz TripleTalk",
           footerPrivacy: "Polityka Prywatności",
           footerTerms: "Regulamin",
+          footerSupport: "Pomoc",
         },
         en: {
           navFeatures: "Features",
@@ -243,6 +211,7 @@ const previewCards = [
           downloadTitle: "Download TripleTalk",
           footerPrivacy: "Privacy Policy",
           footerTerms: "Terms of Service",
+          footerSupport: "Support",
         },
       };
 

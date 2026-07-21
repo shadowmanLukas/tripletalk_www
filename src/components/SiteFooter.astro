@@ -1,0 +1,28 @@
+---
+type Page = "home" | "terms" | "privacy" | "support";
+
+interface Props {
+  currentPage?: Page;
+}
+
+const { currentPage = "home" } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p>© 2026 craftapp</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="/privacy" data-i18n="footerPrivacy" aria-current={currentPage === "privacy" ? "page" : undefined}>
+        Privacy Policy
+      </a>
+      <a href="/terms" data-i18n="footerTerms" aria-current={currentPage === "terms" ? "page" : undefined}>
+        Terms of Service
+      </a>
+      <a href="/support/" data-i18n="footerSupport" aria-current={currentPage === "support" ? "page" : undefined}>
+        Support
+      </a>
+    </nav>
+  </div>
+</footer>
