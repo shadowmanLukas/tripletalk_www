@@ -414,7 +414,9 @@ const documents = [
       const legalLanguageButtons = document.querySelectorAll("[data-lang-switch]");
       const translatedNodes = document.querySelectorAll("[data-i18n]");
       const legalDocuments = document.querySelectorAll<HTMLElement>(".legal-document");
-      const initialLegalLanguage = "en";
+      const languageStorageKey = "tripletalk-language-preference-v2";
+      const savedLegalLanguage = localStorage.getItem(languageStorageKey);
+      const initialLegalLanguage = savedLegalLanguage === "pl" || savedLegalLanguage === "en" ? savedLegalLanguage : "en";
 
       function setLegalLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
@@ -437,6 +439,7 @@ const documents = [
           document.hidden = document.id !== language;
         });
 
+        localStorage.setItem(languageStorageKey, language);
       }
 
       menuToggle?.addEventListener("click", () => {

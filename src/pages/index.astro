@@ -338,7 +338,9 @@ const steps = [
       const translatedNodes = document.querySelectorAll("[data-i18n]");
       const localizedNodes = document.querySelectorAll("[data-en][data-pl]");
 
-      const initialLanguage = "en";
+      const languageStorageKey = "tripletalk-language-preference-v2";
+      const savedLanguage = localStorage.getItem(languageStorageKey);
+      const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : "en";
 
       function setLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
@@ -360,6 +362,7 @@ const steps = [
           button.setAttribute("aria-checked", String(isActive));
         });
 
+        localStorage.setItem(languageStorageKey, language);
       }
 
       menuToggle?.addEventListener("click", () => {

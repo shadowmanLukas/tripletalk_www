@@ -102,7 +102,9 @@ import SiteHeader from "../components/SiteHeader.astro";
       const languageButtons = document.querySelectorAll("[data-lang-switch]");
       const translatedNodes = document.querySelectorAll("[data-i18n]");
 
-      const initialLanguage = "en";
+      const languageStorageKey = "tripletalk-language-preference-v2";
+      const savedLanguage = localStorage.getItem(languageStorageKey);
+      const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : "en";
 
       function setLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
@@ -121,6 +123,7 @@ import SiteHeader from "../components/SiteHeader.astro";
           button.setAttribute("aria-checked", String(isActive));
         });
 
+        localStorage.setItem(languageStorageKey, language);
       }
 
       menuToggle?.addEventListener("click", () => {
