@@ -30,10 +30,65 @@ const sectionPrefix = currentPage === "home" ? "" : "/";
       <a href="/privacy" data-i18n="navPrivacy" aria-current={currentPage === "privacy" ? "page" : undefined}>
         Privacy
       </a>
-      <div class="language-switcher" aria-label="Language switcher">
-        <button type="button" data-lang-switch="pl">PL</button>
-        <button type="button" data-lang-switch="en">EN</button>
+      <div class="language-switcher">
+        <button
+          class="language-menu-trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="language-menu"
+          aria-label="Choose language"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18M12 3c2.4 2.5 3.7 5.5 3.7 9S14.4 18.5 12 21M12 3C9.6 5.5 8.3 8.5 8.3 12s1.3 6.5 3.7 9"></path>
+          </svg>
+        </button>
+        <div class="language-menu" id="language-menu" role="menu" hidden>
+          <button type="button" role="menuitemradio" data-lang-switch="en">
+            <span>English</span>
+          </button>
+          <button type="button" role="menuitemradio" data-lang-switch="pl">
+            <span>Polski</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
 </header>
+
+<script>
+  const languageSwitcher = document.querySelector<HTMLElement>(".language-switcher");
+  const languageTrigger = languageSwitcher?.querySelector<HTMLButtonElement>(".language-menu-trigger");
+  const languageMenu = languageSwitcher?.querySelector<HTMLElement>(".language-menu");
+  const languageOptions = languageSwitcher?.querySelectorAll<HTMLButtonElement>("[data-lang-switch]");
+
+  function closeLanguageMenu() {
+    languageTrigger?.setAttribute("aria-expanded", "false");
+    if (languageMenu) languageMenu.hidden = true;
+  }
+
+  languageTrigger?.addEventListener("click", () => {
+    const shouldOpen = languageTrigger.getAttribute("aria-expanded") !== "true";
+    languageTrigger.setAttribute("aria-expanded", String(shouldOpen));
+    if (languageMenu) languageMenu.hidden = !shouldOpen;
+  });
+
+  languageOptions?.forEach((option) => {
+    option.addEventListener("click", () => {
+      closeLanguageMenu();
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target instanceof Node && !languageSwitcher?.contains(event.target)) {
+      closeLanguageMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeLanguageMenu();
+      languageTrigger?.focus();
+    }
+  });
+</script>

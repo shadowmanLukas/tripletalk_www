@@ -102,7 +102,7 @@ import SiteHeader from "../components/SiteHeader.astro";
       const languageButtons = document.querySelectorAll("[data-lang-switch]");
       const translatedNodes = document.querySelectorAll("[data-i18n]");
 
-      const savedLanguage = localStorage.getItem("tripletalk-language");
+      const savedLanguage = localStorage.getItem("tripletalk-language-preference");
       const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : "en";
 
       function setLanguage(language: "pl" | "en") {
@@ -119,10 +119,10 @@ import SiteHeader from "../components/SiteHeader.astro";
         languageButtons.forEach((button) => {
           const isActive = button.getAttribute("data-lang-switch") === language;
           button.classList.toggle("active", isActive);
-          button.setAttribute("aria-pressed", String(isActive));
+          button.setAttribute("aria-checked", String(isActive));
         });
 
-        localStorage.setItem("tripletalk-language", language);
+        localStorage.setItem("tripletalk-language-preference", language);
       }
 
       menuToggle?.addEventListener("click", () => {

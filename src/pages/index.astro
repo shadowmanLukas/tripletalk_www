@@ -221,7 +221,7 @@ const previewCards = [
       const translatedNodes = document.querySelectorAll("[data-i18n]");
       const featureTexts = document.querySelectorAll("[data-pl][data-en]");
 
-      const savedLanguage = localStorage.getItem("tripletalk-language");
+      const savedLanguage = localStorage.getItem("tripletalk-language-preference");
       const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : "en";
 
       function setLanguage(language: "pl" | "en") {
@@ -241,10 +241,10 @@ const previewCards = [
         languageButtons.forEach((button) => {
           const isActive = button.getAttribute("data-lang-switch") === language;
           button.classList.toggle("active", isActive);
-          button.setAttribute("aria-pressed", String(isActive));
+          button.setAttribute("aria-checked", String(isActive));
         });
 
-        localStorage.setItem("tripletalk-language", language);
+        localStorage.setItem("tripletalk-language-preference", language);
       }
 
       menuToggle?.addEventListener("click", () => {
