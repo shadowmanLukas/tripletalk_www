@@ -5,35 +5,57 @@ import SiteHeader from "../components/SiteHeader.astro";
 
 const features = [
   {
-    title: "AI Flashcards",
-    titlePl: "Fiszki AI",
-    pl: "Twórz fiszki wspólnie z AI.",
-    en: "Create flashcards with AI.",
+    title: "Create flashcards in seconds",
+    titlePl: "Twórz fiszki w kilka sekund",
+    description:
+      "Enter a word or add your own content. TripleTalk AI generates translations, examples and audio.",
+    descriptionPl:
+      "Wpisz słowo lub dodaj własną treść. AI TripleTalk generuje tłumaczenia, przykłady i nagrania audio.",
   },
   {
-    title: "Smart Repetition",
-    titlePl: "Inteligentne powtórki",
-    pl: "Powtarzaj słowa dokładnie wtedy, kiedy trzeba.",
-    en: "Review vocabulary at the perfect moment.",
+    title: "Remember words for longer",
+    titlePl: "Zapamiętuj słowa na dłużej",
+    description: "Smart repetition brings back vocabulary at the right moment, before you forget it.",
+    descriptionPl: "Inteligentne powtórki przywracają słownictwo w odpowiednim momencie, zanim je zapomnisz.",
   },
   {
-    title: "Multiple Languages",
-    titlePl: "Wiele języków",
-    pl: "Ucz się wielu języków w jednej aplikacji.",
-    en: "Learn multiple languages in one app.",
+    title: "Learn while you listen",
+    titlePl: "Ucz się podczas słuchania",
+    description: "Play your lessons as audio while walking, driving or exercising.",
+    descriptionPl: "Odtwarzaj lekcje jako audio podczas spaceru, jazdy samochodem lub ćwiczeń.",
   },
   {
-    title: "Audio Learning",
-    titlePl: "Nauka z audio",
-    pl: "Słuchaj swoich lekcji i ucz się bez patrzenia na ekran.",
-    en: "Listen to your lessons anytime.",
+    title: "Create your own lessons",
+    titlePl: "Twórz własne lekcje",
+    description:
+      "Create personal vocabulary collections for work, travel, school and everyday conversations.",
+    descriptionPl:
+      "Twórz własne zestawy słownictwa do pracy, podróży, szkoły i codziennych rozmów.",
   },
 ];
 
-const previewCards = [
-  { en: "Vocabulary", pl: "Słownictwo" },
-  { en: "Practice", pl: "Ćwiczenia" },
-  { en: "Audio", pl: "Audio" },
+const steps = [
+  {
+    number: "01",
+    title: "Create",
+    titlePl: "Utwórz",
+    description: "Add a word, phrase or your own learning material.",
+    descriptionPl: "Dodaj słowo, zwrot lub własny materiał do nauki.",
+  },
+  {
+    number: "02",
+    title: "Practice",
+    titlePl: "Ćwicz",
+    description: "Learn with flashcards, examples and audio.",
+    descriptionPl: "Ucz się z fiszkami, przykładami i nagraniami audio.",
+  },
+  {
+    number: "03",
+    title: "Remember",
+    titlePl: "Zapamiętaj",
+    description: "Smart repetition schedules the next review automatically.",
+    descriptionPl: "Inteligentne powtórki automatycznie planują kolejną sesję.",
+  },
 ];
 ---
 
@@ -44,25 +66,25 @@ const previewCards = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="TripleTalk helps you learn languages faster with AI flashcards, smart repetition and audio lessons."
+      content="Create AI-powered flashcards in seconds, learn with smart repetition and audio, and build your vocabulary faster with TripleTalk."
     />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tripletalk.app/" />
-    <meta property="og:title" content="TripleTalk - Learn languages faster with AI" />
+    <meta property="og:title" content="TripleTalk – AI Flashcards for Faster Language Learning" />
     <meta
       property="og:description"
-      content="Create your own flashcards, learn with smart repetition and build your vocabulary every day."
+      content="Create AI-powered flashcards in seconds, learn with smart repetition and audio, and build your vocabulary faster with TripleTalk."
     />
     <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="TripleTalk - Learn languages faster with AI" />
+    <meta name="twitter:title" content="TripleTalk – AI Flashcards for Faster Language Learning" />
     <meta
       name="twitter:description"
-      content="Create your own flashcards, learn with smart repetition and build your vocabulary every day."
+      content="Create AI-powered flashcards in seconds, learn with smart repetition and audio, and build your vocabulary faster with TripleTalk."
     />
     <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
-    <title>TripleTalk - Learn languages faster with AI</title>
+    <title>TripleTalk – AI Flashcards for Faster Language Learning</title>
     <link rel="canonical" href="https://tripletalk.app/" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
@@ -75,9 +97,13 @@ const previewCards = [
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">TripleTalk</p>
-            <h1 data-i18n="heroTitle">Learn languages faster with AI.</h1>
+            <h1 data-i18n="heroTitle">Build your vocabulary faster with TripleTalk AI Flashcards.</h1>
             <p class="hero-description" data-i18n="heroDescription">
-              Create your own flashcards, learn with smart repetition and build your vocabulary every day.
+              Create flashcards in seconds with TripleTalk AI. Generate translations, examples and audio automatically,
+              then remember new words with smart repetition.
+            </p>
+            <p class="hero-value" data-i18n="heroValue">
+              No more creating flashcards manually. TripleTalk AI does it for you.
             </p>
             <div class="store-actions" aria-label="Download app">
               <a href="TODO" aria-label="Download on the App Store">App Store</a>
@@ -112,15 +138,17 @@ const previewCards = [
       <section class="section" id="features" aria-labelledby="features-title">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow" data-i18n="featuresEyebrow">Features</p>
-            <h2 id="features-title" data-i18n="featuresTitle">Simple tools for daily language learning.</h2>
+            <p class="eyebrow" data-i18n="featuresEyebrow">Why TripleTalk</p>
+            <h2 id="features-title" data-i18n="featuresTitle">
+              Everything you need to build vocabulary faster.
+            </h2>
           </div>
           <div class="feature-grid">
             {
               features.map((feature) => (
                 <article class="feature-card">
-                  <h3 data-pl={feature.titlePl} data-en={feature.title}>{feature.title}</h3>
-                  <p data-pl={feature.pl} data-en={feature.en}>{feature.en}</p>
+                  <h3 data-en={feature.title} data-pl={feature.titlePl}>{feature.title}</h3>
+                  <p data-en={feature.description} data-pl={feature.descriptionPl}>{feature.description}</p>
                 </article>
               ))
             }
@@ -128,42 +156,119 @@ const previewCards = [
         </div>
       </section>
 
+      <section class="section how-it-works" aria-labelledby="how-it-works-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="howEyebrow">How it works</p>
+            <h2 id="how-it-works-title" data-i18n="howTitle">From a new word to long-term memory.</h2>
+          </div>
+          <ol class="steps-grid">
+            {
+              steps.map((step) => (
+                <li class="step">
+                  <span class="step-number" aria-hidden="true">{step.number}</span>
+                  <h3 data-en={step.title} data-pl={step.titlePl}>{step.title}</h3>
+                  <p data-en={step.description} data-pl={step.descriptionPl}>{step.description}</p>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </section>
+
       <section class="section preview-section" aria-labelledby="preview-title">
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow" data-i18n="previewEyebrow">App Preview</p>
-            <h2 id="preview-title" data-i18n="previewTitle">A clear space for future screenshots.</h2>
+            <h2 id="preview-title" data-i18n="previewTitle">See how TripleTalk helps you learn.</h2>
           </div>
           <div class="preview-scroll" aria-label="App screenshot placeholders">
-            {
-              previewCards.map((title, index) => (
-                <div class="screenshot-placeholder">
-                  <div class="placeholder-status"></div>
-                  <div class="placeholder-card">
-                    <span>0{index + 1}</span>
-                    <strong data-pl={title.pl} data-en={title.en}>{title.en}</strong>
-                  </div>
-                  <div class="placeholder-lines">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
+            <figure class="screenshot-placeholder">
+              <!-- TODO: Replace with real TripleTalk app screenshot. -->
+              <div class="screenshot-placeholder-content">
+                <div class="placeholder-status"></div>
+                <div class="placeholder-card">
+                  <span>01</span>
+                  <strong data-en="Create with AI" data-pl="Twórz z AI">Create with AI</strong>
                 </div>
-              ))
-            }
+                <div class="placeholder-lines" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </figure>
+            <figure class="screenshot-placeholder">
+              <!-- TODO: Replace with real TripleTalk app screenshot. -->
+              <div class="screenshot-placeholder-content">
+                <div class="placeholder-status"></div>
+                <div class="placeholder-card">
+                  <span>02</span>
+                  <strong data-en="Practice smarter" data-pl="Ćwicz skuteczniej">Practice smarter</strong>
+                </div>
+                <div class="placeholder-lines" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </figure>
+            <figure class="screenshot-placeholder">
+              <!-- TODO: Replace with real TripleTalk app screenshot. -->
+              <div class="screenshot-placeholder-content">
+                <div class="placeholder-status"></div>
+                <div class="placeholder-card">
+                  <span>03</span>
+                  <strong data-en="Learn with audio" data-pl="Ucz się z audio">Learn with audio</strong>
+                </div>
+                <div class="placeholder-lines" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </figure>
+            <figure class="screenshot-placeholder">
+              <!-- TODO: Replace with Dashboard / Statistics screenshot. -->
+              <div class="screenshot-placeholder-content">
+                <div class="placeholder-status"></div>
+                <div class="placeholder-card">
+                  <span>04</span>
+                  <strong data-en="Track your progress" data-pl="Śledź swoje postępy">Track your progress</strong>
+                </div>
+                <div class="placeholder-lines" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </figure>
           </div>
+        </div>
+      </section>
+
+      <section class="perfect-for" aria-labelledby="perfect-for-title">
+        <div class="container perfect-for-inner">
+          <h2 id="perfect-for-title" data-i18n="perfectTitle">Made for every learning goal.</h2>
+          <ul>
+            <li data-en="Travel" data-pl="Podróże">Travel</li>
+            <li data-en="Work" data-pl="Praca">Work</li>
+            <li data-en="School" data-pl="Szkoła">School</li>
+            <li data-en="Moving abroad" data-pl="Przeprowadzka za granicę">Moving abroad</li>
+            <li data-en="Everyday conversations" data-pl="Codzienne rozmowy">Everyday conversations</li>
+          </ul>
         </div>
       </section>
 
       <section class="download" id="download" aria-labelledby="download-title">
         <div class="container download-inner">
-          <div>
+          <div class="download-copy">
             <p class="eyebrow" data-i18n="downloadEyebrow">Download</p>
-            <h2 id="download-title" data-i18n="downloadTitle">Download TripleTalk</h2>
+            <h2 id="download-title" data-i18n="downloadTitle">Start building your vocabulary today.</h2>
+            <p class="download-description" data-i18n="downloadDescription">
+              Download TripleTalk and create your first AI flashcards in minutes.
+            </p>
           </div>
-          <div class="store-actions">
-            <a href="TODO" aria-label="Download on the App Store">App Store</a>
-            <a href="TODO" aria-label="Get it on Google Play">Google Play</a>
+          <div class="download-actions">
+            <div class="store-actions">
+              <a href="TODO" aria-label="Download on the App Store">App Store</a>
+              <a href="TODO" aria-label="Get it on Google Play">Google Play</a>
+            </div>
+            <p class="download-offer" data-i18n="downloadOffer">
+              3 days of Premium free · 100 AI flashcards free
+            </p>
           </div>
         </div>
       </section>
@@ -178,17 +283,23 @@ const previewCards = [
           navDownload: "Pobierz",
           navTerms: "Regulamin",
           navPrivacy: "Prywatność",
-          heroTitle: "Ucz się języków szybciej z pomocą AI.",
+          heroTitle: "Rozwijaj słownictwo szybciej z fiszkami AI TripleTalk.",
           heroDescription:
-            "Twórz własne fiszki, ucz się z inteligentnymi powtórkami i rozwijaj słownictwo każdego dnia.",
+            "Twórz fiszki w kilka sekund z AI TripleTalk. Automatycznie generuj tłumaczenia, przykłady i nagrania audio, a następnie zapamiętuj nowe słowa dzięki inteligentnym powtórkom.",
+          heroValue: "Koniec z ręcznym tworzeniem fiszek. AI TripleTalk zrobi to za Ciebie.",
           phoneToday: "Dzisiaj",
           phoneFlashcard: "Fiszka",
-          featuresEyebrow: "Funkcje",
-          featuresTitle: "Proste narzędzia do codziennej nauki języków.",
+          featuresEyebrow: "Dlaczego TripleTalk",
+          featuresTitle: "Wszystko, czego potrzebujesz, aby szybciej rozwijać słownictwo.",
+          howEyebrow: "Jak to działa",
+          howTitle: "Od nowego słowa do trwałej pamięci.",
           previewEyebrow: "Podgląd aplikacji",
-          previewTitle: "Miejsce na przyszłe zrzuty ekranu.",
+          previewTitle: "Zobacz, jak TripleTalk pomaga Ci w nauce.",
+          perfectTitle: "Dla każdego celu w nauce.",
           downloadEyebrow: "Pobierz",
-          downloadTitle: "Pobierz TripleTalk",
+          downloadTitle: "Zacznij rozwijać swoje słownictwo już dziś.",
+          downloadDescription: "Pobierz TripleTalk i utwórz pierwsze fiszki AI w kilka minut.",
+          downloadOffer: "3 dni Premium za darmo · 100 fiszek AI za darmo",
           footerPrivacy: "Polityka Prywatności",
           footerTerms: "Regulamin",
           footerSupport: "Pomoc",
@@ -198,17 +309,23 @@ const previewCards = [
           navDownload: "Download",
           navTerms: "Terms",
           navPrivacy: "Privacy",
-          heroTitle: "Learn languages faster with AI.",
+          heroTitle: "Build your vocabulary faster with TripleTalk AI Flashcards.",
           heroDescription:
-            "Create your own flashcards, learn with smart repetition and build your vocabulary every day.",
+            "Create flashcards in seconds with TripleTalk AI. Generate translations, examples and audio automatically, then remember new words with smart repetition.",
+          heroValue: "No more creating flashcards manually. TripleTalk AI does it for you.",
           phoneToday: "Today",
           phoneFlashcard: "Flashcard",
-          featuresEyebrow: "Features",
-          featuresTitle: "Simple tools for daily language learning.",
+          featuresEyebrow: "Why TripleTalk",
+          featuresTitle: "Everything you need to build vocabulary faster.",
+          howEyebrow: "How it works",
+          howTitle: "From a new word to long-term memory.",
           previewEyebrow: "App Preview",
-          previewTitle: "A clear space for future screenshots.",
+          previewTitle: "See how TripleTalk helps you learn.",
+          perfectTitle: "Made for every learning goal.",
           downloadEyebrow: "Download",
-          downloadTitle: "Download TripleTalk",
+          downloadTitle: "Start building your vocabulary today.",
+          downloadDescription: "Download TripleTalk and create your first AI flashcards in minutes.",
+          downloadOffer: "3 days of Premium free · 100 AI flashcards free",
           footerPrivacy: "Privacy Policy",
           footerTerms: "Terms of Service",
           footerSupport: "Support",
@@ -219,10 +336,9 @@ const previewCards = [
       const navLinks = document.querySelector(".nav-links");
       const languageButtons = document.querySelectorAll("[data-lang-switch]");
       const translatedNodes = document.querySelectorAll("[data-i18n]");
-      const featureTexts = document.querySelectorAll("[data-pl][data-en]");
+      const localizedNodes = document.querySelectorAll("[data-en][data-pl]");
 
-      const savedLanguage = localStorage.getItem("tripletalk-language-preference");
-      const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : "en";
+      const initialLanguage = "en";
 
       function setLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
@@ -234,7 +350,7 @@ const previewCards = [
           }
         });
 
-        featureTexts.forEach((node) => {
+        localizedNodes.forEach((node) => {
           node.textContent = node.getAttribute(`data-${language}`);
         });
 
@@ -244,7 +360,6 @@ const previewCards = [
           button.setAttribute("aria-checked", String(isActive));
         });
 
-        localStorage.setItem("tripletalk-language-preference", language);
       }
 
       menuToggle?.addEventListener("click", () => {
