@@ -62,6 +62,8 @@ import SiteHeader from "../components/SiteHeader.astro";
     <SiteFooter currentPage="support" />
 
     <script>
+      import { getVisitorLanguage } from "../scripts/visitor-language";
+
       const translations = {
         pl: {
           navFeatures: "Funkcje",
@@ -99,12 +101,7 @@ import SiteHeader from "../components/SiteHeader.astro";
 
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
-      const languageButtons = document.querySelectorAll("[data-lang-switch]");
       const translatedNodes = document.querySelectorAll("[data-i18n]");
-
-      const languageStorageKey = "tripletalk-language-preference-v2";
-      const savedLanguage = localStorage.getItem(languageStorageKey);
-      const initialLanguage = savedLanguage === "pl" || savedLanguage === "en" ? savedLanguage : "en";
 
       function setLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
@@ -117,13 +114,6 @@ import SiteHeader from "../components/SiteHeader.astro";
           }
         });
 
-        languageButtons.forEach((button) => {
-          const isActive = button.getAttribute("data-lang-switch") === language;
-          button.classList.toggle("active", isActive);
-          button.setAttribute("aria-checked", String(isActive));
-        });
-
-        localStorage.setItem(languageStorageKey, language);
       }
 
       menuToggle?.addEventListener("click", () => {
@@ -139,14 +129,7 @@ import SiteHeader from "../components/SiteHeader.astro";
         });
       });
 
-      languageButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const language = button.getAttribute("data-lang-switch");
-          if (language === "pl" || language === "en") setLanguage(language);
-        });
-      });
-
-      setLanguage(initialLanguage);
+      setLanguage(await getVisitorLanguage());
     </script>
   </body>
 </html>

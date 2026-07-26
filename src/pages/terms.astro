@@ -386,6 +386,8 @@ const documents = [
     </main>
     <SiteFooter currentPage="terms" />
     <script>
+      import { getVisitorLanguage } from "../scripts/visitor-language";
+
       const translations = {
         pl: {
           navFeatures: "Funkcje",
@@ -411,12 +413,8 @@ const documents = [
 
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
-      const legalLanguageButtons = document.querySelectorAll("[data-lang-switch]");
       const translatedNodes = document.querySelectorAll("[data-i18n]");
       const legalDocuments = document.querySelectorAll<HTMLElement>(".legal-document");
-      const languageStorageKey = "tripletalk-language-preference-v2";
-      const savedLegalLanguage = localStorage.getItem(languageStorageKey);
-      const initialLegalLanguage = savedLegalLanguage === "pl" || savedLegalLanguage === "en" ? savedLegalLanguage : "en";
 
       function setLegalLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
@@ -429,17 +427,9 @@ const documents = [
           }
         });
 
-        legalLanguageButtons.forEach((button) => {
-          const isActive = button.getAttribute("data-lang-switch") === language;
-          button.classList.toggle("active", isActive);
-          button.setAttribute("aria-checked", String(isActive));
-        });
-
         legalDocuments.forEach((document: HTMLElement) => {
           document.hidden = document.id !== language;
         });
-
-        localStorage.setItem(languageStorageKey, language);
       }
 
       menuToggle?.addEventListener("click", () => {
@@ -455,14 +445,7 @@ const documents = [
         });
       });
 
-      legalLanguageButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const language = button.getAttribute("data-lang-switch");
-          if (language === "pl" || language === "en") setLegalLanguage(language);
-        });
-      });
-
-      setLegalLanguage(initialLegalLanguage);
+      setLegalLanguage(await getVisitorLanguage());
     </script>
   </body>
 </html>
