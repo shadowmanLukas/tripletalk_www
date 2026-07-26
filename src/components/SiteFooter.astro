@@ -1,11 +1,27 @@
 ---
 type Page = "home" | "terms" | "privacy" | "support";
+type Language = "pl" | "en";
+
+interface FooterContent {
+  navigationLabel: string;
+  privacy: string;
+  terms: string;
+  support: string;
+}
 
 interface Props {
   currentPage?: Page;
+  language?: Language;
+  content?: FooterContent;
 }
 
-const { currentPage = "home" } = Astro.props;
+const { currentPage = "home", content } = Astro.props;
+const labels = content ?? {
+  navigationLabel: "Footer navigation",
+  privacy: "Privacy Policy",
+  terms: "Terms of Service",
+  support: "Support",
+};
 ---
 
 <footer class="site-footer">
@@ -13,15 +29,15 @@ const { currentPage = "home" } = Astro.props;
     <div>
       <p>© 2026 craftapp</p>
     </div>
-    <nav aria-label="Footer navigation">
+    <nav aria-label={labels.navigationLabel}>
       <a href="/privacy" data-i18n="footerPrivacy" aria-current={currentPage === "privacy" ? "page" : undefined}>
-        Privacy Policy
+        {labels.privacy}
       </a>
       <a href="/terms" data-i18n="footerTerms" aria-current={currentPage === "terms" ? "page" : undefined}>
-        Terms of Service
+        {labels.terms}
       </a>
       <a href="/support/" data-i18n="footerSupport" aria-current={currentPage === "support" ? "page" : undefined}>
-        Support
+        {labels.support}
       </a>
     </nav>
   </div>

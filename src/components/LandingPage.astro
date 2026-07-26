@@ -1,0 +1,359 @@
+---
+import "../styles/global.css";
+import { landingContent, landingSeo, type LandingLanguage } from "../lib/landing-content";
+import SiteFooter from "./SiteFooter.astro";
+import SiteHeader from "./SiteHeader.astro";
+
+interface Props {
+  language: LandingLanguage;
+}
+
+const { language } = Astro.props;
+const copy = landingContent[language];
+const seo = landingSeo[language];
+const canonicalUrl = language === "pl" ? "https://tripletalk.app/" : "https://tripletalk.app/en/";
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "TripleTalk AI",
+    url: canonicalUrl,
+    description: seo.description,
+    applicationCategory: "EducationalApplication",
+    operatingSystem: "iOS, Android",
+    inLanguage: language,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+    publisher: {
+      "@id": "https://tripletalk.app/#organization",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://tripletalk.app/#organization",
+    name: "TripleTalk",
+    url: "https://tripletalk.app/",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://tripletalk.app/assets/tripletalk-logo-with-background.png",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://tripletalk.app/#website",
+    name: "TripleTalk AI",
+    url: "https://tripletalk.app/",
+    inLanguage: ["pl", "en"],
+    publisher: {
+      "@id": "https://tripletalk.app/#organization",
+    },
+  },
+];
+---
+
+<html lang={language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={seo.description} />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TripleTalk" />
+    <meta property="og:locale" content={seo.locale} />
+    <meta property="og:locale:alternate" content={language === "pl" ? "en_US" : "pl_PL"} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:image" content="https://tripletalk.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="TripleTalk AI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image" content="https://tripletalk.app/og.png" />
+    <meta name="twitter:image:alt" content="TripleTalk AI" />
+    <title>{seo.title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="pl" href="https://tripletalk.app/" />
+    <link rel="alternate" hreflang="en" href="https://tripletalk.app/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://tripletalk.app/" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} is:inline />
+  </head>
+  <body>
+    <SiteHeader currentPage="home" language={language} navigation={copy.navigation} />
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">{copy.hero.eyebrow}</p>
+            <h1>{copy.hero.title}</h1>
+            <p class="hero-description">{copy.hero.description}</p>
+            <p class="hero-value">{copy.hero.value}</p>
+            <div class="store-actions" aria-label={copy.hero.downloadLabel}>
+              <a aria-label={copy.hero.appStoreLabel} aria-disabled="true">App Store</a>
+              <a aria-label={copy.hero.googlePlayLabel} aria-disabled="true">Google Play</a>
+            </div>
+            <p class="hero-offer">{copy.hero.offer}</p>
+          </div>
+
+          <div class="phone-mockup" aria-label={copy.hero.previewLabel}>
+            <div class="phone-frame">
+              <img
+                class="hero-phone-screenshot"
+                src="/assets/tripletalk-app-home.png"
+                alt={copy.hero.imageAlt}
+                width="720"
+                height="1565"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section use-cases-section" id="features" aria-labelledby="use-cases-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">{copy.useCases.eyebrow}</p>
+            <h2 id="use-cases-title">{copy.useCases.title}</h2>
+            <p class="section-description">{copy.useCases.description}</p>
+          </div>
+
+          <div class="use-cases-layout">
+            <div
+              class="use-case-tabs"
+              role="tablist"
+              aria-label={copy.useCases.tabsLabel}
+            >
+              {
+                copy.useCases.items.map((useCase, index) => (
+                  <button
+                    type="button"
+                    role="tab"
+                    id={`use-case-tab-${useCase.id}`}
+                    aria-controls="use-case-panel"
+                    aria-selected={index === 0 ? "true" : "false"}
+                    tabindex={index === 0 ? "0" : "-1"}
+                    data-use-case={useCase.id}
+                    data-title={useCase.title}
+                    data-description={useCase.description}
+                    data-cards={JSON.stringify(useCase.cards)}
+                  >
+                    {useCase.label}
+                  </button>
+                ))
+              }
+            </div>
+
+            <article
+              class="use-case-panel"
+              id="use-case-panel"
+              role="tabpanel"
+              tabindex="0"
+              aria-labelledby="use-case-tab-school"
+            >
+              <div class="use-case-example">
+                <p class="eyebrow">{copy.useCases.cardEyebrow}</p>
+                <h3 data-use-case-title>{copy.useCases.items[0].title}</h3>
+                <p data-use-case-description>{copy.useCases.items[0].description}</p>
+              </div>
+              <div class="use-case-process" aria-hidden="true">
+                <div class="process-stage process-source">
+                  <span>{copy.useCases.processText}</span>
+                  <div class="source-lines">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                </div>
+                <span class="process-arrow">→</span>
+                <div class="process-stage generated-card">
+                  <span>{copy.useCases.processFlashcards}</span>
+                  <ul class="use-case-flashcards" data-use-case-flashcards>
+                    {
+                      copy.useCases.items[0].cards.map((card) => (
+                        <li>
+                          <strong data-card-front>{card.front}</strong>
+                          <small data-card-back>{card.back}</small>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+                <span class="process-arrow">→</span>
+                <div class="process-stage process-learning">
+                  <span>{copy.useCases.processLearning}</span>
+                  <strong>{copy.useCases.processPractice}</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section how-it-works" aria-labelledby="how-it-works-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">{copy.how.eyebrow}</p>
+            <h2 id="how-it-works-title">{copy.how.title}</h2>
+            <p class="section-description">{copy.how.description}</p>
+          </div>
+          <ol class="steps-grid">
+            {
+              copy.how.steps.map((step) => (
+                <li class="step">
+                  <div class="step-marker" aria-hidden="true">
+                    <span class="step-number">{step.number}</span>
+                    <span class={`step-icon step-icon-${step.icon}`}></span>
+                  </div>
+                  <div class="step-copy">
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </section>
+
+      <section class="section preview-section" aria-labelledby="preview-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">{copy.preview.eyebrow}</p>
+            <h2 id="preview-title">{copy.preview.title}</h2>
+          </div>
+          <div class="preview-scroll" aria-label={copy.preview.listLabel}>
+            {
+              copy.preview.items.map((preview) => (
+                <figure class="app-preview-card">
+                  <div class="app-preview-phone">
+                    <img
+                      class="app-preview-screenshot"
+                      src={preview.image}
+                      alt={preview.imageAlt}
+                      width="1206"
+                      height="2622"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption>
+                    <h3>{preview.title}</h3>
+                    <p>{preview.description}</p>
+                  </figcaption>
+                </figure>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section class="download" id="download" aria-labelledby="download-title">
+        <div class="container download-inner">
+          <div class="download-copy">
+            <p class="eyebrow">{copy.download.eyebrow}</p>
+            <h2 id="download-title">{copy.download.title}</h2>
+            <p class="download-description">{copy.download.description}</p>
+          </div>
+          <div class="download-actions">
+            <div class="store-actions" aria-label={copy.hero.downloadLabel}>
+              <a aria-label={copy.hero.appStoreLabel} aria-disabled="true">App Store</a>
+              <a aria-label={copy.hero.googlePlayLabel} aria-disabled="true">Google Play</a>
+            </div>
+            <p class="download-offer">{copy.hero.offer}</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter currentPage="home" language={language} content={copy.footer} />
+
+    <script>
+      type Flashcard = { front: string; back: string };
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      const useCaseTabs = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-use-case]"));
+      const useCasePanel = document.querySelector<HTMLElement>("#use-case-panel");
+      const useCaseTitle = document.querySelector<HTMLElement>("[data-use-case-title]");
+      const useCaseDescription = document.querySelector<HTMLElement>("[data-use-case-description]");
+      const useCaseCardFronts = document.querySelectorAll<HTMLElement>("[data-card-front]");
+      const useCaseCardBacks = document.querySelectorAll<HTMLElement>("[data-card-back]");
+
+      function cardsForTab(tab: HTMLButtonElement): Flashcard[] {
+        try {
+          return JSON.parse(tab.dataset.cards ?? "[]") as Flashcard[];
+        } catch {
+          return [];
+        }
+      }
+
+      function renderUseCase(tab: HTMLButtonElement, focus = false) {
+        if (useCaseTitle) useCaseTitle.textContent = tab.dataset.title ?? "";
+        if (useCaseDescription) useCaseDescription.textContent = tab.dataset.description ?? "";
+
+        const cards = cardsForTab(tab);
+        useCaseCardFronts.forEach((front, index) => {
+          front.textContent = cards[index]?.front ?? "";
+        });
+        useCaseCardBacks.forEach((back, index) => {
+          back.textContent = cards[index]?.back ?? "";
+        });
+
+        if (useCasePanel) useCasePanel.setAttribute("aria-labelledby", tab.id);
+        useCaseTabs.forEach((item) => {
+          const isActive = item === tab;
+          item.setAttribute("aria-selected", String(isActive));
+          item.tabIndex = isActive ? 0 : -1;
+        });
+
+        if (focus) tab.focus();
+      }
+
+      menuToggle?.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+        navLinks?.classList.toggle("open", !expanded);
+      });
+
+      navLinks?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle?.setAttribute("aria-expanded", "false");
+          navLinks.classList.remove("open");
+        });
+      });
+
+      useCaseTabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => renderUseCase(tab));
+        tab.addEventListener("keydown", (event) => {
+          let nextIndex: number | null = null;
+
+          if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % useCaseTabs.length;
+          if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+            nextIndex = (index - 1 + useCaseTabs.length) % useCaseTabs.length;
+          }
+          if (event.key === "Home") nextIndex = 0;
+          if (event.key === "End") nextIndex = useCaseTabs.length - 1;
+
+          if (nextIndex !== null) {
+            event.preventDefault();
+            const nextTab = useCaseTabs[nextIndex];
+            if (nextTab) renderUseCase(nextTab, true);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,34 +1,59 @@
 ---
 type Page = "home" | "terms" | "privacy" | "support";
+type Language = "pl" | "en";
+
+interface NavigationContent {
+  label: string;
+  brandHome: string;
+  menuOpen: string;
+  features: string;
+  download: string;
+  terms: string;
+  privacy: string;
+}
 
 interface Props {
   currentPage?: Page;
+  language?: Language;
+  navigation?: NavigationContent;
 }
 
-const { currentPage = "home" } = Astro.props;
-const sectionPrefix = currentPage === "home" ? "" : "/";
+const { currentPage = "home", language = "pl", navigation } = Astro.props;
+const homeHref = language === "en" ? "/en/" : "/";
+const sectionPrefix = currentPage === "home" ? "" : homeHref;
+const labels = navigation ?? {
+  label: "Main navigation",
+  brandHome: "TripleTalk home",
+  menuOpen: "Open menu",
+  features: "Features",
+  download: "Download",
+  terms: "Terms",
+  privacy: "Privacy",
+};
 ---
 
 <header class="site-header">
-  <nav class="container nav" aria-label="Main navigation">
-    <a class="brand" href="/" aria-label="TripleTalk home">
+  <nav class="container nav" aria-label={labels.label}>
+    <a class="brand" href={homeHref} aria-label={labels.brandHome}>
       <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
       <span><span>Triple</span><span>Talk</span></span>
     </a>
 
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
-      <span class="sr-only">Open menu</span>
+      <span class="sr-only">{labels.menuOpen}</span>
       <span></span>
       <span></span>
       <span></span>
     </button>
 
     <div class="nav-links" id="site-menu">
-      <a href={`${sectionPrefix}#features`} data-i18n="navFeatures">Features</a>
-      <a href={`${sectionPrefix}#download`} data-i18n="navDownload">Download</a>
-      <a href="/terms" data-i18n="navTerms" aria-current={currentPage === "terms" ? "page" : undefined}>Terms</a>
+      <a href={`${sectionPrefix}#features`} data-i18n="navFeatures">{labels.features}</a>
+      <a href={`${sectionPrefix}#download`} data-i18n="navDownload">{labels.download}</a>
+      <a href="/terms" data-i18n="navTerms" aria-current={currentPage === "terms" ? "page" : undefined}>
+        {labels.terms}
+      </a>
       <a href="/privacy" data-i18n="navPrivacy" aria-current={currentPage === "privacy" ? "page" : undefined}>
-        Privacy
+        {labels.privacy}
       </a>
     </div>
   </nav>
