@@ -1,6 +1,11 @@
 ---
 import "../styles/global.css";
-import { landingContent, landingSeo, type LandingLanguage } from "../lib/landing-content";
+import {
+  landingContent,
+  landingSeo,
+  type LandingLanguage,
+} from "../lib/landing-content";
+import LanguageTicker from "./LanguageTicker.astro";
 import SiteFooter from "./SiteFooter.astro";
 import SiteHeader from "./SiteHeader.astro";
 
@@ -11,7 +16,8 @@ interface Props {
 const { language } = Astro.props;
 const copy = landingContent[language];
 const seo = landingSeo[language];
-const canonicalUrl = language === "pl" ? "https://tripletalk.app/" : "https://tripletalk.app/en/";
+const canonicalUrl =
+  language === "pl" ? "https://tripletalk.app/" : "https://tripletalk.app/en/";
 const structuredData = [
   {
     "@context": "https://schema.org",
@@ -66,7 +72,10 @@ const structuredData = [
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="TripleTalk" />
     <meta property="og:locale" content={seo.locale} />
-    <meta property="og:locale:alternate" content={language === "pl" ? "en_US" : "pl_PL"} />
+    <meta
+      property="og:locale:alternate"
+      content={language === "pl" ? "en_US" : "pl_PL"}
+    />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={seo.title} />
     <meta property="og:description" content={seo.description} />
@@ -86,10 +95,18 @@ const structuredData = [
     <link rel="alternate" hreflang="x-default" href="https://tripletalk.app/" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} is:inline />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+      is:inline
+    />
   </head>
   <body>
-    <SiteHeader currentPage="home" language={language} navigation={copy.navigation} />
+    <SiteHeader
+      currentPage="home"
+      language={language}
+      navigation={copy.navigation}
+    />
 
     <main>
       <section class="hero">
@@ -100,10 +117,14 @@ const structuredData = [
             <p class="hero-description">{copy.hero.description}</p>
             <p class="hero-value">{copy.hero.value}</p>
             <div class="store-actions" aria-label={copy.hero.downloadLabel}>
-              <a aria-label={copy.hero.appStoreLabel} aria-disabled="true">App Store</a>
-              <a aria-label={copy.hero.googlePlayLabel} aria-disabled="true">Google Play</a>
+              <a aria-label={copy.hero.appStoreLabel} aria-disabled="true"
+                >App Store</a
+              >
+              <a aria-label={copy.hero.googlePlayLabel} aria-disabled="true"
+                >Google Play</a
+              >
             </div>
-            <p class="hero-offer">{copy.hero.offer}</p>
+            <LanguageTicker language={language} />
           </div>
 
           <div class="phone-mockup" aria-label={copy.hero.previewLabel}>
@@ -122,7 +143,11 @@ const structuredData = [
         </div>
       </section>
 
-      <section class="section use-cases-section" id="features" aria-labelledby="use-cases-title">
+      <section
+        class="section use-cases-section"
+        id="features"
+        aria-labelledby="use-cases-title"
+      >
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">{copy.useCases.eyebrow}</p>
@@ -166,7 +191,9 @@ const structuredData = [
               <div class="use-case-example">
                 <p class="eyebrow">{copy.useCases.cardEyebrow}</p>
                 <h3 data-use-case-title>{copy.useCases.items[0].title}</h3>
-                <p data-use-case-description>{copy.useCases.items[0].description}</p>
+                <p data-use-case-description>
+                  {copy.useCases.items[0].description}
+                </p>
               </div>
               <div class="use-case-process" aria-hidden="true">
                 <div class="process-stage process-source">
@@ -202,7 +229,10 @@ const structuredData = [
         </div>
       </section>
 
-      <section class="section how-it-works" aria-labelledby="how-it-works-title">
+      <section
+        class="section how-it-works"
+        aria-labelledby="how-it-works-title"
+      >
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">{copy.how.eyebrow}</p>
@@ -215,7 +245,7 @@ const structuredData = [
                 <li class="step">
                   <div class="step-marker" aria-hidden="true">
                     <span class="step-number">{step.number}</span>
-                    <span class={`step-icon step-icon-${step.icon}`}></span>
+                    <span class={`step-icon step-icon-${step.icon}`} />
                   </div>
                   <div class="step-copy">
                     <h3>{step.title}</h3>
@@ -269,10 +299,13 @@ const structuredData = [
           </div>
           <div class="download-actions">
             <div class="store-actions" aria-label={copy.hero.downloadLabel}>
-              <a aria-label={copy.hero.appStoreLabel} aria-disabled="true">App Store</a>
-              <a aria-label={copy.hero.googlePlayLabel} aria-disabled="true">Google Play</a>
+              <a aria-label={copy.hero.appStoreLabel} aria-disabled="true"
+                >App Store</a
+              >
+              <a aria-label={copy.hero.googlePlayLabel} aria-disabled="true"
+                >Google Play</a
+              >
             </div>
-            <p class="download-offer">{copy.hero.offer}</p>
           </div>
         </div>
       </section>
@@ -285,12 +318,21 @@ const structuredData = [
 
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
-      const useCaseTabs = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-use-case]"));
-      const useCasePanel = document.querySelector<HTMLElement>("#use-case-panel");
-      const useCaseTitle = document.querySelector<HTMLElement>("[data-use-case-title]");
-      const useCaseDescription = document.querySelector<HTMLElement>("[data-use-case-description]");
-      const useCaseCardFronts = document.querySelectorAll<HTMLElement>("[data-card-front]");
-      const useCaseCardBacks = document.querySelectorAll<HTMLElement>("[data-card-back]");
+      const useCaseTabs = Array.from(
+        document.querySelectorAll<HTMLButtonElement>("[data-use-case]"),
+      );
+      const useCasePanel =
+        document.querySelector<HTMLElement>("#use-case-panel");
+      const useCaseTitle = document.querySelector<HTMLElement>(
+        "[data-use-case-title]",
+      );
+      const useCaseDescription = document.querySelector<HTMLElement>(
+        "[data-use-case-description]",
+      );
+      const useCaseCardFronts =
+        document.querySelectorAll<HTMLElement>("[data-card-front]");
+      const useCaseCardBacks =
+        document.querySelectorAll<HTMLElement>("[data-card-back]");
 
       function cardsForTab(tab: HTMLButtonElement): Flashcard[] {
         try {
@@ -302,7 +344,8 @@ const structuredData = [
 
       function renderUseCase(tab: HTMLButtonElement, focus = false) {
         if (useCaseTitle) useCaseTitle.textContent = tab.dataset.title ?? "";
-        if (useCaseDescription) useCaseDescription.textContent = tab.dataset.description ?? "";
+        if (useCaseDescription)
+          useCaseDescription.textContent = tab.dataset.description ?? "";
 
         const cards = cardsForTab(tab);
         useCaseCardFronts.forEach((front, index) => {
@@ -340,7 +383,8 @@ const structuredData = [
         tab.addEventListener("keydown", (event) => {
           let nextIndex: number | null = null;
 
-          if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % useCaseTabs.length;
+          if (event.key === "ArrowRight" || event.key === "ArrowDown")
+            nextIndex = (index + 1) % useCaseTabs.length;
           if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
             nextIndex = (index - 1 + useCaseTabs.length) % useCaseTabs.length;
           }

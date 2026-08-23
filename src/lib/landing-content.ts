@@ -35,7 +35,6 @@ export const landingContent = {
       downloadLabel: "Pobierz aplikację",
       appStoreLabel: "Pobierz w App Store",
       googlePlayLabel: "Pobierz z Google Play",
-      offer: "3 dni Premium za darmo • 100 fiszek TripleTalk AI na start",
       previewLabel: "Podgląd aplikacji TripleTalk",
       imageAlt:
         "Ekran aplikacji TripleTalk z zestawem fiszek i przyciskiem rozpoczęcia nauki",
@@ -205,8 +204,6 @@ export const landingContent = {
       downloadLabel: "Download the app",
       appStoreLabel: "Download on the App Store",
       googlePlayLabel: "Get it on Google Play",
-      offer:
-        "3 days of Premium free • 100 TripleTalk AI flashcards to get started",
       previewLabel: "TripleTalk app preview",
       imageAlt:
         "TripleTalk app screen with a flashcard set and a start learning button",

@@ -1,0 +1,60 @@
+---
+import type { LandingLanguage } from "../lib/landing-content";
+
+interface Props {
+  language: LandingLanguage;
+}
+
+const { language } = Astro.props;
+const labels = {
+  pl: {
+    listLabel: "Dostępne języki nauki",
+    languages: [
+      ["🇩🇪", "Niemiecki"],
+      ["🇬🇧", "Angielski"],
+      ["🇵🇱", "Polski"],
+      ["🇪🇸", "Hiszpański"],
+      ["🇫🇷", "Francuski"],
+      ["🇮🇹", "Włoski"],
+      ["🇺🇦", "Ukraiński"],
+    ],
+  },
+  en: {
+    listLabel: "Available learning languages",
+    languages: [
+      ["🇩🇪", "German"],
+      ["🇬🇧", "English"],
+      ["🇵🇱", "Polish"],
+      ["🇪🇸", "Spanish"],
+      ["🇫🇷", "French"],
+      ["🇮🇹", "Italian"],
+      ["🇺🇦", "Ukrainian"],
+    ],
+  },
+} as const;
+
+const copy = labels[language];
+---
+
+<div class="language-ticker">
+  <p class="sr-only">
+    {copy.listLabel}: {copy.languages.map(([, name]) => name).join(", ")}.
+  </p>
+
+  <div class="language-ticker-viewport" aria-hidden="true">
+    <div class="language-ticker-track">
+      {
+        [0, 1].map(() => (
+          <div class="language-ticker-set">
+            {copy.languages.map(([flag, name]) => (
+              <span class="language-chip">
+                <span class="language-chip-flag">{flag}</span>
+                <span>{name}</span>
+              </span>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
