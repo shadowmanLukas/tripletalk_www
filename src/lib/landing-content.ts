@@ -2,13 +2,13 @@ export type LandingLanguage = "pl" | "en";
 
 export const landingSeo = {
   pl: {
-    title: "TripleTalk AI – Twórz fiszki AI z tekstu i zdjęć",
+    title: "TripleTalk AI Flashcards",
     description:
       "Twórz fiszki AI z tekstu i zdjęć. Ucz się szybciej dzięki inteligentnym powtórkom, tłumaczeniom i lekcjom audio.",
     locale: "pl_PL",
   },
   en: {
-    title: "TripleTalk AI – Create AI Flashcards from Text and Photos",
+    title: "TripleTalk AI Flashcards",
     description:
       "Create AI flashcards from text and photos. Learn faster with smart repetition, translations and audio lessons.",
     locale: "en_US",
@@ -27,7 +27,7 @@ export const landingContent = {
       privacy: "Prywatność",
     },
     hero: {
-      eyebrow: "Fiszki TripleTalk AI",
+      eyebrow: "Inteligentne Fiszki TripleTalk AI",
       title: "Zamień dowolny tekst w fiszki z TripleTalk AI.",
       description:
         "Wklej dowolny tekst lub zrób zdjęcie. TripleTalk AI automatycznie utworzy fiszki z tłumaczeniami, przykładami i nagraniami audio.",
@@ -137,7 +137,7 @@ export const landingContent = {
           icon: "review",
           title: "Ćwicz i zapamiętuj",
           description:
-            "Mechanizm Inteligentnych powtórek pomaga utrwalić słownictwo na dłużej.",
+            "Mechanizm inteligentnych powtórek pomaga utrwalić słownictwo na dłużej.",
         },
       ],
     },
@@ -196,10 +196,10 @@ export const landingContent = {
       privacy: "Privacy",
     },
     hero: {
-      eyebrow: "TripleTalk AI Flashcards",
+      eyebrow: "Intelligent TripleTalk AI Flashcards",
       title: "Turn any text into TripleTalk AI flashcards.",
       description:
-        "Paste any text or take a photo. TripleTalk AI automatically creates flashcards with translations, examples and audio.",
+        "Paste any text or take a photo. TripleTalk AI automatically creates flashcards with translations, examples and audio recordings.",
       value: "Learn the words you really need.",
       downloadLabel: "Download the app",
       appStoreLabel: "Download on the App Store",
@@ -218,7 +218,7 @@ export const landingContent = {
       processText: "Text",
       processFlashcards: "TripleTalk AI flashcards",
       processLearning: "Learning",
-      processPractice: "Practise",
+      processPractice: "Practice",
       items: [
         {
           id: "school",
@@ -237,7 +237,7 @@ export const landingContent = {
           label: "Presentation",
           title: "Prepare a presentation in English",
           description:
-            "Paste your slides and practise the words you need during your presentation.",
+            "Paste your slides and practice the words you need during your presentation.",
           cards: [
             { front: "key message", back: "Kernbotschaft" },
             { front: "conclusion", back: "Fazit" },
@@ -249,7 +249,7 @@ export const landingContent = {
           label: "Business meeting",
           title: "Prepare for a business meeting",
           description:
-            "Add an agenda or notes. TripleTalk AI creates a set of words to practise.",
+            "Add an agenda or notes. TripleTalk AI creates a set of words to practice.",
           cards: [
             { front: "agenda", back: "Tagesordnung" },
             { front: "deadline", back: "Frist" },
@@ -299,12 +299,12 @@ export const landingContent = {
           icon: "ai",
           title: "TripleTalk AI creates flashcards",
           description:
-            "Automatically prepares translations, examples and audio.",
+            "Automatically prepares translations, examples and audio recordings.",
         },
         {
           number: "03",
           icon: "review",
-          title: "Practise and remember",
+          title: "Practice and remember",
           description: "Smart reviews help you remember vocabulary for longer.",
         },
       ],
