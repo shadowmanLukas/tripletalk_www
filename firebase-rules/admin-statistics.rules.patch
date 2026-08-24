@@ -1,0 +1,20 @@
+diff --git a/firestore.rules b/firestore.rules
+--- a/firestore.rules
++++ b/firestore.rules
+@@ -115,7 +115,7 @@ service cloud.firestore {
+     }
+ 
+     match /users/{userId} {
+-      allow read: if owns(userId);
++      allow read: if owns(userId) || isAdmin();
+       allow create: if owns(userId) && hasValidLanguagePreferences(
+         request.resource.data
+       ) && !request.resource.data.keys().hasAny([
+@@ -138,5 +138,6 @@ service cloud.firestore {
+       }
+ 
+       match /lessons/{lessonId} {
+-        allow read, create, delete: if owns(userId);
++        allow read: if owns(userId) || isAdmin();
++        allow create, delete: if owns(userId);
+         allow update: if owns(userId) && !changesProtectedLessonSourceFields();

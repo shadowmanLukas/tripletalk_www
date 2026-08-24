@@ -22,7 +22,12 @@ import "../styles/admin.css";
     <main class="admin-login-shell" id="login-view" hidden>
       <section class="admin-login-card" aria-labelledby="login-title">
         <a class="brand login-brand" href="/" aria-label="TripleTalk home">
-          <img src="/assets/tripletalk-logo.png" alt="" width="48" height="48" />
+          <img
+            src="/assets/tripletalk-logo.png"
+            alt=""
+            width="48"
+            height="48"
+          />
           <span><span>Triple</span><span>Talk</span></span>
         </a>
         <p class="eyebrow">Administration</p>
@@ -30,7 +35,13 @@ import "../styles/admin.css";
         <form id="admin-login-form">
           <label>
             Login
-            <input name="login" type="text" autocomplete="username" required maxlength="64" />
+            <input
+              name="login"
+              type="text"
+              autocomplete="username"
+              required
+              maxlength="64"
+            />
           </label>
           <label>
             Password
@@ -52,49 +63,347 @@ import "../styles/admin.css";
       <header class="admin-header">
         <div class="admin-shell admin-header-inner">
           <a class="brand" href="/" aria-label="TripleTalk home">
-            <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
+            <img
+              src="/assets/tripletalk-logo.png"
+              alt=""
+              width="40"
+              height="40"
+            />
             <span><span>Triple</span><span>Talk</span> Admin</span>
           </a>
-          <button class="admin-button secondary" id="logout-button" type="button">Logout</button>
+          <button
+            class="admin-button secondary"
+            id="logout-button"
+            type="button">Logout</button
+          >
         </div>
       </header>
-      <main class="admin-shell admin-main">
-        <div class="admin-title-row">
-          <div>
-            <p class="eyebrow">Feedback</p>
-            <h1>User reports</h1>
-          </div>
-          <button class="admin-button secondary" id="refresh-button" type="button">Refresh</button>
-        </div>
-        <div id="feedback-message" class="admin-state" role="status">Loading feedback…</div>
-        <div class="admin-table-wrap" id="feedback-table-wrap" hidden>
-          <table class="admin-table">
-            <thead>
-              <tr>
-                <th>Status</th><th>Date</th><th>Category</th><th>Title</th><th>Platform</th
-                ><th>Version</th><th>User ID</th><th>Actions</th>
-              </tr>
-            </thead>
-            <tbody id="feedback-rows"></tbody>
-          </table>
-        </div>
-        <div class="feedback-cards" id="feedback-cards" hidden></div>
-        <button class="admin-button load-more" id="load-more-button" type="button" hidden>
-          Load more
-        </button>
-      </main>
+      <div class="admin-shell admin-workspace">
+        <aside class="admin-sidebar" aria-label="Admin navigation">
+          <p class="admin-nav-label">Workspace</p>
+          <nav class="admin-nav">
+            <a
+              class="admin-nav-item"
+              href="#app-feedback"
+              data-admin-view="app-feedback"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7 8h10M7 12h6m-7.5 7 3.1-3H18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 1.5 1.94V19Z"
+                ></path>
+              </svg>
+              <span>App Feedback</span>
+            </a>
+            <a
+              class="admin-nav-item"
+              href="#statistics"
+              data-admin-view="statistics"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 20V10m7 10V4m7 16v-7M3 20h18"></path>
+              </svg>
+              <span>Statistics</span>
+            </a>
+            <a class="admin-nav-item" href="#costs" data-admin-view="costs">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3v18m4-14.5c-.8-.9-2.1-1.5-4-1.5-2.2 0-4 1.2-4 3s1.6 2.7 4 3c2.4.3 4 1.2 4 3s-1.8 3-4 3c-1.9 0-3.4-.6-4.3-1.7"
+                ></path>
+              </svg>
+              <span>Costs</span>
+            </a>
+          </nav>
+        </aside>
+
+        <main class="admin-main">
+          <section
+            data-admin-section="app-feedback"
+            aria-labelledby="feedback-page-title"
+          >
+            <div class="admin-title-row">
+              <div>
+                <p class="eyebrow">App Feedback</p>
+                <h1 id="feedback-page-title">User reports</h1>
+              </div>
+              <button
+                class="admin-button secondary"
+                id="refresh-button"
+                type="button"
+              >
+                Refresh
+              </button>
+            </div>
+            <div id="feedback-message" class="admin-state" role="status">
+              Loading feedback…
+            </div>
+            <div class="admin-table-wrap" id="feedback-table-wrap" hidden>
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Status</th><th>Date</th><th>Category</th><th>Title</th
+                    ><th>Platform</th><th>Version</th><th>User ID</th><th
+                      >Actions</th
+                    >
+                  </tr>
+                </thead>
+                <tbody id="feedback-rows"></tbody>
+              </table>
+            </div>
+            <div class="feedback-cards" id="feedback-cards" hidden></div>
+            <button
+              class="admin-button load-more"
+              id="load-more-button"
+              type="button"
+              hidden
+            >
+              Load more
+            </button>
+          </section>
+
+          <section
+            data-admin-section="statistics"
+            aria-labelledby="statistics-page-title"
+            hidden
+          >
+            <div class="admin-title-row">
+              <div>
+                <p class="eyebrow">Overview</p>
+                <h1 id="statistics-page-title">Statistics</h1>
+              </div>
+              <button
+                class="admin-button secondary"
+                id="statistics-refresh-button"
+                type="button"
+              >
+                Refresh
+              </button>
+            </div>
+            <div id="statistics-message" class="admin-state" role="status">
+              Loading statistics…
+            </div>
+            <div class="statistics-grid" id="statistics-grid" hidden>
+              <article class="statistic-card statistic-card-primary">
+                <p>Users</p>
+                <strong data-statistic="users">—</strong>
+                <span>Registered accounts</span>
+              </article>
+              <article class="statistic-card">
+                <p>User-created lessons</p>
+                <strong data-statistic="lessons">—</strong>
+                <span>Excludes ready-made collections</span>
+              </article>
+              <article class="statistic-card">
+                <p>User-created flashcards</p>
+                <strong data-statistic="flashcards">—</strong>
+                <span>From user-created lessons only</span>
+              </article>
+              <article class="statistic-card">
+                <p>User-created lessons per user</p>
+                <strong data-statistic="lessons-per-user">—</strong>
+                <span>Average</span>
+              </article>
+              <article class="statistic-card">
+                <p>Flashcards per user</p>
+                <strong data-statistic="flashcards-per-user">—</strong>
+                <span>Average</span>
+              </article>
+              <article class="statistic-card">
+                <p>User flashcards per lesson</p>
+                <strong data-statistic="flashcards-per-lesson">—</strong>
+                <span>Average</span>
+              </article>
+              <article class="statistic-card statistic-card-positive">
+                <p>Active users</p>
+                <strong data-statistic="active-users">—</strong>
+                <span>Signed in during last 7 days</span>
+              </article>
+              <article class="statistic-card statistic-card-warning">
+                <p>Inactive users</p>
+                <strong data-statistic="inactive-users">—</strong>
+                <span>No sign-in for more than 7 days</span>
+              </article>
+              <article class="statistic-card">
+                <p>New users</p>
+                <strong data-statistic="new-users">—</strong>
+                <span>Registered during last 30 days</span>
+              </article>
+            </div>
+            <p class="statistics-updated" id="statistics-updated" hidden></p>
+          </section>
+
+          <section
+            data-admin-section="costs"
+            aria-labelledby="costs-page-title"
+            hidden
+          >
+            <div class="admin-title-row">
+              <div>
+                <p class="eyebrow">Gemini usage</p>
+                <h1 id="costs-page-title">Costs</h1>
+              </div>
+              <button
+                class="admin-button secondary"
+                id="costs-refresh-button"
+                type="button"
+              >
+                Refresh
+              </button>
+            </div>
+            <div id="costs-message" class="admin-state" role="status">
+              Loading AI usage…
+            </div>
+            <div class="statistics-grid" id="costs-grid" hidden>
+              <article class="statistic-card statistic-card-primary">
+                <p>Estimated API cost</p>
+                <strong data-cost-statistic="estimated-cost">—</strong>
+                <span>Gemini 2.5 Flash, paid standard tier</span>
+              </article>
+              <article class="statistic-card">
+                <p>Total tokens</p>
+                <strong data-cost-statistic="total-tokens">—</strong>
+                <span>Input and output combined</span>
+              </article>
+              <article class="statistic-card">
+                <p>AI generation processes</p>
+                <strong data-cost-statistic="processes">—</strong>
+                <span>LexiAI text/image uploads with analytics</span>
+              </article>
+              <article class="statistic-card">
+                <p>Input tokens</p>
+                <strong data-cost-statistic="input-tokens">—</strong>
+                <span>Prompt and image input</span>
+              </article>
+              <article class="statistic-card">
+                <p>Output tokens</p>
+                <strong data-cost-statistic="output-tokens">—</strong>
+                <span>Generated candidates and translations</span>
+              </article>
+              <article class="statistic-card">
+                <p>Gemini API calls</p>
+                <strong data-cost-statistic="api-calls">—</strong>
+                <span>All stages across recorded processes</span>
+              </article>
+              <article class="statistic-card">
+                <p>Average cost per process</p>
+                <strong data-cost-statistic="cost-per-process">—</strong>
+                <span>Estimated paid-tier cost</span>
+              </article>
+              <article class="statistic-card">
+                <p>Tokens per process</p>
+                <strong data-cost-statistic="tokens-per-process">—</strong>
+                <span>Average</span>
+              </article>
+              <article class="statistic-card">
+                <p>Tokens per API call</p>
+                <strong data-cost-statistic="tokens-per-call">—</strong>
+                <span>Average</span>
+              </article>
+            </div>
+            <section
+              class="costs-charts"
+              id="costs-charts"
+              hidden
+              aria-labelledby="costs-charts-title"
+            >
+              <div class="costs-charts-heading">
+                <h2 id="costs-charts-title">Monthly usage</h2>
+                <p>Last 6 months, including months with no recorded usage.</p>
+              </div>
+              <div class="costs-charts-grid">
+                <article class="usage-chart-card">
+                  <div class="usage-chart-header">
+                    <div>
+                      <h3>Input tokens</h3><p>Prompt and image input</p>
+                    </div>
+                    <strong data-chart-total="inputTokens">—</strong>
+                  </div>
+                  <div
+                    class="usage-chart usage-chart-input"
+                    data-monthly-chart="inputTokens"
+                  >
+                  </div>
+                </article>
+                <article class="usage-chart-card">
+                  <div class="usage-chart-header">
+                    <div>
+                      <h3>Output tokens</h3><p>Candidates and translations</p>
+                    </div>
+                    <strong data-chart-total="outputTokens">—</strong>
+                  </div>
+                  <div
+                    class="usage-chart usage-chart-output"
+                    data-monthly-chart="outputTokens"
+                  >
+                  </div>
+                </article>
+                <article class="usage-chart-card">
+                  <div class="usage-chart-header">
+                    <div>
+                      <h3>Thinking tokens</h3><p>
+                        Total minus input and output
+                      </p>
+                    </div>
+                    <strong data-chart-total="thinkingTokens">—</strong>
+                  </div>
+                  <div
+                    class="usage-chart usage-chart-thinking"
+                    data-monthly-chart="thinkingTokens"
+                  >
+                  </div>
+                </article>
+                <article class="usage-chart-card">
+                  <div class="usage-chart-header">
+                    <div>
+                      <h3>API calls</h3><p>Gemini calls across all stages</p>
+                    </div>
+                    <strong data-chart-total="apiCalls">—</strong>
+                  </div>
+                  <div
+                    class="usage-chart usage-chart-calls"
+                    data-monthly-chart="apiCalls"
+                  >
+                  </div>
+                </article>
+              </div>
+            </section>
+            <div class="costs-footnote" id="costs-footnote" hidden>
+              <p id="costs-updated"></p>
+              <p>
+                Estimate uses $0.30/M input tokens and $2.50/M output tokens.
+                Free-tier usage may result in no billed cost.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
     </div>
 
-    <dialog class="admin-dialog" id="details-dialog" aria-labelledby="details-title">
+    <dialog
+      class="admin-dialog"
+      id="details-dialog"
+      aria-labelledby="details-title"
+    >
       <div class="dialog-header">
         <h2 id="details-title">Feedback details</h2>
-        <button class="icon-button" id="close-details-button" type="button" aria-label="Close details">
+        <button
+          class="icon-button"
+          id="close-details-button"
+          type="button"
+          aria-label="Close details"
+        >
           ×
         </button>
       </div>
       <div id="details-content"></div>
     </dialog>
-    <div class="admin-toast" id="admin-toast" role="status" aria-live="polite" hidden></div>
+    <div
+      class="admin-toast"
+      id="admin-toast"
+      role="status"
+      aria-live="polite"
+      hidden
+    >
+    </div>
 
     <script src="../scripts/admin-panel.ts"></script>
   </body>

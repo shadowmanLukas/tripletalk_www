@@ -40,14 +40,23 @@ Claim należy nadać przez zaufane narzędzie administracyjne lub backend aplika
 Aktualne reguły znajdują się w sąsiednim repozytorium `tripletalk`. Przygotowane patche zachowują istniejącą walidację tworzenia feedbacku i dodają tylko uprawnienia administratora:
 
 - [firebase-rules/firestore.rules.patch](firebase-rules/firestore.rules.patch)
+- [firebase-rules/admin-statistics.rules.patch](firebase-rules/admin-statistics.rules.patch)
+- [firebase-rules/admin-statistics-collection-group.rules.patch](firebase-rules/admin-statistics-collection-group.rules.patch)
+- [firebase-rules/admin-ai-costs-collection-group.rules.patch](firebase-rules/admin-ai-costs-collection-group.rules.patch)
 - [firebase-rules/storage.rules.patch](firebase-rules/storage.rules.patch)
 
 Sprawdzenie i zastosowanie lokalne, uruchamiane z katalogu `tripletalk_www`:
 
 ```bash
 git -C ../tripletalk apply --check ../tripletalk_www/firebase-rules/firestore.rules.patch
+git -C ../tripletalk apply --check ../tripletalk_www/firebase-rules/admin-statistics.rules.patch
+git -C ../tripletalk apply --check ../tripletalk_www/firebase-rules/admin-statistics-collection-group.rules.patch
+git -C ../tripletalk apply --check ../tripletalk_www/firebase-rules/admin-ai-costs-collection-group.rules.patch
 git -C ../tripletalk apply --check ../tripletalk_www/firebase-rules/storage.rules.patch
 git -C ../tripletalk apply ../tripletalk_www/firebase-rules/firestore.rules.patch
+git -C ../tripletalk apply ../tripletalk_www/firebase-rules/admin-statistics.rules.patch
+git -C ../tripletalk apply ../tripletalk_www/firebase-rules/admin-statistics-collection-group.rules.patch
+git -C ../tripletalk apply ../tripletalk_www/firebase-rules/admin-ai-costs-collection-group.rules.patch
 git -C ../tripletalk apply ../tripletalk_www/firebase-rules/storage.rules.patch
 ```
 
@@ -70,6 +79,12 @@ CORS jedynie pozwala przeglądarce wysyłać żądania z `tripletalk.app`; każd
 Nie wdrażaj reguł przed utworzeniem kopii/commita bieżącego stanu i ich przetestowaniem. Reguły nie są wdrażane automatycznie przez build strony.
 
 Zmiana Firestore pozwala administratorowi czytać i usuwać feedback oraz aktualizować wyłącznie `status`, `completedAt` i `completedBy`. Zwykły użytkownik nadal może jedynie utworzyć własne zgłoszenie zgodnie z dotychczasową walidacją. Zmiana Storage pozwala administratorowi czytać i usuwać załączniki z `feedback`; nie dodaje publicznego dostępu ani możliwości uploadu przez administratora.
+
+Osobny patch statystyk pozwala administratorowi wyłącznie odczytywać dokumenty `users` i `users/*/lessons`. Panel używa ich do agregatów liczbowych; prywatne podkolekcje użytkowników i operacje zapisu pozostają niedostępne.
+
+Uzupełniający patch collection group zezwala administratorowi na odczyt zapytań `collectionGroup("lessons")`, których panel używa do zsumowania liczby lekcji i pól `flashcardCount`.
+
+Patch kosztów AI zezwala administratorowi na odczyt zapytań `collectionGroup("lexiAiUploads")`. Panel odczytuje z nich zapisane agregaty tokenów Gemini dla procesów generowania propozycji fiszek z tekstu i zdjęć.
 
 ## Lokalna weryfikacja
 

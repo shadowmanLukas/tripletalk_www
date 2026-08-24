@@ -1,0 +1,14 @@
+diff --git a/firestore.rules b/firestore.rules
+--- a/firestore.rules
++++ b/firestore.rules
+@@ -166,6 +166,10 @@ service cloud.firestore {
+         allow read, write: if owns(userId);
+       }
+     }
++
++    match /{path=**}/lessons/{lessonId} {
++      allow read: if isAdmin();
++    }
+ 
+     match /audioPronunciations/{audioId} {
+       allow read: if signedIn();
