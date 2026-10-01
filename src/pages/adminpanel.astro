@@ -71,11 +71,20 @@ import "../styles/admin.css";
             />
             <span><span>Triple</span><span>Talk</span> Admin</span>
           </a>
-          <button
-            class="admin-button secondary"
-            id="logout-button"
-            type="button">Logout</button
-          >
+          <div class="admin-header-actions">
+            <button
+              class="admin-button secondary"
+              id="theme-toggle"
+              type="button"
+            >
+              Dark mode
+            </button>
+            <button
+              class="admin-button secondary"
+              id="logout-button"
+              type="button">Logout</button
+            >
+          </div>
         </div>
       </header>
       <div class="admin-shell admin-workspace">
@@ -96,21 +105,39 @@ import "../styles/admin.css";
             </a>
             <a
               class="admin-nav-item"
-              href="#statistics"
-              data-admin-view="statistics"
+              href="#user-stats"
+              data-admin-view="user-stats"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 20V10m7 10V4m7 16v-7M3 20h18"></path>
-              </svg>
-              <span>Statistics</span>
-            </a>
-            <a class="admin-nav-item" href="#costs" data-admin-view="costs">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path
-                  d="M12 3v18m4-14.5c-.8-.9-2.1-1.5-4-1.5-2.2 0-4 1.2-4 3s1.6 2.7 4 3c2.4.3 4 1.2 4 3s-1.8 3-4 3c-1.9 0-3.4-.6-4.3-1.7"
+                  d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-6 9a6 6 0 0 1 12 0m1-9a3 3 0 1 0 0-6m2 15h3a5 5 0 0 0-4-4.9"
                 ></path>
               </svg>
-              <span>Costs</span>
+              <span>User Stats</span>
+            </a>
+            <a
+              class="admin-nav-item"
+              href="#school-stats"
+              data-admin-view="school-stats"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="m3 9 9-5 9 5-9 5-9-5Zm4 2.2V16c0 1.7 2.2 3 5 3s5-1.3 5-3v-4.8M21 9v6"
+                ></path>
+              </svg>
+              <span>School Stats</span>
+            </a>
+            <a
+              class="admin-nav-item"
+              href="#functions-stats"
+              data-admin-view="functions-stats"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4 20h16M6 16V9m4 7V5m4 11v-5m4 5V8M9 3 7 6m8-2 2 3"
+                ></path>
+              </svg>
+              <span>Functions Stats</span>
             </a>
           </nav>
         </aside>
@@ -161,217 +188,483 @@ import "../styles/admin.css";
           </section>
 
           <section
-            data-admin-section="statistics"
-            aria-labelledby="statistics-page-title"
+            data-admin-section="user-stats"
+            aria-labelledby="user-stats-title"
             hidden
           >
             <div class="admin-title-row">
               <div>
-                <p class="eyebrow">Overview</p>
-                <h1 id="statistics-page-title">Statistics</h1>
+                <p class="eyebrow">Users</p>
+                <h1 id="user-stats-title">User Stats</h1>
               </div>
               <button
                 class="admin-button secondary"
-                id="statistics-refresh-button"
+                id="us-refresh-button"
                 type="button"
               >
                 Refresh
               </button>
             </div>
-            <div id="statistics-message" class="admin-state" role="status">
-              Loading statistics…
+            <form class="stats-controls" id="us-controls">
+              <label>
+                Chart from (UTC)
+                <input id="us-from" name="from" type="date" required />
+              </label>
+              <label>
+                To (UTC)
+                <input id="us-to" name="to" type="date" required />
+              </label>
+              <button class="admin-button primary" type="submit">Show</button>
+            </form>
+            <p class="stats-freshness" id="us-freshness" role="status" hidden></p>
+            <div id="us-message" class="admin-state" role="status">
+              Loading user statistics…
             </div>
-            <div class="statistics-grid" id="statistics-grid" hidden>
-              <article class="statistic-card statistic-card-primary">
-                <p>Users</p>
-                <strong data-statistic="users">—</strong>
-                <span>Registered accounts</span>
-              </article>
-              <article class="statistic-card">
-                <p>User-created lessons</p>
-                <strong data-statistic="lessons">—</strong>
-                <span>Excludes ready-made collections</span>
-              </article>
-              <article class="statistic-card">
-                <p>User-created flashcards</p>
-                <strong data-statistic="flashcards">—</strong>
-                <span>From user-created lessons only</span>
-              </article>
-              <article class="statistic-card">
-                <p>User-created lessons per user</p>
-                <strong data-statistic="lessons-per-user">—</strong>
-                <span>Average</span>
-              </article>
-              <article class="statistic-card">
-                <p>Flashcards per user</p>
-                <strong data-statistic="flashcards-per-user">—</strong>
-                <span>Average</span>
-              </article>
-              <article class="statistic-card">
-                <p>User flashcards per lesson</p>
-                <strong data-statistic="flashcards-per-lesson">—</strong>
-                <span>Average</span>
-              </article>
-              <article class="statistic-card statistic-card-positive">
-                <p>Active users</p>
-                <strong data-statistic="active-users">—</strong>
-                <span>Signed in during last 7 days</span>
-              </article>
-              <article class="statistic-card statistic-card-warning">
-                <p>Inactive users</p>
-                <strong data-statistic="inactive-users">—</strong>
-                <span>No sign-in for more than 7 days</span>
-              </article>
-              <article class="statistic-card">
-                <p>New users</p>
-                <strong data-statistic="new-users">—</strong>
-                <span>Registered during last 30 days</span>
-              </article>
+            <div id="us-content" hidden>
+              <div id="us-totals">
+                <h2 class="stats-section-title">Users now</h2>
+                <div class="statistics-grid stats-summary">
+                  <article class="statistic-card statistic-card-primary">
+                    <p>Users</p>
+                    <strong data-user-total="users">—</strong>
+                    <span>Registered accounts</span>
+                  </article>
+                  <article class="statistic-card statistic-card-positive">
+                    <p>Premium active</p>
+                    <strong data-user-total="premium">—</strong>
+                    <span data-user-total="premium-share">—</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Active learners, last 7 days</p>
+                    <strong data-user-total="active-7">—</strong>
+                    <span data-user-total="active-7-share">—</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Active learners, last 30 days</p>
+                    <strong data-user-total="active-30">—</strong>
+                    <span data-user-total="active-30-share">—</span>
+                  </article>
+                </div>
+                <h2 class="stats-section-title">Content now</h2>
+                <div class="statistics-grid stats-summary stats-summary-auto">
+                  <article class="statistic-card">
+                    <p>User-created lessons</p>
+                    <strong data-user-total="lessons">—</strong>
+                    <span>Excludes ready-made collections</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>User-created flashcards</p>
+                    <strong data-user-total="flashcards">—</strong>
+                    <span>From user-created lessons only</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Flashcards per lesson</p>
+                    <strong data-user-total="flashcards-per-lesson">—</strong>
+                    <span>Average, user-created</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Lessons per user</p>
+                    <strong data-user-total="lessons-per-user">—</strong>
+                    <span>Average over all users</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Flashcards per user</p>
+                    <strong data-user-total="flashcards-per-user">—</strong>
+                    <span>Average over all users</span>
+                  </article>
+                </div>
+                <p class="stats-muted stats-definition">
+                  Active learner: marked at least one flashcard as known on that
+                  day (learningStats, the user's local date).
+                </p>
+                <p class="stats-live-note" id="us-activity-note" hidden></p>
+                <p class="stats-live-note" id="us-scan-note" hidden>
+                  Lessons were counted by reading every lesson document, because
+                  Firestore is missing an index for counting them. The browser
+                  console shows the error with a link that creates the index.
+                </p>
+              </div>
+              <section class="stats-chart-card" aria-labelledby="us-chart-title">
+                <div class="stats-chart-header">
+                  <div>
+                    <h2 id="us-chart-title">New users per day (UTC)</h2>
+                    <p class="stats-muted" id="us-chart-summary"></p>
+                  </div>
+                  <div
+                    class="stats-segmented"
+                    role="group"
+                    aria-label="Chart metric"
+                  >
+                    <button type="button" data-us-metric="new-users">
+                      New users
+                    </button>
+                    <button type="button" data-us-metric="active-learners">
+                      Active learners
+                    </button>
+                  </div>
+                </div>
+                <div class="stats-chart-body">
+                  <span class="stats-chart-max" data-chart-max></span>
+                  <div class="stats-chart" id="us-chart"></div>
+                </div>
+                <div class="stats-tooltip" id="us-tooltip" hidden></div>
+                <p class="stats-muted stats-chart-note" id="us-chart-note"></p>
+              </section>
+              <div class="stats-tables">
+                <section aria-labelledby="us-provider-title">
+                  <h2 class="stats-section-title" id="us-provider-title">
+                    Sign-in method
+                  </h2>
+                  <div class="stats-table-wrap">
+                    <table class="admin-table stats-table">
+                      <thead>
+                        <tr>
+                          <th>Method</th><th class="numeric">Users</th><th
+                            class="numeric">Share</th
+                          >
+                        </tr>
+                      </thead>
+                      <tbody id="us-provider-rows"></tbody>
+                    </table>
+                  </div>
+                </section>
+                <section aria-labelledby="us-premium-title">
+                  <h2 class="stats-section-title" id="us-premium-title">
+                    Active premium by source
+                  </h2>
+                  <div class="stats-table-wrap">
+                    <table class="admin-table stats-table">
+                      <thead>
+                        <tr>
+                          <th>Source</th><th class="numeric">Users</th><th
+                            class="numeric">Share</th
+                          >
+                        </tr>
+                      </thead>
+                      <tbody id="us-premium-rows"></tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
             </div>
-            <p class="statistics-updated" id="statistics-updated" hidden></p>
           </section>
 
           <section
-            data-admin-section="costs"
-            aria-labelledby="costs-page-title"
+            data-admin-section="school-stats"
+            aria-labelledby="school-stats-title"
             hidden
           >
             <div class="admin-title-row">
               <div>
-                <p class="eyebrow">Gemini usage</p>
-                <h1 id="costs-page-title">Costs</h1>
+                <p class="eyebrow">School</p>
+                <h1 id="school-stats-title">School Stats</h1>
               </div>
               <button
                 class="admin-button secondary"
-                id="costs-refresh-button"
+                id="ss-refresh-button"
                 type="button"
               >
                 Refresh
               </button>
             </div>
-            <div id="costs-message" class="admin-state" role="status">
-              Loading AI usage…
+            <form class="stats-controls" id="ss-controls">
+              <label>
+                Chart from (UTC)
+                <input id="ss-from" name="from" type="date" required />
+              </label>
+              <label>
+                To (UTC)
+                <input id="ss-to" name="to" type="date" required />
+              </label>
+              <button class="admin-button primary" type="submit">Show</button>
+            </form>
+            <p class="stats-freshness" id="ss-freshness" role="status" hidden></p>
+            <div id="ss-message" class="admin-state" role="status">
+              Loading School statistics…
             </div>
-            <div class="statistics-grid" id="costs-grid" hidden>
-              <article class="statistic-card statistic-card-primary">
-                <p>Estimated API cost</p>
-                <strong data-cost-statistic="estimated-cost">—</strong>
-                <span>Gemini 2.5 Flash, paid standard tier</span>
-              </article>
-              <article class="statistic-card">
-                <p>Total tokens</p>
-                <strong data-cost-statistic="total-tokens">—</strong>
-                <span>Input and output combined</span>
-              </article>
-              <article class="statistic-card">
-                <p>AI generation processes</p>
-                <strong data-cost-statistic="processes">—</strong>
-                <span>LexiAI text/image uploads with analytics</span>
-              </article>
-              <article class="statistic-card">
-                <p>Input tokens</p>
-                <strong data-cost-statistic="input-tokens">—</strong>
-                <span>Prompt and image input</span>
-              </article>
-              <article class="statistic-card">
-                <p>Output tokens</p>
-                <strong data-cost-statistic="output-tokens">—</strong>
-                <span>Generated candidates and translations</span>
-              </article>
-              <article class="statistic-card">
-                <p>Gemini API calls</p>
-                <strong data-cost-statistic="api-calls">—</strong>
-                <span>All stages across recorded processes</span>
-              </article>
-              <article class="statistic-card">
-                <p>Average cost per process</p>
-                <strong data-cost-statistic="cost-per-process">—</strong>
-                <span>Estimated paid-tier cost</span>
-              </article>
-              <article class="statistic-card">
-                <p>Tokens per process</p>
-                <strong data-cost-statistic="tokens-per-process">—</strong>
-                <span>Average</span>
-              </article>
-              <article class="statistic-card">
-                <p>Tokens per API call</p>
-                <strong data-cost-statistic="tokens-per-call">—</strong>
-                <span>Average</span>
-              </article>
+            <div id="ss-content" hidden>
+              <div id="ss-totals">
+                <h2 class="stats-section-title">People</h2>
+                <div class="statistics-grid stats-summary">
+                  <article class="statistic-card statistic-card-primary">
+                    <p>School accounts</p>
+                    <strong data-school-total="school-users">—</strong>
+                    <span>Users who chose a School role</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Teachers</p>
+                    <strong data-school-total="teachers">—</strong>
+                    <span data-school-total="lessons-per-teacher">—</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Students</p>
+                    <strong data-school-total="students">—</strong>
+                    <span>Free School accounts</span>
+                  </article>
+                  <article class="statistic-card statistic-card-positive">
+                    <p>Students in classes</p>
+                    <strong data-school-total="students-in-classes">—</strong>
+                    <span>Accepted class memberships</span>
+                  </article>
+                </div>
+                <h2 class="stats-section-title">Classes and lessons</h2>
+                <div class="statistics-grid stats-summary">
+                  <article class="statistic-card">
+                    <p>Classes</p>
+                    <strong data-school-total="classes">—</strong>
+                    <span data-school-total="students-per-class">—</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Teacher lessons</p>
+                    <strong data-school-total="lessons">—</strong>
+                    <span data-school-total="published-lessons">—</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Cards in lessons</p>
+                    <strong data-school-total="cards">—</strong>
+                    <span data-school-total="cards-per-lesson">—</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Lessons assigned to classes</p>
+                    <strong data-school-total="assignments">—</strong>
+                    <span data-school-total="open-assignments">—</span>
+                  </article>
+                </div>
+                <h2 class="stats-section-title">Learning and health</h2>
+                <div class="statistics-grid stats-summary">
+                  <article class="statistic-card">
+                    <p>Assignments started</p>
+                    <strong data-school-total="started-assignments">—</strong>
+                    <span>Student and assignment pairs</span>
+                  </article>
+                  <article class="statistic-card statistic-card-positive">
+                    <p>Progress in last 7 days</p>
+                    <strong data-school-total="recent-progress">—</strong>
+                    <span>Started or updated assignments</span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Card audio pending</p>
+                    <strong data-school-total="audio-pending">—</strong>
+                    <span>Sum over teacher lessons</span>
+                  </article>
+                  <article class="statistic-card statistic-card-warning">
+                    <p>Card audio failed</p>
+                    <strong data-school-total="audio-failed">—</strong>
+                    <span>Sum over teacher lessons</span>
+                  </article>
+                </div>
+              </div>
+              <section class="stats-chart-card" aria-labelledby="ss-chart-title">
+                <div class="stats-chart-header">
+                  <div>
+                    <h2 id="ss-chart-title">New School accounts per day (UTC)</h2>
+                    <p class="stats-muted" id="ss-chart-summary"></p>
+                  </div>
+                  <div
+                    class="stats-segmented"
+                    role="group"
+                    aria-label="Chart metric"
+                  >
+                    <button type="button" data-ss-metric="accounts">
+                      Accounts
+                    </button>
+                    <button type="button" data-ss-metric="published">
+                      Published
+                    </button>
+                    <button type="button" data-ss-metric="started">
+                      Started
+                    </button>
+                  </div>
+                </div>
+                <div class="stats-chart-body">
+                  <span class="stats-chart-max" data-chart-max></span>
+                  <div class="stats-chart" id="ss-chart"></div>
+                </div>
+                <div class="stats-tooltip" id="ss-tooltip" hidden></div>
+                <p class="stats-muted stats-chart-note" id="ss-chart-note"></p>
+              </section>
+              <div class="stats-tables stats-tables-3">
+                <section aria-labelledby="ss-role-title">
+                  <h2 class="stats-section-title" id="ss-role-title">
+                    Roles
+                  </h2>
+                  <div class="stats-table-wrap">
+                    <table class="admin-table stats-table">
+                      <thead>
+                        <tr>
+                          <th>Role</th><th class="numeric">Count</th><th
+                            class="numeric">Share</th
+                          >
+                        </tr>
+                      </thead>
+                      <tbody id="ss-role-rows"></tbody>
+                    </table>
+                  </div>
+                </section>
+                <section aria-labelledby="ss-membership-title">
+                  <h2 class="stats-section-title" id="ss-membership-title">
+                    Class invitations
+                  </h2>
+                  <div class="stats-table-wrap">
+                    <table class="admin-table stats-table">
+                      <thead>
+                        <tr>
+                          <th>Status</th><th class="numeric">Count</th><th
+                            class="numeric">Share</th
+                          >
+                        </tr>
+                      </thead>
+                      <tbody id="ss-membership-rows"></tbody>
+                    </table>
+                  </div>
+                </section>
+                <section aria-labelledby="ss-assignment-title">
+                  <h2 class="stats-section-title" id="ss-assignment-title">
+                    Assignment publishing
+                  </h2>
+                  <div class="stats-table-wrap">
+                    <table class="admin-table stats-table">
+                      <thead>
+                        <tr>
+                          <th>State</th><th class="numeric">Count</th><th
+                            class="numeric">Share</th
+                          >
+                        </tr>
+                      </thead>
+                      <tbody id="ss-assignment-rows"></tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
             </div>
-            <section
-              class="costs-charts"
-              id="costs-charts"
-              hidden
-              aria-labelledby="costs-charts-title"
-            >
-              <div class="costs-charts-heading">
-                <h2 id="costs-charts-title">Monthly usage</h2>
-                <p>Last 6 months, including months with no recorded usage.</p>
+          </section
+>
+          <section
+            data-admin-section="functions-stats"
+            aria-labelledby="functions-stats-title"
+            hidden
+          >
+            <div class="admin-title-row">
+              <div>
+                <p class="eyebrow">Cloud Functions</p>
+                <h1 id="functions-stats-title">Functions Stats</h1>
               </div>
-              <div class="costs-charts-grid">
-                <article class="usage-chart-card">
-                  <div class="usage-chart-header">
-                    <div>
-                      <h3>Input tokens</h3><p>Prompt and image input</p>
-                    </div>
-                    <strong data-chart-total="inputTokens">—</strong>
-                  </div>
-                  <div
-                    class="usage-chart usage-chart-input"
-                    data-monthly-chart="inputTokens"
-                  >
-                  </div>
+              <button
+                class="admin-button secondary"
+                id="fs-refresh-button"
+                type="button"
+              >
+                Refresh
+              </button>
+            </div>
+            <form class="stats-controls" id="fs-controls">
+              <label>
+                From (UTC)
+                <input id="fs-from" name="from" type="date" required />
+              </label>
+              <label>
+                To (UTC)
+                <input id="fs-to" name="to" type="date" required />
+              </label>
+              <label class="stats-checkbox">
+                <input id="fs-live" name="live" type="checkbox" />
+                Include today (live, incomplete day)
+              </label>
+              <label>
+                Daily cost alert per function (USD)
+                <input
+                  id="fs-cost-threshold"
+                  name="threshold"
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  inputmode="decimal"
+                />
+              </label>
+              <button class="admin-button primary" type="submit">Show</button>
+            </form>
+            <p class="stats-freshness" id="fs-freshness" role="status" hidden></p>
+            <p class="stats-live-note" id="fs-live-note" hidden></p>
+            <div id="fs-message" class="admin-state" role="status">
+              Loading function statistics…
+            </div>
+            <div id="fs-content" hidden>
+              <div class="statistics-grid stats-summary" id="fs-summary">
+                <article class="statistic-card statistic-card-primary">
+                  <p>Estimated cost</p>
+                  <strong data-fs-total="cost">—</strong>
+                  <span data-fs-unpriced></span>
                 </article>
-                <article class="usage-chart-card">
-                  <div class="usage-chart-header">
-                    <div>
-                      <h3>Output tokens</h3><p>Candidates and translations</p>
-                    </div>
-                    <strong data-chart-total="outputTokens">—</strong>
-                  </div>
-                  <div
-                    class="usage-chart usage-chart-output"
-                    data-monthly-chart="outputTokens"
-                  >
-                  </div>
+                <article class="statistic-card">
+                  <p>Gemini calls</p>
+                  <strong data-fs-total="gemini-calls">—</strong>
+                  <span>Model responses</span>
                 </article>
-                <article class="usage-chart-card">
-                  <div class="usage-chart-header">
-                    <div>
-                      <h3>Thinking tokens</h3><p>
-                        Total minus input and output
-                      </p>
-                    </div>
-                    <strong data-chart-total="thinkingTokens">—</strong>
-                  </div>
-                  <div
-                    class="usage-chart usage-chart-thinking"
-                    data-monthly-chart="thinkingTokens"
-                  >
-                  </div>
+                <article class="statistic-card">
+                  <p>Input tokens</p>
+                  <strong data-fs-total="prompt-tokens">—</strong>
+                  <span>Prompt tokens</span>
                 </article>
-                <article class="usage-chart-card">
-                  <div class="usage-chart-header">
-                    <div>
-                      <h3>API calls</h3><p>Gemini calls across all stages</p>
-                    </div>
-                    <strong data-chart-total="apiCalls">—</strong>
-                  </div>
-                  <div
-                    class="usage-chart usage-chart-calls"
-                    data-monthly-chart="apiCalls"
-                  >
-                  </div>
+                <article class="statistic-card">
+                  <p>Output tokens</p>
+                  <strong data-fs-total="output-tokens">—</strong>
+                  <span>Candidate tokens</span>
+                </article>
+                <article class="statistic-card">
+                  <p>Thinking tokens</p>
+                  <strong data-fs-total="thinking-tokens">—</strong>
+                  <span>Billed as output</span>
+                </article>
+                <article class="statistic-card">
+                  <p>TTS syntheses</p>
+                  <strong data-fs-total="tts-calls">—</strong>
+                  <span>Text-to-Speech requests</span>
+                </article>
+                <article class="statistic-card">
+                  <p>TTS characters</p>
+                  <strong data-fs-total="tts-characters">—</strong>
+                  <span>Billing unit for TTS</span>
                 </article>
               </div>
-            </section>
-            <div class="costs-footnote" id="costs-footnote" hidden>
-              <p id="costs-updated"></p>
-              <p>
-                Estimate uses $0.30/M input tokens and $2.50/M output tokens.
-                Free-tier usage may result in no billed cost.
-              </p>
+              <p class="stats-pricing-note" id="fs-pricing-note"></p>
+              <section class="stats-alerts" id="fs-alerts" hidden></section>
+              <section class="stats-chart-card" aria-labelledby="fs-chart-title">
+                <div class="stats-chart-header">
+                  <h2 id="fs-chart-title">Daily usage per function (UTC)</h2>
+                  <div
+                    class="stats-segmented"
+                    role="group"
+                    aria-label="Chart metric"
+                  >
+                    <button type="button" data-fs-metric="cost">Cost</button>
+                    <button type="button" data-fs-metric="tokens">
+                      Gemini tokens
+                    </button>
+                    <button type="button" data-fs-metric="characters">
+                      TTS characters
+                    </button>
+                  </div>
+                </div>
+                <ul class="stats-legend" id="fs-legend"></ul>
+                <div class="stats-chart-body">
+                  <span class="stats-chart-max" data-chart-max></span>
+                  <div class="stats-chart" id="fs-chart"></div>
+                </div>
+                <div class="stats-tooltip" id="fs-tooltip" hidden></div>
+              </section>
+              <section class="stats-functions" aria-labelledby="fs-functions-title">
+                <h2 id="fs-functions-title">Functions</h2>
+                <p class="stats-muted">
+                  Select a function to see its daily trend, operations, models
+                  and voices.
+                </p>
+                <div class="stats-table-wrap">
+                  <table class="admin-table stats-table">
+                    <thead><tr id="fs-function-head"></tr></thead>
+                    <tbody id="fs-function-rows"></tbody>
+                  </table>
+                </div>
+              </section>
             </div>
           </section>
         </main>
@@ -395,6 +688,24 @@ import "../styles/admin.css";
         </button>
       </div>
       <div id="details-content"></div>
+    </dialog>
+    <dialog
+      class="admin-dialog stats-details-dialog"
+      id="fs-details-dialog"
+      aria-labelledby="fs-details-title"
+    >
+      <div class="dialog-header">
+        <h2 class="mono" id="fs-details-title">Function</h2>
+        <button
+          class="icon-button"
+          id="fs-close-details-button"
+          type="button"
+          aria-label="Close function details"
+        >
+          ×
+        </button>
+      </div>
+      <div id="fs-details-content"></div>
     </dialog>
     <div
       class="admin-toast"

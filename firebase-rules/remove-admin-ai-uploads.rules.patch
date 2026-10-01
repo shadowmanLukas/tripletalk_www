@@ -1,0 +1,98 @@
+diff --git a/firestore.rules b/firestore.rules
+index 4605899..98641d8 100644
+--- a/firestore.rules
++++ b/firestore.rules
+@@ -271,10 +271,6 @@ service cloud.firestore {
+       allow read: if isAdmin();
+     }
+ 
+-    match /{path=**}/lexiAiUploads/{uploadId} {
+-      allow read: if isAdmin();
+-    }
+-
+     match /audioPronunciations/{audioId} {
+       allow read: if signedIn();
+       allow create, update, delete: if false;
+diff --git a/rules-tests/admin-panel.rules.test.js b/rules-tests/admin-panel.rules.test.js
+new file mode 100644
+index 0000000..54abed4
+--- /dev/null
++++ b/rules-tests/admin-panel.rules.test.js
+@@ -0,0 +1,64 @@
++"use strict";
++
++// Security rules for the read-only admin panel (tripletalk_www, /adminpanel):
++//   cd rules-tests && npm test
++// The panel signs in with the `admin: true` custom claim and only counts
++// documents; nothing here may let an admin write or a user read others' data.
++
++const fs = require("node:fs");
++const path = require("node:path");
++const {after, before, beforeEach, describe, it} = require("node:test");
++
++const {
++  assertFails,
++  assertSucceeds,
++  initializeTestEnvironment,
++} = require("@firebase/rules-unit-testing");
++const {
++  collectionGroup, doc, getCountFromServer, getDocs, setDoc, setLogLevel,
++} = require("firebase/firestore");
++
++setLogLevel("silent");
++
++const ROOT = path.join(__dirname, "..");
++let env;
++
++before(async () => {
++  env = await initializeTestEnvironment({
++    projectId: "demo-tripletalk",
++    firestore: {
++      host: "127.0.0.1",
++      port: 8080,
++      rules: fs.readFileSync(path.join(ROOT, "firestore.rules"), "utf8"),
++    },
++  });
++});
++
++after(async () => {
++  await env.cleanup();
++});
++
++beforeEach(async () => {
++  await env.clearFirestore();
++});
++
++const admin = () =>
++  env.authenticatedContext("admin1", {admin: true}).firestore();
++const user = () => env.authenticatedContext("user1").firestore();
++
++async function seed(documents) {
++  await env.withSecurityRulesDisabled(async (context) => {
++    for (const [documentPath, data] of Object.entries(documents)) {
++      await setDoc(doc(context.firestore(), documentPath), data);
++    }
++  });
++}
++
++describe("TripleTalk AI uploads", () => {
++  it("an admin no longer lists uploads across users", async () => {
++    await seed({"users/user1/lexiAiUploads/upload1": {status: "ready"}});
++    await assertFails(getDocs(collectionGroup(admin(), "lexiAiUploads")));
++    await assertFails(
++        getCountFromServer(collectionGroup(admin(), "lexiAiUploads")));
++  });
++});
+diff --git a/rules-tests/package.json b/rules-tests/package.json
+index 69fbcc7..611f371 100644
+--- a/rules-tests/package.json
++++ b/rules-tests/package.json
+@@ -3,7 +3,7 @@
+   "private": true,
+   "description": "Security rules tests, run against the Firebase emulators",
+   "scripts": {
+-    "test": "cd .. && firebase emulators:exec --only firestore,storage --project demo-tripletalk \"node --test --test-concurrency=1 rules-tests/school.rules.test.js rules-tests/ai-cost.rules.test.js\""
++    "test": "cd .. && firebase emulators:exec --only firestore,storage --project demo-tripletalk \"node --test --test-concurrency=1 rules-tests/school.rules.test.js rules-tests/ai-cost.rules.test.js rules-tests/admin-panel.rules.test.js\""
+   },
+   "devDependencies": {
+     "@firebase/rules-unit-testing": "^5.0.0",

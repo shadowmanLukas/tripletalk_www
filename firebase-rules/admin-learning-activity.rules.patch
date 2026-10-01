@@ -1,0 +1,73 @@
+diff --git a/firestore.rules b/firestore.rules
+index 98641d8..8003a3b 100644
+--- a/firestore.rules
++++ b/firestore.rules
+@@ -271,6 +271,12 @@ service cloud.firestore {
+       allow read: if isAdmin();
+     }
+ 
++    // Days on which a user learned (one document per user and local day).
++    // The admin panel counts them as its activity measure.
++    match /{path=**}/learningStats/{dayKey} {
++      allow read: if isAdmin();
++    }
++
+     match /audioPronunciations/{audioId} {
+       allow read: if signedIn();
+       allow create, update, delete: if false;
+diff --git a/rules-tests/admin-panel.rules.test.js b/rules-tests/admin-panel.rules.test.js
+index 54abed4..efdbdcb 100644
+--- a/rules-tests/admin-panel.rules.test.js
++++ b/rules-tests/admin-panel.rules.test.js
+@@ -15,7 +15,8 @@ const {
+   initializeTestEnvironment,
+ } = require("@firebase/rules-unit-testing");
+ const {
+-  collectionGroup, doc, getCountFromServer, getDocs, setDoc, setLogLevel,
++  Timestamp, collectionGroup, doc, getCountFromServer, getDoc, getDocs, query,
++  setDoc, setLogLevel, where,
+ } = require("firebase/firestore");
+ 
+ setLogLevel("silent");
+@@ -62,3 +63,41 @@ describe("TripleTalk AI uploads", () => {
+         getCountFromServer(collectionGroup(admin(), "lexiAiUploads")));
+   });
+ });
++
++describe("learning activity", () => {
++  beforeEach(async () => {
++    await seed({
++      "users/user1/learningStats/2026-09-30": {
++        date: Timestamp.fromDate(new Date("2026-09-29T22:00:00Z")),
++        knownFlashcards: 3,
++      },
++      "users/user2/learningStats/2026-09-30": {
++        date: Timestamp.fromDate(new Date("2026-09-29T22:00:00Z")),
++        knownFlashcards: 1,
++      },
++    });
++  });
++
++  it("an admin counts learning days across users", async () => {
++    const days = query(collectionGroup(admin(), "learningStats"),
++        where("date", ">=", new Date("2026-09-29T12:00:00Z")),
++        where("date", "<", new Date("2026-09-30T12:00:00Z")));
++    const result = await assertSucceeds(getCountFromServer(days));
++    if (result.data().count !== 2) throw new Error("expected 2 learning days");
++    await assertSucceeds(getDocs(days));
++  });
++
++  it("a user reads only their own learning days", async () => {
++    await assertSucceeds(
++        getDoc(doc(user(), "users/user1/learningStats/2026-09-30")));
++    await assertFails(
++        getDoc(doc(user(), "users/user2/learningStats/2026-09-30")));
++    await assertFails(getDocs(collectionGroup(user(), "learningStats")));
++  });
++
++  it("an admin cannot change learning days", async () => {
++    await assertFails(setDoc(
++        doc(admin(), "users/user1/learningStats/2026-09-30"),
++        {knownFlashcards: 99}));
++  });
++});

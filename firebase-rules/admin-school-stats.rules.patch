@@ -1,0 +1,157 @@
+diff --git a/firestore.rules b/firestore.rules
+index 8003a3b..42afb73 100644
+--- a/firestore.rules
++++ b/firestore.rules
+@@ -374,10 +374,11 @@ service cloud.firestore {
+     }
+ 
+     // School. Every write goes through Cloud Functions; clients only read
+-    // their own documents. Queries must filter by the same uid the rule
++    // their own documents. The admin panel reads (counts) the top-level
++    // School collections; it never reads cards, codes, blocks or limits. Queries must filter by the same uid the rule
+     // checks (teacherUid / studentUid), which also keeps them index-free.
+     match /schoolUsers/{userId} {
+-      allow read: if owns(userId);
++      allow read: if owns(userId) || isAdmin();
+       allow write: if false;
+     }
+ 
+@@ -398,14 +399,16 @@ service cloud.firestore {
+     }
+ 
+     match /schoolClasses/{classId} {
+-      allow read: if signedIn() && resource.data.teacherUid == request.auth.uid;
++      allow read: if isAdmin() ||
++        (signedIn() && resource.data.teacherUid == request.auth.uid);
+       allow write: if false;
+     }
+ 
+     // A teacher's lessons and their cards are readable by the owner only;
+     // audio and card contents are written by Cloud Functions.
+     match /schoolLessons/{lessonId} {
+-      allow read: if signedIn() && resource.data.ownerUid == request.auth.uid;
++      allow read: if isAdmin() ||
++        (signedIn() && resource.data.ownerUid == request.auth.uid);
+       allow write: if false;
+ 
+       match /schoolCards/{cardId} {
+@@ -418,16 +421,17 @@ service cloud.firestore {
+ 
+     // Read by the teacher of the class and by the invited student.
+     match /schoolMemberships/{membershipId} {
+-      allow read: if signedIn() &&
++      allow read: if isAdmin() || (signedIn() &&
+         (resource.data.teacherUid == request.auth.uid ||
+-         resource.data.studentUid == request.auth.uid);
++         resource.data.studentUid == request.auth.uid));
+       allow write: if false;
+     }
+ 
+     // A published (or publishing) lesson, and its card snapshot. Written only
+     // by the background trigger that prepares and syncs it.
+     match /schoolAssignments/{assignmentId} {
+-      allow read: if signedIn() && isReadableSchoolAssignment(resource.data);
++      allow read: if isAdmin() ||
++        (signedIn() && isReadableSchoolAssignment(resource.data));
+       allow write: if false;
+ 
+       match /schoolAssignmentCards/{cardId} {
+@@ -440,7 +444,8 @@ service cloud.firestore {
+     // the student writes this directly (see isValidSchoolProgressWrite);
+     // deleting it stays a Cloud Functions job (leaving a class, a reset).
+     match /schoolProgress/{progressId} {
+-      allow read: if signedIn() && resource.data.studentUid == request.auth.uid;
++      allow read: if isAdmin() ||
++        (signedIn() && resource.data.studentUid == request.auth.uid);
+       allow create: if signedIn() &&
+         isValidSchoolProgressWrite(progressId, request.resource.data) &&
+         request.resource.data.startedAt == request.time;
+diff --git a/rules-tests/admin-panel.rules.test.js b/rules-tests/admin-panel.rules.test.js
+index efdbdcb..8a0d023 100644
+--- a/rules-tests/admin-panel.rules.test.js
++++ b/rules-tests/admin-panel.rules.test.js
+@@ -16,7 +16,7 @@ const {
+ } = require("@firebase/rules-unit-testing");
+ const {
+   Timestamp, collectionGroup, doc, getCountFromServer, getDoc, getDocs, query,
+-  setDoc, setLogLevel, where,
++  collection, setDoc, setLogLevel, updateDoc, where,
+ } = require("firebase/firestore");
+ 
+ setLogLevel("silent");
+@@ -101,3 +101,75 @@ describe("learning activity", () => {
+         {knownFlashcards: 99}));
+   });
+ });
++
++describe("School", () => {
++  const counted = [
++    "schoolUsers",
++    "schoolClasses",
++    "schoolLessons",
++    "schoolMemberships",
++    "schoolAssignments",
++    "schoolProgress",
++  ];
++
++  beforeEach(async () => {
++    await seed({
++      "schoolUsers/teacher1": {role: "teacher", displayName: "T"},
++      "schoolUsers/student1": {role: "student", displayName: "S"},
++      "schoolClasses/class1": {teacherUid: "teacher1", memberSlotsUsed: 1},
++      "schoolLessons/lesson1": {ownerUid: "teacher1", cardCount: 3},
++      "schoolLessons/lesson1/schoolCards/card1": {order: 0},
++      "schoolMemberships/class1_student1": {
++        classId: "class1", teacherUid: "teacher1", studentUid: "student1",
++        status: "accepted",
++      },
++      "schoolAssignments/assignment1": {
++        classId: "class1", teacherUid: "teacher1", lessonId: "lesson1",
++        publishState: "ready",
++      },
++      "schoolProgress/assignment1_student1": {
++        assignmentId: "assignment1", classId: "class1",
++        studentUid: "student1", knownCardIds: [],
++      },
++      "schoolStudentCodes/ABCDEFGH": {uid: "student1"},
++      "schoolTeacherStats/teacher1": {classCount: 1},
++      "schoolBlocks/student1_teacher1": {
++        studentUid: "student1", teacherUid: "teacher1",
++      },
++    });
++  });
++
++  for (const name of counted) {
++    it(`an admin counts ${name}`, async () => {
++      await assertSucceeds(getCountFromServer(collection(admin(), name)));
++    });
++  }
++
++  it("an admin counts by field, e.g. teachers", async () => {
++    const result = await assertSucceeds(getCountFromServer(query(
++        collection(admin(), "schoolUsers"), where("role", "==", "teacher"))));
++    if (result.data().count !== 1) throw new Error("expected 1 teacher");
++  });
++
++  it("an admin still cannot read codes, limits, blocks or cards", async () => {
++    await assertFails(getDocs(collection(admin(), "schoolStudentCodes")));
++    await assertFails(getDocs(collection(admin(), "schoolTeacherStats")));
++    await assertFails(getDocs(collection(admin(), "schoolBlocks")));
++    await assertFails(
++        getDocs(collection(admin(), "schoolLessons/lesson1/schoolCards")));
++  });
++
++  it("an admin cannot write School data", async () => {
++    await assertFails(updateDoc(doc(admin(), "schoolUsers/student1"), {
++      displayName: "X",
++    }));
++    await assertFails(setDoc(doc(admin(), "schoolClasses/class2"), {
++      teacherUid: "admin1",
++    }));
++  });
++
++  it("other users still see only their own School data", async () => {
++    await assertFails(getDocs(collection(user(), "schoolUsers")));
++    await assertFails(getCountFromServer(collection(user(), "schoolClasses")));
++  });
++});

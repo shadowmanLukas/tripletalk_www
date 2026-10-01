@@ -1,0 +1,55 @@
+diff --git a/firestore.indexes.json b/firestore.indexes.json
+index 44d216f..4099f80 100644
+--- a/firestore.indexes.json
++++ b/firestore.indexes.json
+@@ -57,6 +57,50 @@
+           "queryScope": "COLLECTION_GROUP"
+         }
+       ]
++    },
++    {
++      "collectionGroup": "lessons",
++      "fieldPath": "createdFromCommonCollection",
++      "indexes": [
++        {
++          "order": "ASCENDING",
++          "queryScope": "COLLECTION"
++        },
++        {
++          "order": "DESCENDING",
++          "queryScope": "COLLECTION"
++        },
++        {
++          "arrayConfig": "CONTAINS",
++          "queryScope": "COLLECTION"
++        },
++        {
++          "order": "ASCENDING",
++          "queryScope": "COLLECTION_GROUP"
++        }
++      ]
++    },
++    {
++      "collectionGroup": "learningStats",
++      "fieldPath": "date",
++      "indexes": [
++        {
++          "order": "ASCENDING",
++          "queryScope": "COLLECTION"
++        },
++        {
++          "order": "DESCENDING",
++          "queryScope": "COLLECTION"
++        },
++        {
++          "arrayConfig": "CONTAINS",
++          "queryScope": "COLLECTION"
++        },
++        {
++          "order": "ASCENDING",
++          "queryScope": "COLLECTION_GROUP"
++        }
++      ]
+     }
+   ]
+ }

@@ -10,12 +10,10 @@ import {
 } from "firebase/auth";
 import {
   collection,
-  collectionGroup,
   deleteDoc,
   deleteField,
   doc,
   getDocs,
-  getCountFromServer,
   getFirestore,
   limit,
   orderBy,
@@ -23,7 +21,6 @@ import {
   serverTimestamp,
   startAfter,
   updateDoc,
-  where,
   type DocumentData,
   type QueryDocumentSnapshot,
 } from "firebase/firestore";
@@ -41,6 +38,10 @@ import {
   mapFeedback,
   type FeedbackRecord,
 } from "../lib/feedback";
+import { initializeAdminTheme } from "./admin-theme";
+import { createFunctionStatsView } from "./function-stats";
+import { createSchoolStatsView } from "./school-stats";
+import { createUserStatsView } from "./user-stats";
 
 const PAGE_SIZE = 50;
 const DATE_FORMAT = new Intl.DateTimeFormat("pl-PL", {
@@ -48,281 +49,6 @@ const DATE_FORMAT = new Intl.DateTimeFormat("pl-PL", {
   timeStyle: "short",
   timeZone: "Europe/Warsaw",
 });
-const NUMBER_FORMAT = new Intl.NumberFormat("pl-PL");
-const AVERAGE_FORMAT = new Intl.NumberFormat("pl-PL", {
-  maximumFractionDigits: 1,
-  minimumFractionDigits: 1,
-});
-const COST_FORMAT = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-  minimumFractionDigits: 4,
-  maximumFractionDigits: 4,
-});
-const GEMINI_INPUT_USD_PER_MILLION = 0.3;
-const GEMINI_OUTPUT_USD_PER_MILLION = 2.5;
-const MONTH_FORMAT = new Intl.DateTimeFormat("pl-PL", {
-  month: "short",
-  year: "2-digit",
-  timeZone: "UTC",
-});
-
-export interface AdminStatistics {
-  users: number;
-  lessons: number;
-  flashcards: number;
-  lessonsPerUser: number;
-  flashcardsPerUser: number;
-  flashcardsPerLesson: number;
-  activeUsers: number;
-  inactiveUsers: number;
-  newUsers: number;
-}
-
-export function summarizeUserCreatedLessons(
-  lessons: Array<Record<string, unknown>>,
-): { lessons: number; flashcards: number } {
-  const userCreated = lessons.filter(
-    (lesson) => lesson.createdFromCommonCollection !== true,
-  );
-  const flashcards = userCreated.reduce((total, lesson) => {
-    const value = Number(lesson.flashcardCount || 0);
-    return total + (Number.isFinite(value) && value > 0 ? value : 0);
-  }, 0);
-  return { lessons: userCreated.length, flashcards };
-}
-
-export interface AiCostStatistics {
-  processes: number;
-  apiCalls: number;
-  inputTokens: number;
-  outputTokens: number;
-  totalTokens: number;
-  estimatedCostUsd: number;
-  costPerProcessUsd: number;
-  tokensPerProcess: number;
-  tokensPerCall: number;
-}
-
-interface AiTokenTotals {
-  apiCalls: number;
-  inputTokens: number;
-  outputTokens: number;
-  totalTokens: number;
-}
-
-function record(value: unknown): Record<string, unknown> {
-  return value && typeof value === "object"
-    ? (value as Record<string, unknown>)
-    : {};
-}
-
-function nonNegativeNumber(value: unknown): number {
-  const number = Number(value || 0);
-  return Number.isFinite(number) && number > 0 ? number : 0;
-}
-
-export function summarizeAiCosts(
-  uploads: Array<Record<string, unknown>>,
-): AiCostStatistics {
-  const withAnalytics = uploads.flatMap((upload) => {
-    const analytics = record(upload.lexiAiProcessingAnalytics);
-    const totals = record(analytics.totals);
-    return Object.keys(totals).length ? [totals] : [];
-  });
-  const totals = withAnalytics.reduce<AiTokenTotals>(
-    (sum, usage) => ({
-      apiCalls: sum.apiCalls + nonNegativeNumber(usage.apiCallCount),
-      inputTokens: sum.inputTokens + nonNegativeNumber(usage.promptTokenCount),
-      outputTokens:
-        sum.outputTokens + nonNegativeNumber(usage.candidatesTokenCount),
-      totalTokens: sum.totalTokens + nonNegativeNumber(usage.totalTokenCount),
-    }),
-    { apiCalls: 0, inputTokens: 0, outputTokens: 0, totalTokens: 0 },
-  );
-  const processes = withAnalytics.length;
-  const estimatedCostUsd =
-    (totals.inputTokens / 1_000_000) * GEMINI_INPUT_USD_PER_MILLION +
-    (totals.outputTokens / 1_000_000) * GEMINI_OUTPUT_USD_PER_MILLION;
-  return {
-    processes,
-    ...totals,
-    estimatedCostUsd,
-    costPerProcessUsd: processes ? estimatedCostUsd / processes : 0,
-    tokensPerProcess: processes ? totals.totalTokens / processes : 0,
-    tokensPerCall: totals.apiCalls ? totals.totalTokens / totals.apiCalls : 0,
-  };
-}
-
-export function renderAiCosts(
-  container: HTMLElement,
-  statistics: AiCostStatistics,
-): void {
-  const values: Record<string, string> = {
-    "estimated-cost": COST_FORMAT.format(statistics.estimatedCostUsd),
-    "total-tokens": NUMBER_FORMAT.format(statistics.totalTokens),
-    processes: NUMBER_FORMAT.format(statistics.processes),
-    "input-tokens": NUMBER_FORMAT.format(statistics.inputTokens),
-    "output-tokens": NUMBER_FORMAT.format(statistics.outputTokens),
-    "api-calls": NUMBER_FORMAT.format(statistics.apiCalls),
-    "cost-per-process": COST_FORMAT.format(statistics.costPerProcessUsd),
-    "tokens-per-process": NUMBER_FORMAT.format(
-      Math.round(statistics.tokensPerProcess),
-    ),
-    "tokens-per-call": NUMBER_FORMAT.format(
-      Math.round(statistics.tokensPerCall),
-    ),
-  };
-  container
-    .querySelectorAll<HTMLElement>("[data-cost-statistic]")
-    .forEach((element) => {
-      element.textContent = values[element.dataset.costStatistic || ""] || "—";
-    });
-}
-
-export interface MonthlyAiUsage {
-  key: string;
-  label: string;
-  inputTokens: number;
-  outputTokens: number;
-  thinkingTokens: number;
-  apiCalls: number;
-}
-
-function dateValue(value: unknown): Date | null {
-  if (value instanceof Date) return value;
-  if (value && typeof value === "object" && "toDate" in value) {
-    const toDate = (value as { toDate?: unknown }).toDate;
-    if (typeof toDate === "function") {
-      const converted = toDate.call(value);
-      return converted instanceof Date ? converted : null;
-    }
-  }
-  if (typeof value === "string") {
-    const converted = new Date(value);
-    return Number.isNaN(converted.getTime()) ? null : converted;
-  }
-  return null;
-}
-
-function monthKey(date: Date): string {
-  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}`;
-}
-
-export function buildMonthlyAiUsage(
-  uploads: Array<Record<string, unknown>>,
-  now = new Date(),
-  monthCount = 6,
-): MonthlyAiUsage[] {
-  const points = Array.from({ length: monthCount }, (_, index) => {
-    const offset = monthCount - index - 1;
-    const date = new Date(
-      Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - offset, 1),
-    );
-    return {
-      key: monthKey(date),
-      label: MONTH_FORMAT.format(date),
-      inputTokens: 0,
-      outputTokens: 0,
-      thinkingTokens: 0,
-      apiCalls: 0,
-    };
-  });
-  const byMonth = new Map(points.map((point) => [point.key, point]));
-  for (const upload of uploads) {
-    const completedAt =
-      dateValue(upload.processingCompletedAt) || dateValue(upload.createdAt);
-    if (!completedAt) continue;
-    const point = byMonth.get(monthKey(completedAt));
-    if (!point) continue;
-    const totals = record(record(upload.lexiAiProcessingAnalytics).totals);
-    const input = nonNegativeNumber(totals.promptTokenCount);
-    const output = nonNegativeNumber(totals.candidatesTokenCount);
-    const total = nonNegativeNumber(totals.totalTokenCount);
-    point.inputTokens += input;
-    point.outputTokens += output;
-    point.thinkingTokens += Math.max(0, total - input - output);
-    point.apiCalls += nonNegativeNumber(totals.apiCallCount);
-  }
-  return points;
-}
-
-export function renderMonthlyAiUsage(
-  container: HTMLElement,
-  points: MonthlyAiUsage[],
-): void {
-  const metrics: Array<keyof Omit<MonthlyAiUsage, "key" | "label">> = [
-    "inputTokens",
-    "outputTokens",
-    "thinkingTokens",
-    "apiCalls",
-  ];
-  for (const metric of metrics) {
-    const chart = container.querySelector<HTMLElement>(
-      `[data-monthly-chart="${metric}"]`,
-    );
-    const total = points.reduce((sum, point) => sum + point[metric], 0);
-    const totalElement = container.querySelector<HTMLElement>(
-      `[data-chart-total="${metric}"]`,
-    );
-    if (totalElement) totalElement.textContent = NUMBER_FORMAT.format(total);
-    if (!chart) continue;
-    const maximum = Math.max(...points.map((point) => point[metric]), 0);
-    chart.replaceChildren(
-      ...points.map((point) => {
-        const column = document.createElement("div");
-        column.className = "usage-chart-column";
-        const track = document.createElement("div");
-        track.className = "usage-chart-track";
-        const wrapper = document.createElement("div");
-        const value = document.createElement("span");
-        value.className = "usage-chart-value";
-        value.textContent = NUMBER_FORMAT.format(point[metric]);
-        const bar = document.createElement("div");
-        bar.className = "usage-chart-bar";
-        bar.style.height = maximum
-          ? `${(point[metric] / maximum) * 100}%`
-          : "0";
-        bar.setAttribute(
-          "aria-label",
-          `${point.label}: ${NUMBER_FORMAT.format(point[metric])}`,
-        );
-        const label = document.createElement("span");
-        label.className = "usage-chart-label";
-        label.textContent = point.label;
-        wrapper.append(value, bar);
-        track.append(wrapper);
-        column.append(track, label);
-        return column;
-      }),
-    );
-  }
-}
-
-export function renderAdminStatistics(
-  container: HTMLElement,
-  statistics: AdminStatistics,
-): void {
-  const values: Record<string, string> = {
-    users: NUMBER_FORMAT.format(statistics.users),
-    lessons: NUMBER_FORMAT.format(statistics.lessons),
-    flashcards: NUMBER_FORMAT.format(statistics.flashcards),
-    "lessons-per-user": AVERAGE_FORMAT.format(statistics.lessonsPerUser),
-    "flashcards-per-user": AVERAGE_FORMAT.format(statistics.flashcardsPerUser),
-    "flashcards-per-lesson": AVERAGE_FORMAT.format(
-      statistics.flashcardsPerLesson,
-    ),
-    "active-users": NUMBER_FORMAT.format(statistics.activeUsers),
-    "inactive-users": NUMBER_FORMAT.format(statistics.inactiveUsers),
-    "new-users": NUMBER_FORMAT.format(statistics.newUsers),
-  };
-  container
-    .querySelectorAll<HTMLElement>("[data-statistic]")
-    .forEach((element) => {
-      element.textContent = values[element.dataset.statistic || ""] || "—";
-    });
-}
-
 export function formatWarsawDate(value: string | null): string {
   if (!value) return "—";
   const date = new Date(value);
@@ -562,6 +288,9 @@ async function verifyAdministrator(user: User): Promise<boolean> {
 }
 
 function initializePanel(): void {
+  initializeAdminTheme(
+    document.querySelector<HTMLButtonElement>("#theme-toggle"),
+  );
   const authLoading = document.querySelector<HTMLElement>("#auth-loading")!;
   const loginView = document.querySelector<HTMLElement>("#login-view")!;
   const panelView = document.querySelector<HTMLElement>("#panel-view")!;
@@ -577,26 +306,21 @@ function initializePanel(): void {
   const dialog = document.querySelector<HTMLDialogElement>("#details-dialog")!;
   const details = document.querySelector<HTMLElement>("#details-content")!;
   const toast = document.querySelector<HTMLElement>("#admin-toast")!;
-  const statisticsMessage = document.querySelector<HTMLElement>(
-    "#statistics-message",
-  )!;
-  const statisticsGrid =
-    document.querySelector<HTMLElement>("#statistics-grid")!;
-  const statisticsUpdated = document.querySelector<HTMLElement>(
-    "#statistics-updated",
-  )!;
-  const statisticsRefresh = document.querySelector<HTMLButtonElement>(
-    "#statistics-refresh-button",
-  )!;
-  const costsMessage = document.querySelector<HTMLElement>("#costs-message")!;
-  const costsGrid = document.querySelector<HTMLElement>("#costs-grid")!;
-  const costsFootnote = document.querySelector<HTMLElement>("#costs-footnote")!;
-  const costsUpdated = document.querySelector<HTMLElement>("#costs-updated")!;
-  const costsRefresh = document.querySelector<HTMLButtonElement>(
-    "#costs-refresh-button",
-  )!;
-  const costsCharts = document.querySelector<HTMLElement>("#costs-charts")!;
   let items: FeedbackRecord[] = [];
+  const userStats = createUserStatsView(
+    document.querySelector<HTMLElement>('[data-admin-section="user-stats"]')!,
+    () => Boolean(currentAdmin),
+  );
+  const schoolStats = createSchoolStatsView(
+    document.querySelector<HTMLElement>('[data-admin-section="school-stats"]')!,
+    () => Boolean(currentAdmin),
+  );
+  const functionStats = createFunctionStatsView(
+    document.querySelector<HTMLElement>(
+      '[data-admin-section="functions-stats"]',
+    )!,
+    () => Boolean(currentAdmin),
+  );
   let cursor: QueryDocumentSnapshot<DocumentData> | null = null;
   let currentAdmin: User | null = null;
 
@@ -606,7 +330,16 @@ function initializePanel(): void {
   const sections = Array.from(
     document.querySelectorAll<HTMLElement>("[data-admin-section]"),
   );
-  const showSection = (requestedView: string): string => {
+  const loadView = (view: string) => {
+    if (view === "user-stats") return userStats.load();
+    if (view === "school-stats") return schoolStats.load();
+    if (view === "functions-stats") return functionStats.load();
+    return Promise.resolve();
+  };
+  const showSection = (requestedHash: string): string => {
+    // Old bookmarks of the former Statistics tab.
+    const requestedView =
+      requestedHash === "statistics" ? "user-stats" : requestedHash;
     const view = sections.some(
       (section) => section.dataset.adminSection === requestedView,
     )
@@ -626,15 +359,11 @@ function initializePanel(): void {
   };
   navigationItems.forEach((item) => {
     item.addEventListener("click", () => {
-      const view = showSection(item.dataset.adminView || "app-feedback");
-      if (view === "statistics") void loadStatistics();
-      if (view === "costs") void loadCosts();
+      void loadView(showSection(item.dataset.adminView || "app-feedback"));
     });
   });
   window.addEventListener("hashchange", () => {
-    const view = showSection(window.location.hash.slice(1));
-    if (view === "statistics") void loadStatistics();
-    if (view === "costs") void loadCosts();
+    void loadView(showSection(window.location.hash.slice(1)));
   });
   showSection(window.location.hash.slice(1));
 
@@ -700,91 +429,6 @@ function initializePanel(): void {
       loadMore.disabled = false;
     }
   };
-
-  async function loadStatistics(): Promise<void> {
-    if (!currentAdmin || statisticsRefresh.disabled) return;
-    statisticsMessage.hidden = false;
-    statisticsMessage.textContent = "Loading statistics…";
-    statisticsGrid.hidden = true;
-    statisticsUpdated.hidden = true;
-    statisticsRefresh.disabled = true;
-    try {
-      const db = getFirestore(getFirebaseApp());
-      const users = collection(db, "users");
-      const now = Date.now();
-      const sevenDaysAgo = new Date(now - 7 * 24 * 60 * 60 * 1000);
-      const thirtyDaysAgo = new Date(now - 30 * 24 * 60 * 60 * 1000);
-      const [usersCount, activeCount, newUsersCount, lessonsSnapshot] =
-        await Promise.all([
-          getCountFromServer(users),
-          getCountFromServer(
-            query(users, where("lastSignInAt", ">=", sevenDaysAgo)),
-          ),
-          getCountFromServer(
-            query(users, where("createdAt", ">=", thirtyDaysAgo)),
-          ),
-          getDocs(collectionGroup(db, "lessons")),
-        ]);
-      const totalUsers = usersCount.data().count;
-      const activeUsers = activeCount.data().count;
-      const userCreated = summarizeUserCreatedLessons(
-        lessonsSnapshot.docs.map((document) => document.data()),
-      );
-      const { lessons, flashcards } = userCreated;
-      renderAdminStatistics(statisticsGrid, {
-        users: totalUsers,
-        lessons,
-        flashcards,
-        lessonsPerUser: totalUsers ? lessons / totalUsers : 0,
-        flashcardsPerUser: totalUsers ? flashcards / totalUsers : 0,
-        flashcardsPerLesson: lessons ? flashcards / lessons : 0,
-        activeUsers,
-        inactiveUsers: Math.max(0, totalUsers - activeUsers),
-        newUsers: newUsersCount.data().count,
-      });
-      statisticsMessage.hidden = true;
-      statisticsGrid.hidden = false;
-      statisticsUpdated.textContent = `Updated ${DATE_FORMAT.format(new Date())}`;
-      statisticsUpdated.hidden = false;
-    } catch {
-      statisticsMessage.hidden = false;
-      statisticsMessage.textContent =
-        "Unable to load statistics. Administrator read permissions are required.";
-    } finally {
-      statisticsRefresh.disabled = false;
-    }
-  }
-
-  async function loadCosts(): Promise<void> {
-    if (!currentAdmin || costsRefresh.disabled) return;
-    costsMessage.hidden = false;
-    costsMessage.textContent = "Loading AI usage…";
-    costsGrid.hidden = true;
-    costsCharts.hidden = true;
-    costsFootnote.hidden = true;
-    costsRefresh.disabled = true;
-    try {
-      const db = getFirestore(getFirebaseApp());
-      const uploadsSnapshot = await getDocs(
-        collectionGroup(db, "lexiAiUploads"),
-      );
-      const uploads = uploadsSnapshot.docs.map((document) => document.data());
-      const statistics = summarizeAiCosts(uploads);
-      renderAiCosts(costsGrid, statistics);
-      renderMonthlyAiUsage(costsCharts, buildMonthlyAiUsage(uploads));
-      costsMessage.hidden = true;
-      costsGrid.hidden = false;
-      costsCharts.hidden = false;
-      costsUpdated.textContent = `Updated ${DATE_FORMAT.format(new Date())}`;
-      costsFootnote.hidden = false;
-    } catch {
-      costsMessage.hidden = false;
-      costsMessage.textContent =
-        "Unable to load AI usage. Administrator read permissions are required.";
-    } finally {
-      costsRefresh.disabled = false;
-    }
-  }
 
   const handleAction = async (target: HTMLButtonElement) => {
     const item = items.find((candidate) => candidate.id === target.dataset.id);
@@ -864,8 +508,6 @@ function initializePanel(): void {
   document
     .querySelector("#refresh-button")
     ?.addEventListener("click", () => void load(false));
-  statisticsRefresh.addEventListener("click", () => void loadStatistics());
-  costsRefresh.addEventListener("click", () => void loadCosts());
   document
     .querySelector("#close-details-button")
     ?.addEventListener("click", () => dialog.close());
@@ -920,6 +562,9 @@ function initializePanel(): void {
         currentAdmin = null;
         items = [];
         cursor = null;
+        userStats.reset();
+        schoolStats.reset();
+        functionStats.reset();
         showLogin();
         return;
       }
@@ -932,13 +577,8 @@ function initializePanel(): void {
         currentAdmin = user;
         showPanel();
         const view = showSection(window.location.hash.slice(1));
-        if (view === "statistics") {
-          await loadStatistics();
-        } else if (view === "costs") {
-          await loadCosts();
-        } else {
-          await load(false);
-        }
+        if (view === "app-feedback") await load(false);
+        else await loadView(view);
       } catch {
         await signOut(auth);
         showLogin("Unable to verify administrator access.");
