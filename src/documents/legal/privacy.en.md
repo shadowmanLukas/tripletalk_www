@@ -62,11 +62,11 @@ Providing data is voluntary, but the App cannot be used without account data. We
 
 ## 5. Welcome bonus and abuse prevention
 
-1. To make sure the welcome bonus goes to one person only once, the App creates a random installation secret on your device and keeps it in the system's secure storage (Keychain on iOS, encrypted storage on Android).
-2. Only an irreversible hash (HMAC) of this secret, and similar hashes of your verified sign-in identity (email, Google, Apple), are sent to our server. Neither the secret nor your email address can be recovered from the hash.
+1. To make sure the welcome bonus goes to one person only once, the App saves a random installation identifier on your device. It is kept in a protected part of the device's storage.
+2. Only an irreversible hash of this identifier, and similar hashes of your sign-in details (email address, Google or Apple account), are sent to our server. Neither the identifier nor your email address can be recovered from a hash.
 3. The hashes are used only to check whether the bonus has already been granted. **They remain after account deletion**, unlinked from the account, so that deleting and re-creating an account cannot be used to get around the rules. We keep them for 3 years from granting the bonus and then delete them automatically. If the account still exists, the hash is written again at the next sign-in so the bonus cannot be claimed twice.
 4. The legal basis is our legitimate interest (preventing abuse). You may object (section 11).
-5. App Check (Apple App Attest and DeviceCheck, Google Play Integrity) checks that requests come from the genuine App on a real device. It does not collect content from your device.
+5. We also check that requests come from the genuine App installed on a real device, using Apple and Google services (App Check). They do not collect content from your device.
 
 ## 6. TripleTalk AI
 
@@ -139,7 +139,7 @@ Write to support@tripletalk.app from the email address linked to your account. W
 ## 13. App permissions and data on your device
 
 1. The App may ask for access to: camera (photo of text), photo library (choosing a photo) and notifications (reminders, School invitations). You can turn off any permission in your device settings.
-2. On your device we store, among other things, settings, a cache of audio and flashcards, and the installation secret described in section 5. Deleting the App removes most of this data. On iOS the secret in Keychain may remain after the App is deleted, as the system works this way.
+2. On your device we store, among other things, settings, a cache of audio and flashcards, and the installation identifier described in section 5. Deleting the App removes most of this data. On iOS the secret in Keychain may remain after the App is deleted, as the system works this way.
 
 ## 14. Security
 

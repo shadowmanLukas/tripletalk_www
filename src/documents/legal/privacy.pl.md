@@ -62,11 +62,11 @@ Podanie danych jest dobrowolne, ale bez danych konta nie da się korzystać z Ap
 
 ## 5. Bonus powitalny i ochrona przed nadużyciami
 
-1. Aby bonus powitalny trafiał do jednej osoby tylko raz, Aplikacja tworzy na urządzeniu losowy sekret instalacji. Przechowujemy go lokalnie w bezpiecznym magazynie systemu (Keychain na iOS, zaszyfrowany magazyn na Androidzie).
-2. Na serwer trafia tylko nieodwracalny skrót (HMAC) tego sekretu oraz podobne skróty zweryfikowanej tożsamości logowania (e-mail, Google, Apple). Z samego skrótu nie da się odtworzyć sekretu ani adresu e-mail.
+1. Aby bonus powitalny trafiał do jednej osoby tylko raz, Aplikacja zapisuje na Twoim urządzeniu losowy identyfikator instalacji. Jest on przechowywany w zabezpieczonej części pamięci urządzenia.
+2. Na nasz serwer trafia tylko nieodwracalny skrót tego identyfikatora oraz podobne skróty danych logowania (adres e-mail, konto Google lub Apple). Ze skrótu nie da się odtworzyć ani identyfikatora, ani adresu e-mail.
 3. Skróty służą wyłącznie do sprawdzenia, czy bonus był już przyznany. **Zostają po usunięciu konta**, bez powiązania z kontem, aby usunięcie i ponowne założenie konta nie pozwalało obejść zasad. Przechowujemy je przez 3 lata od przyznania bonusu, a następnie automatycznie usuwamy. Jeśli konto nadal istnieje, skrót jest zapisywany ponownie przy kolejnym logowaniu, aby bonusu nie dało się pobrać drugi raz.
 4. Podstawą jest nasz prawnie uzasadniony interes (zapobieganie nadużyciom). Możesz wnieść sprzeciw (pkt 11).
-5. App Check (Apple App Attest i DeviceCheck, Google Play Integrity) sprawdza, czy zapytania pochodzą z oryginalnej Aplikacji na prawdziwym urządzeniu. Nie zbiera treści z Twojego urządzenia.
+5. Sprawdzamy też, czy zapytania pochodzą z oryginalnej Aplikacji zainstalowanej na prawdziwym urządzeniu. Korzystamy do tego z usług Apple i Google (App Check). Nie zbierają one treści z Twojego urządzenia.
 
 ## 6. TripleTalk AI
 
@@ -139,7 +139,7 @@ Napisz na support@tripletalk.app z adresu przypisanego do konta. Odpowiemy w ci�
 ## 13. Uprawnienia aplikacji i dane na urządzeniu
 
 1. Aplikacja może prosić o dostęp do: aparatu (zdjęcie tekstu), galerii (wybór zdjęcia) i powiadomień (przypomnienia, zaproszenia Szkoły). Każde uprawnienie możesz wyłączyć w ustawieniach urządzenia.
-2. Na urządzeniu przechowujemy m.in. ustawienia, pamięć podręczną nagrań i fiszek oraz sekret instalacji z pkt 5. Usunięcie Aplikacji usuwa większość tych danych. Sekret w Keychain na iOS może pozostać po usunięciu Aplikacji, zgodnie z działaniem systemu.
+2. Na urządzeniu przechowujemy m.in. ustawienia, pamięć podręczną nagrań i fiszek oraz identyfikator instalacji z pkt 5. Usunięcie Aplikacji usuwa większość tych danych. Sekret w Keychain na iOS może pozostać po usunięciu Aplikacji, zgodnie z działaniem systemu.
 
 ## 14. Bezpieczeństwo
 
