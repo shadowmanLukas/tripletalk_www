@@ -34,7 +34,7 @@ _Version of October 7, 2026. Effective from October 1, 2026._
 1. TripleTalk helps you learn foreign-language words and phrases with flashcards. In particular it lets you:
    - create your own lessons and flashcards, manually or from a photo of text,
    - have flashcards completed automatically by TripleTalk AI (translation, example sentence, grammar information, pronunciation audio),
-   - study with spaced repetition and in an audio listening mode,
+   - study with spaced repetition and in an audio mode that plays whole lessons,
    - track progress and sync data across devices,
    - use ready-made flashcard collections (Premium),
    - use School mode, where a teacher shares lessons with their students (section 9).

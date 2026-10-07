@@ -34,7 +34,7 @@ _Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
 1. TripleTalk służy do nauki słówek i zwrotów w językach obcych metodą fiszek. Umożliwia w szczególności:
    - tworzenie własnych lekcji i fiszek, ręcznie lub ze zdjęcia tekstu,
    - automatyczne uzupełnianie fiszek przez TripleTalk AI (tłumaczenie, przykładowe zdanie, informacje gramatyczne, nagranie wymowy),
-   - naukę z systemem powtórek rozłożonych w czasie oraz tryb odsłuchu,
+   - naukę z systemem powtórek rozłożonych w czasie oraz tryb odsłuchu całych lekcji,
    - śledzenie postępów i synchronizację danych między urządzeniami,
    - gotowe kolekcje fiszek (Premium),
    - tryb Szkoła, w którym nauczyciel udostępnia lekcje swoim uczniom (pkt 9).
