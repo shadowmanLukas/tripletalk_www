@@ -1,6 +1,6 @@
 # TripleTalk Privacy Policy
 
-_Version of October 7, 2026. Effective from October 1, 2026._
+_Effective from October 1, 2026._
 
 ## 1. Controller
 

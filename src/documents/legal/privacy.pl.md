@@ -1,6 +1,6 @@
 # Polityka Prywatności TripleTalk
 
-_Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
+_Obowiązuje od 1 października 2026._
 
 ## 1. Administrator
 
