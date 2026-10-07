@@ -375,10 +375,6 @@ Under `Account data > Devices` you'll see the devices you're signed in on and wh
 
 You can use one account on several devices, such as a phone and a tablet, and your lessons and progress will be the same on all of them. The number of devices is limited (see the Terms of Service). When you sign in on another one, the app signs out the device you haven't used for the longest time and shows a message on it. To use it again, just sign in.
 
-### Documents
-
-You'll find the Terms of Service and Privacy Policy in the Documents section.
-
 ### Signing out and deleting your account
 
 When you sign out, your data stays in your account and comes back when you sign in again.
