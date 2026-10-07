@@ -172,31 +172,31 @@ You can tailor example sentences to your interests with the "Example sentence co
 
 ### How a session works
 
-1. Open a lesson and tap **"Start"** (or **"Continue learning"** on the Dashboard).
+1. Open a lesson and tap "Start" (or "Continue learning" on the Dashboard).
 2. You see a word. Try to recall the answer.
-3. Tap **"Reveal answer"**.
+3. Tap "Reveal answer".
 4. Rate how well you remembered it:
-   - **Again**: you'll see the flashcard again in a moment,
-   - **Hard**: it comes back soon,
-   - **Good**: it comes back later,
-   - **Easy**: it comes back after a longer break.
+   - Again: you'll see the flashcard again in a moment,
+   - Hard: it comes back soon,
+   - Good: it comes back later,
+   - Easy: it comes back after a longer break.
 
-You just answer. The review algorithm takes care of the rest: the better you know a flashcard, the less often it appears, and if it starts giving you trouble, it comes back more often. A lesson is **completed** when every flashcard is mastered and none needs a review right now.
+You just answer. The review algorithm takes care of the rest: the better you know a flashcard, the less often it appears, and if it starts giving you trouble, it comes back more often. A lesson is completed when every flashcard is mastered and none needs a review right now.
 
 ### After a session
 
-- **"Session complete"**: your answers are saved and the next reviews are scheduled.
-- **"Session paused, come back soon"**: a few hard flashcards will return in a few hours for another try.
-- **"Nothing due right now"**: there's nothing to review in this lesson at the moment. Come back later or add new flashcards.
+- "Session complete": your answers are saved and the next reviews are scheduled.
+- "Session paused, come back soon": a few hard flashcards will return in a few hours for another try.
+- "Nothing due right now": there's nothing to review in this lesson at the moment. Come back later or add new flashcards.
 
 If you leave a session halfway, the app asks next time whether you want to continue where you left off.
 
 ### Learning pace
 
-In settings you choose a **learning mode**:
+In settings you choose a learning mode:
 
-- **Balanced**: calmer, less frequent reviews, good for everyday learning.
-- **Intensive**: more frequent reviews for faster memorising, for example before an exam or a trip.
+- Balanced: calmer, less frequent reviews, good for everyday learning.
+- Intensive: more frequent reviews for faster memorising, for example before an exam or a trip.
 
 ---
 

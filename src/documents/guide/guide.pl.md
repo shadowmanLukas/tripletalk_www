@@ -172,31 +172,31 @@ Przykładowe zdania możesz dopasować do swoich zainteresowań w ustawieniu „
 
 ### Jak wygląda sesja
 
-1. Otwórz lekcję i wybierz **„Rozpocznij”** (albo **„Kontynuuj naukę”** na Panelu).
+1. Otwórz lekcję i wybierz „Rozpocznij” (albo „Kontynuuj naukę” na Panelu).
 2. Zobaczysz słowo. Spróbuj przypomnieć sobie odpowiedź.
-3. Wybierz **„Pokaż odpowiedź”**.
+3. Wybierz „Pokaż odpowiedź”.
 4. Oceń, jak dobrze pamiętałeś:
-   - **Nie znam**: zobaczysz fiszkę ponownie za chwilę,
-   - **Trudne**: wróci niedługo,
-   - **Znam**: wróci później,
-   - **Łatwe**: wróci po dłuższej przerwie.
+   - Nie znam: zobaczysz fiszkę ponownie za chwilę,
+   - Trudne: wróci niedługo,
+   - Znam: wróci później,
+   - Łatwe: wróci po dłuższej przerwie.
 
-Ty tylko odpowiadasz. Resztą zajmuje się algorytm powtórek: im lepiej znasz fiszkę, tym rzadziej się pojawia, a jeśli zacznie sprawiać trudność, wróci częściej. Lekcja jest **ukończona**, gdy wszystkie fiszki są opanowane i żadna nie wymaga teraz powtórki.
+Ty tylko odpowiadasz. Resztą zajmuje się algorytm powtórek: im lepiej znasz fiszkę, tym rzadziej się pojawia, a jeśli zacznie sprawiać trudność, wróci częściej. Lekcja jest ukończona, gdy wszystkie fiszki są opanowane i żadna nie wymaga teraz powtórki.
 
 ### Po sesji
 
-- **„Sesja zakończona”**: odpowiedzi są zapisane, kolejne powtórki zaplanowane.
-- **„Sesja wstrzymana, wróć wkrótce”**: kilka trudnych fiszek wróci za kilka godzin do kolejnej próby.
-- **„Na teraz wszystko powtórzone”**: w tej lekcji nie ma teraz nic do powtórki. Wróć później albo dodaj nowe fiszki.
+- „Sesja zakończona”: odpowiedzi są zapisane, kolejne powtórki zaplanowane.
+- „Sesja wstrzymana, wróć wkrótce”: kilka trudnych fiszek wróci za kilka godzin do kolejnej próby.
+- „Na teraz wszystko powtórzone”: w tej lekcji nie ma teraz nic do powtórki. Wróć później albo dodaj nowe fiszki.
 
 Jeśli przerwiesz sesję, aplikacja zapyta przy następnym otwarciu, czy chcesz kontynuować od miejsca, w którym skończyłeś.
 
 ### Tempo nauki
 
-W ustawieniach wybierasz **tryb nauki**:
+W ustawieniach wybierasz tryb nauki:
 
-- **Zrównoważony**: spokojniejsze, rzadsze powtórki, dobre na co dzień.
-- **Intensywny**: częstsze powtórki, dla szybszego zapamiętywania, np. przed egzaminem albo wyjazdem.
+- Zrównoważony: spokojniejsze, rzadsze powtórki, dobre na co dzień.
+- Intensywny: częstsze powtórki, dla szybszego zapamiętywania, np. przed egzaminem albo wyjazdem.
 
 ---
 
