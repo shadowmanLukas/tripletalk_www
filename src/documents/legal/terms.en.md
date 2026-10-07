@@ -1,10 +1,10 @@
 # TripleTalk Terms of Service
 
-_Version of October 7, 2026. Effective from October 1, 2026._
+_Effective from October 1, 2026._
 
 ## 1. Who provides the service
 
-1. The TripleTalk mobile application (the "App") is provided by [FILL IN: full legal name of craftapp, legal form, registered address, tax ID (NIP), court/business register number if any] (the "Operator", "we").
+1. The TripleTalk mobile application (the "App") is provided by craftApp (the "Operator", "we").
 2. Contact: support@tripletalk.app. This address is also our single point of contact for users and authorities under the EU Digital Services Act (DSA). We answer in Polish and English.
 3. These Terms govern services provided electronically. Together with the Privacy Policy they form the agreement between you and the Operator.
 4. The agreement is concluded when you create an account and accept these Terms. It is concluded for an indefinite period and you may terminate it at any time by deleting your account (section 13).

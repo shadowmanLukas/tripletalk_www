@@ -1,10 +1,10 @@
 # Regulamin korzystania z aplikacji TripleTalk
 
-_Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
+_Obowiązuje od 1 października 2026._
 
 ## 1. Kto świadczy usługę
 
-1. Aplikację mobilną TripleTalk ("Aplikacja") udostępnia [UZUPEŁNIJ: pełna nazwa firmy craftapp, forma prawna, adres siedziby, NIP, ew. KRS/CEIDG] ("Operator", "my").
+1. Aplikację mobilną TripleTalk ("Aplikacja") udostępnia craftApp ("Operator", "my").
 2. Kontakt: support@tripletalk.app. Ten adres jest też punktem kontaktowym dla użytkowników i organów w rozumieniu aktu o usługach cyfrowych (DSA). Odpowiadamy po polsku i po angielsku.
 3. Regulamin jest regulaminem świadczenia usług drogą elektroniczną. Razem z Polityką Prywatności tworzy umowę między Tobą a Operatorem.
 4. Umowa zostaje zawarta w chwili założenia konta i akceptacji Regulaminu. Zawierasz ją na czas nieokreślony i możesz ją w każdej chwili rozwiązać, usuwając konto (pkt 13).
