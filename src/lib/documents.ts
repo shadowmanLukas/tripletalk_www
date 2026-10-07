@@ -14,6 +14,7 @@ import {
   prefixAnchors,
   shiftHeadings,
   splitDocument,
+  uiPaths,
   wrapTables,
   type DocumentLanguage,
   type SplitDocument,
@@ -54,9 +55,8 @@ export async function loadLegalDocument(
 export async function loadGuide(
   language: DocumentLanguage,
 ): Promise<SplitDocument> {
-  const html = linkReferences(
-    await compiled("guide", language),
-    guideLinkRules[language],
+  const html = uiPaths(
+    linkReferences(await compiled("guide", language), guideLinkRules[language]),
   );
   const document = splitDocument(html);
   const faq = document.sections.at(-1);

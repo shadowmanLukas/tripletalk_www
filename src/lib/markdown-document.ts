@@ -114,6 +114,20 @@ function stripSeparators(html: string): string {
   return html.replace(/<hr\s*\/?>/g, "").trim();
 }
 
+// App navigation paths are written as inline code ("More > Account data") and shown as a
+// highlighted path with a chevron between the steps.
+export function uiPaths(html: string): string {
+  return html.replace(/<code>([^<]*?)<\/code>/g, (match, text: string) => {
+    const steps = text.split(/\s*(?:&gt;|>)\s*/);
+    if (steps.length < 2) return match;
+    const separator =
+      '<span class="ui-path-sep" aria-hidden="true">›</span><span class="sr-only"> &gt; </span>';
+    return `<span class="ui-path">${steps
+      .map((step) => `<span class="ui-path-step">${step}</span>`)
+      .join(separator)}</span>`;
+  });
+}
+
 // FAQ entries are written as a bold question followed by the answer in the same paragraph.
 export function faqToDetails(html: string): string {
   return html.replace(

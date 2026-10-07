@@ -148,7 +148,7 @@ One word in one language is enough. TripleTalk AI adds the translation, an examp
 
 ### What it costs
 
-Every flashcard created with AI uses 1 TripleTalk AI flashcard from your balance, whether you add it by hand or from a photo, to your own lesson or to a School lesson. If a flashcard can't be prepared, it goes back to your balance. You can check your balance in More > TripleTalk AI flashcards.
+Every flashcard created with AI uses 1 TripleTalk AI flashcard from your balance, whether you add it by hand or from a photo, to your own lesson or to a School lesson. If a flashcard can't be prepared, it goes back to your balance. You can check your balance in `More > TripleTalk AI flashcards`.
 
 ---
 
@@ -208,7 +208,7 @@ Audio mode turns a lesson into something you can listen to. The app plays the wo
 
 Start it with the "Audio" button in a lesson or "Play lesson audio". If you stopped listening earlier, you can continue or start over.
 
-In More > Audio playback you can set:
+In `More > Audio playback` you can set:
 
 - which flashcards: all flashcards in the lesson or only unmastered ones,
 - pause between items: 0.5 s, 1 s or 1.5 s,
@@ -268,7 +268,7 @@ Key rules:
 
 ### School settings
 
-In More > School settings:
+In `More > School settings`:
 
 - Invitations (student): allow or stop teachers from inviting you to classes.
 - Blocked teachers (student): the list of teachers you've blocked, with the option to unblock them.
@@ -365,13 +365,13 @@ Here you can write to us when something isn't working or you have an idea for an
 
 ### Account data
 
-In More > Account data you can check which email address your account uses, how you sign in (with email, Google or Apple) and whether your email is verified. If you sign in with Apple, your email address may be hidden.
+In `More > Account data` you can check which email address your account uses, how you sign in (with email, Google or Apple) and whether your email is verified. If you sign in with Apple, your email address may be hidden.
 
 If you created your account with email, you can also change your address here (a confirmation link is sent to the new one) or reset your password. If you sign in with Google or Apple, you change your address and password in your Google or Apple account.
 
 ### Devices
 
-Under Account data > Devices you'll see the phones and tablets you're signed in on and when they were last used. If you lose your phone, for example, you can sign it out from here.
+Under `Account data > Devices` you'll see the phones and tablets you're signed in on and when they were last used. If you lose your phone, for example, you can sign it out from here.
 
 You can use one account on several devices, such as a phone and a tablet, and your lessons and progress will be the same on all of them. The number of devices is limited (see the Terms of Service). When you sign in on another one, the app signs out the device you haven't used for the longest time and shows a message on it. To use it again, just sign in.
 
@@ -395,7 +395,7 @@ You can read more in the Privacy Policy.
 
 ## 14. Help and contact
 
-In **More > Send Feedback** you can:
+In `More > Send Feedback` you can:
 
 1. choose a category: **Bug**, **Improvement**, **Feature Request** or **Other**,
 2. enter a title and a description,

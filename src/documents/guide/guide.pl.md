@@ -148,7 +148,7 @@ Wystarczy jedno słowo w jednym języku. TripleTalk AI uzupełni tłumaczenie, p
 
 ### Ile to kosztuje
 
-Każda fiszka utworzona z pomocą AI zużywa 1 fiszkę TripleTalk AI z Twojego salda, niezależnie od tego, czy dodajesz ją ręcznie, ze zdjęcia, do własnej lekcji czy do lekcji w Szkole. Jeśli przygotowanie fiszki się nie uda, fiszka wraca na Twoje saldo. Saldo sprawdzisz w Więcej > Fiszki TripleTalk AI.
+Każda fiszka utworzona z pomocą AI zużywa 1 fiszkę TripleTalk AI z Twojego salda, niezależnie od tego, czy dodajesz ją ręcznie, ze zdjęcia, do własnej lekcji czy do lekcji w Szkole. Jeśli przygotowanie fiszki się nie uda, fiszka wraca na Twoje saldo. Saldo sprawdzisz w `Więcej > Fiszki TripleTalk AI`.
 
 ---
 
@@ -208,7 +208,7 @@ Tryb audio zamienia lekcję w nagranie do słuchania. Aplikacja odtwarza po kole
 
 Uruchomisz go przyciskiem „Audio” w lekcji albo „Odtwórz audio lekcji”. Jeśli wcześniej przerwałeś odsłuch, możesz kontynuować albo zacząć od nowa.
 
-W Więcej > Odtwarzanie audio ustawisz:
+W `Więcej > Odtwarzanie audio` ustawisz:
 
 - zakres fiszek: wszystkie fiszki w lekcji albo tylko nieopanowane,
 - pauzę między elementami: 0,5 s, 1 s albo 1,5 s,
@@ -268,7 +268,7 @@ Ważne zasady:
 
 ### Ustawienia Szkoły
 
-W Więcej > Ustawienia Szkoły:
+W `Więcej > Ustawienia Szkoły`:
 
 - Zaproszenia (uczeń): włącz albo wyłącz możliwość zapraszania Cię do klas.
 - Zablokowani nauczyciele (uczeń): lista zablokowanych nauczycieli z możliwością odblokowania.
@@ -365,13 +365,13 @@ Tutaj możesz napisać do nas, gdy coś nie działa albo masz pomysł, co ulepsz
 
 ### Dane konta
 
-W Więcej > Dane konta sprawdzisz, na jaki adres e-mail jest założone Twoje konto, jak się logujesz (e-mailem, przez Google albo Apple) i czy Twój e-mail jest potwierdzony. Jeśli logujesz się przez Apple, adres e-mail może być ukryty.
+W `Więcej > Dane konta` sprawdzisz, na jaki adres e-mail jest założone Twoje konto, jak się logujesz (e-mailem, przez Google albo Apple) i czy Twój e-mail jest potwierdzony. Jeśli logujesz się przez Apple, adres e-mail może być ukryty.
 
 Jeśli zakładałeś konto e-mailem, możesz tu też zmienić adres (link potwierdzający przyjdzie na nowy) albo zresetować hasło. Przy logowaniu przez Google lub Apple adres i hasło zmieniasz na swoim koncie Google albo Apple.
 
 ### Urządzenia
 
-W Dane konta > Urządzenia zobaczysz telefony i tablety, na których jesteś zalogowany, i kiedy ostatnio były używane. Jeśli np. zgubisz telefon, możesz go stąd wylogować.
+W `Dane konta > Urządzenia` zobaczysz telefony i tablety, na których jesteś zalogowany, i kiedy ostatnio były używane. Jeśli np. zgubisz telefon, możesz go stąd wylogować.
 
 Z jednego konta możesz korzystać na kilku urządzeniach, np. na telefonie i tablecie, a lekcje i postępy będą na nich takie same. Liczba urządzeń jest ograniczona (szczegóły w regulaminie). Gdy zalogujesz się na kolejnym, aplikacja wyloguje to, którego najdłużej nie używałeś, i pokaże na nim komunikat. Żeby znów z niego korzystać, wystarczy się zalogować.
 
@@ -395,7 +395,7 @@ Więcej przeczytasz w polityce prywatności.
 
 ## 14. Pomoc i kontakt
 
-W **Więcej > Wyślij opinię** możesz:
+W `Więcej > Wyślij opinię` możesz:
 
 1. wybrać kategorię: **Błąd**, **Usprawnienie**, **Nowa funkcja** albo **Inne**,
 2. wpisać tytuł i opis,

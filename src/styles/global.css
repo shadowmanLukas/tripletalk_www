@@ -1155,6 +1155,38 @@ h3 {
   font-weight: 800;
 }
 
+.legal-prose code {
+  border-radius: 5px;
+  padding: 1px 5px;
+  background: #f1f5f8;
+  color: #102033;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+.ui-path {
+  display: inline;
+  border: 1px solid #cfe8e3;
+  border-radius: 6px;
+  padding: 1px 7px;
+  background: #eef8f6;
+  color: #04695f;
+  font-size: 0.94em;
+  font-weight: 700;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.ui-path-step {
+  white-space: nowrap;
+}
+
+.ui-path-sep {
+  margin: 0 5px;
+  color: #08a795;
+  font-weight: 800;
+}
+
 .doc-faq {
   margin-top: 10px;
   border: 1px solid #dfe9f0;

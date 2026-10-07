@@ -8,6 +8,7 @@ import {
   prefixAnchors,
   shiftHeadings,
   splitDocument,
+  uiPaths,
   wrapTables,
 } from "../src/lib/markdown-document";
 
@@ -69,6 +70,17 @@ describe("markdown document transforms", () => {
       { id: "12-zmiany", number: "12", title: "Zmiany" },
     ]);
     expect(result.sections[0].html).toBe("<ol><li>a</li></ol>");
+  });
+
+  it("shows inline code navigation paths as highlighted paths", () => {
+    expect(
+      uiPaths("<p>W <code>Więcej &gt; Dane konta</code> sprawdzisz</p>"),
+    ).toBe(
+      '<p>W <span class="ui-path"><span class="ui-path-step">Więcej</span><span class="ui-path-sep" aria-hidden="true">›</span><span class="sr-only"> &gt; </span><span class="ui-path-step">Dane konta</span></span> sprawdzisz</p>',
+    );
+    expect(uiPaths("<p><code>XXXX-XXXX</code></p>")).toBe(
+      "<p><code>XXXX-XXXX</code></p>",
+    );
   });
 
   it("turns bold-question paragraphs into details elements", () => {
