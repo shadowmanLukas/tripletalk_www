@@ -138,7 +138,7 @@ _Version of October 7, 2026. Effective from October 1, 2026._
 
 - A student reset deletes their first name, class memberships and progress. The student code and the student's blocks remain.
 - A teacher reset deletes their classes, lessons, flashcards, audio and shares. Students lose access to those lessons. Daily invitation counters remain, so a reset cannot be used to bypass limits.
-- We may temporarily disable School (e.g. for technical or security reasons). We will announce a permanent shutdown of School in the App at least 30 days in advance.
+- We may temporarily disable School (e.g. for technical or security reasons).
 
 ## 10. Rules of use
 

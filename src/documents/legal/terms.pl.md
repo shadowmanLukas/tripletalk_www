@@ -138,7 +138,7 @@ _Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
 
 - Reset roli ucznia usuwa jego imię, członkostwa w klasach i postęp. Kod ucznia i założone przez niego blokady zostają.
 - Reset roli nauczyciela usuwa jego klasy, lekcje, fiszki, nagrania i udostępnienia. Uczniowie tracą dostęp do tych lekcji. Dzienne liczniki zaproszeń zostają, aby reset nie służył do obchodzenia limitów.
-- Możemy czasowo wyłączyć Szkołę (np. z powodów technicznych lub bezpieczeństwa). Zamknięcie Szkoły na stałe ogłosimy w Aplikacji co najmniej 30 dni wcześniej.
+- Możemy czasowo wyłączyć Szkołę (np. z powodów technicznych lub bezpieczeństwa).
 
 ## 10. Zasady korzystania
 
