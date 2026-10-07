@@ -348,7 +348,7 @@ Your profile is at the top of the screen. From here you can open Account data (s
 
 Good to know:
 
-- Adding a learning language (Premium) doesn't mean rebuilding your lessons. TripleTalk prepares the translations and recordings in the new language across all your lessons on its own. Meanwhile, lessons may show the "Preparing" label.
+- Adding a second learning language doesn't mean rebuilding your lessons. TripleTalk prepares the translations and recordings in the new language across all your lessons on its own. Meanwhile, lessons may show the "Preparing" label.
 - Changing the learning language on a free account resets your progress in all lessons, including archived ones, because you start learning the flashcards in a new language. The app always asks you to confirm first.
 
 ### School

@@ -348,7 +348,7 @@ Na górze ekranu widzisz swój profil. Stąd przejdziesz do Danych konta (patrz 
 
 Dobrze wiedzieć:
 
-- Dodanie języka nauki (Premium) nie wymaga tworzenia lekcji od nowa. TripleTalk sam przygotuje tłumaczenia i nagrania w nowym języku we wszystkich Twoich lekcjach. Przez ten czas lekcje mogą mieć etykietę „W przygotowaniu”.
+- Dodanie drugiego języka nauki nie wymaga tworzenia lekcji od nowa. TripleTalk sam przygotuje tłumaczenia i nagrania w nowym języku we wszystkich Twoich lekcjach. Przez ten czas lekcje mogą mieć etykietę „W przygotowaniu”.
 - Zmiana języka nauki na koncie darmowym resetuje postęp we wszystkich lekcjach, także zarchiwizowanych, bo fiszki zaczynasz poznawać w nowym języku. Aplikacja zawsze zapyta o potwierdzenie.
 
 ### Szkoła
