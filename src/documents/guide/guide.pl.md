@@ -70,13 +70,13 @@ Długość okresu próbnego i liczbę darmowych fiszek podaje regulamin. Prezent
 
 Panel to ekran startowy aplikacji. Znajdziesz na nim:
 
-- **Przycisk „Kontynuuj naukę”**, który zabiera Cię prosto do lekcji z fiszkami czekającymi na powtórkę. Gdy wszystko jest powtórzone, aplikacja podpowie, żeby wybrać kolejną lekcję.
-- **Twoje postępy:**
+- Przycisk „Kontynuuj naukę”, który zabiera Cię prosto do lekcji z fiszkami czekającymi na powtórkę. Gdy wszystko jest powtórzone, aplikacja podpowie, żeby wybrać kolejną lekcję.
+- Twoje postępy:
   - lekcje w trakcie nauki,
   - lekcje ukończone,
   - fiszki powtórzone w tym tygodniu,
   - wszystkie potwierdzone fiszki, czyli te, które już znasz.
-- **Wykres „Postęp nauki”** z ostatnich 7 dni.
+- Wykres „Postęp nauki” z ostatnich 7 dni.
 
 Do statystyk liczą się zarówno Twoje własne lekcje, jak i lekcje udostępnione przez nauczyciela w Szkole.
 
@@ -88,32 +88,32 @@ Lekcja to zestaw fiszek na jeden temat, np. „Podróże” albo „Business Eng
 
 ### Tworzenie lekcji
 
-Na ekranie **Lekcje** wybierz **„Dodaj lekcję”** i wpisz nazwę. TripleTalk dobierze do niej pasującą ikonę.
+Na ekranie Lekcje wybierz „Dodaj lekcję” i wpisz nazwę. TripleTalk dobierze do niej pasującą ikonę.
 
 ### Kafelek lekcji
 
 Kafelek pokazuje liczbę fiszek, ile z nich czeka na powtórkę i kiedy wypada następna powtórka. Oznaczenia, które możesz zobaczyć:
 
-- **Nierozpoczęta**: nie zacząłeś jeszcze nauki tej lekcji.
-- **Opanowana**: znasz wszystkie fiszki i żadna nie wymaga teraz powtórki.
-- **W przygotowaniu**: TripleTalk AI kończy przygotowywać część fiszek albo nagrań. Nauka i odsłuch tej lekcji będą dostępne, gdy wszystkie fiszki będą gotowe. Zwykle trwa to od kilku sekund do kilku minut.
-- **Aktualizacja**: aplikacja pobiera nagrania do lekcji. Lekcję otworzysz za chwilę.
+- Nierozpoczęta: nie zacząłeś jeszcze nauki tej lekcji.
+- Opanowana: znasz wszystkie fiszki i żadna nie wymaga teraz powtórki.
+- W przygotowaniu: TripleTalk AI kończy przygotowywać część fiszek albo nagrań. Nauka i odsłuch tej lekcji będą dostępne, gdy wszystkie fiszki będą gotowe. Zwykle trwa to od kilku sekund do kilku minut.
+- Aktualizacja: aplikacja pobiera nagrania do lekcji. Lekcję otworzysz za chwilę.
 
 ### Porządkowanie lekcji
 
-- **Sortowanie:** według daty dodania, nazwy, poziomu nauki, ostatniej nauki albo daty kolejnej powtórki, rosnąco lub malejąco.
-- **Archiwum:** przesuń kafelek w prawo, aby przenieść lekcję do archiwum. Zarchiwizowane lekcje znajdziesz po przełączeniu filtra na **„Archiwum”** i możesz je stamtąd przywrócić.
-- **Usuwanie:** przesuń kafelek w lewo, aby usunąć lekcję.
-- **Zmiana nazwy** i **reset postępu** są dostępne z poziomu lekcji.
+- Sortowanie: według daty dodania, nazwy, poziomu nauki, ostatniej nauki albo daty kolejnej powtórki, rosnąco lub malejąco.
+- Archiwum: przesuń kafelek w prawo, aby przenieść lekcję do archiwum. Zarchiwizowane lekcje znajdziesz po przełączeniu filtra na „Archiwum” i możesz je stamtąd przywrócić.
+- Usuwanie: przesuń kafelek w lewo, aby usunąć lekcję.
+- Zmiana nazwy i reset postępu są dostępne z poziomu lekcji.
 
 ### Ekran lekcji
 
 Po otwarciu lekcji masz pod ręką szybkie akcje:
 
-- **Audio**: odsłuch lekcji,
-- **Szukaj**: znajdź fiszkę w lekcji,
-- **Sortuj**: uporządkuj fiszki,
-- **Widok**: przełącz między widokiem listy a widokiem kompaktowym.
+- Audio: odsłuch lekcji,
+- Szukaj: znajdź fiszkę w lekcji,
+- Sortuj: uporządkuj fiszki,
+- Widok: przełącz między widokiem listy a widokiem kompaktowym.
 
 ### Limity lekcji
 

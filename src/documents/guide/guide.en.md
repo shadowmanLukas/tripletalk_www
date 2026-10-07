@@ -70,13 +70,13 @@ The length of the trial and the number of free flashcards are set out in the Ter
 
 The Dashboard is the app's home screen. Here you'll find:
 
-- **The "Continue learning" button**, which takes you straight to a lesson with flashcards due for review. When everything is reviewed, the app suggests picking another lesson.
-- **Your progress:**
+- The "Continue learning" button, which takes you straight to a lesson with flashcards due for review. When everything is reviewed, the app suggests picking another lesson.
+- Your progress:
   - lessons in progress,
   - completed lessons,
   - flashcards reviewed this week,
   - all confirmed flashcards, meaning the ones you already know.
-- **The "Learning growth" chart** for the last 7 days.
+- The "Learning growth" chart for the last 7 days.
 
 Both your own lessons and lessons shared by a teacher in School count towards these stats.
 
@@ -88,32 +88,32 @@ A lesson is a set of flashcards on one topic, such as "Travel" or "Business Engl
 
 ### Creating a lesson
 
-On the **Lessons** screen, tap **"Add lesson"** and enter a name. TripleTalk picks a matching icon for it.
+On the Lessons screen, tap "Add lesson" and enter a name. TripleTalk picks a matching icon for it.
 
 ### The lesson tile
 
 The tile shows the number of flashcards, how many are due for review and when the next review is. Labels you may see:
 
-- **Not started**: you haven't started learning this lesson yet.
-- **Mastered**: you know every flashcard and none needs a review right now.
-- **Preparing**: TripleTalk AI is finishing some flashcards or recordings. Learning and listening become available once all flashcards are ready. This usually takes from a few seconds to a few minutes.
-- **Updating**: the app is downloading the lesson's recordings. You'll be able to open it in a moment.
+- Not started: you haven't started learning this lesson yet.
+- Mastered: you know every flashcard and none needs a review right now.
+- Preparing: TripleTalk AI is finishing some flashcards or recordings. Learning and listening become available once all flashcards are ready. This usually takes from a few seconds to a few minutes.
+- Updating: the app is downloading the lesson's recordings. You'll be able to open it in a moment.
 
 ### Organising lessons
 
-- **Sorting:** by date added, name, learning level, last learning or next review date, ascending or descending.
-- **Archive:** swipe a tile to the right to move the lesson to the archive. Switch the filter to **"Archived"** to see archived lessons and restore them from there.
-- **Deleting:** swipe a tile to the left to delete the lesson.
-- **Renaming** and **resetting progress** are available from inside the lesson.
+- Sorting: by date added, name, learning level, last learning or next review date, ascending or descending.
+- Archive: swipe a tile to the right to move the lesson to the archive. Switch the filter to "Archived" to see archived lessons and restore them from there.
+- Deleting: swipe a tile to the left to delete the lesson.
+- Renaming and resetting progress are available from inside the lesson.
 
 ### The lesson screen
 
 When you open a lesson, quick actions are at hand:
 
-- **Audio**: listen to the lesson,
-- **Search**: find a flashcard in the lesson,
-- **Sort**: reorder the flashcards,
-- **View**: switch between list view and compact view.
+- Audio: listen to the lesson,
+- Search: find a flashcard in the lesson,
+- Sort: reorder the flashcards,
+- View: switch between list view and compact view.
 
 ### Lesson limits
 
