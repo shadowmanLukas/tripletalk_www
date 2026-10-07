@@ -297,7 +297,7 @@ Do wyboru są trzy plany: miesięczny, kwartalny i roczny. Przy planach dłuższ
 
 Subskrypcja odnawia się automatycznie. Anulujesz ją w ustawieniach sklepu (App Store albo Google Play), a na ekranie Premium znajdziesz skrót „Zarządzaj subskrypcją”. Po anulowaniu Premium działa do końca opłaconego okresu. Gdy Premium wygaśnie, Twoje lekcje nie znikają i wszystkie funkcje Premium wrócą po odnowieniu subskrypcji.
 
-Jedna subskrypcja = jedno konto TripleTalk. Jeśli kupiłeś Premium na innym koncie TripleTalk, ale tym samym koncie w sklepie, aplikacja to wyjaśni. Możesz zalogować się na tamto konto albo wybrać „Przywróć zakupy”, aby przenieść subskrypcję na bieżące konto (tamto konto straci wtedy Premium).
+Premium działa zawsze tylko na jednym koncie TripleTalk. Może się zdarzyć, że masz dwa konta w TripleTalk, a Premium kupiłeś na jednym z nich, używając tego samego Apple ID albo konta Google. Jeśli zalogujesz się na to drugie konto, aplikacja Ci o tym powie. Możesz wtedy wrócić na konto z Premium albo wybrać „Przywróć zakupy” i przenieść Premium na konto, na którym jesteś teraz. Pierwsze konto straci wtedy Premium.
 
 ### Pakiety fiszek TripleTalk AI (jednorazowe)
 
