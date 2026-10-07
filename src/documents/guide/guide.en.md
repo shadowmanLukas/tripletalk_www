@@ -69,7 +69,7 @@ Every new account receives, once:
 - **A free Premium trial.** Full access to Premium features with no commitment. The free period does not renew automatically and does not turn into a paid subscription.
 - **Free TripleTalk AI flashcards.** You can start creating flashcards from photos and with AI help right away.
 
-The length of the trial and the number of free flashcards are set out in the Terms of Service. The welcome gift is available once per person and device. When it ends, you keep using the basic features and any unused AI flashcards.
+The length of the trial and the number of free flashcards are set out in the Terms of Service. The welcome gift is available once per person and device. When it ends, you keep using the basic features and any unused TripleTalk AI flashcards.
 
 ---
 
@@ -140,7 +140,7 @@ Open the camera and take a clear photo of a textbook page, notes, a menu or any 
 2. pick out the words,
 3. show you a list of candidates to approve.
 
-Tick the words you want to add (or **"Select all"**) and tap **"Create flashcards"**. The app shows right away how many words were found, how many are new, how many you selected and how many AI flashcards you have available. Words that are already in the lesson are marked as duplicates, so you won't add them twice.
+Tick the words you want to add (or **"Select all"**) and tap **"Create flashcards"**. The app shows right away how many words were found, how many are new, how many you selected and how many TripleTalk AI flashcards you have available. Words that are already in the lesson are marked as duplicates, so you won't add them twice.
 
 You don't have to wait on the analysis screen. Go back to the lesson, and the photo will be waiting in **"Pending flashcards"** with the status "Processing" or "Ready to review".
 
@@ -315,7 +315,7 @@ The subscription renews automatically. You cancel it in your store settings (App
 
 ### TripleTalk AI flashcard packs (one-time)
 
-TripleTalk AI flashcards are your balance for creating flashcards with AI: **1 AI flashcard = 1 created flashcard**, from a photo or by hand.
+TripleTalk AI flashcards are your balance for creating flashcards with AI: **1 TripleTalk AI flashcard = 1 created flashcard**, from a photo or by hand.
 
 There are three packs of different sizes: **S**, **L** and **XL**. The number of flashcards in each pack is shown on the purchase screen and in the Terms of Service.
 
@@ -340,7 +340,7 @@ Your profile is at the top of the screen. From here you can open **Account data*
 | Setting | What it does |
 | --- | --- |
 | **Premium** | Shows your subscription status and opens the plans. |
-| **TripleTalk AI flashcards** | Shows your AI flashcard balance and lets you buy a pack. |
+| **TripleTalk AI flashcards** | Shows your TripleTalk AI flashcard balance and lets you buy a pack. |
 
 ### App
 
@@ -443,7 +443,7 @@ Nothing disappears. Your lessons, flashcards and progress stay in your account, 
 **Why does a lesson say "Preparing"?**
 TripleTalk AI is finishing translations or recordings. This usually takes from a few seconds to a few minutes. Learning becomes available once all flashcards are ready.
 
-**Do I lose an AI flashcard if something goes wrong?**
+**Do I lose a TripleTalk AI flashcard if something goes wrong?**
 No. If a flashcard can't be prepared, it goes back to your balance.
 
 **Do students pay for School?**

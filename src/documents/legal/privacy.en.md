@@ -26,7 +26,7 @@ Legal bases under Art. 6(1) GDPR: **(b)** performance of the contract (Terms), *
 | Lessons, flashcards, review history, study statistics | Learning, reviews, sync across devices | (b) |
 | Photos sent to AI and their analysis results | Recognising text and creating flashcards | (b) |
 | School data (section 4) | Running School mode | (b) |
-| Purchase data: Premium status, store transaction history, subscription moves between TripleTalk accounts (from which account to which, and when), AI credit balance and history | Granting and verifying entitlements, handling complaints, accounting | (b), (c) |
+| Purchase data: Premium status, store transaction history, subscription moves between TripleTalk accounts (from which account to which, and when), TripleTalk AI flashcard balance and history | Granting and verifying entitlements, handling complaints, accounting | (b), (c) |
 | Pseudonymous welcome bonus markers (section 5) | Preventing the bonus from being claimed more than once | (f) |
 | Daily AI and pronunciation usage counters (failed AI flashcard attempts, characters turned into audio, photo analyses) | Enforcing limits that protect against abuse and excessive costs | (f) |
 | App and device integrity check result (App Check) | Protection against abuse and attacks | (f) |

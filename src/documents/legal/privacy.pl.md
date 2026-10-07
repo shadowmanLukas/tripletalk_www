@@ -26,7 +26,7 @@ Podstawy prawne z art. 6 ust. 1 RODO: **(b)** wykonanie umowy (Regulaminu), **(a
 | Lekcje, fiszki, historia powtórek, statystyki nauki | Nauka, powtórki, synchronizacja między urządzeniami | (b) |
 | Zdjęcia przesłane do AI i wyniki ich analizy | Rozpoznanie tekstu i utworzenie fiszek | (b) |
 | Dane Szkoły (pkt 4) | Działanie trybu Szkoła | (b) |
-| Dane zakupów: status Premium, historia transakcji ze sklepu, przeniesienia subskrypcji między kontami TripleTalk (z którego na które konto i kiedy), saldo i historia kredytów AI | Przyznanie i weryfikacja uprawnień, obsługa reklamacji, rozliczenia | (b), (c) |
+| Dane zakupów: status Premium, historia transakcji ze sklepu, przeniesienia subskrypcji między kontami TripleTalk (z którego na które konto i kiedy), saldo i historia fiszek TripleTalk AI | Przyznanie i weryfikacja uprawnień, obsługa reklamacji, rozliczenia | (b), (c) |
 | Pseudonimowe znaczniki bonusu powitalnego (pkt 5) | Zapobieganie wielokrotnemu pobieraniu bonusu | (f) |
 | Dzienne liczniki użycia AI i nagrań wymowy (liczba nieudanych prób utworzenia fiszki, liczba znaków zamienionych na nagrania, liczba analiz zdjęć) | Egzekwowanie limitów chroniących przed nadużyciami i nadmiernymi kosztami | (f) |
 | Wynik weryfikacji integralności aplikacji i urządzenia (App Check) | Ochrona przed nadużyciami i atakami | (f) |

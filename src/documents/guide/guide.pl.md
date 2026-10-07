@@ -69,7 +69,7 @@ Każde nowe konto otrzymuje jednorazowo:
 - **Darmowy okres Premium.** Pełny dostęp do funkcji Premium, bez zobowiązań. Darmowy okres nie odnawia się automatycznie i nie zamienia się w płatną subskrypcję.
 - **Darmowe fiszki TripleTalk AI.** Możesz od razu tworzyć fiszki ze zdjęć i z pomocą AI.
 
-Długość okresu próbnego i liczbę darmowych fiszek podaje regulamin. Prezent powitalny przysługuje raz na osobę i urządzenie. Po jego wygaśnięciu nadal korzystasz z podstawowych funkcji i z niewykorzystanych fiszek AI.
+Długość okresu próbnego i liczbę darmowych fiszek podaje regulamin. Prezent powitalny przysługuje raz na osobę i urządzenie. Po jego wygaśnięciu nadal korzystasz z podstawowych funkcji i z niewykorzystanych fiszek TripleTalk AI.
 
 ---
 
@@ -140,7 +140,7 @@ Otwórz aparat i zrób czytelne zdjęcie strony z podręcznika, notatek, menu al
 2. wybierze z niego słówka,
 3. pokaże Ci listę kandydatów do zatwierdzenia.
 
-Zaznacz słówka, które chcesz dodać (albo **„Zaznacz wszystko”**), i wybierz **„Utwórz fiszki”**. Aplikacja od razu pokazuje, ile słówek znaleziono, ile jest nowych, ile wybrałeś i ile fiszek AI masz do dyspozycji. Słówka, które już są w lekcji, są oznaczone jako duplikaty, więc nie dodasz ich dwa razy.
+Zaznacz słówka, które chcesz dodać (albo **„Zaznacz wszystko”**), i wybierz **„Utwórz fiszki”**. Aplikacja od razu pokazuje, ile słówek znaleziono, ile jest nowych, ile wybrałeś i ile fiszek TripleTalk AI masz do dyspozycji. Słówka, które już są w lekcji, są oznaczone jako duplikaty, więc nie dodasz ich dwa razy.
 
 Nie musisz czekać na ekranie analizy. Wróć do lekcji, a gotowe zdjęcie znajdziesz w sekcji **„Fiszki oczekujące”** ze statusem „W trakcie analizy” albo „Do akceptacji”.
 
@@ -315,7 +315,7 @@ Subskrypcja odnawia się automatycznie. Anulujesz ją w ustawieniach sklepu (App
 
 ### Pakiety fiszek TripleTalk AI (jednorazowe)
 
-Fiszki TripleTalk AI to Twoje saldo na tworzenie fiszek z pomocą AI: **1 fiszka AI = 1 utworzona fiszka**, ze zdjęcia albo ręcznie.
+Fiszki TripleTalk AI to Twoje saldo na tworzenie fiszek z pomocą AI: **1 fiszka TripleTalk AI = 1 utworzona fiszka**, ze zdjęcia albo ręcznie.
 
 Do wyboru są trzy pakiety różnej wielkości: **S**, **L** i **XL**. Liczbę fiszek w każdym pakiecie zobaczysz na ekranie zakupu, a także w regulaminie.
 
@@ -340,7 +340,7 @@ Na górze ekranu widzisz swój profil. Stąd przejdziesz do **Danych konta** (pa
 | Ustawienie | Co robi |
 | --- | --- |
 | **Premium** | Pokazuje stan Twojej subskrypcji i otwiera wybór planów. |
-| **Fiszki TripleTalk AI** | Pokazuje saldo fiszek AI i pozwala kupić pakiet. |
+| **Fiszki TripleTalk AI** | Pokazuje saldo fiszek TripleTalk AI i pozwala kupić pakiet. |
 
 ### Aplikacja
 
@@ -443,7 +443,7 @@ Nic nie zniknie. Lekcje, fiszki i postępy zostają na koncie, a funkcje Premium
 **Dlaczego lekcja ma etykietę „W przygotowaniu”?**
 TripleTalk AI kończy przygotowywać tłumaczenia albo nagrania. Zwykle trwa to od kilku sekund do kilku minut. Nauka będzie dostępna, gdy wszystkie fiszki będą gotowe.
 
-**Czy stracę fiszkę AI, jeśli coś pójdzie nie tak?**
+**Czy stracę fiszkę TripleTalk AI, jeśli coś pójdzie nie tak?**
 Nie. Jeśli fiszki nie uda się przygotować, wraca ona na Twoje saldo.
 
 **Czy uczniowie płacą za Szkołę?**
