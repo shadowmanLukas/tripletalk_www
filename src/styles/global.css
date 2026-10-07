@@ -1108,8 +1108,11 @@ h3 {
   transform: translateY(-50%);
 }
 
-.legal-intro p {
+.legal-document-header .legal-intro p {
   margin: 8px 0 0;
+  color: #4b5c70;
+  font-size: 1.04rem;
+  font-weight: 400;
 }
 
 .legal-intro em {
@@ -1175,7 +1178,7 @@ h3 {
   padding: 12px 14px;
 }
 
-.support-guide {
+.support-guide.legal-page {
   min-height: 0;
   padding-top: 0;
   background: transparent;
@@ -1257,11 +1260,11 @@ h3 {
 
 .support-hero {
   width: 100%;
-  padding: 48px 0;
+  padding: 48px 0 24px;
 }
 
 .support-card {
-  max-width: 720px;
+  max-width: 920px;
   margin-inline: auto;
   border: 1px solid #dfe9f0;
   border-radius: 12px;
@@ -1351,7 +1354,7 @@ h3 {
   }
 
   .support-card {
-    padding: 48px;
+    padding: 30px;
   }
 }
 
@@ -1496,7 +1499,11 @@ h3 {
   }
 
   .support-hero {
-    padding: 56px 0;
+    padding: 56px 0 28px;
+  }
+
+  .support-card {
+    padding: 34px 38px;
   }
 }
 
