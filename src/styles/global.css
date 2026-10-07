@@ -1281,9 +1281,7 @@ h3 {
 .support-contact {
   display: grid;
   gap: 8px;
-  margin-top: 34px;
-  border-top: 1px solid #e5edf4;
-  padding-top: 26px;
+  margin-top: 28px;
 }
 
 .support-contact span {
@@ -1301,13 +1299,6 @@ h3 {
   line-height: 1.15;
   overflow-wrap: anywhere;
   user-select: all;
-}
-
-.support-response {
-  margin: 6px 0 0;
-  color: #66778a;
-  font-size: 0.94rem;
-  line-height: 1.55;
 }
 
 @media (min-width: 620px) {
