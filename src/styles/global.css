@@ -1270,10 +1270,6 @@ h3 {
   box-shadow: 0 18px 48px rgba(7, 22, 50, 0.06);
 }
 
-.support-card h1 {
-  font-size: clamp(2.35rem, 11vw, 4.1rem);
-}
-
 .support-intro {
   max-width: 650px;
   margin: 18px 0 0;
