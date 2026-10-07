@@ -66,7 +66,7 @@ _Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
    | Lekcje udostępnione jednej klasie | do 100 |
 
    Limity mogą się zmieniać. Aktualne wartości są widoczne w Aplikacji. Zmniejszenie limitu nie usuwa treści, które już utworzyłeś.
-5. Stosujemy też limity techniczne chroniące przed nadużyciami i nadmiernymi kosztami, np. maksymalną długość tekstu przekazywanego do AI, dzienną liczbę znaków zamienianych na nagrania wymowy oraz dzienną liczbę nieudanych prób utworzenia fiszki przez AI. Przy zwykłym korzystaniu nie są odczuwalne. Po przekroczeniu limitu dana funkcja może być niedostępna do następnego dnia. Kredyt AI za fiszkę, której nie utworzono z powodu limitu, nie jest pobierany.
+5. Stosujemy też limity techniczne chroniące przed nadużyciami, np. maksymalną długość tekstu przekazywanego do AI, dzienną liczbę znaków zamienianych na nagrania wymowy oraz dzienną liczbę nieudanych prób utworzenia fiszki. Przy zwykłym korzystaniu z aplikacji nie są odczuwalne dla użytkownika. Po przekroczeniu limitu dana funkcja może być niedostępna do następnego dnia. Kredyt AI za fiszkę, której nie utworzono z powodu limitu, nie jest pobierany.
 
 ## 6. TripleTalk AI
 

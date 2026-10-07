@@ -66,7 +66,7 @@ _Version of October 7, 2026. Effective from October 1, 2026._
    | Lessons shared with one class | up to 100 |
 
    Limits may change. Current values are shown in the App. Lowering a limit does not delete content you have already created.
-5. We also apply technical limits that protect against abuse and excessive costs, e.g. a maximum length of text sent to AI, a daily number of characters turned into pronunciation audio and a daily number of failed AI flashcard attempts. They are not noticeable in normal use. When a limit is reached, the feature may be unavailable until the next day. No AI credit is charged for a flashcard that was not created because of a limit.
+5. We also apply technical limits that protect against abuse, e.g. a maximum length of text sent to AI, a daily number of characters turned into pronunciation audio and a daily number of failed flashcard attempts. Users do not notice them in normal use of the app. When a limit is reached, the feature may be unavailable until the next day. No AI credit is charged for a flashcard that was not created because of a limit.
 
 ## 6. TripleTalk AI
 
