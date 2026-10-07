@@ -119,7 +119,7 @@ Po otwarciu lekcji masz pod ręką szybkie akcje:
 
 ## 5. Dodawanie fiszek
 
-W lekcji wybierz **„Dodaj fiszki”**. Masz trzy możliwości.
+W lekcji wybierz „Dodaj fiszki”. Masz trzy możliwości.
 
 ### Zrób zdjęcie tekstu
 
@@ -129,9 +129,9 @@ Otwórz aparat i zrób czytelne zdjęcie strony z podręcznika, notatek, menu al
 2. wybierze z niego słówka,
 3. pokaże Ci listę kandydatów do zatwierdzenia.
 
-Zaznacz słówka, które chcesz dodać (albo **„Zaznacz wszystko”**), i wybierz **„Utwórz fiszki”**. Aplikacja od razu pokazuje, ile słówek znaleziono, ile jest nowych, ile wybrałeś i ile fiszek TripleTalk AI masz do dyspozycji. Słówka, które już są w lekcji, są oznaczone jako duplikaty, więc nie dodasz ich dwa razy.
+Zaznacz słówka, które chcesz dodać (albo „Zaznacz wszystko”), i wybierz „Utwórz fiszki”. Aplikacja od razu pokazuje, ile słówek znaleziono, ile jest nowych, ile wybrałeś i ile fiszek TripleTalk AI masz do dyspozycji. Słówka, które już są w lekcji, są oznaczone jako duplikaty, więc nie dodasz ich dwa razy.
 
-Nie musisz czekać na ekranie analizy. Wróć do lekcji, a gotowe zdjęcie znajdziesz w sekcji **„Fiszki oczekujące”** ze statusem „W trakcie analizy” albo „Do akceptacji”.
+Nie musisz czekać na ekranie analizy. Wróć do lekcji, a gotowe zdjęcie znajdziesz w sekcji „Fiszki oczekujące” ze statusem „W trakcie analizy” albo „Do akceptacji”.
 
 ### Dodaj z galerii
 
@@ -141,14 +141,14 @@ Działa tak samo jak zdjęcie z aparatu, ale wybierasz gotowe zdjęcie z telefon
 
 Wybierz język, w którym wpisujesz, i podaj:
 
-- **słowo lub zwrot**,
-- opcjonalnie **przykładowe zdanie**.
+- słowo lub zwrot,
+- opcjonalnie przykładowe zdanie.
 
-Wystarczy jedno słowo w jednym języku. TripleTalk AI uzupełni tłumaczenie, przykład, gramatykę i wymowę. Jeśli w ustawieniach włączysz **„Korekta z TripleTalk AI”**, AI poprawi też ewentualne błędy w tym, co wpiszesz.
+Wystarczy jedno słowo w jednym języku. TripleTalk AI uzupełni tłumaczenie, przykład, gramatykę i wymowę. Jeśli w ustawieniach włączysz „Korekta z TripleTalk AI”, AI poprawi też ewentualne błędy w tym, co wpiszesz.
 
 ### Ile to kosztuje
 
-Każda fiszka utworzona z pomocą AI zużywa **1 fiszkę TripleTalk AI** z Twojego salda, niezależnie od tego, czy dodajesz ją ręcznie, ze zdjęcia, do własnej lekcji czy do lekcji w Szkole. Jeśli przygotowanie fiszki się nie uda, fiszka wraca na Twoje saldo. Saldo sprawdzisz w **Więcej > Fiszki TripleTalk AI**.
+Każda fiszka utworzona z pomocą AI zużywa 1 fiszkę TripleTalk AI z Twojego salda, niezależnie od tego, czy dodajesz ją ręcznie, ze zdjęcia, do własnej lekcji czy do lekcji w Szkole. Jeśli przygotowanie fiszki się nie uda, fiszka wraca na Twoje saldo. Saldo sprawdzisz w Więcej > Fiszki TripleTalk AI.
 
 Analiza zdjęć ma dzienny limit, który przy zwykłym korzystaniu nie powinien być odczuwalny. Jeśli potrzebujesz więcej, napisz do nas przez tripletalk.app.
 

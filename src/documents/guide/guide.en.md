@@ -119,7 +119,7 @@ When you open a lesson, quick actions are at hand:
 
 ## 5. Adding flashcards
 
-In a lesson, tap **"Add flashcards"**. You have three options.
+In a lesson, tap "Add flashcards". You have three options.
 
 ### Take a text photo
 
@@ -129,9 +129,9 @@ Open the camera and take a clear photo of a textbook page, notes, a menu or any 
 2. pick out the words,
 3. show you a list of candidates to approve.
 
-Tick the words you want to add (or **"Select all"**) and tap **"Create flashcards"**. The app shows right away how many words were found, how many are new, how many you selected and how many TripleTalk AI flashcards you have available. Words that are already in the lesson are marked as duplicates, so you won't add them twice.
+Tick the words you want to add (or "Select all") and tap "Create flashcards". The app shows right away how many words were found, how many are new, how many you selected and how many TripleTalk AI flashcards you have available. Words that are already in the lesson are marked as duplicates, so you won't add them twice.
 
-You don't have to wait on the analysis screen. Go back to the lesson, and the photo will be waiting in **"Pending flashcards"** with the status "Processing" or "Ready to review".
+You don't have to wait on the analysis screen. Go back to the lesson, and the photo will be waiting in "Pending flashcards" with the status "Processing" or "Ready to review".
 
 ### Add from gallery
 
@@ -141,14 +141,14 @@ Works the same as a camera photo, but you choose an existing picture from your p
 
 Choose the language you type in and enter:
 
-- **a word or phrase**,
-- optionally, **an example sentence**.
+- a word or phrase,
+- optionally, an example sentence.
 
-One word in one language is enough. TripleTalk AI adds the translation, an example, grammar and pronunciation. If you turn on **"TripleTalk AI correction"** in settings, AI also fixes any mistakes in what you type.
+One word in one language is enough. TripleTalk AI adds the translation, an example, grammar and pronunciation. If you turn on "TripleTalk AI correction" in settings, AI also fixes any mistakes in what you type.
 
 ### What it costs
 
-Every flashcard created with AI uses **1 TripleTalk AI flashcard** from your balance, whether you add it by hand or from a photo, to your own lesson or to a School lesson. If a flashcard can't be prepared, it goes back to your balance. You can check your balance in **More > TripleTalk AI flashcards**.
+Every flashcard created with AI uses 1 TripleTalk AI flashcard from your balance, whether you add it by hand or from a photo, to your own lesson or to a School lesson. If a flashcard can't be prepared, it goes back to your balance. You can check your balance in More > TripleTalk AI flashcards.
 
 Photo analysis has a daily limit that you shouldn't notice in normal use. If you need more, contact us through tripletalk.app.
 
