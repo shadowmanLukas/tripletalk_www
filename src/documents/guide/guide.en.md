@@ -391,13 +391,15 @@ You can read more in the Privacy Policy.
 
 ## 14. Help and contact
 
+If something isn't working, you have an idea for a new feature or you just want to tell us something, write to us right from the app.
+
 In `More > Send Feedback` you can:
 
 - choose a category: Bug, Improvement, Feature Request or Other,
 - enter a title and a description,
 - optionally attach a screenshot from your gallery.
 
-We read every message. You can also reach us through tripletalk.app.
+We read every message.
 
 ---
 

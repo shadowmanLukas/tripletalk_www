@@ -391,13 +391,15 @@ Więcej przeczytasz w polityce prywatności.
 
 ## 14. Pomoc i kontakt
 
+Jeśli coś nie działa, masz pomysł na nową funkcję albo po prostu chcesz nam coś przekazać, napisz do nas prosto z aplikacji.
+
 W `Więcej > Wyślij opinię` możesz:
 
 - wybrać kategorię: Błąd, Usprawnienie, Nowa funkcja albo Inne,
 - wpisać tytuł i opis,
 - opcjonalnie dołączyć zrzut ekranu z galerii.
 
-Czytamy każdą wiadomość. Możesz też skontaktować się z nami przez stronę tripletalk.app.
+Czytamy każdą wiadomość.
 
 ---
 
