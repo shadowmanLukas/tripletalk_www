@@ -185,11 +185,13 @@ You don't need to plan anything. Words you know well will show up less and less 
 
 ### After a session
 
-- "Session complete": your answers are saved and the next reviews are scheduled.
-- "Session paused, come back soon": a few hard flashcards will return in a few hours for another try.
-- "Nothing due right now": there's nothing to review in this lesson at the moment. Come back later or add new flashcards.
+At the end you'll see one of three messages:
 
-If you leave a session halfway, the app asks next time whether you want to continue where you left off.
+- When you see "Session complete", everything is saved and the app plans your next reviews for you.
+- "Session paused, come back soon" means a few tricky words will come back to you in a few hours.
+- "Nothing due right now" means nothing in this lesson is waiting for you at the moment. Come back later or add new flashcards.
+
+If you stop halfway, the app asks next time whether you'd like to pick up where you left off.
 
 ### Learning pace
 

@@ -185,11 +185,13 @@ Nie musisz niczego planować. Słówka, które dobrze znasz, będą pojawiać si
 
 ### Po sesji
 
-- „Sesja zakończona”: odpowiedzi są zapisane, kolejne powtórki zaplanowane.
-- „Sesja wstrzymana, wróć wkrótce”: kilka trudnych fiszek wróci za kilka godzin do kolejnej próby.
-- „Na teraz wszystko powtórzone”: w tej lekcji nie ma teraz nic do powtórki. Wróć później albo dodaj nowe fiszki.
+Na koniec zobaczysz jeden z trzech komunikatów:
 
-Jeśli przerwiesz sesję, aplikacja zapyta przy następnym otwarciu, czy chcesz kontynuować od miejsca, w którym skończyłeś.
+- Gdy pojawi się „Sesja zakończona”, wszystko jest zapisane, a aplikacja sama zaplanuje kolejne powtórki.
+- „Sesja wstrzymana, wróć wkrótce” oznacza, że kilka trudnych słówek wróci do Ciebie za kilka godzin.
+- „Na teraz wszystko powtórzone” oznacza, że w tej lekcji nic na Ciebie teraz nie czeka. Wróć później albo dodaj nowe fiszki.
+
+Jeśli przerwiesz naukę w połowie, przy następnym otwarciu aplikacja zapyta, czy chcesz wrócić do miejsca, w którym skończyłeś.
 
 ### Tempo nauki
 
