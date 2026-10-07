@@ -47,7 +47,7 @@ _Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
    | Języki nauki uczone jednocześnie | 1 | 2 |
    | Własne lekcje | do 10 | do 50 |
    | Analizy zdjęć przez TripleTalk AI | do 10 dziennie | do 30 dziennie |
-   | Słówka wybierane przez AI z jednego zdjęcia | do 100 | do 100 |
+   | Słówka wybierane przez AI z jednego zdjęcia | do 50 | do 100 |
    | Urządzenia zalogowane jednocześnie na jednym koncie | do 2 | do 2 |
 
    Limity Szkoły (rola nauczyciela, wymaga Premium):
