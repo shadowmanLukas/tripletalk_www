@@ -332,7 +332,7 @@ Your profile is at the top of the screen. From here you can open Account data (s
 | --- | --- |
 | App language | The language of menus, buttons and messages |
 | Theme | How the app looks: dark (default), light or system. |
-| Push notifications (Premium) | Push notifications for various app features |
+| Push notifications | Push notifications for various app features |
 
 ### Learning
 
