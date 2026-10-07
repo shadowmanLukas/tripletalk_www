@@ -239,15 +239,15 @@ Przy pierwszym wejściu wybierasz rolę: Uczeń albo Nauczyciel. Jedno konto mo�
 
 ### Uczeń
 
-1. Wybierz rolę Uczeń, podaj imię i potwierdź, że masz co najmniej 16 lat albo zgodę rodzica lub opiekuna.
-2. Otrzymasz swoje ID w formacie `XXXX-XXXX`. Skopiuj je albo udostępnij nauczycielowi.
-3. Nauczyciel wyśle Ci zaproszenie do klasy. Możesz je zaakceptować, odrzucić albo odrzucić i zablokować nauczyciela, jeśli nie chcesz od niego kolejnych zaproszeń.
-4. W sekcji „Moje klasy” zobaczysz lekcje udostępnione przez nauczyciela, razem z datą, do kiedy są dostępne.
-5. Ucz się w prostym trybie „Znam” / „Nie znam” i słuchaj wymowy. Swój postęp w lekcji możesz w każdej chwili zresetować.
+- Na początku wybierasz rolę Uczeń i podajesz swoje imię. Potwierdzasz też, że masz co najmniej 16 lat albo zgodę rodzica lub opiekuna.
+- Dostajesz swoje ID w formacie `XXXX-XXXX`. Skopiuj je albo wyślij nauczycielowi, żeby mógł Cię zaprosić.
+- Nauczyciel wyśle Ci zaproszenie do klasy. Możesz je przyjąć albo odrzucić. Jeśli nie chcesz więcej zaproszeń od tej osoby, możesz ją też zablokować.
+- W „Moich klasach” znajdziesz lekcje od nauczyciela i datę, do kiedy są dostępne.
+- Uczysz się, zaznaczając „Znam” albo „Nie znam”, i możesz odsłuchać wymowę. Jeśli chcesz przerobić lekcję od nowa, możesz zresetować swój postęp.
 
-Każde „Znam” w lekcji ze Szkoły liczy się do Twoich statystyk na Panelu. Klasę możesz w każdej chwili opuścić.
+Każde „Znam” w lekcji ze Szkoły wlicza się do Twoich statystyk na Panelu. Z klasy możesz wypisać się w każdej chwili.
 
-Prywatność ucznia: nauczyciel widzi tylko Twoje imię i to, czy zacząłeś naukę lekcji. Nie widzi, które fiszki znasz. Uczniowie nie widzą siebie nawzajem, a w Szkole nie ma czatu ani komentarzy.
+Nauczyciel widzi tylko Twoje imię i to, czy zacząłeś już naukę lekcji. Nie wie, które fiszki znasz. Uczniowie nie widzą siebie nawzajem, a w Szkole nie ma czatu ani komentarzy.
 
 ### Nauczyciel (wymaga Premium)
 

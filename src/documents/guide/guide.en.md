@@ -239,15 +239,15 @@ The first time you open it, you choose a role: Student or Teacher. An account ca
 
 ### Student
 
-1. Choose the Student role, enter your first name and confirm that you are at least 16 or have a parent's or guardian's consent.
-2. You get your own ID in the format `XXXX-XXXX`. Copy it or share it with your teacher.
-3. The teacher sends you a class invitation. You can accept it, decline it, or decline and block the teacher if you don't want any more invitations from them.
-4. In "My classes" you'll see the lessons your teacher has shared, along with the date they're available until.
-5. Learn in a simple "Know" / "Don't know" mode and listen to the pronunciation. You can reset your progress in a lesson at any time.
+- First you choose the Student role and enter your first name. You also confirm that you are at least 16 or have a parent's or guardian's consent.
+- You get your own ID in the format `XXXX-XXXX`. Copy it or send it to your teacher so they can invite you.
+- Your teacher will send you a class invitation. You can accept or decline it. If you don't want any more invitations from that person, you can also block them.
+- In "My classes" you'll find the lessons from your teacher and the date they're available until.
+- You learn by marking "Know" or "Don't know", and you can listen to the pronunciation. If you want to go through a lesson again from the start, you can reset your progress.
 
-Every "Know" in a School lesson counts towards your Dashboard stats. You can leave a class at any time.
+Every "Know" in a School lesson counts towards your stats on the Dashboard. You can leave a class at any time.
 
-Student privacy: the teacher only sees your first name and whether you have started a lesson. They don't see which flashcards you know. Students can't see each other, and School has no chat or comments.
+Your teacher only sees your first name and whether you've started a lesson. They don't know which flashcards you know. Students can't see each other, and School has no chat or comments.
 
 ### Teacher (requires Premium)
 
