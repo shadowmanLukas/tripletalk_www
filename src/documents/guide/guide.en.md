@@ -391,6 +391,14 @@ In **More > Account data** you can see:
 
 Accounts created with email also have **Change email** (a confirmation link is sent to the new address) and **Change password**. For Google and Apple accounts, you change your email and password with those providers.
 
+### Devices
+
+Under **Account data > Devices** you can see the phones and tablets you're signed in on, with the date each was last active. You can sign out any of them with **"Sign out"**, for example if you lose your phone.
+
+You can use your account on several devices at once, such as a phone and a tablet, and your lessons and progress sync between them. The number of devices signed in at the same time is limited (see the Terms of Service). When you sign in on another one, the app automatically signs out the device that has gone unused the longest and shows a message on it. To use it again, just sign in again.
+
+### Documents
+
 The **Documents** section contains the Terms of Service and Privacy Policy.
 
 ### Signing out and deleting your account
@@ -442,4 +450,7 @@ No. If a flashcard can't be prepared, it goes back to your balance.
 No. The student role is completely free. Only the teacher needs Premium.
 
 **Can I use TripleTalk on more than one device?**
-Yes. Sign in to the same account, and your lessons, progress and settings will be available on every device.
+Yes. Sign in to the same account, and your lessons, progress and settings will be available on every device. The number of devices signed in at the same time is limited, and you'll find the list of signed-in devices under Account data.
+
+**Why did the app sign me out?**
+Usually because your account was signed in on another device, or this device was signed out from Account data on another phone. Sign in again. If you don't know who is using your account, check the device list and change your password.

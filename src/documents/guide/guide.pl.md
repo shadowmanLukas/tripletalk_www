@@ -391,6 +391,14 @@ W **Więcej > Dane konta** sprawdzisz:
 
 Konta zakładane emailem mają też opcje **Zmień email** (link potwierdzający przyjdzie na nowy adres) i **Resetuj hasło**. Dla kont Google i Apple email i hasło zmieniasz u tych dostawców.
 
+### Urządzenia
+
+W **Dane konta > Urządzenia** widzisz telefony i tablety, na których jesteś zalogowany, wraz z datą ostatniej aktywności. Dowolne z nich możesz wylogować przyciskiem **„Wyloguj”**, np. gdy zgubisz telefon.
+
+Konto możesz używać jednocześnie na kilku urządzeniach, np. na telefonie i tablecie, a lekcje i postępy synchronizują się między nimi. Liczba urządzeń zalogowanych jednocześnie jest ograniczona (szczegóły w regulaminie). Gdy zalogujesz się na kolejnym, aplikacja automatycznie wyloguje urządzenie, które najdłużej nie było używane, i wyświetli na nim komunikat. Aby znowu z niego korzystać, wystarczy zalogować się ponownie.
+
+### Dokumenty
+
 W sekcji **Dokumenty** znajdziesz regulamin i politykę prywatności.
 
 ### Wylogowanie i usunięcie konta
@@ -442,4 +450,7 @@ Nie. Jeśli fiszki nie uda się przygotować, wraca ona na Twoje saldo.
 Nie. Rola ucznia jest całkowicie darmowa. Premium jest potrzebne tylko nauczycielowi.
 
 **Czy mogę korzystać z TripleTalk na kilku urządzeniach?**
-Tak. Zaloguj się na to samo konto, a Twoje lekcje, postępy i ustawienia będą dostępne na każdym urządzeniu.
+Tak. Zaloguj się na to samo konto, a Twoje lekcje, postępy i ustawienia będą dostępne na każdym urządzeniu. Liczba urządzeń zalogowanych jednocześnie jest ograniczona, a listę zalogowanych urządzeń znajdziesz w Danych konta.
+
+**Dlaczego aplikacja mnie wylogowała?**
+Najczęściej dlatego, że na Twoim koncie zalogowano się na kolejnym urządzeniu, albo urządzenie zostało wylogowane w Danych konta na innym telefonie. Zaloguj się ponownie. Jeśli nie wiesz, kto korzysta z Twojego konta, sprawdź listę urządzeń i zmień hasło.
