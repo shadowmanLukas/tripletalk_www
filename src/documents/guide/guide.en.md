@@ -377,9 +377,9 @@ You can use one account on several devices, such as a phone and a tablet, and yo
 
 ### Signing out and deleting your account
 
-When you sign out, your data stays in your account and comes back when you sign in again.
+Signing out doesn't delete anything. When you sign in again, everything will be right where you left it.
 
-Deleting your account is final. Your lessons, flashcards, progress and the photos you sent to TripleTalk AI are deleted with it. Keep in mind that your store subscription doesn't cancel itself: do that separately in the App Store or Google Play.
+Once you delete your account, it can't be recovered. You'll lose all your lessons, flashcards and progress, and we'll also delete the photos you sent to TripleTalk AI. If you have Premium, remember to cancel your subscription in the App Store or Google Play. Deleting your account won't do that for you.
 
 ### How we look after your data
 

@@ -377,9 +377,9 @@ Z jednego konta możesz korzystać na kilku urządzeniach, np. na telefonie i ta
 
 ### Wylogowanie i usunięcie konta
 
-Gdy się wylogujesz, Twoje dane zostają na koncie i wrócą, gdy znów się zalogujesz.
+Wylogowanie niczego nie usuwa. Po ponownym zalogowaniu wszystko będzie na swoim miejscu.
 
-Usunięcie konta jest ostateczne. Razem z kontem znikną Twoje lekcje, fiszki, postępy i zdjęcia przesłane do TripleTalk AI. Pamiętaj, że subskrypcja w sklepie nie anuluje się sama: zrób to osobno w App Store albo Google Play.
+Jeśli usuniesz konto, nie da się go już odzyskać. Stracisz wszystkie lekcje, fiszki i postępy, a my usuniemy też zdjęcia, które przesłałeś do TripleTalk AI. Jeśli masz Premium, pamiętaj, żeby anulować subskrypcję w App Store albo Google Play. Usunięcie konta tego nie zrobi.
 
 ### Jak dbamy o Twoje dane
 
