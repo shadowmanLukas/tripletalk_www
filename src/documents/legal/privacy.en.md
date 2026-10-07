@@ -70,7 +70,7 @@ Providing data is voluntary, but the App cannot be used without account data. We
 
 ## 6. TripleTalk AI
 
-1. Photos and text you send to AI features are passed to the AI provider (Google) only as needed to perform the feature: text recognition, translation, examples, language information, pronunciation audio and picking a lesson icon that fits its name (also in School). The icon picked for a given name is stored without any link to an account, so the AI is not asked again for the same name.
+1. Photos and text you send to AI features are passed to the AI provider (Google) only as needed to perform the feature: text recognition, translation, examples, language information, pronunciation audio and picking a lesson icon that fits its name (also in School).
 2. In School, class names, lesson titles and flashcard words and examples are sent to AI before they are saved, to check automatically that they contain no vulgar or offensive content (Terms section 8(6)). Based on the result the content is saved or rejected. You can challenge this by contacting us.
 3. Do not send photos containing personal data (e.g. faces, documents, students' names). If a photo contains such data, it will be processed together with the rest of the photo.
 4. AI content may contain errors. Check it before you study.

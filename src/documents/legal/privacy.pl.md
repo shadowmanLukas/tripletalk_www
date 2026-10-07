@@ -70,7 +70,7 @@ Podanie danych jest dobrowolne, ale bez danych konta nie da się korzystać z Ap
 
 ## 6. TripleTalk AI
 
-1. Zdjęcia i teksty, które przesyłasz do funkcji AI, przekazujemy dostawcy AI (Google) tylko w zakresie potrzebnym do wykonania funkcji: rozpoznania tekstu, tłumaczenia, przykładów, informacji językowych, nagrań wymowy oraz dobrania ikony lekcji do jej nazwy (także w Szkole). Ten sam wybór ikony dla tej samej nazwy zapisujemy bez powiązania z kontem, aby nie pytać AI ponownie.
+1. Zdjęcia i teksty, które przesyłasz do funkcji AI, przekazujemy dostawcy AI (Google) tylko w zakresie potrzebnym do wykonania funkcji: rozpoznania tekstu, tłumaczenia, przykładów, informacji językowych, nagrań wymowy oraz dobrania ikony lekcji do jej nazwy (także w Szkole).
 2. W Szkole nazwy klas, tytuły lekcji oraz słowa i przykłady na fiszkach są przed zapisaniem przekazywane do AI w celu automatycznego sprawdzenia, czy nie zawierają treści wulgarnych lub obraźliwych (regulamin pkt 8 ust. 6). Na podstawie wyniku treść jest zapisywana albo odrzucana. Możesz to zakwestionować, pisząc do nas.
 3. Nie przesyłaj zdjęć z danymi osobowymi (np. twarzami, dokumentami, nazwiskami uczniów). Jeśli zdjęcie je zawiera, zostaną przetworzone razem z resztą zdjęcia.
 4. Treści AI mogą zawierać błędy. Sprawdzaj je przed nauką.
