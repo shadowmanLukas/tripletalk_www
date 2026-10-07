@@ -35,8 +35,6 @@ TripleTalk pomaga uczyć się słówek szybciej i bez przepisywania ich ręcznie
 - Na Panelu widzisz, ile słówek już znasz i które lekcje czekają na powtórkę.
 - Nauczyciel może przygotować lekcje dla swojej klasy, a uczniowie uczą się z nich za darmo.
 
-TripleTalk jest dostępny po angielsku, polsku, niemiecku, hiszpańsku, francusku, włosku i ukraińsku. W tych samych językach możesz się uczyć.
-
 ---
 
 ## 2. Pierwsze kroki

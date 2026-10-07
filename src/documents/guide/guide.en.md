@@ -35,8 +35,6 @@ TripleTalk helps you learn words faster, without copying them out by hand.
 - The Dashboard shows how many words you already know and which lessons are waiting for a review.
 - A teacher can prepare lessons for their class, and students learn from them for free.
 
-TripleTalk is available in English, Polish, German, Spanish, French, Italian and Ukrainian, and you can learn any of these languages.
-
 ---
 
 ## 2. Getting started
