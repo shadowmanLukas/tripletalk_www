@@ -237,7 +237,7 @@ School is a separate tab where a teacher prepares lessons with flashcards and re
 
 The first time you open it, you choose a role: Student or Teacher. An account can have one role. You can only change it by resetting your School settings.
 
-### Student (free)
+### Student
 
 1. Choose the Student role, enter your first name and confirm that you are at least 16 or have a parent's or guardian's consent.
 2. You get your own ID in the format `XXXX-XXXX`. Copy it or share it with your teacher.

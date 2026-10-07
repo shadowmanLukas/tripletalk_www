@@ -237,7 +237,7 @@ Szkoła to osobna zakładka, w której nauczyciel przygotowuje lekcje z fiszkami
 
 Przy pierwszym wejściu wybierasz rolę: Uczeń albo Nauczyciel. Jedno konto może mieć jedną rolę. Zmienisz ją tylko przez zresetowanie ustawień Szkoły.
 
-### Uczeń (za darmo)
+### Uczeń
 
 1. Wybierz rolę Uczeń, podaj imię i potwierdź, że masz co najmniej 16 lat albo zgodę rodzica lub opiekuna.
 2. Otrzymasz swoje ID w formacie `XXXX-XXXX`. Skopiuj je albo udostępnij nauczycielowi.
