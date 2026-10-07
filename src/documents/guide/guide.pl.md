@@ -43,31 +43,24 @@ TripleTalk pomaga uczyć się słówek szybciej i bez przepisywania ich ręcznie
 
 Do korzystania z TripleTalk potrzebne jest konto. Dzięki temu Twoje lekcje, postępy i zakupy są bezpieczne i dostępne po zalogowaniu na innym urządzeniu.
 
-Możesz zalogować się na trzy sposoby:
+Możesz zalogować się adresem e-mail i hasłem, kontem Google albo przez Apple (Sign in with Apple).
 
-- **Email i hasło.** Po założeniu konta otrzymasz email z linkiem potwierdzającym. Hasło musi mieć od 8 do 30 znaków, małą i wielką literę, cyfrę oraz znak specjalny.
-- **Google.**
-- **Apple** (Sign in with Apple).
-
-Jeśli nie pamiętasz hasła, wybierz **„Nie pamiętasz hasła?”**, a wyślemy Ci link do ustawienia nowego.
+Jeśli wybierzesz e-mail, po założeniu konta dostaniesz wiadomość z linkiem potwierdzającym. Hasło musi mieć od 8 do 30 znaków, małą i wielką literę, cyfrę oraz znak specjalny. Jeśli zapomnisz hasła, wybierz „Nie pamiętasz hasła?”, a wyślemy Ci link do ustawienia nowego.
 
 ### Wprowadzenie
 
 Przy pierwszym uruchomieniu aplikacja w kilku krokach pokaże, jak działa, i poprosi Cię o kilka wyborów:
 
-1. **Język fiszek.** To Twój język bazowy, np. polski. W nim zobaczysz podpowiedzi i tłumaczenia.
-2. **Język nauki.** Język, którego chcesz się uczyć, np. angielski. Drugi język nauki możesz dodać później w ustawieniach.
-3. **Tempo nauki.** Intensywne albo zrównoważone (więcej w [sekcji 12](#12-ustawienia)).
-4. **Regulamin i polityka prywatności.** Obie zgody są wymagane, aby zacząć.
+1. Wybierasz język fiszek, czyli swój język bazowy, np. polski. W nim zobaczysz podpowiedzi i tłumaczenia.
+2. Wybierasz język nauki, np. angielski. Drugi język nauki możesz dodać później w ustawieniach.
+3. Wybierasz tempo nauki: intensywne albo zrównoważone (więcej w [sekcji 12](#12-ustawienia)).
+4. Akceptujesz regulamin i politykę prywatności. Obie zgody są wymagane, aby zacząć.
 
-Wszystkie wybory (poza zgodami) możesz w każdej chwili zmienić w ustawieniach.
+Wszystkie wybory poza zgodami możesz w każdej chwili zmienić w ustawieniach.
 
 ### Prezent na start
 
-Każde nowe konto otrzymuje jednorazowo:
-
-- **Darmowy okres Premium.** Pełny dostęp do funkcji Premium, bez zobowiązań. Darmowy okres nie odnawia się automatycznie i nie zamienia się w płatną subskrypcję.
-- **Darmowe fiszki TripleTalk AI.** Możesz od razu tworzyć fiszki ze zdjęć i z pomocą AI.
+Każde nowe konto dostaje jednorazowo darmowy okres Premium z pełnym dostępem do jego funkcji oraz pulę darmowych fiszek TripleTalk AI, dzięki którym od razu możesz tworzyć fiszki ze zdjęć i z pomocą AI. Darmowy okres nie odnawia się automatycznie i nie zamienia się w płatną subskrypcję.
 
 Długość okresu próbnego i liczbę darmowych fiszek podaje regulamin. Prezent powitalny przysługuje raz na osobę i urządzenie. Po jego wygaśnięciu nadal korzystasz z podstawowych funkcji i z niewykorzystanych fiszek TripleTalk AI.
 

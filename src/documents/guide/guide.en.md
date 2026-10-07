@@ -43,31 +43,24 @@ TripleTalk helps you learn words faster, without copying them out by hand.
 
 You need an account to use TripleTalk. This keeps your lessons, progress and purchases safe and available when you sign in on another device.
 
-You can sign in in three ways:
+You can sign in with an email address and password, with your Google account or with Apple (Sign in with Apple).
 
-- **Email and password.** After creating the account you'll receive an email with a confirmation link. The password must be 8 to 30 characters long and include a lowercase letter, an uppercase letter, a digit and a special character.
-- **Google.**
-- **Apple** (Sign in with Apple).
-
-If you forget your password, tap **"Forgot password?"** and we'll send you a link to set a new one.
+If you choose email, you'll receive a message with a confirmation link after creating the account. The password must be 8 to 30 characters long and include a lowercase letter, an uppercase letter, a digit and a special character. If you forget your password, tap "Forgot password?" and we'll send you a link to set a new one.
 
 ### Introduction
 
 The first time you open the app, it shows you how it works in a few steps and asks you to make a few choices:
 
-1. **Flashcard language.** Your base language, for example English. Hints and translations appear in this language.
-2. **Learning language.** The language you want to learn, for example Spanish. You can add a second learning language later in settings.
-3. **Learning pace.** Intensive or balanced (more in [section 12](#12-settings)).
-4. **Terms of Service and Privacy Policy.** Both are required to get started.
+1. You choose your flashcard language, which is your base language, for example English. Hints and translations appear in this language.
+2. You choose the language you want to learn, for example Spanish. You can add a second learning language later in settings.
+3. You choose your learning pace: intensive or balanced (more in [section 12](#12-settings)).
+4. You accept the Terms of Service and Privacy Policy. Both are required to get started.
 
-You can change any of these choices (except the consents) in settings at any time.
+You can change any of these choices except the consents in settings at any time.
 
 ### Welcome gift
 
-Every new account receives, once:
-
-- **A free Premium trial.** Full access to Premium features with no commitment. The free period does not renew automatically and does not turn into a paid subscription.
-- **Free TripleTalk AI flashcards.** You can start creating flashcards from photos and with AI help right away.
+Every new account receives, once, a free Premium trial with full access to Premium features and a set of free TripleTalk AI flashcards, so you can start creating flashcards from photos and with AI help right away. The free period does not renew automatically and does not turn into a paid subscription.
 
 The length of the trial and the number of free flashcards are set out in the Terms of Service. The welcome gift is available once per person and device. When it ends, you keep using the basic features and any unused TripleTalk AI flashcards.
 
