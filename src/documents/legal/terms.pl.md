@@ -102,43 +102,43 @@ _Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
 
 ### 9.1. Jak to działa
 
-1. Szkoła to tryb, w którym nauczyciel tworzy klasy, zaprasza do nich uczniów i udostępnia im lekcje do samodzielnej nauki.
-2. Na jednym koncie możesz mieć tylko jedną rolę: ucznia albo nauczyciela. Rolę zmienisz wyłącznie przez reset ustawień Szkoły. Reset trwale usuwa dane Szkoły związane z tą rolą (szczegóły w pkt 9.4).
-3. Rola ucznia jest bezpłatna. Rola nauczyciela wymaga aktywnego Premium. Dodawanie fiszek do lekcji Szkoły zużywa kredyty AI i może wymagać wcześniejszego zakupu co najmniej jednego pakietu AI (kredyty z bonusu powitalnego mogą nie wystarczać). Aktualne wymagania są widoczne w Aplikacji.
-4. W Szkole nie ma czatu, komentarzy ani wolnego tekstu od uczniów. Uczniowie nie widzą się nawzajem.
+- Szkoła to tryb, w którym nauczyciel tworzy klasy, zaprasza do nich uczniów i udostępnia im lekcje do samodzielnej nauki.
+- Na jednym koncie możesz mieć tylko jedną rolę: ucznia albo nauczyciela. Rolę zmienisz wyłącznie przez reset ustawień Szkoły. Reset trwale usuwa dane Szkoły związane z tą rolą (szczegóły w pkt 9.4).
+- Rola ucznia jest bezpłatna. Rola nauczyciela wymaga aktywnego Premium. Dodawanie fiszek do lekcji Szkoły zużywa kredyty AI i może wymagać wcześniejszego zakupu co najmniej jednego pakietu AI (kredyty z bonusu powitalnego mogą nie wystarczać). Aktualne wymagania są widoczne w Aplikacji.
+- W Szkole nie ma czatu, komentarzy ani wolnego tekstu od uczniów. Uczniowie nie widzą się nawzajem.
 
 ### 9.2. Uczeń
 
-1. Uczeń podaje tylko imię (lub pseudonim). Nie podawaj nazwiska ani innych danych. Wybierając rolę ucznia, potwierdzasz, że masz co najmniej 16 lat albo zgodę rodzica lub opiekuna (pkt 2).
-2. Uczeń otrzymuje stały kod identyfikacyjny (format XXXX-XXXX). Sam decyduje, komu go przekaże. Kod pozwala nauczycielowi wysłać zaproszenie. Kod nie zmienia się przy resecie roli i jest usuwany razem z kontem.
-3. Zaproszenie możesz przyjąć, odrzucić albo odrzucić i zablokować nauczyciela. Zablokowany nauczyciel nie może Cię ponownie zaprosić. Blokadę możesz zdjąć w ustawieniach Szkoły. Niezaakceptowane zaproszenie wygasa po czasie wskazanym w pkt 5 ust. 4.
-4. Po dołączeniu do klasy widzisz lekcje udostępnione przez nauczyciela w okresie ich dostępności. Uczysz się w trybie "Znam / Nie znam" i możesz słuchać nagrań. Postęp to wyłącznie Twoja samoocena, możesz go zresetować.
-5. Możesz w każdej chwili opuścić klasę. Twój postęp w lekcjach tej klasy zostanie wtedy usunięty.
+- Uczeń podaje tylko imię (lub pseudonim). Nie podawaj nazwiska ani innych danych. Wybierając rolę ucznia, potwierdzasz, że masz co najmniej 16 lat albo zgodę rodzica lub opiekuna (pkt 2).
+- Uczeń otrzymuje stały kod identyfikacyjny (format XXXX-XXXX). Sam decyduje, komu go przekaże. Kod pozwala nauczycielowi wysłać zaproszenie. Kod nie zmienia się przy resecie roli i jest usuwany razem z kontem.
+- Zaproszenie możesz przyjąć, odrzucić albo odrzucić i zablokować nauczyciela. Zablokowany nauczyciel nie może Cię ponownie zaprosić. Blokadę możesz zdjąć w ustawieniach Szkoły. Niezaakceptowane zaproszenie wygasa po czasie wskazanym w pkt 5 ust. 4.
+- Po dołączeniu do klasy widzisz lekcje udostępnione przez nauczyciela w okresie ich dostępności. Uczysz się w trybie "Znam / Nie znam" i możesz słuchać nagrań. Postęp to wyłącznie Twoja samoocena, możesz go zresetować.
+- Możesz w każdej chwili opuścić klasę. Twój postęp w lekcjach tej klasy zostanie wtedy usunięty.
 
 ### 9.3. Nauczyciel
 
-1. Nauczyciel podaje nazwę wyświetlaną, którą zobaczą zaproszeni uczniowie. Tworzy klasy, zaprasza uczniów po ich kodzie, tworzy lekcje i udostępnia je klasom na wybrany okres.
-2. Nauczyciel widzi o uczniu tylko: imię, kod, status zaproszenia lub członkostwa oraz zbiorczą liczbę uczniów, którzy zaczęli naukę danej lekcji. Nie widzi, które fiszki zna konkretny uczeń. Szkoła nie służy do oceniania uczniów.
-3. Udostępnienie blokuje lekcję. Po pierwszym udostępnieniu lekcji jakiejkolwiek klasie nie można już zmienić jej nazwy ani dodać, zmienić lub usunąć fiszek. Blokada zostaje także po usunięciu wszystkich udostępnień i znika dopiero, gdy lekcja przejdzie przez archiwum (ust. 5). Zablokowaną lekcję można dalej udostępniać innym klasom i zmieniać okres jej dostępności. Przed pierwszym udostępnieniem Aplikacja o tym ostrzega.
-4. Daną lekcję można udostępnić jednej klasie tylko raz. Nowy termin ustawiasz, zmieniając okres dostępności istniejącego udostępnienia.
-5. Usuwanie:
+- Nauczyciel podaje nazwę wyświetlaną, którą zobaczą zaproszeni uczniowie. Tworzy klasy, zaprasza uczniów po ich kodzie, tworzy lekcje i udostępnia je klasom na wybrany okres.
+- Nauczyciel widzi o uczniu tylko: imię, kod, status zaproszenia lub członkostwa oraz zbiorczą liczbę uczniów, którzy zaczęli naukę danej lekcji. Nie widzi, które fiszki zna konkretny uczeń. Szkoła nie służy do oceniania uczniów.
+- Udostępnienie blokuje lekcję. Po pierwszym udostępnieniu lekcji jakiejkolwiek klasie nie można już zmienić jej nazwy ani dodać, zmienić lub usunąć fiszek. Blokada zostaje także po usunięciu wszystkich udostępnień i znika dopiero, gdy lekcja przejdzie przez archiwum (zob. punkt "Usuwanie" poniżej). Zablokowaną lekcję można dalej udostępniać innym klasom i zmieniać okres jej dostępności. Przed pierwszym udostępnieniem Aplikacja o tym ostrzega.
+- Daną lekcję można udostępnić jednej klasie tylko raz. Nowy termin ustawiasz, zmieniając okres dostępności istniejącego udostępnienia.
+- Usuwanie:
    - usunięcie udostępnienia w klasie usuwa lekcję tylko z tej klasy (wraz z postępem uczniów w tej lekcji),
    - przeniesienie lekcji do archiwum usuwa ją ze wszystkich klas, wraz z postępem uczniów. Sama lekcja z fiszkami i nagraniami zostaje w archiwum nauczyciela, widocznym tylko dla niego. Z archiwum można ją przywrócić (wraca nieudostępniona i znowu edytowalna) albo usunąć na zawsze. Archiwum ma własny limit, widoczny w Aplikacji,
    - usunięcie klasy usuwa klasę, członkostwa, udostępnienia i postęp uczniów w tej klasie,
    - usunięcia, w tym usunięcie lekcji z archiwum na zawsze, są trwałe. Usunięcia udostępnień i postępu uczniów przy przeniesieniu lekcji do archiwum nie da się cofnąć, także po przywróceniu lekcji. Przed przeniesieniem do archiwum lub usunięciem lekcji albo klasy, z której korzystają uczniowie, poinformuj ich o tym.
-6. Koniec Premium. Po wygaśnięciu Premium nauczyciel nie może tworzyć klas ani lekcji, zapraszać uczniów, udostępniać lekcji ani zmieniać okresów dostępności. Lekcje już udostępnione działają dla uczniów do końca ustawionego okresu. Nauczyciel nadal może porządkować dane (usuwać klasy, uczniów i udostępnienia, przenosić lekcje do archiwum i usuwać je z archiwum, wykonać reset). Przywrócenie lekcji z archiwum wymaga aktywnego Premium.
-7. Obowiązki nauczyciela. Nauczyciel:
+- Koniec Premium. Po wygaśnięciu Premium nauczyciel nie może tworzyć klas ani lekcji, zapraszać uczniów, udostępniać lekcji ani zmieniać okresów dostępności. Lekcje już udostępnione działają dla uczniów do końca ustawionego okresu. Nauczyciel nadal może porządkować dane (usuwać klasy, uczniów i udostępnienia, przenosić lekcje do archiwum i usuwać je z archiwum, wykonać reset). Przywrócenie lekcji z archiwum wymaga aktywnego Premium.
+- Obowiązki nauczyciela. Nauczyciel:
    - zaprasza tylko osoby, które sam uczy lub którym oferuje naukę, i które przekazały mu swój kod,
    - dba, aby lekcje były odpowiednie dla wieku uczniów, nie zawierały danych osobowych uczniów ani innych osób i nie naruszały praw autorskich,
    - sprawdza treści wygenerowane przez AI przed udostępnieniem,
    - jeśli korzysta z Szkoły w ramach pracy w szkole lub innej placówce, sam ustala, czy wymaga to zgody placówki lub rodziców i czy placówka musi zawrzeć z nami osobną umowę (np. umowę powierzenia danych). Napisz do nas, jeśli placówka tego potrzebuje.
-8. Rola Operatora. Dostarczamy narzędzie. Nie jesteśmy stroną relacji między nauczycielem, uczniem, rodzicem i szkołą, nie nadzorujemy procesu nauczania i nie weryfikujemy tożsamości ani uprawnień nauczycieli. Za treść lekcji i sposób prowadzenia klas odpowiada nauczyciel.
+- Rola Operatora. Dostarczamy narzędzie. Nie jesteśmy stroną relacji między nauczycielem, uczniem, rodzicem i szkołą, nie nadzorujemy procesu nauczania i nie weryfikujemy tożsamości ani uprawnień nauczycieli. Za treść lekcji i sposób prowadzenia klas odpowiada nauczyciel.
 
 ### 9.4. Reset i dostępność Szkoły
 
-1. Reset roli ucznia usuwa jego imię, członkostwa w klasach i postęp. Kod ucznia i założone przez niego blokady zostają.
-2. Reset roli nauczyciela usuwa jego klasy, lekcje, fiszki, nagrania i udostępnienia. Uczniowie tracą dostęp do tych lekcji. Dzienne liczniki zaproszeń zostają, aby reset nie służył do obchodzenia limitów.
-3. Możemy czasowo wyłączyć Szkołę (np. z powodów technicznych lub bezpieczeństwa). Zamknięcie Szkoły na stałe ogłosimy w Aplikacji co najmniej 30 dni wcześniej.
+- Reset roli ucznia usuwa jego imię, członkostwa w klasach i postęp. Kod ucznia i założone przez niego blokady zostają.
+- Reset roli nauczyciela usuwa jego klasy, lekcje, fiszki, nagrania i udostępnienia. Uczniowie tracą dostęp do tych lekcji. Dzienne liczniki zaproszeń zostają, aby reset nie służył do obchodzenia limitów.
+- Możemy czasowo wyłączyć Szkołę (np. z powodów technicznych lub bezpieczeństwa). Zamknięcie Szkoły na stałe ogłosimy w Aplikacji co najmniej 30 dni wcześniej.
 
 ## 10. Zasady korzystania
 

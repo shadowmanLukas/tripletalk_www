@@ -102,43 +102,43 @@ _Version of October 7, 2026. Effective from October 1, 2026._
 
 ### 9.1. How it works
 
-1. School is a mode in which a teacher creates classes, invites students and shares lessons with them for self-study.
-2. One account can have only one role: student or teacher. You can change the role only by resetting your School settings. A reset permanently deletes the School data for that role (details in 9.4).
-3. The student role is free. The teacher role requires active Premium. Adding flashcards to School lessons uses AI credits and may require having purchased at least one AI pack (welcome bonus credits may not be enough). Current requirements are shown in the App.
-4. School has no chat, comments or free text from students. Students cannot see each other.
+- School is a mode in which a teacher creates classes, invites students and shares lessons with them for self-study.
+- One account can have only one role: student or teacher. You can change the role only by resetting your School settings. A reset permanently deletes the School data for that role (details in 9.4).
+- The student role is free. The teacher role requires active Premium. Adding flashcards to School lessons uses AI credits and may require having purchased at least one AI pack (welcome bonus credits may not be enough). Current requirements are shown in the App.
+- School has no chat, comments or free text from students. Students cannot see each other.
 
 ### 9.2. Student
 
-1. A student provides only a first name (or nickname). Do not enter a surname or other data. By choosing the student role you confirm that you are at least 16 or have a parent's or guardian's consent (section 2).
-2. A student receives a permanent student code (format XXXX-XXXX) and decides who to give it to. The code lets a teacher send an invitation. It does not change on a role reset and is deleted with the account.
-3. You can accept an invitation, decline it, or decline and block the teacher. A blocked teacher cannot invite you again. You can unblock in School settings. An invitation that is not accepted expires after the period set out in section 5(4).
-4. After joining a class you see the lessons shared by the teacher during their availability period. You study in "I know / I don't know" mode and can listen to audio. Progress is only your self-assessment and you can reset it.
-5. You can leave a class at any time. Your progress in that class's lessons is then deleted.
+- A student provides only a first name (or nickname). Do not enter a surname or other data. By choosing the student role you confirm that you are at least 16 or have a parent's or guardian's consent (section 2).
+- A student receives a permanent student code (format XXXX-XXXX) and decides who to give it to. The code lets a teacher send an invitation. It does not change on a role reset and is deleted with the account.
+- You can accept an invitation, decline it, or decline and block the teacher. A blocked teacher cannot invite you again. You can unblock in School settings. An invitation that is not accepted expires after the period set out in section 5(4).
+- After joining a class you see the lessons shared by the teacher during their availability period. You study in "I know / I don't know" mode and can listen to audio. Progress is only your self-assessment and you can reset it.
+- You can leave a class at any time. Your progress in that class's lessons is then deleted.
 
 ### 9.3. Teacher
 
-1. A teacher provides a display name that invited students will see. The teacher creates classes, invites students by their code, creates lessons and shares them with classes for a chosen period.
-2. About a student, the teacher sees only: first name, code, invitation or membership status, and the total number of students who have started a given lesson. The teacher does not see which flashcards a particular student knows. School is not a grading tool.
-3. Sharing locks a lesson. Once a lesson is shared with any class, its name can no longer be changed and flashcards can no longer be added, edited or deleted. The lock stays even after all shares are deleted and is lifted only when the lesson goes through the archive (point 5). A locked lesson can still be shared with other classes and its availability period can be changed. The App warns before the first share.
-4. A lesson can be shared with a given class only once. To set a new date, change the availability period of the existing share.
-5. Deletion:
+- A teacher provides a display name that invited students will see. The teacher creates classes, invites students by their code, creates lessons and shares them with classes for a chosen period.
+- About a student, the teacher sees only: first name, code, invitation or membership status, and the total number of students who have started a given lesson. The teacher does not see which flashcards a particular student knows. School is not a grading tool.
+- Sharing locks a lesson. Once a lesson is shared with any class, its name can no longer be changed and flashcards can no longer be added, edited or deleted. The lock stays even after all shares are deleted and is lifted only when the lesson goes through the archive (see "Deletion" below). A locked lesson can still be shared with other classes and its availability period can be changed. The App warns before the first share.
+- A lesson can be shared with a given class only once. To set a new date, change the availability period of the existing share.
+- Deletion:
    - deleting a share in a class removes the lesson from that class only (with students' progress in that lesson),
    - moving a lesson to the archive removes it from all classes, with students' progress. The lesson itself, with its flashcards and audio, stays in the teacher's archive, visible only to the teacher. From the archive it can be restored (it comes back unshared and editable again) or deleted for good. The archive has its own limit, shown in the App,
    - deleting a class removes the class, memberships, shares and students' progress in that class,
    - deletions, including deleting a lesson from the archive for good, are permanent. Shares and students' progress removed when a lesson is moved to the archive cannot be brought back, even if the lesson is restored. Before archiving or deleting a lesson or class that students are using, let them know.
-6. When Premium ends. After Premium expires the teacher cannot create classes or lessons, invite students, share lessons or change availability periods. Lessons already shared remain available to students until the end of the set period. The teacher can still clean up (delete classes, students and shares, move lessons to the archive and delete them from it, or reset). Restoring a lesson from the archive requires active Premium.
-7. Teacher's obligations. The teacher:
+- When Premium ends. After Premium expires the teacher cannot create classes or lessons, invite students, share lessons or change availability periods. Lessons already shared remain available to students until the end of the set period. The teacher can still clean up (delete classes, students and shares, move lessons to the archive and delete them from it, or reset). Restoring a lesson from the archive requires active Premium.
+- Teacher's obligations. The teacher:
    - invites only people they teach or offer lessons to, and who gave them their code,
    - makes sure lessons are suitable for the students' age, contain no personal data of students or others and do not infringe copyright,
    - checks AI-generated content before sharing,
    - if using School as part of work at a school or other institution, determines whether this requires the consent of the institution or parents and whether the institution needs a separate agreement with us (e.g. a data processing agreement). Contact us if the institution needs one.
-8. Our role. We provide a tool. We are not a party to the relationship between teacher, student, parent and school, do not supervise teaching and do not verify teachers' identity or qualifications. The teacher is responsible for lesson content and how classes are run.
+- Our role. We provide a tool. We are not a party to the relationship between teacher, student, parent and school, do not supervise teaching and do not verify teachers' identity or qualifications. The teacher is responsible for lesson content and how classes are run.
 
 ### 9.4. Reset and availability of School
 
-1. A student reset deletes their first name, class memberships and progress. The student code and the student's blocks remain.
-2. A teacher reset deletes their classes, lessons, flashcards, audio and shares. Students lose access to those lessons. Daily invitation counters remain, so a reset cannot be used to bypass limits.
-3. We may temporarily disable School (e.g. for technical or security reasons). We will announce a permanent shutdown of School in the App at least 30 days in advance.
+- A student reset deletes their first name, class memberships and progress. The student code and the student's blocks remain.
+- A teacher reset deletes their classes, lessons, flashcards, audio and shares. Students lose access to those lessons. Daily invitation counters remain, so a reset cannot be used to bypass limits.
+- We may temporarily disable School (e.g. for technical or security reasons). We will announce a permanent shutdown of School in the App at least 30 days in advance.
 
 ## 10. Rules of use
 
