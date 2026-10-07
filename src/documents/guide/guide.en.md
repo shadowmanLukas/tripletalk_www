@@ -330,7 +330,7 @@ Your profile is at the top of the screen. From here you can open Account data (s
 
 | Setting | What it does |
 | --- | --- |
-| App language | The language of menus, buttons and messages. 7 languages to choose from. |
+| App language | The language of menus, buttons and messages |
 | Theme | How the app looks: dark (default), light or system. |
 | Push notifications (Premium) | Reminders for lessons waiting for a review. |
 
