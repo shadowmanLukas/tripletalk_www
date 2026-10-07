@@ -24,16 +24,18 @@ TripleTalk is an iPhone and Android app for learning words and phrases in foreig
 
 ## 1. Why TripleTalk
 
-- **Flashcards from a photo.** Take a picture of a textbook page, a vocabulary list or any text. TripleTalk AI finds the words and turns them into flashcards. You just choose which ones to add.
-- **One word is enough.** When you add a flashcard by hand, type the word in one language. AI fills in the rest: the translation, an example sentence, grammar notes and pronunciation.
-- **Natural pronunciation.** Every word and every example sentence comes with a recording in your languages.
-- **Reviews at the right moment.** After each flashcard you rate how well you remembered it. TripleTalk uses that to plan the next review: hard words come back sooner, easy ones less often.
-- **Learn on the go.** Audio mode plays a lesson like a podcast, on a walk, in the car or on public transport, with no need to look at the screen.
-- **Several languages at once.** With Premium you learn two languages at the same time on the same flashcards, for example English and German with hints in Polish. That's where the name comes from: three languages on one flashcard.
-- **Progress at a glance.** The Dashboard shows how many flashcards you already know, how many you reviewed this week and which lessons are waiting for a review.
-- **School.** A teacher prepares lessons and shares them with a class, and students learn from them for free.
+TripleTalk helps you learn words faster, without copying them out by hand.
 
-**Available languages** (both for the interface and for learning): English, Polish, German, Spanish, French, Italian and Ukrainian.
+- Take a photo of a textbook page or a word list and the app turns it into flashcards. You just pick the ones you want to learn.
+- When you add a flashcard yourself, you type a single word. TripleTalk fills in the translation, an example sentence and the pronunciation for you.
+- You can listen to every word and every sentence, spoken in a natural voice.
+- After each flashcard you mark how well you remembered it. Hard words come back more often and easy ones less often, so you don't waste time on what you already know.
+- You can listen to a lesson like a podcast: on a walk, in the car or on the bus, without looking at the screen.
+- With Premium you learn two languages at once on the same flashcards, for example English and German with hints in Polish. That's where the name comes from: three languages on one flashcard.
+- The Dashboard shows how many words you already know and which lessons are waiting for a review.
+- A teacher can prepare lessons for their class, and students learn from them for free.
+
+TripleTalk is available in English, Polish, German, Spanish, French, Italian and Ukrainian, and you can learn any of these languages.
 
 ---
 

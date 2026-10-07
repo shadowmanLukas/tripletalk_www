@@ -24,16 +24,18 @@ TripleTalk to aplikacja na iPhone'a i Androida do nauki słówek i zwrotów w ob
 
 ## 1. Dlaczego TripleTalk
 
-- **Fiszki ze zdjęcia.** Zrób zdjęcie strony z podręcznika, listy słówek albo dowolnego tekstu. TripleTalk AI znajdzie słówka i przygotuje z nich fiszki. Ty tylko wybierasz, które dodać.
-- **Wystarczy jedno słowo.** Dodając fiszkę ręcznie, wpisujesz słowo w jednym języku. Resztę, czyli tłumaczenie, przykładowe zdanie, informacje gramatyczne i wymowę, uzupełnia AI.
-- **Naturalna wymowa.** Każde słowo i każde przykładowe zdanie ma nagranie wymowy w Twoich językach.
-- **Powtórki we właściwym momencie.** Po każdej fiszce oceniasz, jak dobrze ją pamiętasz. Na tej podstawie TripleTalk planuje kolejną powtórkę: trudne słowa wracają szybciej, łatwe rzadziej.
-- **Nauka w drodze.** Tryb audio odtwarza lekcję jak podcast: na spacerze, w samochodzie albo w komunikacji miejskiej, bez patrzenia w ekran.
-- **Kilka języków naraz.** Z Premium uczysz się dwóch języków jednocześnie na tych samych fiszkach, np. angielskiego i niemieckiego z podpowiedzią po polsku. Stąd nazwa: trzy języki na jednej fiszce.
-- **Postępy na wyciągnięcie ręki.** Panel pokazuje, ile fiszek już znasz, ile powtórzyłeś w tym tygodniu i które lekcje czekają na powtórkę.
-- **Szkoła.** Nauczyciel przygotowuje lekcje i udostępnia je klasie, a uczniowie uczą się z nich za darmo.
+TripleTalk pomaga uczyć się słówek szybciej i bez przepisywania ich ręcznie.
 
-**Dostępne języki** (zarówno interfejsu, jak i nauki): angielski, polski, niemiecki, hiszpański, francuski, włoski i ukraiński.
+- Robisz zdjęcie strony z podręcznika albo listy słówek, a aplikacja przygotowuje z nich fiszki. Wybierasz tylko te, których chcesz się uczyć.
+- Dodając fiszkę samodzielnie, wpisujesz jedno słowo. Tłumaczenie, przykładowe zdanie i wymowę TripleTalk uzupełni za Ciebie.
+- Każde słowo i każde zdanie możesz odsłuchać, wymówione naturalnym głosem.
+- Po każdej fiszce zaznaczasz, jak dobrze ją pamiętasz. Trudne słowa wracają częściej, łatwe rzadziej, więc nie tracisz czasu na to, co już umiesz.
+- Lekcji możesz słuchać jak podcastu: na spacerze, w samochodzie albo w tramwaju, bez patrzenia w ekran.
+- Z Premium uczysz się dwóch języków naraz na tych samych fiszkach, np. angielskiego i niemieckiego z podpowiedzią po polsku. Stąd nazwa: trzy języki na jednej fiszce.
+- Na Panelu widzisz, ile słówek już znasz i które lekcje czekają na powtórkę.
+- Nauczyciel może przygotować lekcje dla swojej klasy, a uczniowie uczą się z nich za darmo.
+
+TripleTalk jest dostępny po angielsku, polsku, niemiecku, hiszpańsku, francusku, włosku i ukraińsku. W tych samych językach możesz się uczyć.
 
 ---
 
