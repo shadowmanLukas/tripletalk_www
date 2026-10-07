@@ -150,8 +150,6 @@ One word in one language is enough. TripleTalk AI adds the translation, an examp
 
 Every flashcard created with AI uses 1 TripleTalk AI flashcard from your balance, whether you add it by hand or from a photo, to your own lesson or to a School lesson. If a flashcard can't be prepared, it goes back to your balance. You can check your balance in More > TripleTalk AI flashcards.
 
-Photo analysis has a daily limit that you shouldn't notice in normal use. If you need more, contact us through tripletalk.app.
-
 ---
 
 ## 6. What a flashcard contains

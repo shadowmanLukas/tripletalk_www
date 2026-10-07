@@ -150,8 +150,6 @@ Wystarczy jedno słowo w jednym języku. TripleTalk AI uzupełni tłumaczenie, p
 
 Każda fiszka utworzona z pomocą AI zużywa 1 fiszkę TripleTalk AI z Twojego salda, niezależnie od tego, czy dodajesz ją ręcznie, ze zdjęcia, do własnej lekcji czy do lekcji w Szkole. Jeśli przygotowanie fiszki się nie uda, fiszka wraca na Twoje saldo. Saldo sprawdzisz w Więcej > Fiszki TripleTalk AI.
 
-Analiza zdjęć ma dzienny limit, który przy zwykłym korzystaniu nie powinien być odczuwalny. Jeśli potrzebujesz więcej, napisz do nas przez tripletalk.app.
-
 ---
 
 ## 6. Co zawiera fiszka
