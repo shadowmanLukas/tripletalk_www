@@ -215,10 +215,6 @@ In More > Audio playback you can set:
 - speed: 0.75×, 1× or 1.25×,
 - flashcard playback order: in order or shuffled.
 
-### Background listening (Premium)
-
-With Premium the lesson keeps playing when you leave the app or lock the screen. The lock screen shows the current sentence, the lesson name, the time and progress of the whole lesson, and buttons for the previous and next sentence.
-
 ---
 
 ## 9. Collections
