@@ -365,37 +365,31 @@ Tutaj możesz napisać do nas, gdy coś nie działa albo masz pomysł, co ulepsz
 
 ### Dane konta
 
-W Więcej > Dane konta sprawdzisz:
+W Więcej > Dane konta sprawdzisz, na jaki adres e-mail jest założone Twoje konto, jak się logujesz (e-mailem, przez Google albo Apple) i czy Twój e-mail jest potwierdzony. Jeśli logujesz się przez Apple, adres e-mail może być ukryty.
 
-- adres email (przy logowaniu przez Apple może być ukryty),
-- metodę logowania (email i hasło, Google albo Apple),
-- status weryfikacji emaila.
-
-Konta zakładane emailem mają też opcje Zmień email (link potwierdzający przyjdzie na nowy adres) i Resetuj hasło. Dla kont Google i Apple email i hasło zmieniasz u tych dostawców.
+Jeśli zakładałeś konto e-mailem, możesz tu też zmienić adres (link potwierdzający przyjdzie na nowy) albo zresetować hasło. Przy logowaniu przez Google lub Apple adres i hasło zmieniasz na swoim koncie Google albo Apple.
 
 ### Urządzenia
 
-W Dane konta > Urządzenia widzisz telefony i tablety, na których jesteś zalogowany, wraz z datą ostatniej aktywności. Dowolne z nich możesz wylogować przyciskiem „Wyloguj”, np. gdy zgubisz telefon.
+W Dane konta > Urządzenia zobaczysz telefony i tablety, na których jesteś zalogowany, i kiedy ostatnio były używane. Jeśli np. zgubisz telefon, możesz go stąd wylogować.
 
-Konto możesz używać jednocześnie na kilku urządzeniach, np. na telefonie i tablecie, a lekcje i postępy synchronizują się między nimi. Liczba urządzeń zalogowanych jednocześnie jest ograniczona (szczegóły w regulaminie). Gdy zalogujesz się na kolejnym, aplikacja automatycznie wyloguje urządzenie, które najdłużej nie było używane, i wyświetli na nim komunikat. Aby znowu z niego korzystać, wystarczy zalogować się ponownie.
+Z jednego konta możesz korzystać na kilku urządzeniach, np. na telefonie i tablecie, a lekcje i postępy będą na nich takie same. Liczba urządzeń jest ograniczona (szczegóły w regulaminie). Gdy zalogujesz się na kolejnym, aplikacja wyloguje to, którego najdłużej nie używałeś, i pokaże na nim komunikat. Żeby znów z niego korzystać, wystarczy się zalogować.
 
 ### Dokumenty
 
-W sekcji Dokumenty znajdziesz regulamin i politykę prywatności.
+Regulamin i politykę prywatności znajdziesz w sekcji Dokumenty.
 
 ### Wylogowanie i usunięcie konta
 
-- Wyloguj: Twoje dane zostają na koncie i wrócą po ponownym zalogowaniu.
-- Usuń konto: trwale usuwa konto, lekcje, fiszki, postępy i zdjęcia przesłane do TripleTalk AI. Tej operacji nie można cofnąć. Usunięcie konta nie anuluje subskrypcji w sklepie, zrób to osobno w App Store albo Google Play.
+Gdy się wylogujesz, Twoje dane zostają na koncie i wrócą, gdy znów się zalogujesz.
+
+Usunięcie konta jest ostateczne. Razem z kontem znikną Twoje lekcje, fiszki, postępy i zdjęcia przesłane do TripleTalk AI. Pamiętaj, że subskrypcja w sklepie nie anuluje się sama: zrób to osobno w App Store albo Google Play.
 
 ### Jak dbamy o Twoje dane
 
-- Zbieramy tylko to, co potrzebne do działania aplikacji.
-- Zdjęcia przesłane do TripleTalk AI służą wyłącznie do przygotowania fiszek i są usuwane razem z lekcją albo kontem.
-- W Szkole nauczyciel nie widzi szczegółowych wyników ucznia.
-- Płatności obsługuje App Store albo Google Play. Nie przechowujemy danych Twojej karty.
+Zbieramy tylko to, czego aplikacja potrzebuje do działania. Zdjęcia, które przesyłasz do TripleTalk AI, służą wyłącznie do przygotowania fiszek i usuwamy je razem z lekcją albo kontem. W Szkole nauczyciel nie widzi Twoich szczegółowych wyników. Płatności obsługuje App Store albo Google Play, więc nie przechowujemy danych Twojej karty.
 
-Pełne informacje znajdziesz w polityce prywatności.
+Więcej przeczytasz w polityce prywatności.
 
 ---
 

@@ -365,37 +365,31 @@ Here you can write to us when something isn't working or you have an idea for an
 
 ### Account data
 
-In More > Account data you can see:
+In More > Account data you can check which email address your account uses, how you sign in (with email, Google or Apple) and whether your email is verified. If you sign in with Apple, your email address may be hidden.
 
-- your email address (it may be hidden if you sign in with Apple),
-- your sign-in method (email and password, Google or Apple),
-- whether your email is verified.
-
-Accounts created with email also have Change email (a confirmation link is sent to the new address) and Change password. For Google and Apple accounts, you change your email and password with those providers.
+If you created your account with email, you can also change your address here (a confirmation link is sent to the new one) or reset your password. If you sign in with Google or Apple, you change your address and password in your Google or Apple account.
 
 ### Devices
 
-Under Account data > Devices you can see the phones and tablets you're signed in on, with the date each was last active. You can sign out any of them with "Sign out", for example if you lose your phone.
+Under Account data > Devices you'll see the phones and tablets you're signed in on and when they were last used. If you lose your phone, for example, you can sign it out from here.
 
-You can use your account on several devices at once, such as a phone and a tablet, and your lessons and progress sync between them. The number of devices signed in at the same time is limited (see the Terms of Service). When you sign in on another one, the app automatically signs out the device that has gone unused the longest and shows a message on it. To use it again, just sign in again.
+You can use one account on several devices, such as a phone and a tablet, and your lessons and progress will be the same on all of them. The number of devices is limited (see the Terms of Service). When you sign in on another one, the app signs out the device you haven't used for the longest time and shows a message on it. To use it again, just sign in.
 
 ### Documents
 
-The Documents section contains the Terms of Service and Privacy Policy.
+You'll find the Terms of Service and Privacy Policy in the Documents section.
 
 ### Signing out and deleting your account
 
-- Sign out: your data stays in your account and comes back when you sign in again.
-- Delete account: permanently deletes your account, lessons, flashcards, progress and the photos you sent to TripleTalk AI. This cannot be undone. Deleting your account doesn't cancel a store subscription, so cancel it separately in the App Store or Google Play.
+When you sign out, your data stays in your account and comes back when you sign in again.
+
+Deleting your account is final. Your lessons, flashcards, progress and the photos you sent to TripleTalk AI are deleted with it. Keep in mind that your store subscription doesn't cancel itself: do that separately in the App Store or Google Play.
 
 ### How we look after your data
 
-- We only collect what the app needs to work.
-- Photos sent to TripleTalk AI are used only to prepare flashcards and are deleted together with the lesson or the account.
-- In School, the teacher doesn't see a student's detailed results.
-- Payments are handled by the App Store or Google Play. We don't store your card details.
+We only collect what the app needs to work. Photos you send to TripleTalk AI are used only to prepare flashcards, and we delete them together with the lesson or your account. In School, your teacher doesn't see your detailed results. Payments are handled by the App Store or Google Play, so we don't store your card details.
 
-Full details are in the Privacy Policy.
+You can read more in the Privacy Policy.
 
 ---
 
