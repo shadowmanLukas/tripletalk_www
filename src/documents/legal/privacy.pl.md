@@ -42,15 +42,15 @@ Podanie danych jest dobrowolne, ale bez danych konta nie da się korzystać z Ap
 
 ## 4. Szkoła
 
-1. **Uczeń** podaje imię (może to być pseudonim) i otrzymuje stały kod ucznia. Przetwarzamy też: listę klas, statusy zaproszeń (oczekuje, zaakceptowano, odrzucono, wygasło) z datami, listę zablokowanych nauczycieli, postęp w lekcjach (które fiszki oznaczył jako znane; każde oznaczenie "Znam" zwiększa też statystyki nauki na jego koncie, których nauczyciel nie widzi) oraz datę potwierdzenia, że ma co najmniej 16 lat albo zgodę rodzica lub opiekuna.
-2. **Nauczyciel** podaje nazwę wyświetlaną. Przetwarzamy też: jego klasy, lekcje (także te w jego archiwum), fiszki, nagrania, udostępnienia oraz liczniki potrzebne do limitów (np. liczba zaproszeń dziennie, liczba lekcji w archiwum).
-3. **Kto co widzi:**
+1. Uczeń podaje imię (może to być pseudonim) i otrzymuje stały kod ucznia. Przetwarzamy też: listę klas, statusy zaproszeń (oczekuje, zaakceptowano, odrzucono, wygasło) z datami, listę zablokowanych nauczycieli, postęp w lekcjach (które fiszki oznaczył jako znane; każde oznaczenie "Znam" zwiększa też statystyki nauki na jego koncie, których nauczyciel nie widzi) oraz datę potwierdzenia, że ma co najmniej 16 lat albo zgodę rodzica lub opiekuna.
+2. Nauczyciel podaje nazwę wyświetlaną. Przetwarzamy też: jego klasy, lekcje (także te w jego archiwum), fiszki, nagrania, udostępnienia oraz liczniki potrzebne do limitów (np. liczba zaproszeń dziennie, liczba lekcji w archiwum).
+3. Kto co widzi:
    - nauczyciel widzi imię ucznia, jego kod i status w klasie oraz zbiorczą liczbę uczniów, którzy zaczęli daną lekcję. Nie widzi szczegółowych postępów ucznia,
    - uczeń widzi nazwę nauczyciela, nazwę klasy i udostępnione lekcje,
    - uczniowie nie widzą się nawzajem,
    - przy wyszukiwaniu ucznia po kodzie nauczyciel widzi tylko imię przypisane do kodu.
 4. Uczeń sam decyduje, komu przekaże kod. Nauczyciel bez kodu nie może go zaprosić.
-5. **Kiedy dane Szkoły są usuwane:**
+5. Kiedy dane Szkoły są usuwane:
    - opuszczenie klasy lub usunięcie ucznia z klasy: członkostwo i postęp w tej klasie,
    - usunięcie klasy: klasa, członkostwa, udostępnienia i postęp uczniów,
    - przeniesienie lekcji do archiwum nauczyciela: jej udostępnienia we wszystkich klasach wraz z postępem uczniów oraz zdjęcia przesłane do tej lekcji. Lekcja, fiszki i nagrania zostają w archiwum, widocznym tylko dla nauczyciela, do przywrócenia lekcji, usunięcia jej z archiwum, resetu roli albo usunięcia konta,
