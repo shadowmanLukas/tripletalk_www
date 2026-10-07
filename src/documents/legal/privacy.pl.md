@@ -64,7 +64,7 @@ Podanie danych jest dobrowolne, ale bez danych konta nie da się korzystać z Ap
 
 1. Aby bonus powitalny trafiał do jednej osoby tylko raz, Aplikacja zapisuje na Twoim urządzeniu losowy identyfikator instalacji. Jest on przechowywany w zabezpieczonej części pamięci urządzenia.
 2. Na nasz serwer trafia tylko nieodwracalny skrót tego identyfikatora oraz podobne skróty danych logowania (adres e-mail, konto Google lub Apple). Ze skrótu nie da się odtworzyć ani identyfikatora, ani adresu e-mail.
-3. Skróty służą wyłącznie do sprawdzenia, czy bonus był już przyznany. **Zostają po usunięciu konta**, bez powiązania z kontem, aby usunięcie i ponowne założenie konta nie pozwalało obejść zasad. Przechowujemy je przez 3 lata od przyznania bonusu, a następnie automatycznie usuwamy. Jeśli konto nadal istnieje, skrót jest zapisywany ponownie przy kolejnym logowaniu, aby bonusu nie dało się pobrać drugi raz.
+3. Skróty służą wyłącznie do sprawdzenia, czy bonus był już przyznany. Zostają po usunięciu konta, bez powiązania z kontem, aby usunięcie i ponowne założenie konta nie pozwalało obejść zasad. Przechowujemy je przez 3 lata od przyznania bonusu, a następnie automatycznie usuwamy. Jeśli konto nadal istnieje, skrót jest zapisywany ponownie przy kolejnym logowaniu, aby bonusu nie dało się pobrać drugi raz.
 4. Podstawą jest nasz prawnie uzasadniony interes (zapobieganie nadużyciom). Możesz wnieść sprzeciw (pkt 11).
 5. Sprawdzamy też, czy zapytania pochodzą z oryginalnej Aplikacji zainstalowanej na prawdziwym urządzeniu. Korzystamy do tego z usług Apple i Google (App Check). Nie zbierają one treści z Twojego urządzenia.
 

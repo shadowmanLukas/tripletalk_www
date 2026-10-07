@@ -64,7 +64,7 @@ Providing data is voluntary, but the App cannot be used without account data. We
 
 1. To make sure the welcome bonus goes to one person only once, the App saves a random installation identifier on your device. It is kept in a protected part of the device's storage.
 2. Only an irreversible hash of this identifier, and similar hashes of your sign-in details (email address, Google or Apple account), are sent to our server. Neither the identifier nor your email address can be recovered from a hash.
-3. The hashes are used only to check whether the bonus has already been granted. **They remain after account deletion**, unlinked from the account, so that deleting and re-creating an account cannot be used to get around the rules. We keep them for 3 years from granting the bonus and then delete them automatically. If the account still exists, the hash is written again at the next sign-in so the bonus cannot be claimed twice.
+3. The hashes are used only to check whether the bonus has already been granted. They remain after account deletion, unlinked from the account, so that deleting and re-creating an account cannot be used to get around the rules. We keep them for 3 years from granting the bonus and then delete them automatically. If the account still exists, the hash is written again at the next sign-in so the bonus cannot be claimed twice.
 4. The legal basis is our legitimate interest (preventing abuse). You may object (section 11).
 5. We also check that requests come from the genuine App installed on a real device, using Apple and Google services (App Check). They do not collect content from your device.
 
