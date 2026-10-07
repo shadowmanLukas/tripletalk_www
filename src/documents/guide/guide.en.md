@@ -338,7 +338,7 @@ Your profile is at the top of the screen. From here you can open Account data (s
 
 | Setting | What it does |
 | --- | --- |
-| Flashcard language | Your base language, used for hints on flashcards. |
+| Flashcard language | The language you know best. Translations on your flashcards appear in it |
 | Learning languages | One or two languages you're learning. Free account: one language, Premium: two at the same time. |
 | Learning mode | Review pace: balanced or intensive. |
 | Audio playback | Which flashcards, pause, speed and order in audio mode. |

@@ -338,7 +338,7 @@ Na górze ekranu widzisz swój profil. Stąd przejdziesz do Danych konta (patrz 
 
 | Ustawienie | Co robi |
 | --- | --- |
-| Język fiszek | Twój język bazowy, w którym widzisz podpowiedzi na fiszkach. |
+| Język fiszek | Język, który znasz najlepiej. W nim zobaczysz tłumaczenia na fiszkach |
 | Język nauki | Jeden lub dwa języki, których się uczysz. Konto darmowe: jeden język, Premium: dwa jednocześnie. |
 | Tryb nauki | Tempo powtórek: zrównoważony albo intensywny. |
 | Odtwarzanie audio | Zakres fiszek, pauza, prędkość i kolejność w trybie audio. |
