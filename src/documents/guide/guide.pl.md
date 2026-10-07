@@ -353,7 +353,7 @@ Dobrze wiedzieć:
 
 ### Szkoła
 
-Widoczne, gdy wybrałeś rolę w Szkole: Ustawienia Szkoły oraz (dla ucznia) przełącznik Zaproszenia. Szczegóły w [sekcji 10](#10-szkoła-nauka-w-klasie).
+Jeśli korzystasz ze Szkoły, znajdziesz tu jej ustawienia. Jako uczeń możesz tu też włączyć albo wyłączyć przyjmowanie zaproszeń do klas. Więcej o Szkole przeczytasz w [sekcji 10](#10-szkoła-nauka-w-klasie).
 
 ### Pomoc
 

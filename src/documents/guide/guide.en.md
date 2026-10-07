@@ -353,7 +353,7 @@ Good to know:
 
 ### School
 
-Visible once you've chosen a School role: School settings and, for students, the Invitations switch. Details in [section 10](#10-school-learning-in-a-class).
+If you use School, you'll find its settings here. As a student, you can also turn class invitations on or off here. You can read more about School in [section 10](#10-school-learning-in-a-class).
 
 ### Help
 
