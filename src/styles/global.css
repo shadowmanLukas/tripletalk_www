@@ -968,6 +968,7 @@ h3 {
 }
 
 .legal-document {
+  min-width: 0;
   scroll-margin-top: 24px;
   border-top: 1px solid #dfe9f0;
   background: #ffffff;
@@ -991,6 +992,7 @@ h3 {
 }
 
 .legal-section {
+  min-width: 0;
   scroll-margin-top: 88px;
   padding: 24px 0;
   border-top: 1px solid #eaf1f6;
@@ -1190,6 +1192,52 @@ h3 {
 @media (max-width: 619px) {
   .legal-section .legal-prose {
     padding-left: 0;
+  }
+
+  .doc-table--stacked {
+    overflow: visible;
+    border: 0;
+  }
+
+  .doc-table--stacked table,
+  .doc-table--stacked tbody,
+  .doc-table--stacked tr,
+  .doc-table--stacked td {
+    display: block;
+  }
+
+  .doc-table--stacked thead {
+    display: none;
+  }
+
+  .doc-table--stacked tr {
+    border: 1px solid #dfe9f0;
+    border-radius: 8px;
+    padding: 4px 0;
+  }
+
+  .doc-table--stacked tr + tr {
+    margin-top: 10px;
+  }
+
+  .doc-table--stacked td {
+    border-top: 0;
+    padding: 6px 12px;
+  }
+
+  .doc-table--stacked td::before {
+    display: block;
+    color: #057f72;
+    content: attr(data-label);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .doc-table--stacked td:first-child {
+    color: #102033;
+    font-weight: 700;
   }
 }
 

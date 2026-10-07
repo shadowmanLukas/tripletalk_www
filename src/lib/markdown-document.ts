@@ -42,10 +42,33 @@ export function prefixAnchors(html: string, prefix: string): string {
     );
 }
 
+// Tables with long cell text are shown as stacked cards on narrow screens, so every cell carries
+// its column header as a label.
+const stackedCellLength = 60;
+
+const plainText = (html: string) => html.replace(/<[^>]+>/g, "").trim();
+
 export function wrapTables(html: string): string {
-  return html
-    .replace(/<table>/g, '<div class="doc-table">\n<table>')
-    .replace(/<\/table>/g, "</table>\n</div>");
+  return html.replace(/<table>([\s\S]*?)<\/table>/g, (_, body: string) => {
+    const headers = [...body.matchAll(/<th[^>]*>([\s\S]*?)<\/th>/g)].map(
+      (match) => plainText(match[1]).replace(/"/g, "&quot;"),
+    );
+    const labelled = body.replace(/<tr>([\s\S]*?)<\/tr>/g, (row: string) => {
+      let column = 0;
+      return row.replace(/<td([^>]*)>/g, (_cell, attributes: string) => {
+        const label = headers[column++] ?? "";
+        return label
+          ? `<td${attributes} data-label="${label}">`
+          : `<td${attributes}>`;
+      });
+    });
+    const cells = [...body.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)];
+    const stacked = cells.some(
+      (cell) => plainText(cell[1]).length > stackedCellLength,
+    );
+    const className = stacked ? "doc-table doc-table--stacked" : "doc-table";
+    return `<div class="${className}">\n<table>${labelled}</table>\n</div>`;
+  });
 }
 
 export function shiftHeadings(html: string, by: number): string {

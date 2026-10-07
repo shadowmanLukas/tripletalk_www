@@ -31,6 +31,7 @@ Legal bases under Art. 6(1) GDPR: **(b)** performance of the contract (Terms), *
 | Pseudonymous welcome bonus markers (section 5) | Preventing the bonus from being claimed more than once | (f) |
 | Daily AI and pronunciation usage counters (failed AI flashcard attempts, characters turned into audio, photo analyses) | Enforcing limits that protect against abuse and excessive costs | (f) |
 | App and device integrity check result (App Check) | Protection against abuse and attacks | (f) |
+| Signed-in devices: model (not the name you gave the device), operating system, app version, dates of first and last use, a pseudonymous installation identifier (hash) | Enforcing the per-account device limit, showing the device list under Account data and signing out a chosen device | (b), (f) |
 | Push notification token | Study reminders (Premium), School notifications (invitations, replies) and a notice when Premium is moved to another account | (b); you give consent to notifications in your system settings (a) |
 | Feedback sent via "Send feedback": category, title, description, attachments, app version, operating system | Handling reports and complaints, improving the App | (b), (f) |
 | Crash reports, performance data, usage statistics (device model, OS and app version, in-app events, pseudonymous installation ID) | Detecting errors, stability, developing the App | (f) |
@@ -111,6 +112,7 @@ Some providers (Google, RevenueCat, Apple) may process data outside the European
 | Feedback and correspondence | Up to 3 years after the matter is closed (limitation period for claims) |
 | Crash reports and statistics | According to Firebase settings, no longer than 14 months |
 | Daily AI and audio usage counters | Until the account is deleted (earlier days' values are overwritten) |
+| List of signed-in devices | A device's entry until you sign out on it. The entry of a device signed out automatically or from another device stays until the account is deleted. The whole list is deleted with the account |
 | Backups | Deleted in the normal backup rotation cycle |
 | Anonymised archive and shared audio | No time limit (not personal data) |
 

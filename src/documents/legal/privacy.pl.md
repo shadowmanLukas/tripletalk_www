@@ -31,6 +31,7 @@ Podstawy prawne z art. 6 ust. 1 RODO: **(b)** wykonanie umowy (Regulaminu), **(a
 | Pseudonimowe znaczniki bonusu powitalnego (pkt 5) | Zapobieganie wielokrotnemu pobieraniu bonusu | (f) |
 | Dzienne liczniki użycia AI i nagrań wymowy (liczba nieudanych prób utworzenia fiszki, liczba znaków zamienionych na nagrania, liczba analiz zdjęć) | Egzekwowanie limitów chroniących przed nadużyciami i nadmiernymi kosztami | (f) |
 | Wynik weryfikacji integralności aplikacji i urządzenia (App Check) | Ochrona przed nadużyciami i atakami | (f) |
+| Zalogowane urządzenia: model (bez nazwy nadanej przez Ciebie), system, wersja aplikacji, data pierwszego i ostatniego użycia, pseudonimowy identyfikator instalacji (skrót) | Egzekwowanie limitu urządzeń na jednym koncie, pokazanie listy urządzeń w Danych konta i wylogowanie wybranego urządzenia | (b), (f) |
 | Token powiadomień push | Wysyłanie przypomnień o nauce (Premium), powiadomień Szkoły (zaproszenia, odpowiedzi) oraz informacji o przeniesieniu Premium na inne konto | (b), a zgodę na powiadomienia wyrażasz w systemie (a) |
 | Zgłoszenia z funkcji "Wyślij opinię": kategoria, tytuł, opis, załączniki, wersja aplikacji, system | Obsługa zgłoszeń i reklamacji, poprawa Aplikacji | (b), (f) |
 | Raporty awarii, dane o wydajności, statystyki użycia (model urządzenia, wersja systemu i aplikacji, zdarzenia w aplikacji, pseudonimowy identyfikator instalacji) | Wykrywanie błędów, stabilność, rozwój Aplikacji | (f) |
@@ -111,6 +112,7 @@ Część dostawców (Google, RevenueCat, Apple) może przetwarzać dane poza Eur
 | Zgłoszenia i korespondencja | Do 3 lat od zakończenia sprawy (okres przedawnienia roszczeń) |
 | Raporty awarii i statystyki | Zgodnie z ustawieniami usług Firebase, nie dłużej niż 14 miesięcy |
 | Dzienne liczniki użycia AI i nagrań | Do usunięcia konta (wartości z poprzednich dni są nadpisywane) |
+| Lista zalogowanych urządzeń | Wpis urządzenia do wylogowania się na nim, a wpis urządzenia wylogowanego automatycznie lub z innego urządzenia do usunięcia konta. Cała lista jest usuwana razem z kontem |
 | Kopie zapasowe | Usuwane w zwykłym cyklu rotacji kopii |
 | Zanonimizowane archiwum i wspólne nagrania | Bez ograniczenia czasu (nie są danymi osobowymi) |
 

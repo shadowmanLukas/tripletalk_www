@@ -39,6 +39,17 @@ describe("markdown document transforms", () => {
     );
   });
 
+  it("labels cells with their column header and stacks tables with long text", () => {
+    const long = "x".repeat(61);
+    const html = `<table><thead><tr><th>Dane</th><th>Cel "a"</th></tr></thead><tbody><tr><td>Token</td><td>${long}</td></tr></tbody></table>`;
+    expect(wrapTables(html)).toBe(
+      `<div class="doc-table doc-table--stacked">\n<table><thead><tr><th>Dane</th><th>Cel "a"</th></tr></thead><tbody><tr><td data-label="Dane">Token</td><td data-label="Cel &quot;a&quot;">${long}</td></tr></tbody></table>\n</div>`,
+    );
+    expect(wrapTables(html.replace(long, "krótko"))).toContain(
+      '<div class="doc-table">',
+    );
+  });
+
   it("splits a document into title, intro and numbered sections", () => {
     const html = [
       "<h1>Regulamin</h1>",
