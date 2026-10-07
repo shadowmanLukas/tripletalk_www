@@ -365,7 +365,7 @@ Here you can write to us when something isn't working or you have an idea for an
 
 ### Account data
 
-In `More > Account data` you can check which email address your account uses, how you sign in (with email, Google or Apple) and whether your email is verified. If you sign in with Apple, your email address may be hidden.
+In `More > Account data` you can check which email address your account uses and whether your email is verified. If you sign in with Apple, your email address may be hidden.
 
 If you created your account with email, you can also change your address here (a confirmation link is sent to the new one) or reset your password. If you sign in with Google or Apple, you change your address and password in your Google or Apple account.
 

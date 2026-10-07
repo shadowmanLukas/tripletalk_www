@@ -120,8 +120,7 @@ export function uiPaths(html: string): string {
   return html.replace(/<code>([^<]*?)<\/code>/g, (match, text: string) => {
     const steps = text.split(/\s*(?:&gt;|>)\s*/);
     if (steps.length < 2) return match;
-    const separator =
-      '<span class="ui-path-sep" aria-hidden="true">›</span><span class="sr-only"> &gt; </span>';
+    const separator = '<span class="ui-path-sep"> › </span>';
     return `<span class="ui-path">${steps
       .map((step) => `<span class="ui-path-step">${step}</span>`)
       .join(separator)}</span>`;

@@ -76,7 +76,7 @@ describe("markdown document transforms", () => {
     expect(
       uiPaths("<p>W <code>Więcej &gt; Dane konta</code> sprawdzisz</p>"),
     ).toBe(
-      '<p>W <span class="ui-path"><span class="ui-path-step">Więcej</span><span class="ui-path-sep" aria-hidden="true">›</span><span class="sr-only"> &gt; </span><span class="ui-path-step">Dane konta</span></span> sprawdzisz</p>',
+      '<p>W <span class="ui-path"><span class="ui-path-step">Więcej</span><span class="ui-path-sep"> › </span><span class="ui-path-step">Dane konta</span></span> sprawdzisz</p>',
     );
     expect(uiPaths("<p><code>XXXX-XXXX</code></p>")).toBe(
       "<p><code>XXXX-XXXX</code></p>",
