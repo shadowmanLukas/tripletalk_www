@@ -125,9 +125,9 @@ In a lesson, tap "Add flashcards". You have three options.
 
 Open the camera and take a clear photo of a textbook page, notes, a menu or any text. TripleTalk AI will:
 
-1. recognise the language of the text,
-2. pick out the words,
-3. show you a list of candidates to approve.
+- recognise the language of the text,
+- pick out the words,
+- show you a list of candidates to approve.
 
 Tick the words you want to add (or "Select all") and tap "Create flashcards". The app shows right away how many words were found, how many are new, how many you selected and how many TripleTalk AI flashcards you have available. Words that are already in the lesson are marked as duplicates, so you won't add them twice.
 

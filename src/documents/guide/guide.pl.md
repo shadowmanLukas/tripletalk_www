@@ -125,9 +125,9 @@ W lekcji wybierz „Dodaj fiszki”. Masz trzy możliwości.
 
 Otwórz aparat i zrób czytelne zdjęcie strony z podręcznika, notatek, menu albo dowolnego tekstu. TripleTalk AI:
 
-1. rozpozna język tekstu,
-2. wybierze z niego słówka,
-3. pokaże Ci listę kandydatów do zatwierdzenia.
+- rozpozna język tekstu,
+- wybierze z niego słówka,
+- pokaże Ci listę kandydatów do zatwierdzenia.
 
 Zaznacz słówka, które chcesz dodać (albo „Zaznacz wszystko”), i wybierz „Utwórz fiszki”. Aplikacja od razu pokazuje, ile słówek znaleziono, ile jest nowych, ile wybrałeś i ile fiszek TripleTalk AI masz do dyspozycji. Słówka, które już są w lekcji, są oznaczone jako duplikaty, więc nie dodasz ich dwa razy.
 
