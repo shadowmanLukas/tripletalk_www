@@ -290,7 +290,7 @@ Premium unlocks:
 - much more room for lessons than a free account,
 - Premium collections,
 - push reminders for lessons waiting for a review,
-- background listening and lock-screen controls,
+- playing lessons in audio mode,
 - the teacher role in School.
 
 There are three plans: Monthly, Quarterly and Yearly. For the longer plans the app shows how much you save compared with the monthly plan.

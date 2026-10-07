@@ -290,7 +290,7 @@ Premium odblokowuje:
 - znacznie więcej miejsca na lekcje niż na koncie darmowym,
 - gotowe kolekcje Premium,
 - przypomnienia push o lekcjach czekających na powtórkę,
-- słuchanie w tle i sterowanie z ekranu blokady,
+- odtwarzanie lekcji w trybie audio,
 - rolę nauczyciela w Szkole.
 
 Do wyboru są trzy plany: miesięczny, kwartalny i roczny. Przy planach dłuższych aplikacja pokazuje, ile oszczędzasz w porównaniu z planem miesięcznym.
