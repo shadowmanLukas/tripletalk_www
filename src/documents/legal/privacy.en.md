@@ -128,7 +128,7 @@ You have the right to:
 - withdraw consent at any time (e.g. by turning off notifications in your phone settings), without affecting the lawfulness of earlier processing,
 - lodge a complaint with the Polish supervisory authority (Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warsaw) or the supervisory authority in your country of residence.
 
-Write to support@tripletalk.app from the email address linked to your account. We reply within one month and may ask you to confirm your identity.
+Write to support@tripletalk.app from the email address linked to your account. We reply within 14 days and may ask you to confirm your identity.
 
 ## 12. Children
 

@@ -128,7 +128,7 @@ Masz prawo do:
 - cofnięcia zgody w każdej chwili (np. wyłączając powiadomienia w ustawieniach telefonu), bez wpływu na zgodność z prawem wcześniejszego przetwarzania,
 - skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa) lub organu nadzorczego w kraju, w którym mieszkasz.
 
-Napisz na support@tripletalk.app z adresu przypisanego do konta. Odpowiemy w ciągu miesiąca. Możemy poprosić o potwierdzenie tożsamości.
+Napisz na support@tripletalk.app z adresu przypisanego do konta. Odpowiemy w ciągu 14 dni. Możemy poprosić o potwierdzenie tożsamości.
 
 ## 12. Dzieci
 
