@@ -156,15 +156,15 @@ Every flashcard created with AI uses 1 TripleTalk AI flashcard from your balance
 
 Each flashcard is a complete package for learning a word:
 
-- **the word** in your flashcard language and your learning languages,
-- **an example sentence** in each of those languages, showing the word in context,
-- **pronunciation recordings** for the word and the example,
-- **grammar notes:** part of speech (noun, verb, adjective) and, for verbs, the forms (infinitive, past tense, participle, and in German also the auxiliary verb),
-- **learning progress:** level (new, started, learning, advanced, mastered), number of reviews, how many times you forgot it, and the dates of the last and next review.
+- the word in your flashcard language and your learning languages,
+- an example sentence in each of those languages, showing the word in context,
+- pronunciation recordings for the word and the example,
+- grammar notes: part of speech (noun, verb, adjective) and, for verbs, the forms (infinitive, past tense, participle, and in German also the auxiliary verb),
+- learning progress: level (new, started, learning, advanced, mastered), number of reviews, how many times you forgot it, and the dates of the last and next review.
 
 Tap a flashcard to see the details. There you can edit the words and examples or play the pronunciation.
 
-You can tailor example sentences to your interests with the **"Example sentence context"** setting (for example business, travel, IT).
+You can tailor example sentences to your interests with the "Example sentence context" setting (for example business, travel, IT).
 
 ---
 

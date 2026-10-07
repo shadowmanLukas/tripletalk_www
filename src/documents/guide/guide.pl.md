@@ -156,15 +156,15 @@ Każda fiszka utworzona z pomocą AI zużywa 1 fiszkę TripleTalk AI z Twojego s
 
 Każda fiszka to komplet materiału do nauki słowa:
 
-- **słowo** w języku fiszek i w językach nauki,
-- **przykładowe zdanie** w każdym z tych języków, pokazujące słowo w kontekście,
-- **nagrania wymowy** słowa i przykładu,
-- **informacje gramatyczne:** część mowy (rzeczownik, czasownik, przymiotnik), a dla czasowników odmiana (bezokolicznik, czas przeszły, imiesłów, a w niemieckim także czasownik posiłkowy),
-- **postęp nauki:** poziom (nowa, rozpoczęta, utrwalana, zaawansowana, opanowana), liczba powtórek, ile razy fiszka została zapomniana, data ostatniej i następnej powtórki.
+- słowo w języku fiszek i w językach nauki,
+- przykładowe zdanie w każdym z tych języków, pokazujące słowo w kontekście,
+- nagrania wymowy słowa i przykładu,
+- informacje gramatyczne: część mowy (rzeczownik, czasownik, przymiotnik), a dla czasowników odmiana (bezokolicznik, czas przeszły, imiesłów, a w niemieckim także czasownik posiłkowy),
+- postęp nauki: poziom (nowa, rozpoczęta, utrwalana, zaawansowana, opanowana), liczba powtórek, ile razy fiszka została zapomniana, data ostatniej i następnej powtórki.
 
 Dotknij fiszki, aby zobaczyć szczegóły. Możesz tam edytować słówka i przykłady albo odsłuchać wymowę.
 
-Przykładowe zdania możesz dopasować do swoich zainteresowań w ustawieniu **„Kontekst przykładowych zdań”** (np. biznes, podróże, IT).
+Przykładowe zdania możesz dopasować do swoich zainteresowań w ustawieniu „Kontekst przykładowych zdań” (np. biznes, podróże, IT).
 
 ---
 
