@@ -191,7 +191,7 @@ Na koniec zobaczysz jeden z trzech komunikatów:
 - „Sesja wstrzymana, wróć wkrótce” oznacza, że kilka trudnych słówek wróci do Ciebie za kilka godzin.
 - „Na teraz wszystko powtórzone” oznacza, że w tej lekcji nic na Ciebie teraz nie czeka. Wróć później albo dodaj nowe fiszki.
 
-Jeśli przerwiesz naukę w połowie, przy następnym otwarciu aplikacja zapyta, czy chcesz wrócić do miejsca, w którym skończyłeś.
+Jeśli przerwiesz naukę w trakcie sesji, przy następnym otwarciu aplikacja zapyta, czy chcesz wrócić do miejsca, w którym skończyłeś.
 
 ### Tempo nauki
 

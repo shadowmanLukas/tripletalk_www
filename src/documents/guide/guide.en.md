@@ -191,7 +191,7 @@ At the end you'll see one of three messages:
 - "Session paused, come back soon" means a few tricky words will come back to you in a few hours.
 - "Nothing due right now" means nothing in this lesson is waiting for you at the moment. Come back later or add new flashcards.
 
-If you stop halfway, the app asks next time whether you'd like to pick up where you left off.
+If you stop in the middle of a session, the app asks next time whether you'd like to pick up where you left off.
 
 ### Learning pace
 
