@@ -342,7 +342,7 @@ Na górze ekranu widzisz swój profil. Stąd przejdziesz do Danych konta (patrz 
 | Język nauki | Jeden lub dwa języki, których chcesz się nauczyć. |
 | Tryb nauki | Tempo powtórek: zrównoważony albo intensywny. |
 | Odtwarzanie audio | Zakres fiszek, pauza, prędkość i kolejność odtwarzania w trybie audio. |
-| Kontekst przykładowych zdań | Tematy, z których AI czerpie przykładowe zdania. Możesz wybrać do trzech: życie codzienne, biznes, IT i technologia, podróże, szkoła i nauka, ekologia, zdrowie, kultura i media. |
+| Kontekst przykładowych zdań | Wybierz do trzech tematów, które Cię interesują, a przykładowe zdania na fiszkach będą do nich pasować. |
 | Odmiany czasowników | Pokazuje formy i odmiany czasowników podczas nauki. |
 | Korekta z TripleTalk AI | AI poprawia gramatykę i pisownię fiszek dodawanych ręcznie. |
 

@@ -342,7 +342,7 @@ Your profile is at the top of the screen. From here you can open Account data (s
 | Learning languages | One or two languages you want to learn. |
 | Learning mode | Review pace: balanced or intensive. |
 | Audio playback | Which flashcards, pause, speed and playback order in audio mode. |
-| Example sentence context | Topics AI draws example sentences from. Choose up to three: daily life, business, IT and technology, travel, school and study, ecology, health, culture and media. |
+| Example sentence context | Pick up to three topics you're interested in, and the example sentences on your flashcards will match them. |
 | Verb conjugations | Shows verb forms and conjugations while you learn. |
 | TripleTalk AI correction | AI corrects the grammar and spelling of flashcards you add by hand. |
 
