@@ -44,13 +44,11 @@ _Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
 
    | Czego dotyczy | Konto darmowe | Premium |
    | --- | --- | --- |
-   | Urządzenia zalogowane jednocześnie na jednym koncie | do 2 | do 2 |
-   | Własne lekcje | do 10 | do 50 |
    | Języki nauki uczone jednocześnie | 1 | 2 |
+   | Własne lekcje | do 10 | do 50 |
+   | Urządzenia zalogowane jednocześnie na jednym koncie | do 2 | do 2 |
    | Analizy zdjęć przez TripleTalk AI | do 15 dziennie | do 15 dziennie |
    | Słówka wybierane przez AI z jednego zdjęcia | do 100 | do 100 |
-   | Słowo lub zwrot wpisywany ręcznie | do 30 znaków | do 30 znaków |
-   | Przykładowe zdanie wpisywane ręcznie | do 100 znaków | do 100 znaków |
 
    Limity Szkoły (rola nauczyciela, wymaga Premium):
 

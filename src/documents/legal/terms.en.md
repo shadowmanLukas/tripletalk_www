@@ -44,13 +44,11 @@ _Version of October 7, 2026. Effective from October 1, 2026._
 
    | What it covers | Free account | Premium |
    | --- | --- | --- |
-   | Devices signed in to one account at the same time | up to 2 | up to 2 |
-   | Your own lessons | up to 10 | up to 50 |
    | Learning languages studied at the same time | 1 | 2 |
+   | Your own lessons | up to 10 | up to 50 |
+   | Devices signed in to one account at the same time | up to 2 | up to 2 |
    | TripleTalk AI photo analyses | up to 15 per day | up to 15 per day |
    | Words picked by AI from one photo | up to 100 | up to 100 |
-   | Word or phrase typed manually | up to 30 characters | up to 30 characters |
-   | Example sentence typed manually | up to 100 characters | up to 100 characters |
 
    School limits (teacher role, requires Premium):
 
