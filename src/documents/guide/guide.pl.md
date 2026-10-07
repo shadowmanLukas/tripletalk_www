@@ -367,7 +367,7 @@ Tutaj możesz napisać do nas, gdy coś nie działa albo masz pomysł, co ulepsz
 
 W `Więcej > Dane konta` sprawdzisz, na jaki adres e-mail jest założone Twoje konto oraz czy Twój e-mail jest potwierdzony. Jeśli logujesz się przez Apple, adres e-mail może być ukryty.
 
-Jeśli zakładałeś konto e-mailem, możesz tu też zmienić adres (link potwierdzający przyjdzie na nowy) albo zresetować hasło. Przy logowaniu przez Google lub Apple adres i hasło zmieniasz na swoim koncie Google albo Apple.
+Jeśli zakładałeś konto przez e-mail, możesz tu też zmienić ten adres (link potwierdzający przyjdzie na nowy adres e-mail) albo zresetować hasło. Przy logowaniu przez Google lub Apple adres i hasło zmieniasz na swoim koncie Google albo Apple.
 
 ### Urządzenia
 
