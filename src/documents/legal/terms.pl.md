@@ -71,7 +71,7 @@ _Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
 ## 6. TripleTalk AI
 
 1. Funkcje AI rozpoznają tekst na zdjęciach, generują tłumaczenia, przykłady, informacje językowe i nagrania wymowy. Korzystamy przy tym z modeli zewnętrznych dostawców (wymienionych w Polityce Prywatności).
-2. Treści wygenerowane przez AI mają charakter pomocniczy. Mogą zawierać błędy, nieścisłości lub braki. Sprawdź je, zanim zaczniesz się z nich uczyć. Nauczyciel sprawdza je, zanim udostępni lekcję uczniom.
+2. Treści wygenerowane przez AI mają charakter pomocniczy. Mogą zawierać błędy, nieścisłości lub braki. Sprawdź je, zanim zaczniesz się z nich uczyć. Nauczyciel powinien sprawdzać je, zanim udostępni lekcję uczniom.
 3. Treści AI nie są poradą językową, prawną ani żadną inną profesjonalną poradą.
 4. Nie odpowiadamy za skutki wykorzystania treści AI bez ich weryfikacji, z zastrzeżeniem pkt 14.
 

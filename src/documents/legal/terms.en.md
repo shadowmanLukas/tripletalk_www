@@ -71,7 +71,7 @@ _Version of October 7, 2026. Effective from October 1, 2026._
 ## 6. TripleTalk AI
 
 1. AI features recognize text in photos and generate translations, examples, language information and pronunciation audio, using models from third-party providers (listed in the Privacy Policy).
-2. AI-generated content is an aid only. It may contain errors, inaccuracies or omissions. Check it before you study it. Teachers check it before sharing a lesson with students.
+2. AI-generated content is an aid only. It may contain errors, inaccuracies or omissions. Check it before you study it. Teachers should check it before sharing a lesson with students.
 3. AI content is not linguistic, legal or any other professional advice.
 4. We are not responsible for the consequences of using AI content without verifying it, subject to section 14.
 
