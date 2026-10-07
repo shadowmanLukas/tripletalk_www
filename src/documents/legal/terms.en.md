@@ -27,7 +27,7 @@ _Version of October 7, 2026. Effective from October 1, 2026._
 1. You create an account with an email address and password, Google Sign-In or Sign in with Apple. An account is required to use the App.
 2. One account is for one person. Do not share it and keep your login details safe. You are responsible for activity on your account.
 3. You can change your email address and reset your password in the App.
-4. **Device limit.** One account can be signed in on a limited number of devices at the same time (section 5(4)), whatever the sign-in method (email, Google, Apple). Signing in on another device automatically signs out the device that has gone unused the longest. You can see the signed-in devices under Account data in the App and sign out any of them there. The limit protects against one account, including a Premium account, being shared by several people.
+4. Device limit. You can be signed in to one account on two devices at the same time, whatever the sign-in method (email, Google, Apple). Signing in on another device automatically signs out the device that has gone unused the longest.
 
 ## 5. What the App does
 
