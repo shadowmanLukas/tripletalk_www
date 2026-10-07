@@ -181,7 +181,7 @@ You can tailor example sentences to your interests with the "Example sentence co
    - Good: it comes back later,
    - Easy: it comes back after a longer break.
 
-You just answer. The review algorithm takes care of the rest: the better you know a flashcard, the less often it appears, and if it starts giving you trouble, it comes back more often. A lesson is completed when every flashcard is mastered and none needs a review right now.
+You don't need to plan anything. Words you know well will show up less and less often, and the ones you struggle with will come back sooner. You've finished a lesson when you know every flashcard and none is waiting for a review.
 
 ### After a session
 

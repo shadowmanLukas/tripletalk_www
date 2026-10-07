@@ -181,7 +181,7 @@ Przykładowe zdania możesz dopasować do swoich zainteresowań w ustawieniu „
    - Znam: wróci później,
    - Łatwe: wróci po dłuższej przerwie.
 
-Ty tylko odpowiadasz. Resztą zajmuje się algorytm powtórek: im lepiej znasz fiszkę, tym rzadziej się pojawia, a jeśli zacznie sprawiać trudność, wróci częściej. Lekcja jest ukończona, gdy wszystkie fiszki są opanowane i żadna nie wymaga teraz powtórki.
+Nie musisz niczego planować. Słówka, które dobrze znasz, będą pojawiać się coraz rzadziej, a te, z którymi masz kłopot, wrócą szybciej. Lekcję masz za sobą, gdy znasz już wszystkie fiszki i żadna nie czeka na powtórkę.
 
 ### Po sesji
 
