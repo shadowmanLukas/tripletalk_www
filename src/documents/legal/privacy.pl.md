@@ -124,7 +124,7 @@ Masz prawo do:
 - usunięcia danych,
 - ograniczenia przetwarzania,
 - przeniesienia danych, które nam przekazałeś,
-- **sprzeciwu** wobec przetwarzania opartego na naszym prawnie uzasadnionym interesie (w tym analityki i zabezpieczeń bonusu),
+- sprzeciwu wobec przetwarzania opartego na naszym prawnie uzasadnionym interesie (w tym analityki i zabezpieczeń bonusu),
 - cofnięcia zgody w każdej chwili (np. wyłączając powiadomienia w ustawieniach telefonu), bez wpływu na zgodność z prawem wcześniejszego przetwarzania,
 - skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa) lub organu nadzorczego w kraju, w którym mieszkasz.
 

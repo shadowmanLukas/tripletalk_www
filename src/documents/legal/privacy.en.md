@@ -124,7 +124,7 @@ You have the right to:
 - erase your data,
 - restrict processing,
 - data portability for data you provided to us,
-- **object** to processing based on our legitimate interest (including analytics and welcome bonus safeguards),
+- object to processing based on our legitimate interest (including analytics and welcome bonus safeguards),
 - withdraw consent at any time (e.g. by turning off notifications in your phone settings), without affecting the lawfulness of earlier processing,
 - lodge a complaint with the Polish supervisory authority (Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warsaw) or the supervisory authority in your country of residence.
 
