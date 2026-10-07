@@ -365,28 +365,28 @@ Tutaj możesz napisać do nas, gdy coś nie działa albo masz pomysł, co ulepsz
 
 ### Dane konta
 
-W **Więcej > Dane konta** sprawdzisz:
+W Więcej > Dane konta sprawdzisz:
 
 - adres email (przy logowaniu przez Apple może być ukryty),
 - metodę logowania (email i hasło, Google albo Apple),
 - status weryfikacji emaila.
 
-Konta zakładane emailem mają też opcje **Zmień email** (link potwierdzający przyjdzie na nowy adres) i **Resetuj hasło**. Dla kont Google i Apple email i hasło zmieniasz u tych dostawców.
+Konta zakładane emailem mają też opcje Zmień email (link potwierdzający przyjdzie na nowy adres) i Resetuj hasło. Dla kont Google i Apple email i hasło zmieniasz u tych dostawców.
 
 ### Urządzenia
 
-W **Dane konta > Urządzenia** widzisz telefony i tablety, na których jesteś zalogowany, wraz z datą ostatniej aktywności. Dowolne z nich możesz wylogować przyciskiem **„Wyloguj”**, np. gdy zgubisz telefon.
+W Dane konta > Urządzenia widzisz telefony i tablety, na których jesteś zalogowany, wraz z datą ostatniej aktywności. Dowolne z nich możesz wylogować przyciskiem „Wyloguj”, np. gdy zgubisz telefon.
 
 Konto możesz używać jednocześnie na kilku urządzeniach, np. na telefonie i tablecie, a lekcje i postępy synchronizują się między nimi. Liczba urządzeń zalogowanych jednocześnie jest ograniczona (szczegóły w regulaminie). Gdy zalogujesz się na kolejnym, aplikacja automatycznie wyloguje urządzenie, które najdłużej nie było używane, i wyświetli na nim komunikat. Aby znowu z niego korzystać, wystarczy zalogować się ponownie.
 
 ### Dokumenty
 
-W sekcji **Dokumenty** znajdziesz regulamin i politykę prywatności.
+W sekcji Dokumenty znajdziesz regulamin i politykę prywatności.
 
 ### Wylogowanie i usunięcie konta
 
-- **Wyloguj**: Twoje dane zostają na koncie i wrócą po ponownym zalogowaniu.
-- **Usuń konto**: trwale usuwa konto, lekcje, fiszki, postępy i zdjęcia przesłane do TripleTalk AI. Tej operacji nie można cofnąć. Usunięcie konta nie anuluje subskrypcji w sklepie, zrób to osobno w App Store albo Google Play.
+- Wyloguj: Twoje dane zostają na koncie i wrócą po ponownym zalogowaniu.
+- Usuń konto: trwale usuwa konto, lekcje, fiszki, postępy i zdjęcia przesłane do TripleTalk AI. Tej operacji nie można cofnąć. Usunięcie konta nie anuluje subskrypcji w sklepie, zrób to osobno w App Store albo Google Play.
 
 ### Jak dbamy o Twoje dane
 

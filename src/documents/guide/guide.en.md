@@ -365,28 +365,28 @@ Here you can write to us when something isn't working or you have an idea for an
 
 ### Account data
 
-In **More > Account data** you can see:
+In More > Account data you can see:
 
 - your email address (it may be hidden if you sign in with Apple),
 - your sign-in method (email and password, Google or Apple),
 - whether your email is verified.
 
-Accounts created with email also have **Change email** (a confirmation link is sent to the new address) and **Change password**. For Google and Apple accounts, you change your email and password with those providers.
+Accounts created with email also have Change email (a confirmation link is sent to the new address) and Change password. For Google and Apple accounts, you change your email and password with those providers.
 
 ### Devices
 
-Under **Account data > Devices** you can see the phones and tablets you're signed in on, with the date each was last active. You can sign out any of them with **"Sign out"**, for example if you lose your phone.
+Under Account data > Devices you can see the phones and tablets you're signed in on, with the date each was last active. You can sign out any of them with "Sign out", for example if you lose your phone.
 
 You can use your account on several devices at once, such as a phone and a tablet, and your lessons and progress sync between them. The number of devices signed in at the same time is limited (see the Terms of Service). When you sign in on another one, the app automatically signs out the device that has gone unused the longest and shows a message on it. To use it again, just sign in again.
 
 ### Documents
 
-The **Documents** section contains the Terms of Service and Privacy Policy.
+The Documents section contains the Terms of Service and Privacy Policy.
 
 ### Signing out and deleting your account
 
-- **Sign out**: your data stays in your account and comes back when you sign in again.
-- **Delete account**: permanently deletes your account, lessons, flashcards, progress and the photos you sent to TripleTalk AI. This cannot be undone. Deleting your account doesn't cancel a store subscription, so cancel it separately in the App Store or Google Play.
+- Sign out: your data stays in your account and comes back when you sign in again.
+- Delete account: permanently deletes your account, lessons, flashcards, progress and the photos you sent to TripleTalk AI. This cannot be undone. Deleting your account doesn't cancel a store subscription, so cancel it separately in the App Store or Google Play.
 
 ### How we look after your data
 
