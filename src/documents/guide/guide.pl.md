@@ -339,7 +339,7 @@ Na górze ekranu widzisz swój profil. Stąd przejdziesz do Danych konta (patrz 
 | Ustawienie | Co robi |
 | --- | --- |
 | Język fiszek | Język, który znasz najlepiej. W nim zobaczysz tłumaczenia na fiszkach |
-| Język nauki | Jeden lub dwa języki, których się uczysz. Konto darmowe: jeden język, Premium: dwa jednocześnie. |
+| Język nauki | Jeden lub dwa języki, których chcesz się nauczyć |
 | Tryb nauki | Tempo powtórek: zrównoważony albo intensywny. |
 | Odtwarzanie audio | Zakres fiszek, pauza, prędkość i kolejność w trybie audio. |
 | Kontekst przykładowych zdań | Tematy, z których AI czerpie przykładowe zdania. Możesz wybrać do trzech: życie codzienne, biznes, IT i technologia, podróże, szkoła i nauka, ekologia, zdrowie, kultura i media. |
