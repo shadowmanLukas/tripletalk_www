@@ -94,9 +94,9 @@ _Version of October 7, 2026. Effective from October 1, 2026._
    - is offensive, vulgar, discriminatory, incites violence or is unsuitable for children (especially in School lessons),
    - contains other people's personal data without a legal basis,
    - contains malicious code or is used for spam, advertising or circumventing limits.
-4. **Photos of textbooks and other materials.** Photograph only materials you have rights to or may use under statutory exceptions (e.g. private use or, when teaching, the educational exception). The AI extracts individual words and phrases for flashcards. Do not use the App to copy entire works.
+4. Photos of textbooks and other materials. Photograph only materials you have rights to or may use under statutory exceptions (e.g. private use or, when teaching, the educational exception). The AI extracts individual words and phrases for flashcards. Do not use the App to copy entire works.
 5. We do not review content manually before it is added and are not obliged to. We act on notices (section 11).
-6. **Automated moderation in School.** Class names, lesson titles and flashcard words and examples in School are checked automatically by AI for vulgar, offensive or sexual content before they are saved. Content identified as such is rejected and the App shows a message. Automated checks can be wrong either way and do not replace the teacher's responsibility for lesson content. If you believe content was rejected wrongly, contact us (section 11).
+6. Automated moderation in School. Class names, lesson titles and flashcard words and examples in School are checked automatically by AI for vulgar, offensive or sexual content before they are saved. Content identified as such is rejected and the App shows a message. Automated checks can be wrong either way and do not replace the teacher's responsibility for lesson content. If you believe content was rejected wrongly, contact us (section 11).
 
 ## 9. School
 

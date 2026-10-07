@@ -94,9 +94,9 @@ _Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
    - są obraźliwe, wulgarne, dyskryminujące, nawołują do przemocy lub są nieodpowiednie dla dzieci (dotyczy zwłaszcza lekcji w Szkole),
    - zawierają dane osobowe innych osób bez podstawy prawnej,
    - zawierają złośliwy kod lub służą do spamu, reklamy lub obejścia limitów.
-4. **Zdjęcia podręczników i innych materiałów.** Możesz fotografować tylko materiały, do których masz prawo, albo korzystać z nich w granicach dozwolonego użytku (np. własnego użytku osobistego lub, przy nauczaniu, dozwolonego użytku edukacyjnego). Ze zdjęcia AI wyciąga pojedyncze słowa i zwroty do fiszek. Nie używaj Aplikacji do kopiowania całych utworów.
+4. Zdjęcia podręczników i innych materiałów. Możesz fotografować tylko materiały, do których masz prawo, albo korzystać z nich w granicach dozwolonego użytku (np. własnego użytku osobistego lub, przy nauczaniu, dozwolonego użytku edukacyjnego). Ze zdjęcia AI wyciąga pojedyncze słowa i zwroty do fiszek. Nie używaj Aplikacji do kopiowania całych utworów.
 5. Nie przeglądamy ręcznie treści przed ich dodaniem i nie mamy takiego obowiązku. Działamy po otrzymaniu zgłoszenia (pkt 11).
-6. **Automatyczna moderacja w Szkole.** Nazwy klas, tytuły lekcji, słowa i przykłady na fiszkach w Szkole są przed zapisaniem automatycznie sprawdzane przez AI pod kątem treści wulgarnych, obraźliwych lub o charakterze seksualnym. Treść uznana za taką jest odrzucana, a Aplikacja wyświetla komunikat. Kontrola automatyczna może się pomylić w obie strony i nie zastępuje odpowiedzialności nauczyciela za treść lekcji. Jeśli uważasz, że treść została odrzucona niesłusznie, napisz do nas (pkt 11).
+6. Automatyczna moderacja w Szkole. Nazwy klas, tytuły lekcji, słowa i przykłady na fiszkach w Szkole są przed zapisaniem automatycznie sprawdzane przez AI pod kątem treści wulgarnych, obraźliwych lub o charakterze seksualnym. Treść uznana za taką jest odrzucana, a Aplikacja wyświetla komunikat. Kontrola automatyczna może się pomylić w obie strony i nie zastępuje odpowiedzialności nauczyciela za treść lekcji. Jeśli uważasz, że treść została odrzucona niesłusznie, napisz do nas (pkt 11).
 
 ## 9. Szkoła
 
