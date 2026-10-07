@@ -249,14 +249,14 @@ Every "Know" in a School lesson counts towards your stats on the Dashboard. You 
 
 Your teacher only sees your first name and whether you've started a lesson. They don't know which flashcards you know. Students can't see each other, and School has no chat or comments.
 
-### Teacher (requires Premium)
+### Teacher
 
-1. Choose the Teacher role and enter the display name students will see (for example "Mrs Smith").
-2. Create a class (for example "English 3B").
-3. Add students by their ID. Each student receives an invitation and decides whether to join. You can see the invitation status in the student list and resend an invitation that has expired.
-4. Create a lesson: enter a title, the flashcard language and the learning language, then add flashcards by hand or from a photo, just like in your own lessons. TripleTalk AI prepares the translations, examples and recordings, and the lesson gets a matching icon.
-5. Before sharing, check the lesson with "Preview cards" or "Listen".
-6. Share with a class: choose one or more classes and the period when the lesson should be available (from–to).
+- The Teacher role requires Premium. Once you choose it, you enter the name students will see, for example "Mrs Smith".
+- You create a class, for example "English 3B".
+- You add students by their ID. Each of them gets an invitation and decides whether to join. The student list shows who has accepted, and if an invitation expires, you can send it again.
+- You create a lesson just like your own: enter a title, the flashcard language and the learning language, then add flashcards by hand or from a photo. TripleTalk AI prepares the translations, examples and recordings, and the lesson gets a matching icon.
+- Before you share a lesson, you can go through it with "Preview cards" or "Listen".
+- Finally, you choose one or more classes and the period when the lesson should be available to them.
 
 Key rules:
 

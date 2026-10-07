@@ -249,14 +249,14 @@ Każde „Znam” w lekcji ze Szkoły wlicza się do Twoich statystyk na Panelu.
 
 Nauczyciel widzi tylko Twoje imię i to, czy zacząłeś już naukę lekcji. Nie wie, które fiszki znasz. Uczniowie nie widzą siebie nawzajem, a w Szkole nie ma czatu ani komentarzy.
 
-### Nauczyciel (wymaga Premium)
+### Nauczyciel
 
-1. Wybierz rolę Nauczyciel i podaj nazwę wyświetlaną, którą zobaczą uczniowie (np. „Pani Kowalska”).
-2. Utwórz klasę (np. „Angielski 3B”).
-3. Dodaj uczniów po ich ID. Każdy uczeń dostanie zaproszenie i sam zdecyduje, czy dołączyć. Status zaproszenia widzisz na liście uczniów, a zaproszenie, które wygasło, możesz ponowić.
-4. Utwórz lekcję: podaj tytuł, język fiszek i język nauki, a potem dodaj fiszki ręcznie albo ze zdjęcia, tak samo jak we własnych lekcjach. TripleTalk AI przygotuje tłumaczenia, przykłady i nagrania, a lekcja dostanie pasującą ikonę.
-5. Przed udostępnieniem sprawdź lekcję w trybie „Podgląd fiszek” albo „Odsłuch”.
-6. Udostępnij klasie: wybierz jedną lub kilka klas i okres, w którym lekcja ma być dostępna (od–do).
+- Rola nauczyciela wymaga Premium. Po jej wybraniu podajesz nazwę, którą zobaczą uczniowie, np. „Pani Kowalska”.
+- Tworzysz klasę, np. „Angielski 3B”.
+- Uczniów dodajesz po ich ID. Każdy dostanie zaproszenie i sam zdecyduje, czy dołączyć. Na liście uczniów widzisz, kto już przyjął zaproszenie, a jeśli któreś wygaśnie, możesz wysłać je jeszcze raz.
+- Lekcję tworzysz tak samo jak własną: podajesz tytuł, język fiszek i język nauki, a potem dodajesz fiszki ręcznie albo ze zdjęcia. TripleTalk AI przygotuje tłumaczenia, przykłady i nagrania, a lekcja dostanie pasującą ikonę.
+- Zanim udostępnisz lekcję, możesz ją przejrzeć w trybie „Podgląd fiszek” albo „Odsłuch”.
+- Na koniec wybierasz jedną lub kilka klas i okres, w którym lekcja ma być dla nich dostępna.
 
 Ważne zasady:
 
