@@ -1,4 +1,4 @@
-# TripleTalk: instrukcja użytkownika
+# TripleTalk Instrukcja Użytkownika
 
 TripleTalk to aplikacja na iPhone'a i Androida do nauki słówek i zwrotów w obcych językach. Tworzysz własne lekcje z fiszek, a TripleTalk AI uzupełnia za Ciebie tłumaczenia, przykładowe zdania i nagrania wymowy. Aplikacja sama pilnuje, kiedy warto powtórzyć każde słówko, więc uczysz się krócej i pamiętasz dłużej.
 

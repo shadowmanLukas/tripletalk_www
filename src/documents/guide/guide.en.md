@@ -1,4 +1,4 @@
-# TripleTalk: user guide
+# TripleTalk User Guide
 
 TripleTalk is an iPhone and Android app for learning words and phrases in foreign languages. You build your own lessons from flashcards, and TripleTalk AI fills in the translations, example sentences and pronunciation for you. The app keeps track of when each word is worth reviewing, so you spend less time studying and remember for longer.
 
