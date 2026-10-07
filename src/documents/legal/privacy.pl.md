@@ -77,14 +77,14 @@ Podanie danych jest dobrowolne, ale bez danych konta nie da się korzystać z Ap
 
 ## 7. Komu przekazujemy dane
 
-1. **Dostawcom usług**, którzy przetwarzają dane w naszym imieniu i według naszych poleceń:
+1. Dostawcom usług, którzy przetwarzają dane w naszym imieniu i według naszych poleceń:
    - Google Firebase i Google Cloud: logowanie (Authentication), baza danych (Firestore), pliki (Cloud Storage), funkcje serwerowe (Cloud Functions), powiadomienia (Cloud Messaging), App Check, Crashlytics, Analytics, Performance Monitoring,
    - Google Gemini: funkcje AI,
    - Google Cloud Text-to-Speech: nagrania wymowy,
    - RevenueCat: obsługa i weryfikacja zakupów w aplikacji (otrzymuje identyfikator konta i dane transakcji ze sklepu).
-2. **Apple i Google** jako operatorom sklepów i logowania. Zakupy i logowanie przez Apple lub Google podlegają także ich politykom prywatności.
-3. **Innym użytkownikom** w Szkole, w zakresie z pkt 4 ust. 3.
-4. **Organom państwowym**, gdy wymaga tego prawo.
+2. Apple i Google jako operatorom sklepów i logowania. Zakupy i logowanie przez Apple lub Google podlegają także ich politykom prywatności.
+3. Innym użytkownikom w Szkole, w zakresie z pkt 4 ust. 3.
+4. Organom państwowym, gdy wymaga tego prawo.
 
 Listę dostawców możemy zmieniać. Aktualna jest zawsze w tej Polityce.
 

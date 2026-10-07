@@ -77,14 +77,14 @@ Providing data is voluntary, but the App cannot be used without account data. We
 
 ## 7. Who we share data with
 
-1. **Service providers** processing data on our behalf and on our instructions:
+1. Service providers processing data on our behalf and on our instructions:
    - Google Firebase and Google Cloud: sign-in (Authentication), database (Firestore), files (Cloud Storage), server functions (Cloud Functions), notifications (Cloud Messaging), App Check, Crashlytics, Analytics, Performance Monitoring,
    - Google Gemini: AI features,
    - Google Cloud Text-to-Speech: pronunciation audio,
    - RevenueCat: handling and verifying in-app purchases (receives your account ID and store transaction data).
-2. **Apple and Google** as operators of the app stores and sign-in services. Purchases and sign-in via Apple or Google are also subject to their privacy policies.
-3. **Other users** in School, as described in section 4(3).
-4. **Public authorities**, where required by law.
+2. Apple and Google as operators of the app stores and sign-in services. Purchases and sign-in via Apple or Google are also subject to their privacy policies.
+3. Other users in School, as described in section 4(3).
+4. Public authorities, where required by law.
 
 We may change the list of providers. The current list is always in this Policy.
 
