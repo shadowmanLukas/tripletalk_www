@@ -235,46 +235,46 @@ The Collections tab offers ready-made flashcard sets prepared by TripleTalk. The
 
 School is a separate tab where a teacher prepares lessons with flashcards and recordings, and students learn from them on their own phones.
 
-The first time you open it, you choose a role: **Student** or **Teacher**. An account can have one role. You can only change it by resetting your School settings.
+The first time you open it, you choose a role: Student or Teacher. An account can have one role. You can only change it by resetting your School settings.
 
 ### Student (free)
 
-1. Choose the **Student** role, enter your first name and confirm that you are at least 16 or have a parent's or guardian's consent.
-2. You get your own **ID** in the format `XXXX-XXXX`. Copy it or share it with your teacher.
-3. The teacher sends you a class invitation. You can **accept** it, **decline** it, or **decline and block** the teacher if you don't want any more invitations from them.
-4. In **"My classes"** you'll see the lessons your teacher has shared, along with the date they're available until.
-5. Learn in a simple **"Know" / "Don't know"** mode and listen to the pronunciation. You can reset your progress in a lesson at any time.
+1. Choose the Student role, enter your first name and confirm that you are at least 16 or have a parent's or guardian's consent.
+2. You get your own ID in the format `XXXX-XXXX`. Copy it or share it with your teacher.
+3. The teacher sends you a class invitation. You can accept it, decline it, or decline and block the teacher if you don't want any more invitations from them.
+4. In "My classes" you'll see the lessons your teacher has shared, along with the date they're available until.
+5. Learn in a simple "Know" / "Don't know" mode and listen to the pronunciation. You can reset your progress in a lesson at any time.
 
 Every "Know" in a School lesson counts towards your Dashboard stats. You can leave a class at any time.
 
-**Student privacy:** the teacher only sees your first name and whether you have started a lesson. They don't see which flashcards you know. Students can't see each other, and School has no chat or comments.
+Student privacy: the teacher only sees your first name and whether you have started a lesson. They don't see which flashcards you know. Students can't see each other, and School has no chat or comments.
 
 ### Teacher (requires Premium)
 
-1. Choose the **Teacher** role and enter the display name students will see (for example "Mrs Smith").
-2. **Create a class** (for example "English 3B").
-3. **Add students** by their ID. Each student receives an invitation and decides whether to join. You can see the invitation status in the student list and resend an invitation that has expired.
-4. **Create a lesson:** enter a title, the flashcard language and the learning language, then add flashcards by hand or from a photo, just like in your own lessons. TripleTalk AI prepares the translations, examples and recordings, and the lesson gets a matching icon.
-5. Before sharing, check the lesson with **"Preview cards"** or **"Listen"**.
-6. **Share with a class:** choose one or more classes and the period when the lesson should be available (from–to).
+1. Choose the Teacher role and enter the display name students will see (for example "Mrs Smith").
+2. Create a class (for example "English 3B").
+3. Add students by their ID. Each student receives an invitation and decides whether to join. You can see the invitation status in the student list and resend an invitation that has expired.
+4. Create a lesson: enter a title, the flashcard language and the learning language, then add flashcards by hand or from a photo, just like in your own lessons. TripleTalk AI prepares the translations, examples and recordings, and the lesson gets a matching icon.
+5. Before sharing, check the lesson with "Preview cards" or "Listen".
+6. Share with a class: choose one or more classes and the period when the lesson should be available (from–to).
 
 Key rules:
 
-- Once a lesson has been shared, **it can no longer be edited**. You can still share it with more classes or change the availability dates for a given class.
+- Once a lesson has been shared, it can no longer be edited. You can still share it with more classes or change the availability dates for a given class.
 - You share a lesson with a given class only once. To change the dates, change the availability of the existing share.
-- In each class you see **Active**, **Scheduled** and **Ended** lessons, plus a "Started: X of Y students" stat.
-- Move lessons you no longer need to the **Archive**. The lesson disappears from classes and students' progress in it is deleted, but the flashcards and recordings stay. From the archive you can **restore** the lesson (it becomes editable and shareable again, for example next school year) or **delete it for good**.
+- In each class you see Active, Scheduled and Ended lessons, plus a "Started: X of Y students" stat.
+- Move lessons you no longer need to the Archive. The lesson disappears from classes and students' progress in it is deleted, but the flashcards and recordings stay. From the archive you can restore the lesson (it becomes editable and shareable again, for example next school year) or delete it for good.
 - Flashcards in School lessons use the same TripleTalk AI flashcard balance as your own lessons.
 
 The number of classes, students per class, lessons and flashcards per lesson is limited. The limits are generous enough to run several classes, and their current values are in the Terms of Service.
 
 ### School settings
 
-In **More > School settings**:
+In More > School settings:
 
-- **Invitations** (student): allow or stop teachers from inviting you to classes.
-- **Blocked teachers** (student): the list of teachers you've blocked, with the option to unblock them.
-- **Reset School settings:**
+- Invitations (student): allow or stop teachers from inviting you to classes.
+- Blocked teachers (student): the list of teachers you've blocked, with the option to unblock them.
+- Reset School settings:
   - a student leaves all classes, and their progress, name and role are removed (the ID stays the same),
   - a teacher permanently deletes all their classes and lessons, and students lose access to them. This cannot be undone.
 

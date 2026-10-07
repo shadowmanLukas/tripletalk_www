@@ -235,46 +235,46 @@ Zakładka Kolekcje to gotowe zestawy fiszek przygotowane przez TripleTalk. Nie m
 
 Szkoła to osobna zakładka, w której nauczyciel przygotowuje lekcje z fiszkami i nagraniami, a uczniowie uczą się z nich na swoich telefonach.
 
-Przy pierwszym wejściu wybierasz rolę: **Uczeń** albo **Nauczyciel**. Jedno konto może mieć jedną rolę. Zmienisz ją tylko przez zresetowanie ustawień Szkoły.
+Przy pierwszym wejściu wybierasz rolę: Uczeń albo Nauczyciel. Jedno konto może mieć jedną rolę. Zmienisz ją tylko przez zresetowanie ustawień Szkoły.
 
 ### Uczeń (za darmo)
 
-1. Wybierz rolę **Uczeń**, podaj imię i potwierdź, że masz co najmniej 16 lat albo zgodę rodzica lub opiekuna.
-2. Otrzymasz swoje **ID** w formacie `XXXX-XXXX`. Skopiuj je albo udostępnij nauczycielowi.
-3. Nauczyciel wyśle Ci zaproszenie do klasy. Możesz je **zaakceptować**, **odrzucić** albo **odrzucić i zablokować** nauczyciela, jeśli nie chcesz od niego kolejnych zaproszeń.
-4. W sekcji **„Moje klasy”** zobaczysz lekcje udostępnione przez nauczyciela, razem z datą, do kiedy są dostępne.
-5. Ucz się w prostym trybie **„Znam” / „Nie znam”** i słuchaj wymowy. Swój postęp w lekcji możesz w każdej chwili zresetować.
+1. Wybierz rolę Uczeń, podaj imię i potwierdź, że masz co najmniej 16 lat albo zgodę rodzica lub opiekuna.
+2. Otrzymasz swoje ID w formacie `XXXX-XXXX`. Skopiuj je albo udostępnij nauczycielowi.
+3. Nauczyciel wyśle Ci zaproszenie do klasy. Możesz je zaakceptować, odrzucić albo odrzucić i zablokować nauczyciela, jeśli nie chcesz od niego kolejnych zaproszeń.
+4. W sekcji „Moje klasy” zobaczysz lekcje udostępnione przez nauczyciela, razem z datą, do kiedy są dostępne.
+5. Ucz się w prostym trybie „Znam” / „Nie znam” i słuchaj wymowy. Swój postęp w lekcji możesz w każdej chwili zresetować.
 
 Każde „Znam” w lekcji ze Szkoły liczy się do Twoich statystyk na Panelu. Klasę możesz w każdej chwili opuścić.
 
-**Prywatność ucznia:** nauczyciel widzi tylko Twoje imię i to, czy zacząłeś naukę lekcji. Nie widzi, które fiszki znasz. Uczniowie nie widzą siebie nawzajem, a w Szkole nie ma czatu ani komentarzy.
+Prywatność ucznia: nauczyciel widzi tylko Twoje imię i to, czy zacząłeś naukę lekcji. Nie widzi, które fiszki znasz. Uczniowie nie widzą siebie nawzajem, a w Szkole nie ma czatu ani komentarzy.
 
 ### Nauczyciel (wymaga Premium)
 
-1. Wybierz rolę **Nauczyciel** i podaj nazwę wyświetlaną, którą zobaczą uczniowie (np. „Pani Kowalska”).
-2. **Utwórz klasę** (np. „Angielski 3B”).
-3. **Dodaj uczniów** po ich ID. Każdy uczeń dostanie zaproszenie i sam zdecyduje, czy dołączyć. Status zaproszenia widzisz na liście uczniów, a zaproszenie, które wygasło, możesz ponowić.
-4. **Utwórz lekcję:** podaj tytuł, język fiszek i język nauki, a potem dodaj fiszki ręcznie albo ze zdjęcia, tak samo jak we własnych lekcjach. TripleTalk AI przygotuje tłumaczenia, przykłady i nagrania, a lekcja dostanie pasującą ikonę.
-5. Przed udostępnieniem sprawdź lekcję w trybie **„Podgląd fiszek”** albo **„Odsłuch”**.
-6. **Udostępnij klasie:** wybierz jedną lub kilka klas i okres, w którym lekcja ma być dostępna (od–do).
+1. Wybierz rolę Nauczyciel i podaj nazwę wyświetlaną, którą zobaczą uczniowie (np. „Pani Kowalska”).
+2. Utwórz klasę (np. „Angielski 3B”).
+3. Dodaj uczniów po ich ID. Każdy uczeń dostanie zaproszenie i sam zdecyduje, czy dołączyć. Status zaproszenia widzisz na liście uczniów, a zaproszenie, które wygasło, możesz ponowić.
+4. Utwórz lekcję: podaj tytuł, język fiszek i język nauki, a potem dodaj fiszki ręcznie albo ze zdjęcia, tak samo jak we własnych lekcjach. TripleTalk AI przygotuje tłumaczenia, przykłady i nagrania, a lekcja dostanie pasującą ikonę.
+5. Przed udostępnieniem sprawdź lekcję w trybie „Podgląd fiszek” albo „Odsłuch”.
+6. Udostępnij klasie: wybierz jedną lub kilka klas i okres, w którym lekcja ma być dostępna (od–do).
 
 Ważne zasady:
 
-- Po pierwszym udostępnieniu lekcji **nie można już jej edytować**. Nadal możesz udostępnić ją kolejnym klasom albo zmienić termin dostępności dla danej klasy.
+- Po pierwszym udostępnieniu lekcji nie można już jej edytować. Nadal możesz udostępnić ją kolejnym klasom albo zmienić termin dostępności dla danej klasy.
 - Jedną lekcję udostępniasz danej klasie tylko raz. Aby zmienić daty, zmień dostępność istniejącego udostępnienia.
-- W każdej klasie widzisz lekcje **aktywne**, **zaplanowane** i **zakończone** oraz statystykę „Rozpoczęło naukę: X z Y uczniów”.
-- Lekcje, których już nie potrzebujesz, przenieś do **Archiwum**. Lekcja znika wtedy z klas, a postęp uczniów w niej jest usuwany, ale fiszki i nagrania zostają. Z archiwum możesz lekcję **przywrócić** (znowu da się ją edytować i udostępnić, np. w kolejnym roku szkolnym) albo **usunąć na zawsze**.
+- W każdej klasie widzisz lekcje aktywne, zaplanowane i zakończone oraz statystykę „Rozpoczęło naukę: X z Y uczniów”.
+- Lekcje, których już nie potrzebujesz, przenieś do Archiwum. Lekcja znika wtedy z klas, a postęp uczniów w niej jest usuwany, ale fiszki i nagrania zostają. Z archiwum możesz lekcję przywrócić (znowu da się ją edytować i udostępnić, np. w kolejnym roku szkolnym) albo usunąć na zawsze.
 - Fiszki w lekcjach Szkoły korzystają z tego samego salda fiszek TripleTalk AI co lekcje własne.
 
 Liczba klas, uczniów w klasie, lekcji i fiszek w lekcji jest ograniczona. Limity są na tyle duże, żeby wystarczyły do prowadzenia kilku klas, a ich aktualne wartości znajdziesz w regulaminie.
 
 ### Ustawienia Szkoły
 
-W **Więcej > Ustawienia Szkoły**:
+W Więcej > Ustawienia Szkoły:
 
-- **Zaproszenia** (uczeń): włącz albo wyłącz możliwość zapraszania Cię do klas.
-- **Zablokowani nauczyciele** (uczeń): lista zablokowanych nauczycieli z możliwością odblokowania.
-- **Zresetuj ustawienia Szkoły:**
+- Zaproszenia (uczeń): włącz albo wyłącz możliwość zapraszania Cię do klas.
+- Zablokowani nauczyciele (uczeń): lista zablokowanych nauczycieli z możliwością odblokowania.
+- Zresetuj ustawienia Szkoły:
   - uczeń opuszcza wszystkie klasy, a jego postęp, imię i rola są usuwane (ID zostaje bez zmian),
   - nauczyciel trwale usuwa wszystkie swoje klasy i lekcje, a uczniowie tracą do nich dostęp. Tego nie można cofnąć.
 
