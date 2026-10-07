@@ -148,4 +148,4 @@ Stosujemy środki techniczne i organizacyjne odpowiednie do ryzyka: szyfrowanie 
 
 ## 15. Zmiany Polityki
 
-O istotnych zmianach poinformujemy w Aplikacji lub e-mailem przed ich wejściem w życie. Aktualna wersja jest zawsze dostępna w Aplikacji i na stronie tripletalk.app.
+O istotnych zmianach poinformujemy w Aplikacji przed ich wejściem w życie. Aktualna wersja jest zawsze dostępna w Aplikacji i na stronie tripletalk.app.

@@ -148,4 +148,4 @@ We apply technical and organisational measures appropriate to the risk: encrypte
 
 ## 15. Changes to this Policy
 
-We will inform you of material changes in the App or by email before they take effect. The current version is always available in the App and at tripletalk.app.
+We will inform you of material changes in the App before they take effect. The current version is always available in the App and at tripletalk.app.
