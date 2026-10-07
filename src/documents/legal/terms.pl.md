@@ -27,7 +27,7 @@ _Wersja z 7 października 2026. Obowiązuje od 1 października 2026._
 1. Konto zakładasz przy użyciu adresu e-mail i hasła, konta Google albo Sign in with Apple. Konto jest wymagane do korzystania z Aplikacji.
 2. Jedno konto jest przeznaczone dla jednej osoby. Nie udostępniaj go innym i chroń dane logowania. Odpowiadasz za działania wykonane z Twojego konta.
 3. Adres e-mail możesz zmienić, a hasło zresetować z poziomu Aplikacji.
-4. Limit urządzeń. Na jednym koncie możesz być zalogowany jednocześnie na dwóch urządzeniach, niezależnie od sposobu logowania (e-mail, Google, Apple). Zalogowanie na kolejnym urządzeniu automatycznie wyloguje to, które najdłużej nie było używane.
+4. Limit urządzeń, na jednym koncie możesz być zalogowany jednocześnie na dwóch urządzeniach, niezależnie od sposobu logowania (e-mail, Google, Apple). Zalogowanie na kolejnym urządzeniu automatycznie wyloguje to, które najdłużej nie było używane.
 
 ## 5. Co robi Aplikacja
 
