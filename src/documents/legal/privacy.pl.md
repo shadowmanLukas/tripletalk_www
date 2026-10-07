@@ -6,7 +6,6 @@ _Obowiązuje od 1 października 2026._
 
 1. Administratorem Twoich danych osobowych jest [UZUPEŁNIJ: pełna nazwa firmy craftapp, adres siedziby, NIP] ("my").
 2. Kontakt we wszystkich sprawach dotyczących danych: support@tripletalk.app.
-3. Nie wyznaczyliśmy inspektora ochrony danych. Nie jest on u nas wymagany.
 
 ## 2. Najważniejsze w skrócie
 
