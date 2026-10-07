@@ -46,6 +46,7 @@ _Version of October 7, 2026. Effective from October 1, 2026._
    | --- | --- | --- |
    | Learning languages studied at the same time | 1 | 2 |
    | Your own lessons | up to 10 | up to 50 |
+   | Flashcards per lesson | up to 400 | up to 400 |
    | TripleTalk AI photo analyses | up to 10 per day | up to 30 per day |
    | Words picked by AI from one photo | up to 50 | up to 100 |
    | Devices signed in to one account at the same time | up to 2 | up to 2 |
