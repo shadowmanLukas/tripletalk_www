@@ -330,16 +330,16 @@ Na górze ekranu widzisz swój profil. Stąd przejdziesz do Danych konta (patrz 
 
 | Ustawienie | Co robi |
 | --- | --- |
-| Język aplikacji | Język menu, przycisków i komunikatów |
+| Język aplikacji | Język menu, przycisków i komunikatów. |
 | Motyw | Wygląd aplikacji: ciemny (domyślnie), jasny albo systemowy. |
-| Powiadomienia push | Powiadomienia push dla różnych funkcji aplikacji |
+| Powiadomienia push | Powiadomienia push dla różnych funkcji aplikacji. |
 
 ### Nauka
 
 | Ustawienie | Co robi |
 | --- | --- |
-| Język fiszek | Język, który znasz najlepiej. W nim zobaczysz tłumaczenia na fiszkach |
-| Język nauki | Jeden lub dwa języki, których chcesz się nauczyć |
+| Język fiszek | Język, który znasz najlepiej. W nim zobaczysz tłumaczenia na fiszkach. |
+| Język nauki | Jeden lub dwa języki, których chcesz się nauczyć. |
 | Tryb nauki | Tempo powtórek: zrównoważony albo intensywny. |
 | Odtwarzanie audio | Zakres fiszek, pauza, prędkość i kolejność odtwarzania w trybie audio. |
 | Kontekst przykładowych zdań | Tematy, z których AI czerpie przykładowe zdania. Możesz wybrać do trzech: życie codzienne, biznes, IT i technologia, podróże, szkoła i nauka, ekologia, zdrowie, kultura i media. |
