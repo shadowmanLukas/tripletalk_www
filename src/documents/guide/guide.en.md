@@ -227,7 +227,7 @@ The Collections tab offers ready-made flashcard sets prepared by TripleTalk. The
 
 - You can filter collections by various topics, for example daily, business, travel, basics, verbs.
 - Collections marked Free are available to everyone, and those marked Premium need a subscription.
-- A lesson created from a collection keeps the collection's name in your app language. You can't add your own flashcards to it.
+- Lessons created from a collection keep the collection's name in your app language. You can't add your own flashcards to them.
 
 ---
 
