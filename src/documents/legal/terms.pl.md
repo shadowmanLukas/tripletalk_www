@@ -186,7 +186,7 @@ Przy pobraniu Aplikacji z App Store obowiązują również warunki Apple (Licens
 ## 16. Zmiany Regulaminu
 
 1. Możemy zmienić Regulamin z ważnych powodów: zmiany przepisów, zmiany funkcji lub zasad płatności, względów bezpieczeństwa lub decyzji organów.
-2. O zmianach informujemy w Aplikacji lub e-mailem co najmniej 14 dni przed ich wejściem w życie (chyba że zmiana wynika z przepisów lub decyzji organu i musi nastąpić szybciej).
+2. O zmianach informujemy w Aplikacji co najmniej 14 dni przed ich wejściem w życie (chyba że zmiana wynika z przepisów lub decyzji organu i musi nastąpić szybciej).
 3. Jeśli nie akceptujesz zmian, możesz przed ich wejściem w życie usunąć konto. Dalsze korzystanie z Aplikacji po tej dacie oznacza akceptację zmian.
 
 ## 17. Postanowienia końcowe

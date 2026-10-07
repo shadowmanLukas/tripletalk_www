@@ -186,7 +186,7 @@ If you download the App from the App Store, Apple's Licensed Application End Use
 ## 16. Changes to these Terms
 
 1. We may change these Terms for important reasons: changes in law, changes to features or payment rules, security reasons or decisions of authorities.
-2. We announce changes in the App or by email at least 14 days before they take effect (unless a change results from law or an authority's decision and must take effect sooner).
+2. We announce changes in the App at least 14 days before they take effect (unless a change results from law or an authority's decision and must take effect sooner).
 3. If you do not accept the changes, you can delete your account before they take effect. Continuing to use the App after that date means you accept the changes.
 
 ## 17. Final provisions
