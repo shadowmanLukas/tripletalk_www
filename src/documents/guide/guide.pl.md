@@ -297,7 +297,7 @@ Do wyboru są trzy plany: miesięczny, kwartalny i roczny. Przy planach dłuższ
 
 Subskrypcja odnawia się automatycznie. Anulujesz ją w ustawieniach sklepu (App Store albo Google Play), a na ekranie Premium znajdziesz skrót „Zarządzaj subskrypcją”. Po anulowaniu Premium działa do końca opłaconego okresu. Gdy Premium wygaśnie, Twoje lekcje nie znikają i wszystkie funkcje Premium wrócą po odnowieniu subskrypcji.
 
-### Pakiety fiszek TripleTalk AI (jednorazowe)
+### Pakiety fiszek TripleTalk AI
 
 Fiszki TripleTalk AI to Twoje saldo na tworzenie fiszek z pomocą AI: 1 fiszka TripleTalk AI = 1 utworzona fiszka, ze zdjęcia albo ręcznie.
 

@@ -297,7 +297,7 @@ There are three plans: Monthly, Quarterly and Yearly. For the longer plans the a
 
 The subscription renews automatically. You cancel it in your store settings (App Store or Google Play), and the Premium screen has a "Manage subscription" shortcut. After you cancel, Premium stays active until the end of the paid period. When Premium ends, your lessons don't disappear, and all Premium features come back when you renew.
 
-### TripleTalk AI flashcard packs (one-time)
+### TripleTalk AI flashcard packs
 
 TripleTalk AI flashcards are your balance for creating flashcards with AI: 1 TripleTalk AI flashcard = 1 created flashcard, from a photo or by hand.
 
