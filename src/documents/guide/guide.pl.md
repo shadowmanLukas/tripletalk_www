@@ -393,11 +393,11 @@ Więcej przeczytasz w polityce prywatności.
 
 W `Więcej > Wyślij opinię` możesz:
 
-1. wybrać kategorię: **Błąd**, **Usprawnienie**, **Nowa funkcja** albo **Inne**,
-2. wpisać tytuł i opis,
-3. opcjonalnie dołączyć zrzut ekranu z galerii.
+- wybrać kategorię: Błąd, Usprawnienie, Nowa funkcja albo Inne,
+- wpisać tytuł i opis,
+- opcjonalnie dołączyć zrzut ekranu z galerii.
 
-Czytamy każdą wiadomość. Możesz też skontaktować się z nami przez stronę **tripletalk.app**.
+Czytamy każdą wiadomość. Możesz też skontaktować się z nami przez stronę tripletalk.app.
 
 ---
 

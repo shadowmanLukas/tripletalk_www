@@ -393,11 +393,11 @@ You can read more in the Privacy Policy.
 
 In `More > Send Feedback` you can:
 
-1. choose a category: **Bug**, **Improvement**, **Feature Request** or **Other**,
-2. enter a title and a description,
-3. optionally attach a screenshot from your gallery.
+- choose a category: Bug, Improvement, Feature Request or Other,
+- enter a title and a description,
+- optionally attach a screenshot from your gallery.
 
-We read every message. You can also reach us through **tripletalk.app**.
+We read every message. You can also reach us through tripletalk.app.
 
 ---
 
