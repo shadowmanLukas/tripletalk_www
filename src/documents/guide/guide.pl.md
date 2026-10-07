@@ -313,51 +313,51 @@ Jeśli zmieniłeś telefon albo przeinstalowałeś aplikację, wybierz „Przywr
 
 ## 12. Ustawienia
 
-Wszystkie ustawienia znajdziesz w zakładce **Więcej**. Zmiany zapisują się na Twoim koncie, więc są dostępne także na innych urządzeniach.
+Wszystkie ustawienia znajdziesz w zakładce Więcej. Zmiany zapisują się na Twoim koncie, więc są dostępne także na innych urządzeniach.
 
 ### Profil
 
-Na górze ekranu widzisz swój profil. Stąd przejdziesz do **Danych konta** (patrz [sekcja 13](#13-konto-i-prywatność)).
+Na górze ekranu widzisz swój profil. Stąd przejdziesz do Danych konta (patrz [sekcja 13](#13-konto-i-prywatność)).
 
 ### Zakupy
 
 | Ustawienie | Co robi |
 | --- | --- |
-| **Premium** | Pokazuje stan Twojej subskrypcji i otwiera wybór planów. |
-| **Fiszki TripleTalk AI** | Pokazuje saldo fiszek TripleTalk AI i pozwala kupić pakiet. |
+| Premium | Pokazuje stan Twojej subskrypcji i otwiera wybór planów. |
+| Fiszki TripleTalk AI | Pokazuje saldo fiszek TripleTalk AI i pozwala kupić pakiet. |
 
 ### Aplikacja
 
 | Ustawienie | Co robi |
 | --- | --- |
-| **Język aplikacji** | Język menu, przycisków i komunikatów. Do wyboru 7 języków. |
-| **Motyw** | Wygląd aplikacji: ciemny (domyślnie), jasny albo systemowy. |
-| **Powiadomienia push** (Premium) | Przypomnienia o lekcjach czekających na powtórkę. |
+| Język aplikacji | Język menu, przycisków i komunikatów. Do wyboru 7 języków. |
+| Motyw | Wygląd aplikacji: ciemny (domyślnie), jasny albo systemowy. |
+| Powiadomienia push (Premium) | Przypomnienia o lekcjach czekających na powtórkę. |
 
 ### Nauka
 
 | Ustawienie | Co robi |
 | --- | --- |
-| **Język fiszek** | Twój język bazowy, w którym widzisz podpowiedzi na fiszkach. |
-| **Język nauki** | Jeden lub dwa języki, których się uczysz. Konto darmowe: jeden język, Premium: dwa jednocześnie. |
-| **Tryb nauki** | Tempo powtórek: zrównoważony albo intensywny. |
-| **Odtwarzanie audio** | Zakres fiszek, pauza, prędkość i kolejność w trybie audio. |
-| **Kontekst przykładowych zdań** | Tematy, z których AI czerpie przykładowe zdania. Możesz wybrać do trzech: życie codzienne, biznes, IT i technologia, podróże, szkoła i nauka, ekologia, zdrowie, kultura i media. |
-| **Odmiany czasowników** | Pokazuje formy i odmiany czasowników podczas nauki. |
-| **Korekta z TripleTalk AI** | AI poprawia gramatykę i pisownię fiszek dodawanych ręcznie. |
+| Język fiszek | Twój język bazowy, w którym widzisz podpowiedzi na fiszkach. |
+| Język nauki | Jeden lub dwa języki, których się uczysz. Konto darmowe: jeden język, Premium: dwa jednocześnie. |
+| Tryb nauki | Tempo powtórek: zrównoważony albo intensywny. |
+| Odtwarzanie audio | Zakres fiszek, pauza, prędkość i kolejność w trybie audio. |
+| Kontekst przykładowych zdań | Tematy, z których AI czerpie przykładowe zdania. Możesz wybrać do trzech: życie codzienne, biznes, IT i technologia, podróże, szkoła i nauka, ekologia, zdrowie, kultura i media. |
+| Odmiany czasowników | Pokazuje formy i odmiany czasowników podczas nauki. |
+| Korekta z TripleTalk AI | AI poprawia gramatykę i pisownię fiszek dodawanych ręcznie. |
 
 Dobrze wiedzieć:
 
-- **Dodanie języka nauki** (Premium) nie wymaga tworzenia lekcji od nowa. TripleTalk sam przygotuje tłumaczenia i nagrania w nowym języku we wszystkich Twoich lekcjach. Przez ten czas lekcje mogą mieć etykietę „W przygotowaniu”.
-- **Zmiana języka nauki na koncie darmowym** resetuje postęp we wszystkich lekcjach, także zarchiwizowanych, bo fiszki zaczynasz poznawać w nowym języku. Aplikacja zawsze zapyta o potwierdzenie.
+- Dodanie języka nauki (Premium) nie wymaga tworzenia lekcji od nowa. TripleTalk sam przygotuje tłumaczenia i nagrania w nowym języku we wszystkich Twoich lekcjach. Przez ten czas lekcje mogą mieć etykietę „W przygotowaniu”.
+- Zmiana języka nauki na koncie darmowym resetuje postęp we wszystkich lekcjach, także zarchiwizowanych, bo fiszki zaczynasz poznawać w nowym języku. Aplikacja zawsze zapyta o potwierdzenie.
 
 ### Szkoła
 
-Widoczne, gdy wybrałeś rolę w Szkole: **Ustawienia Szkoły** oraz (dla ucznia) przełącznik **Zaproszenia**. Szczegóły w [sekcji 10](#10-szkoła-nauka-w-klasie).
+Widoczne, gdy wybrałeś rolę w Szkole: Ustawienia Szkoły oraz (dla ucznia) przełącznik Zaproszenia. Szczegóły w [sekcji 10](#10-szkoła-nauka-w-klasie).
 
 ### Pomoc
 
-**Wyślij opinię**: zgłoś błąd albo podziel się pomysłem (patrz [sekcja 14](#14-pomoc-i-kontakt)).
+Wyślij opinię: zgłoś błąd albo podziel się pomysłem (patrz [sekcja 14](#14-pomoc-i-kontakt)).
 
 Na dole ekranu widzisz numer wersji aplikacji.
 

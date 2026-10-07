@@ -313,51 +313,51 @@ If you changed phones or reinstalled the app, tap "Restore purchases" on the Pre
 
 ## 12. Settings
 
-All settings are in the **More** tab. Changes are saved to your account, so they're available on your other devices too.
+All settings are in the More tab. Changes are saved to your account, so they're available on your other devices too.
 
 ### Profile
 
-Your profile is at the top of the screen. From here you can open **Account data** (see [section 13](#13-account-and-privacy)).
+Your profile is at the top of the screen. From here you can open Account data (see [section 13](#13-account-and-privacy)).
 
 ### Purchases
 
 | Setting | What it does |
 | --- | --- |
-| **Premium** | Shows your subscription status and opens the plans. |
-| **TripleTalk AI flashcards** | Shows your TripleTalk AI flashcard balance and lets you buy a pack. |
+| Premium | Shows your subscription status and opens the plans. |
+| TripleTalk AI flashcards | Shows your TripleTalk AI flashcard balance and lets you buy a pack. |
 
 ### App
 
 | Setting | What it does |
 | --- | --- |
-| **App language** | The language of menus, buttons and messages. 7 languages to choose from. |
-| **Theme** | How the app looks: dark (default), light or system. |
-| **Push notifications** (Premium) | Reminders for lessons waiting for a review. |
+| App language | The language of menus, buttons and messages. 7 languages to choose from. |
+| Theme | How the app looks: dark (default), light or system. |
+| Push notifications (Premium) | Reminders for lessons waiting for a review. |
 
 ### Learning
 
 | Setting | What it does |
 | --- | --- |
-| **Flashcard language** | Your base language, used for hints on flashcards. |
-| **Learning languages** | One or two languages you're learning. Free account: one language, Premium: two at the same time. |
-| **Learning mode** | Review pace: balanced or intensive. |
-| **Audio playback** | Which flashcards, pause, speed and order in audio mode. |
-| **Example sentence context** | Topics AI draws example sentences from. Choose up to three: daily life, business, IT and technology, travel, school and study, ecology, health, culture and media. |
-| **Verb conjugations** | Shows verb forms and conjugations while you learn. |
-| **TripleTalk AI correction** | AI corrects the grammar and spelling of flashcards you add by hand. |
+| Flashcard language | Your base language, used for hints on flashcards. |
+| Learning languages | One or two languages you're learning. Free account: one language, Premium: two at the same time. |
+| Learning mode | Review pace: balanced or intensive. |
+| Audio playback | Which flashcards, pause, speed and order in audio mode. |
+| Example sentence context | Topics AI draws example sentences from. Choose up to three: daily life, business, IT and technology, travel, school and study, ecology, health, culture and media. |
+| Verb conjugations | Shows verb forms and conjugations while you learn. |
+| TripleTalk AI correction | AI corrects the grammar and spelling of flashcards you add by hand. |
 
 Good to know:
 
-- **Adding a learning language** (Premium) doesn't mean rebuilding your lessons. TripleTalk prepares the translations and recordings in the new language across all your lessons on its own. Meanwhile, lessons may show the "Preparing" label.
-- **Changing the learning language on a free account** resets your progress in all lessons, including archived ones, because you start learning the flashcards in a new language. The app always asks you to confirm first.
+- Adding a learning language (Premium) doesn't mean rebuilding your lessons. TripleTalk prepares the translations and recordings in the new language across all your lessons on its own. Meanwhile, lessons may show the "Preparing" label.
+- Changing the learning language on a free account resets your progress in all lessons, including archived ones, because you start learning the flashcards in a new language. The app always asks you to confirm first.
 
 ### School
 
-Visible once you've chosen a School role: **School settings** and, for students, the **Invitations** switch. Details in [section 10](#10-school-learning-in-a-class).
+Visible once you've chosen a School role: School settings and, for students, the Invitations switch. Details in [section 10](#10-school-learning-in-a-class).
 
 ### Help
 
-**Send Feedback**: report a bug or share an idea (see [section 14](#14-help-and-contact)).
+Send Feedback: report a bug or share an idea (see [section 14](#14-help-and-contact)).
 
 The app version number is shown at the bottom of the screen.
 
