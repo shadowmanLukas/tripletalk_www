@@ -225,7 +225,7 @@ Odtwarzanie działa dalej, gdy wyjdziesz z aplikacji albo zablokujesz ekran. Na 
 
 Zakładka Kolekcje to gotowe zestawy fiszek przygotowane przez TripleTalk. Nie musisz niczego tworzyć: wybierz zestaw, a pojawi się on jako nowa lekcja na Twojej liście.
 
-- Kolekcje możesz filtrować według tematu: codzienne, biznes, podróże, podstawy, czasowniki, technologia, zaawansowane.
+- Kolekcje możesz filtrować według różnych tematów, np. codzienne, biznes, podróże, podstawy, czasowniki.
 - Kolekcje oznaczone Free są dostępne dla wszystkich, a oznaczone Premium wymagają subskrypcji.
 - Lekcja z kolekcji ma nazwę zgodną z kolekcją i językiem aplikacji. Nie można dodawać do niej własnych fiszek.
 

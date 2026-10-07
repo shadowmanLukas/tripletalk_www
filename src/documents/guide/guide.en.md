@@ -225,7 +225,7 @@ Playback keeps going when you leave the app or lock the screen. On the lock scre
 
 The Collections tab offers ready-made flashcard sets prepared by TripleTalk. There's nothing to build: pick a set and it appears as a new lesson in your list.
 
-- You can filter collections by topic: daily, business, travel, basics, verbs, technology, advanced.
+- You can filter collections by various topics, for example daily, business, travel, basics, verbs.
 - Collections marked Free are available to everyone, and those marked Premium need a subscription.
 - A lesson created from a collection keeps the collection's name in your app language. You can't add your own flashcards to it.
 
