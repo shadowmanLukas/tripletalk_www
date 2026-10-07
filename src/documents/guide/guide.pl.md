@@ -357,9 +357,7 @@ Jeśli korzystasz ze Szkoły, znajdziesz tu jej ustawienia. Jako uczeń możesz 
 
 ### Pomoc
 
-Wyślij opinię: zgłoś błąd albo podziel się pomysłem (patrz [sekcja 14](#14-pomoc-i-kontakt)).
-
-Na dole ekranu widzisz numer wersji aplikacji.
+Tutaj możesz napisać do nas, gdy coś nie działa albo masz pomysł, co ulepszyć. Więcej o tym przeczytasz w [sekcji 14](#14-pomoc-i-kontakt). Na dole ekranu znajdziesz też numer wersji aplikacji, który przydaje się, gdy zgłaszasz błąd.
 
 ---
 

@@ -357,9 +357,7 @@ If you use School, you'll find its settings here. As a student, you can also tur
 
 ### Help
 
-Send Feedback: report a bug or share an idea (see [section 14](#14-help-and-contact)).
-
-The app version number is shown at the bottom of the screen.
+Here you can write to us when something isn't working or you have an idea for an improvement. You can read more in [section 14](#14-help-and-contact). At the bottom of the screen you'll also find the app version number, which is handy when you report a bug.
 
 ---
 
