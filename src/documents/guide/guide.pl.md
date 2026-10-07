@@ -409,7 +409,7 @@ Czytamy każdą wiadomość.
 Tak. Na koncie darmowym tworzysz własne lekcje, uczysz się jednego języka, korzystasz z powtórek, trybu audio i darmowych kolekcji. Do tworzenia fiszek z pomocą AI potrzebujesz fiszek TripleTalk AI. Ich określoną pulę dostajesz na start, a kolejne kupisz w pakiecie. Premium rozszerza możliwości aplikacji.
 
 **Czym różnią się Premium i pakiety AI?**
-Premium to subskrypcja, która odblokowuje funkcje (dwa języki, więcej lekcji, kolekcje, słuchanie w tle, przypomnienia, rolę nauczyciela). Pakiety AI to jednorazowy zakup fiszek tworzonych przez AI. Możesz mieć jedno, drugie albo oba.
+Premium to subskrypcja, która odblokowuje funkcje, np. dwa języki, więcej lekcji, kolekcje, słuchanie w tle, przypomnienia, rolę nauczyciela. Pakiety AI to jednorazowy zakup fiszek do tworzenia ich z TripleTalk AI.
 
 **Co się stanie z moimi lekcjami, gdy Premium wygaśnie?**
 Nic nie zniknie. Lekcje, fiszki i postępy zostają na koncie, a funkcje Premium wrócą po odnowieniu subskrypcji.

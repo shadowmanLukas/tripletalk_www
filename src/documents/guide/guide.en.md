@@ -409,7 +409,7 @@ We read every message.
 Yes. On a free account you can create your own lessons, learn one language, and use reviews, audio mode and free collections. To create flashcards with AI you need TripleTalk AI flashcards. You get a set number of them when you start, and you can buy more in a pack. Premium extends what the app can do.
 
 **What's the difference between Premium and AI packs?**
-Premium is a subscription that unlocks features (two languages, more lessons, collections, background listening, reminders, the teacher role). AI packs are a one-time purchase of flashcards created by AI. You can have either one or both.
+Premium is a subscription that unlocks features, for example two languages, more lessons, collections, background listening, reminders and the teacher role. AI packs are a one-time purchase of flashcards you create with TripleTalk AI.
 
 **What happens to my lessons when Premium ends?**
 Nothing disappears. Your lessons, flashcards and progress stay in your account, and Premium features come back when you renew.
