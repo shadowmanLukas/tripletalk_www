@@ -2,6 +2,13 @@
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import MarkdownDocument from "../components/MarkdownDocument.astro";
+import { loadGuide } from "../lib/documents";
+
+const guides = [
+  { language: "pl" as const, document: await loadGuide("pl") },
+  { language: "en" as const, document: await loadGuide("en") },
+];
 ---
 
 <!doctype html>
@@ -57,6 +64,18 @@ import SiteHeader from "../components/SiteHeader.astro";
           </div>
         </div>
       </section>
+
+      <section class="support-guide legal-page">
+        <div class="container legal-shell">
+          <div class="legal-documents">
+            {
+              guides.map(({ language, document }) => (
+                <MarkdownDocument document={document} language={language} titleLevel={2} hidden={language !== "en"} />
+              ))
+            }
+          </div>
+        </div>
+      </section>
     </main>
 
     <SiteFooter currentPage="support" />
@@ -102,6 +121,7 @@ import SiteHeader from "../components/SiteHeader.astro";
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
       const translatedNodes = document.querySelectorAll("[data-i18n]");
+      const guides = document.querySelectorAll<HTMLElement>("[data-document-language]");
 
       function setLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
@@ -114,6 +134,9 @@ import SiteHeader from "../components/SiteHeader.astro";
           }
         });
 
+        guides.forEach((guide) => {
+          guide.hidden = guide.dataset.documentLanguage !== language;
+        });
       }
 
       menuToggle?.addEventListener("click", () => {

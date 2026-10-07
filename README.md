@@ -14,6 +14,21 @@ Statyczna strona Astro dla `tripletalk.app`, wraz ze statycznym panelem administ
 
 Node.js jest wymagany wyłącznie podczas instalacji zależności, testów i statycznego builda.
 
+## Regulamin, Polityka Prywatności i instrukcja
+
+Treść `/terms/`, `/privacy/` i instrukcji na `/support/` to niezmienione kopie plików z repo aplikacji (`../tripletalk`, gałąź `main`):
+
+| Plik w tym repo                     | Źródło                                    |
+| ----------------------------------- | ----------------------------------------- |
+| `src/documents/legal/terms.pl.md`   | `docs/legal/new_07_10_2026/terms.pl.md`   |
+| `src/documents/legal/terms.en.md`   | `docs/legal/new_07_10_2026/terms.en.md`   |
+| `src/documents/legal/privacy.pl.md` | `docs/legal/new_07_10_2026/privacy.pl.md` |
+| `src/documents/legal/privacy.en.md` | `docs/legal/new_07_10_2026/privacy.en.md` |
+| `src/documents/guide/guide.pl.md`   | `docs/instructions/instrukcja-pl.md`      |
+| `src/documents/guide/guide.en.md`   | `docs/instructions/user-guide-en.md`      |
+
+Aktualizacja to podmiana tych plików. Nie edytuj ich ręcznie. Placeholdery `[UZUPEŁNIJ: ...]` / `[FILL IN: ...]` są zastępowane danymi firmy z `src/lib/company.ts`, a build produkcyjny przerywa się, jeśli któryś placeholder zostanie na stronie. Przekształcenia HTML (kotwice z prefiksem języka, tabele, FAQ jako `<details>`, linki w instrukcji) są w `src/lib/markdown-document.ts`.
+
 ## Konfiguracja Firebase Web
 
 W Firebase Console otwórz **Project settings → General → Your apps → Web app**. Jeżeli projekt nie ma aplikacji webowej, najpierw ją zarejestruj. Skopiuj wartości z obiektu `firebaseConfig` do zmiennych Cloudflare Pages:

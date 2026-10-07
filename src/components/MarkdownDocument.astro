@@ -1,0 +1,36 @@
+---
+import type { DocumentLanguage, SplitDocument } from "../lib/markdown-document";
+
+interface Props {
+  document: SplitDocument;
+  language: DocumentLanguage;
+  id?: string;
+  titleLevel?: 1 | 2;
+  hidden?: boolean;
+}
+
+const { document, language, id, titleLevel = 1, hidden = false } = Astro.props;
+const TitleTag = titleLevel === 1 ? "h1" : "h2";
+const SectionTag = titleLevel === 1 ? "h2" : "h3";
+---
+
+<article class="legal-document" id={id} lang={language} data-document-language={language} hidden={hidden}>
+  <div class="legal-document-header">
+    <TitleTag set:html={document.title} />
+    {document.intro && <div class="legal-prose legal-intro" set:html={document.intro} />}
+  </div>
+
+  <div class="legal-sections">
+    {
+      document.sections.map((section) => (
+        <section class="legal-section" id={section.id}>
+          <SectionTag class="legal-section-title">
+            {section.number && <span>{section.number}</span>}
+            <Fragment set:html={section.title} />
+          </SectionTag>
+          <div class="legal-prose" set:html={section.html} />
+        </section>
+      ))
+    }
+  </div>
+</article>

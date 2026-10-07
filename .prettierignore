@@ -1,3 +1,5 @@
 dist
 node_modules
 package-lock.json
+# Verbatim copies of the legal texts and user guide from the app repo (see README).
+src/documents/
