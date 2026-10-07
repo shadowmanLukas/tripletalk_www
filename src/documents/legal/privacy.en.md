@@ -4,7 +4,7 @@ _Effective from October 1, 2026._
 
 ## 1. Controller
 
-1. The controller of your personal data is [FILL IN: full legal name of craftapp, registered address, tax ID (NIP)] ("we").
+1. The controller of your personal data is craftApp ("we").
 2. Contact for all data protection matters: support@tripletalk.app.
 
 ## 2. Key points
