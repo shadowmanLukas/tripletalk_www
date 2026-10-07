@@ -286,30 +286,30 @@ TripleTalk offers two independent kinds of purchase. Payments are handled by the
 
 Premium unlocks:
 
-- **two learning languages at once** on the same flashcards,
-- **much more room for lessons** than a free account,
-- **Premium collections**,
-- **push reminders** for lessons waiting for a review,
-- **background listening** and lock-screen controls,
-- **the teacher role** in School.
+- two learning languages at once on the same flashcards,
+- much more room for lessons than a free account,
+- Premium collections,
+- push reminders for lessons waiting for a review,
+- background listening and lock-screen controls,
+- the teacher role in School.
 
-There are three plans: **Monthly**, **Quarterly** and **Yearly**. For the longer plans the app shows how much you save compared with the monthly plan.
+There are three plans: Monthly, Quarterly and Yearly. For the longer plans the app shows how much you save compared with the monthly plan.
 
-The subscription renews automatically. You cancel it in your store settings (App Store or Google Play), and the Premium screen has a **"Manage subscription"** shortcut. After you cancel, Premium stays active until the end of the paid period. When Premium ends, your lessons don't disappear, and all Premium features come back when you renew.
+The subscription renews automatically. You cancel it in your store settings (App Store or Google Play), and the Premium screen has a "Manage subscription" shortcut. After you cancel, Premium stays active until the end of the paid period. When Premium ends, your lessons don't disappear, and all Premium features come back when you renew.
 
-**One subscription = one TripleTalk account.** If you bought Premium on a different TripleTalk account using the same store account, the app will explain this. You can sign in to that other account, or tap **"Restore purchases"** to move the subscription to the current account (the other account then loses Premium).
+One subscription = one TripleTalk account. If you bought Premium on a different TripleTalk account using the same store account, the app will explain this. You can sign in to that other account, or tap "Restore purchases" to move the subscription to the current account (the other account then loses Premium).
 
 ### TripleTalk AI flashcard packs (one-time)
 
-TripleTalk AI flashcards are your balance for creating flashcards with AI: **1 TripleTalk AI flashcard = 1 created flashcard**, from a photo or by hand.
+TripleTalk AI flashcards are your balance for creating flashcards with AI: 1 TripleTalk AI flashcard = 1 created flashcard, from a photo or by hand.
 
-There are three packs of different sizes: **S**, **L** and **XL**. The number of flashcards in each pack is shown on the purchase screen and in the Terms of Service.
+There are three packs of different sizes: S, L and XL. The number of flashcards in each pack is shown on the purchase screen and in the Terms of Service.
 
-You pay once, and **the flashcards never expire**. Packs work independently of Premium, including on a free account.
+You pay once, and the flashcards never expire. Packs work independently of Premium, including on a free account.
 
 ### Restoring purchases
 
-If you changed phones or reinstalled the app, tap **"Restore purchases"** on the Premium screen.
+If you changed phones or reinstalled the app, tap "Restore purchases" on the Premium screen.
 
 ---
 

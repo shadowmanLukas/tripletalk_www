@@ -286,30 +286,30 @@ W TripleTalk są dwa niezależne rodzaje zakupów. Płatności obsługuje App St
 
 Premium odblokowuje:
 
-- **dwa języki nauki naraz** na tych samych fiszkach,
-- **znacznie więcej miejsca na lekcje** niż na koncie darmowym,
-- **gotowe kolekcje Premium**,
-- **przypomnienia push** o lekcjach czekających na powtórkę,
-- **słuchanie w tle** i sterowanie z ekranu blokady,
-- **rolę nauczyciela** w Szkole.
+- dwa języki nauki naraz na tych samych fiszkach,
+- znacznie więcej miejsca na lekcje niż na koncie darmowym,
+- gotowe kolekcje Premium,
+- przypomnienia push o lekcjach czekających na powtórkę,
+- słuchanie w tle i sterowanie z ekranu blokady,
+- rolę nauczyciela w Szkole.
 
-Do wyboru są trzy plany: **miesięczny**, **kwartalny** i **roczny**. Przy planach dłuższych aplikacja pokazuje, ile oszczędzasz w porównaniu z planem miesięcznym.
+Do wyboru są trzy plany: miesięczny, kwartalny i roczny. Przy planach dłuższych aplikacja pokazuje, ile oszczędzasz w porównaniu z planem miesięcznym.
 
-Subskrypcja odnawia się automatycznie. Anulujesz ją w ustawieniach sklepu (App Store albo Google Play), a na ekranie Premium znajdziesz skrót **„Zarządzaj subskrypcją”**. Po anulowaniu Premium działa do końca opłaconego okresu. Gdy Premium wygaśnie, Twoje lekcje nie znikają i wszystkie funkcje Premium wrócą po odnowieniu subskrypcji.
+Subskrypcja odnawia się automatycznie. Anulujesz ją w ustawieniach sklepu (App Store albo Google Play), a na ekranie Premium znajdziesz skrót „Zarządzaj subskrypcją”. Po anulowaniu Premium działa do końca opłaconego okresu. Gdy Premium wygaśnie, Twoje lekcje nie znikają i wszystkie funkcje Premium wrócą po odnowieniu subskrypcji.
 
-**Jedna subskrypcja = jedno konto TripleTalk.** Jeśli kupiłeś Premium na innym koncie TripleTalk, ale tym samym koncie w sklepie, aplikacja to wyjaśni. Możesz zalogować się na tamto konto albo wybrać **„Przywróć zakupy”**, aby przenieść subskrypcję na bieżące konto (tamto konto straci wtedy Premium).
+Jedna subskrypcja = jedno konto TripleTalk. Jeśli kupiłeś Premium na innym koncie TripleTalk, ale tym samym koncie w sklepie, aplikacja to wyjaśni. Możesz zalogować się na tamto konto albo wybrać „Przywróć zakupy”, aby przenieść subskrypcję na bieżące konto (tamto konto straci wtedy Premium).
 
 ### Pakiety fiszek TripleTalk AI (jednorazowe)
 
-Fiszki TripleTalk AI to Twoje saldo na tworzenie fiszek z pomocą AI: **1 fiszka TripleTalk AI = 1 utworzona fiszka**, ze zdjęcia albo ręcznie.
+Fiszki TripleTalk AI to Twoje saldo na tworzenie fiszek z pomocą AI: 1 fiszka TripleTalk AI = 1 utworzona fiszka, ze zdjęcia albo ręcznie.
 
-Do wyboru są trzy pakiety różnej wielkości: **S**, **L** i **XL**. Liczbę fiszek w każdym pakiecie zobaczysz na ekranie zakupu, a także w regulaminie.
+Do wyboru są trzy pakiety różnej wielkości: S, L i XL. Liczbę fiszek w każdym pakiecie zobaczysz na ekranie zakupu, a także w regulaminie.
 
-Płacisz raz, a **fiszki nie wygasają**. Pakiety działają niezależnie od Premium, także na koncie darmowym.
+Płacisz raz, a fiszki nie wygasają. Pakiety działają niezależnie od Premium, także na koncie darmowym.
 
 ### Przywracanie zakupów
 
-Jeśli zmieniłeś telefon albo przeinstalowałeś aplikację, wybierz **„Przywróć zakupy”** na ekranie Premium.
+Jeśli zmieniłeś telefon albo przeinstalowałeś aplikację, wybierz „Przywróć zakupy” na ekranie Premium.
 
 ---
 
