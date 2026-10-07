@@ -383,7 +383,7 @@ Jeśli usuniesz konto, nie da się go już odzyskać. Stracisz wszystkie lekcje,
 
 ### Jak dbamy o Twoje dane
 
-Zbieramy tylko to, czego aplikacja potrzebuje do działania. Zdjęcia, które przesyłasz do TripleTalk AI, służą wyłącznie do przygotowania fiszek i usuwamy je razem z lekcją albo kontem. W Szkole nauczyciel nie widzi Twoich szczegółowych wyników. Płatności obsługuje App Store albo Google Play, więc nie przechowujemy danych Twojej karty.
+Zbieramy tylko to, czego aplikacja potrzebuje do działania. Zdjęcia, które przesyłasz do TripleTalk AI, służą wyłącznie do przygotowania fiszek i usuwamy je razem z lekcją albo kontem. Płatności obsługuje App Store albo Google Play, dlatego nie przechowujemy Twoich danych rozliczeniowych.
 
 Więcej przeczytasz w polityce prywatności.
 

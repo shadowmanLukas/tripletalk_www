@@ -383,7 +383,7 @@ Once you delete your account, it can't be recovered. You'll lose all your lesson
 
 ### How we look after your data
 
-We only collect what the app needs to work. Photos you send to TripleTalk AI are used only to prepare flashcards, and we delete them together with the lesson or your account. In School, your teacher doesn't see your detailed results. Payments are handled by the App Store or Google Play, so we don't store your card details.
+We only collect what the app needs to work. Photos you send to TripleTalk AI are used only to prepare flashcards, and we delete them together with the lesson or your account. Payments are handled by the App Store or Google Play, which is why we don't store your billing details.
 
 You can read more in the Privacy Policy.
 
