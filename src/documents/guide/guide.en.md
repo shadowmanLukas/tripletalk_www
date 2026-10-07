@@ -297,7 +297,7 @@ There are three plans: Monthly, Quarterly and Yearly. For the longer plans the a
 
 The subscription renews automatically. You cancel it in your store settings (App Store or Google Play), and the Premium screen has a "Manage subscription" shortcut. After you cancel, Premium stays active until the end of the paid period. When Premium ends, your lessons don't disappear, and all Premium features come back when you renew.
 
-Premium only works on one TripleTalk account at a time. You might have two TripleTalk accounts and have bought Premium on one of them with the same Apple ID or Google account. If you sign in to the other account, the app will tell you. You can then go back to the account with Premium, or tap "Restore purchases" to move Premium to the account you're signed in to now. The first account then loses Premium.
+Have two TripleTalk accounts? Premium works on only one of them. If you bought it on one account and are now using the other, the app will let you know. Just sign in to the account with Premium, or tap "Restore purchases" to move Premium to the account you're using now. Premium will then disappear from the other account.
 
 ### TripleTalk AI flashcard packs (one-time)
 
