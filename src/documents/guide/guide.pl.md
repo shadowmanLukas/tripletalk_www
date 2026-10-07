@@ -266,8 +266,6 @@ Ważne zasady:
 - Lekcje, których już nie potrzebujesz, przenieś do Archiwum. Lekcja znika wtedy z klas, a postęp uczniów w niej jest usuwany, ale fiszki i nagrania zostają. Z archiwum możesz lekcję przywrócić (znowu da się ją edytować i udostępnić, np. w kolejnym roku szkolnym) albo usunąć na zawsze.
 - Fiszki w lekcjach Szkoły korzystają z tego samego salda fiszek TripleTalk AI co lekcje własne.
 
-Liczba klas, uczniów w klasie, lekcji i fiszek w lekcji jest ograniczona. Limity są na tyle duże, żeby wystarczyły do prowadzenia kilku klas, a ich aktualne wartości znajdziesz w regulaminie.
-
 ### Ustawienia Szkoły
 
 W Więcej > Ustawienia Szkoły:

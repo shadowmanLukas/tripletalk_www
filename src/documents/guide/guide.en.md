@@ -266,8 +266,6 @@ Key rules:
 - Move lessons you no longer need to the Archive. The lesson disappears from classes and students' progress in it is deleted, but the flashcards and recordings stay. From the archive you can restore the lesson (it becomes editable and shareable again, for example next school year) or delete it for good.
 - Flashcards in School lessons use the same TripleTalk AI flashcard balance as your own lessons.
 
-The number of classes, students per class, lessons and flashcards per lesson is limited. The limits are generous enough to run several classes, and their current values are in the Terms of Service.
-
 ### School settings
 
 In More > School settings:
