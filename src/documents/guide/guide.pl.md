@@ -115,10 +115,6 @@ Po otwarciu lekcji masz pod ręką szybkie akcje:
 - Sortuj: uporządkuj fiszki,
 - Widok: przełącz między widokiem listy a widokiem kompaktowym.
 
-### Limity lekcji
-
-Konto darmowe ma ograniczoną liczbę własnych lekcji, a Premium daje na nie znacznie więcej miejsca. Aktualne limity znajdziesz w regulaminie.
-
 ---
 
 ## 5. Dodawanie fiszek

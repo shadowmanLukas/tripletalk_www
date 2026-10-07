@@ -115,10 +115,6 @@ When you open a lesson, quick actions are at hand:
 - Sort: reorder the flashcards,
 - View: switch between list view and compact view.
 
-### Lesson limits
-
-A free account has a limited number of lessons of your own, and Premium gives you much more room. You'll find the current limits in the Terms of Service.
-
 ---
 
 ## 5. Adding flashcards
