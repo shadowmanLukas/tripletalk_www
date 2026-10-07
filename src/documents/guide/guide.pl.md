@@ -215,7 +215,7 @@ W Więcej > Odtwarzanie audio ustawisz:
 - prędkość: 0,75×, 1× albo 1,25×,
 - kolejność odtwarzania fiszek: po kolei albo losowo.
 
-### Słuchanie w tle (Premium)
+### Słuchanie w tle
 
 Odtwarzanie działa dalej, gdy wyjdziesz z aplikacji albo zablokujesz ekran. Na ekranie blokady widzisz bieżące zdanie, nazwę lekcji, czas i postęp całej lekcji oraz przyciski poprzedniego i następnego zdania.
 
