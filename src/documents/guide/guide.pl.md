@@ -371,7 +371,7 @@ Jeśli zakładałeś konto przez e-mail, możesz tu też zmienić ten adres (lin
 
 ### Urządzenia
 
-W `Dane konta > Urządzenia` zobaczysz telefony i tablety, na których jesteś zalogowany, i kiedy ostatnio były używane. Jeśli np. zgubisz telefon, możesz go stąd wylogować.
+W `Dane konta > Urządzenia` zobaczysz urządzenia, na których jesteś zalogowany, i kiedy ostatnio były używane. Jeśli np. zgubisz telefon, możesz go stąd wylogować.
 
 Z jednego konta możesz korzystać na kilku urządzeniach, np. na telefonie i tablecie, a lekcje i postępy będą na nich takie same. Liczba urządzeń jest ograniczona (szczegóły w regulaminie). Gdy zalogujesz się na kolejnym, aplikacja wyloguje to, którego najdłużej nie używałeś, i pokaże na nim komunikat. Żeby znów z niego korzystać, wystarczy się zalogować.
 

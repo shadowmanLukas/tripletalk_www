@@ -371,7 +371,7 @@ If you created your account with email, you can also change that address here (a
 
 ### Devices
 
-Under `Account data > Devices` you'll see the phones and tablets you're signed in on and when they were last used. If you lose your phone, for example, you can sign it out from here.
+Under `Account data > Devices` you'll see the devices you're signed in on and when they were last used. If you lose your phone, for example, you can sign it out from here.
 
 You can use one account on several devices, such as a phone and a tablet, and your lessons and progress will be the same on all of them. The number of devices is limited (see the Terms of Service). When you sign in on another one, the app signs out the device you haven't used for the longest time and shows a message on it. To use it again, just sign in.
 
