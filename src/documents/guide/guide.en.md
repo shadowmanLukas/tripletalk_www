@@ -418,7 +418,7 @@ Nothing disappears. Your lessons, flashcards and progress stay in your account, 
 TripleTalk AI is finishing translations or recordings. This usually takes from a few seconds to a few minutes. Learning becomes available once all flashcards are ready.
 
 **Do I lose a TripleTalk AI flashcard if something goes wrong?**
-No. If a flashcard can't be prepared, it goes back to your balance.
+No. If a flashcard can't be prepared, your balance isn't reduced.
 
 **Do students pay for School?**
 No. The student role is completely free. Only the teacher needs Premium.

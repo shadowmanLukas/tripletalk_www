@@ -418,7 +418,7 @@ Nic nie zniknie. Lekcje, fiszki i postępy zostają na koncie, a funkcje Premium
 TripleTalk AI kończy przygotowywać tłumaczenia albo nagrania. Zwykle trwa to od kilku sekund do kilku minut. Nauka będzie dostępna, gdy wszystkie fiszki będą gotowe.
 
 **Czy stracę fiszkę TripleTalk AI, jeśli coś pójdzie nie tak?**
-Nie. Jeśli fiszki nie uda się przygotować, wraca ona na Twoje saldo.
+Nie. Jeśli fiszki nie uda się przygotować, Twoje saldo nie jest zmniejszane.
 
 **Czy uczniowie płacą za Szkołę?**
 Nie. Rola ucznia jest całkowicie darmowa. Premium jest potrzebne tylko nauczycielowi.
