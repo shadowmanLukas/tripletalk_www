@@ -206,14 +206,14 @@ In settings you choose a learning mode:
 
 Audio mode turns a lesson into something you can listen to. The app plays the words and example sentences in all your languages one after another, with a short pause in between. It's a great way to review on a walk, in the car or at the gym.
 
-Start it with the **"Audio"** button in a lesson or **"Play lesson audio"**. If you stopped listening earlier, you can continue or start over.
+Start it with the "Audio" button in a lesson or "Play lesson audio". If you stopped listening earlier, you can continue or start over.
 
-In **More > Audio playback** you can set:
+In More > Audio playback you can set:
 
-- **which flashcards:** all flashcards in the lesson or only unmastered ones,
-- **pause between items:** 0.5 s, 1 s or 1.5 s,
-- **speed:** 0.75×, 1× or 1.25×,
-- **order:** in order or shuffled.
+- which flashcards: all flashcards in the lesson or only unmastered ones,
+- pause between items: 0.5 s, 1 s or 1.5 s,
+- speed: 0.75×, 1× or 1.25×,
+- order: in order or shuffled.
 
 ### Background listening (Premium)
 

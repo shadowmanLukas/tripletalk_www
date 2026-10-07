@@ -206,14 +206,14 @@ W ustawieniach wybierasz tryb nauki:
 
 Tryb audio zamienia lekcję w nagranie do słuchania. Aplikacja odtwarza po kolei słowa i przykładowe zdania we wszystkich Twoich językach, z krótką przerwą między nimi. To dobry sposób na powtórkę na spacerze, w samochodzie albo na siłowni.
 
-Uruchomisz go przyciskiem **„Audio”** w lekcji albo **„Odtwórz audio lekcji”**. Jeśli wcześniej przerwałeś odsłuch, możesz kontynuować albo zacząć od nowa.
+Uruchomisz go przyciskiem „Audio” w lekcji albo „Odtwórz audio lekcji”. Jeśli wcześniej przerwałeś odsłuch, możesz kontynuować albo zacząć od nowa.
 
-W **Więcej > Odtwarzanie audio** ustawisz:
+W Więcej > Odtwarzanie audio ustawisz:
 
-- **zakres fiszek:** wszystkie fiszki w lekcji albo tylko nieopanowane,
-- **pauzę między elementami:** 0,5 s, 1 s albo 1,5 s,
-- **prędkość:** 0,75×, 1× albo 1,25×,
-- **kolejność:** po kolei albo losowo.
+- zakres fiszek: wszystkie fiszki w lekcji albo tylko nieopanowane,
+- pauzę między elementami: 0,5 s, 1 s albo 1,5 s,
+- prędkość: 0,75×, 1× albo 1,25×,
+- kolejność: po kolei albo losowo.
 
 ### Słuchanie w tle (Premium)
 
