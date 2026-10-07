@@ -332,7 +332,7 @@ Na górze ekranu widzisz swój profil. Stąd przejdziesz do Danych konta (patrz 
 | --- | --- |
 | Język aplikacji | Język menu, przycisków i komunikatów |
 | Motyw | Wygląd aplikacji: ciemny (domyślnie), jasny albo systemowy. |
-| Powiadomienia push (Premium) | Przypomnienia o lekcjach czekających na powtórkę. |
+| Powiadomienia push (Premium) | Powiadomienia push dla różnych funkcji aplikacji |
 
 ### Nauka
 
