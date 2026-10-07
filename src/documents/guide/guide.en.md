@@ -213,7 +213,7 @@ In More > Audio playback you can set:
 - which flashcards: all flashcards in the lesson or only unmastered ones,
 - pause between items: 0.5 s, 1 s or 1.5 s,
 - speed: 0.75×, 1× or 1.25×,
-- order: in order or shuffled.
+- flashcard playback order: in order or shuffled.
 
 ### Background listening (Premium)
 

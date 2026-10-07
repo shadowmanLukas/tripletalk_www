@@ -213,7 +213,7 @@ W Więcej > Odtwarzanie audio ustawisz:
 - zakres fiszek: wszystkie fiszki w lekcji albo tylko nieopanowane,
 - pauzę między elementami: 0,5 s, 1 s albo 1,5 s,
 - prędkość: 0,75×, 1× albo 1,25×,
-- kolejność: po kolei albo losowo.
+- kolejność odtwarzania fiszek: po kolei albo losowo.
 
 ### Słuchanie w tle (Premium)
 
