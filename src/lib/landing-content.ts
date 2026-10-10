@@ -23,8 +23,7 @@ export const landingContent = {
       menuOpen: "Otwórz menu",
       features: "Funkcje",
       download: "Pobierz",
-      terms: "Regulamin",
-      privacy: "Prywatność",
+      guide: "Instrukcja",
     },
     hero: {
       eyebrow: "Inteligentne Fiszki TripleTalk AI",
@@ -182,7 +181,7 @@ export const landingContent = {
       navigationLabel: "Nawigacja w stopce",
       privacy: "Polityka prywatności",
       terms: "Regulamin",
-      support: "Pomoc",
+      support: "Kontakt",
     },
   },
   en: {
@@ -192,8 +191,7 @@ export const landingContent = {
       menuOpen: "Open menu",
       features: "Features",
       download: "Download",
-      terms: "Terms",
-      privacy: "Privacy",
+      guide: "Guide",
     },
     hero: {
       eyebrow: "Intelligent TripleTalk AI Flashcards",
@@ -350,7 +348,7 @@ export const landingContent = {
       navigationLabel: "Footer navigation",
       privacy: "Privacy Policy",
       terms: "Terms of Service",
-      support: "Support",
+      support: "Contact",
     },
   },
 } as const;

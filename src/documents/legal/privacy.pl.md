@@ -1,4 +1,4 @@
-# Polityka Prywatności TripleTalk
+# Polityka prywatności TripleTalk
 
 _Obowiązuje od 1 października 2026._
 

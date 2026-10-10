@@ -1209,22 +1209,167 @@ h3 {
   padding: 12px 14px;
 }
 
-.support-guide.legal-page {
-  min-height: 0;
-  padding-top: 0;
-  background: transparent;
+/* Guide, Terms and Privacy: shorter lines and stronger headings; the guide also has a contents grid, steps and callouts. */
+.legal-page .legal-document-header h1 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
-.support-guide .legal-document-header h2 {
-  margin: 0;
+.legal-page .legal-intro,
+.legal-page .legal-section .legal-prose {
+  max-width: 68ch;
+}
+
+.legal-page .legal-section-title {
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
   color: #071632;
-  font-size: clamp(1.6rem, 6vw, 2.3rem);
-  font-weight: 500;
-  line-height: 1.1;
+  font-size: clamp(1.25rem, 4vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.legal-page .legal-section-title span {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: #e3f5f2;
+  color: #057f72;
+  font-size: 0.8rem;
+}
+
+.legal-page .legal-section .legal-prose {
+  padding-left: 48px;
+}
+
+.legal-page .legal-section-title:not(:has(span)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.legal-page .legal-section:has(.doc-toc) .legal-prose {
+  max-width: none;
+  padding-left: 0;
+}
+
+.legal-page .legal-prose h3 {
+  margin-top: 28px;
+  color: #071632;
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+.legal-prose ol.doc-toc {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+  counter-reset: toc;
+}
+
+.doc-toc li {
+  padding: 0;
+  counter-increment: toc;
+}
+
+.doc-toc a {
+  display: flex;
+  height: 100%;
+  gap: 10px;
+  align-items: baseline;
+  border: 1px solid #dfe9f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #102033;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+
+.doc-toc a::before {
+  color: #057f72;
+  content: counter(toc, decimal-leading-zero);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.doc-toc a:hover {
+  border-color: #9fd9cf;
+  background: #f3fbf9;
+}
+
+.legal-prose ol.doc-steps {
+  gap: 14px;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.doc-steps > li {
+  padding-left: 40px;
+  counter-increment: step;
+}
+
+.doc-steps > li::before {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: #057f72;
+  color: #ffffff;
+  content: counter(step);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.doc-callout {
+  margin-top: 16px;
+  border: 1px solid #cfe8e3;
+  border-left: 4px solid #08a795;
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #f3fbf9;
+}
+
+.legal-prose .doc-callout-title {
+  margin: 0;
+  color: #04695f;
+  font-weight: 800;
+}
+
+.doc-callout ul {
+  margin-top: 8px;
+}
+
+.legal-prose li.doc-warning {
+  border-radius: 6px;
+  padding: 6px 10px;
+  background: #fff4e5;
+  color: #6b3d00;
+}
+
+.legal-prose li.doc-warning::before {
+  display: none;
+}
+
+.legal-prose li.doc-warning strong {
+  color: #a35200;
 }
 
 @media (max-width: 619px) {
-  .legal-section .legal-prose {
+  .legal-section .legal-prose,
+  .legal-page .legal-section .legal-prose {
     padding-left: 0;
   }
 

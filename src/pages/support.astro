@@ -2,13 +2,6 @@
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
-import MarkdownDocument from "../components/MarkdownDocument.astro";
-import { loadGuide } from "../lib/documents";
-
-const guides = [
-  { language: "pl" as const, document: await loadGuide("pl") },
-  { language: "en" as const, document: await loadGuide("en") },
-];
 ---
 
 <!doctype html>
@@ -18,25 +11,25 @@ const guides = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Need help with TripleTalk? Contact us about the app, your account, privacy or data requests."
+      content="Questions about TripleTalk? Contact us about the app, your account, privacy or data requests."
     />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tripletalk.app/support/" />
-    <meta property="og:title" content="TripleTalk Support" />
+    <meta property="og:title" content="TripleTalk Contact" />
     <meta
       property="og:description"
-      content="Need help with TripleTalk? Contact us about the app, your account, privacy or data requests."
+      content="Questions about TripleTalk? Contact us about the app, your account, privacy or data requests."
     />
     <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="TripleTalk Support" />
+    <meta name="twitter:title" content="TripleTalk Contact" />
     <meta
       name="twitter:description"
-      content="Need help with TripleTalk? Contact us about the app, your account, privacy or data requests."
+      content="Questions about TripleTalk? Contact us about the app, your account, privacy or data requests."
     />
     <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
-    <title>TripleTalk Support</title>
+    <title>TripleTalk Contact</title>
     <link rel="canonical" href="https://tripletalk.app/support/" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
@@ -48,9 +41,9 @@ const guides = [
       <section class="support-hero" aria-labelledby="support-title">
         <div class="container">
           <div class="support-card">
-            <h1 class="eyebrow" id="support-title" data-i18n="supportEyebrow">TripleTalk Support</h1>
+            <h1 class="eyebrow" id="support-title" data-i18n="supportEyebrow">TripleTalk Contact</h1>
             <p class="support-intro" data-i18n="supportIntro">
-              Need help with TripleTalk? Contact us about the app, your account, privacy or data requests.
+              Questions about TripleTalk? Contact us about the app, your account, privacy or data requests.
             </p>
 
             <div class="support-contact" aria-label="Support email">
@@ -59,18 +52,6 @@ const guides = [
               <strong class="support-email">support@tripletalk.app</strong>
               <!--/email_off-->
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="support-guide legal-page">
-        <div class="container legal-shell">
-          <div class="legal-documents">
-            {
-              guides.map(({ language, document }) => (
-                <MarkdownDocument document={document} language={language} titleLevel={2} hidden={language !== "en"} />
-              ))
-            }
           </div>
         </div>
       </section>
@@ -85,37 +66,34 @@ const guides = [
         pl: {
           navFeatures: "Funkcje",
           navDownload: "Pobierz",
-          navTerms: "Regulamin",
-          navPrivacy: "Prywatność",
-          supportEyebrow: "Pomoc TripleTalk",
+          navGuide: "Instrukcja",
+          supportEyebrow: "Kontakt TripleTalk",
           supportIntro:
-            "Potrzebujesz pomocy z TripleTalk? Skontaktuj się z nami w sprawie aplikacji, konta, prywatności lub wniosków dotyczących danych.",
+            "Masz pytanie dotyczące TripleTalk? Skontaktuj się z nami w sprawie aplikacji, konta, prywatności lub wniosków dotyczących danych.",
           emailLabel: "E-mail",
-          footerPrivacy: "Polityka Prywatności",
+          footerPrivacy: "Polityka prywatności",
           footerTerms: "Regulamin",
-          footerSupport: "Pomoc",
-          pageTitle: "Pomoc TripleTalk",
+          footerSupport: "Kontakt",
+          pageTitle: "Kontakt TripleTalk",
         },
         en: {
           navFeatures: "Features",
           navDownload: "Download",
-          navTerms: "Terms",
-          navPrivacy: "Privacy",
-          supportEyebrow: "TripleTalk Support",
+          navGuide: "Guide",
+          supportEyebrow: "TripleTalk Contact",
           supportIntro:
-            "Need help with TripleTalk? Contact us about the app, your account, privacy or data requests.",
+            "Questions about TripleTalk? Contact us about the app, your account, privacy or data requests.",
           emailLabel: "Email",
           footerPrivacy: "Privacy Policy",
           footerTerms: "Terms of Service",
-          footerSupport: "Support",
-          pageTitle: "TripleTalk Support",
+          footerSupport: "Contact",
+          pageTitle: "TripleTalk Contact",
         },
       };
 
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
       const translatedNodes = document.querySelectorAll("[data-i18n]");
-      const guides = document.querySelectorAll<HTMLElement>("[data-document-language]");
 
       function setLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
@@ -126,10 +104,6 @@ const guides = [
           if (key && key in translations[language]) {
             node.textContent = translations[language][key as keyof (typeof translations)["pl"]];
           }
-        });
-
-        guides.forEach((guide) => {
-          guide.hidden = guide.dataset.documentLanguage !== language;
         });
       }
 

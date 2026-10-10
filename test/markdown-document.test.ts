@@ -1,12 +1,12 @@
 import { describe, expect, it } from "vitest";
 import {
+  callouts,
   faqToDetails,
   fillPlaceholders,
   guideLinkRules,
   hasPlaceholder,
   linkReferences,
   prefixAnchors,
-  shiftHeadings,
   splitDocument,
   uiPaths,
   wrapTables,
@@ -31,12 +31,24 @@ describe("markdown document transforms", () => {
     );
   });
 
-  it("wraps tables in a scroll container and shifts heading levels", () => {
+  it("wraps tables in a scroll container", () => {
     expect(wrapTables("<table><tr><td>1</td></tr></table>")).toBe(
       '<div class="doc-table">\n<table><tr><td>1</td></tr></table>\n</div>',
     );
-    expect(shiftHeadings('<h1>a</h1><h3 id="x">b</h3><hr>', 1)).toBe(
-      '<h2>a</h2><h4 id="x">b</h4><hr>',
+  });
+
+  it("turns lead-in lists into callouts and marks warning items", () => {
+    const labels = { leads: ["Dobrze wiedzieć"], warning: "Uwaga" };
+    expect(
+      callouts(
+        "<p>Dobrze wiedzieć:</p>\n<ul>\n<li>A</li>\n<li>Uwaga: B</li>\n</ul>",
+        labels,
+      ),
+    ).toBe(
+      '<div class="doc-callout">\n<p class="doc-callout-title">Dobrze wiedzieć</p>\n<ul>\n<li>A</li>\n<li class="doc-warning"><strong>Uwaga:</strong> B</li>\n</ul>\n</div>',
+    );
+    expect(callouts("<p>Na Panelu:</p>\n<ul><li>A</li></ul>", labels)).toBe(
+      "<p>Na Panelu:</p>\n<ul><li>A</li></ul>",
     );
   });
 

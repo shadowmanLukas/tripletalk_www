@@ -1,5 +1,5 @@
 ---
-type Page = "home" | "terms" | "privacy" | "support";
+type Page = "home" | "terms" | "privacy" | "support" | "guide";
 type Language = "pl" | "en";
 
 interface NavigationContent {
@@ -8,8 +8,7 @@ interface NavigationContent {
   menuOpen: string;
   features: string;
   download: string;
-  terms: string;
-  privacy: string;
+  guide: string;
 }
 
 interface Props {
@@ -27,8 +26,7 @@ const labels = navigation ?? {
   menuOpen: "Open menu",
   features: "Features",
   download: "Download",
-  terms: "Terms",
-  privacy: "Privacy",
+  guide: "Guide",
 };
 ---
 
@@ -49,11 +47,8 @@ const labels = navigation ?? {
     <div class="nav-links" id="site-menu">
       <a href={`${sectionPrefix}#features`} data-i18n="navFeatures">{labels.features}</a>
       <a href={`${sectionPrefix}#download`} data-i18n="navDownload">{labels.download}</a>
-      <a href="/terms" data-i18n="navTerms" aria-current={currentPage === "terms" ? "page" : undefined}>
-        {labels.terms}
-      </a>
-      <a href="/privacy" data-i18n="navPrivacy" aria-current={currentPage === "privacy" ? "page" : undefined}>
-        {labels.privacy}
+      <a href="/guide/" data-i18n="navGuide" aria-current={currentPage === "guide" ? "page" : undefined}>
+        {labels.guide}
       </a>
     </div>
   </nav>

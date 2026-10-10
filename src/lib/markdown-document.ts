@@ -71,13 +71,26 @@ export function wrapTables(html: string): string {
   });
 }
 
-export function shiftHeadings(html: string, by: number): string {
-  return html.replace(
-    /<(\/?)h([1-6])([\s>])/g,
-    (_, slash: string, level: string, rest: string) => {
-      return `<${slash}h${Math.min(Number(level) + by, 6)}${rest}`;
-    },
-  );
+// A list introduced by a lead-in paragraph ("Dobrze wiedzieć:") is shown as a highlighted note,
+// and a list item starting with a warning word ("Uwaga:") is marked as a warning.
+export interface CalloutLabels {
+  leads: string[];
+  warning: string;
+}
+
+export function callouts(html: string, labels: CalloutLabels): string {
+  return html
+    .replace(
+      /<p>([^<]*?):<\/p>\s*(<ul>[\s\S]*?<\/ul>)/g,
+      (match, lead: string, list: string) =>
+        labels.leads.includes(lead.trim())
+          ? `<div class="doc-callout">\n<p class="doc-callout-title">${lead.trim()}</p>\n${list}\n</div>`
+          : match,
+    )
+    .replaceAll(
+      `<li>${labels.warning}:`,
+      `<li class="doc-warning"><strong>${labels.warning}:</strong>`,
+    );
 }
 
 const headingPattern = /<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g;
@@ -167,6 +180,11 @@ export function linkReferences(html: string, rules: LinkRule[]): string {
 }
 
 const letter = "\\p{L}";
+
+export const guideCallouts: Record<DocumentLanguage, CalloutLabels> = {
+  pl: { leads: ["Dobrze wiedzieć", "Warto pamiętać"], warning: "Uwaga" },
+  en: { leads: ["Good to know", "Worth remembering"], warning: "Note" },
+};
 
 export const guideLinkRules: Record<DocumentLanguage, LinkRule[]> = {
   pl: [

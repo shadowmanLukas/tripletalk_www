@@ -1,6 +1,8 @@
-# TripleTalk Instrukcja Użytkownika
+# TripleTalk instrukcja użytkownika
 
-TripleTalk to aplikacja na iPhone'a i Androida do nauki słówek i zwrotów w obcych językach. Tworzysz własne lekcje z fiszek, a TripleTalk AI uzupełnia za Ciebie tłumaczenia, przykładowe zdania i nagrania wymowy. Aplikacja sama pilnuje, kiedy warto powtórzyć każde słówko, więc uczysz się krócej i pamiętasz dłużej.
+Witaj w TripleTalk! To aplikacja, z którą nauczysz się słówek i zwrotów w obcych językach. Układasz własne lekcje z fiszek, a TripleTalk AI dopisuje do nich tłumaczenia, przykładowe zdania i nagrania wymowy. Aplikacja sama pilnuje, kiedy wrócić do każdego słówka, więc uczysz się krócej, a pamiętasz dłużej.
+
+Ta instrukcja prowadzi Cię przez aplikację krok po kroku: od założenia konta, przez pierwszą lekcję i pierwszą sesję nauki, aż po ustawienia. Możesz przeczytać ją po kolei albo od razu przejść do tematu, który Cię interesuje.
 
 ## Spis treści
 
@@ -24,16 +26,16 @@ TripleTalk to aplikacja na iPhone'a i Androida do nauki słówek i zwrotów w ob
 
 ## 1. Dlaczego TripleTalk
 
-TripleTalk pomaga uczyć się słówek szybciej i bez przepisywania ich ręcznie.
+Z TripleTalk uczysz się słówek szybciej i nie musisz ich nigdzie przepisywać.
 
-- Robisz zdjęcie strony z podręcznika albo listy słówek, a aplikacja przygotowuje z nich fiszki. Wybierasz tylko te, których chcesz się uczyć.
-- Dodając fiszkę samodzielnie, wpisujesz jedno słowo. Tłumaczenie, przykładowe zdanie i wymowę TripleTalk uzupełni za Ciebie.
+- Zrób zdjęcie strony z podręcznika albo listy słówek, a aplikacja zamieni je w fiszki. Ty wybierasz tylko te, których chcesz się uczyć.
+- Gdy dodajesz fiszkę samodzielnie, wpisujesz jedno słowo. Tłumaczenie, przykładowe zdanie i wymowę TripleTalk dopisze za Ciebie.
 - Każde słowo i każde zdanie możesz odsłuchać, wymówione naturalnym głosem.
 - Po każdej fiszce zaznaczasz, jak dobrze ją pamiętasz. Trudne słowa wracają częściej, łatwe rzadziej, więc nie tracisz czasu na to, co już umiesz.
 - Lekcji możesz słuchać jak podcastu: na spacerze, w samochodzie albo w tramwaju, bez patrzenia w ekran.
-- Z Premium uczysz się dwóch języków naraz na tych samych fiszkach, np. angielskiego i niemieckiego z podpowiedzią po polsku. Stąd nazwa: trzy języki na jednej fiszce.
-- Na Panelu widzisz, ile słówek już znasz i które lekcje czekają na powtórkę.
-- Nauczyciel może przygotować lekcje dla swojej klasy, a uczniowie uczą się z nich za darmo.
+- Z Premium uczysz się dwóch języków naraz na tych samych fiszkach, np. angielskiego i niemieckiego z podpowiedzią po polsku.
+- Na Panelu od razu widać, ile słówek już znasz i które lekcje czekają na powtórkę.
+- Nauczyciel może przygotować lekcje dla swoich klas, a uczniowie uczą się z nich do sprawdzianów.
 
 ---
 
@@ -41,130 +43,126 @@ TripleTalk pomaga uczyć się słówek szybciej i bez przepisywania ich ręcznie
 
 ### Zakładanie konta i logowanie
 
-Do korzystania z TripleTalk potrzebne jest konto. Dzięki temu Twoje lekcje, postępy i zakupy są bezpieczne i dostępne po zalogowaniu na innym urządzeniu.
+Na początek załóż konto. Dzięki niemu Twoje lekcje, postępy i zakupy są bezpieczne i czekają na Ciebie także na innym urządzeniu.
 
-Możesz zalogować się adresem e-mail i hasłem, kontem Google albo przez Apple (Sign in with Apple).
+Zalogować się możesz na trzy sposoby: adresem e-mail i hasłem, kontem Google albo przez Apple (Sign in with Apple).
 
-Jeśli wybierzesz e-mail, po założeniu konta dostaniesz wiadomość z linkiem potwierdzającym. Hasło musi mieć od 8 do 30 znaków, małą i wielką literę, cyfrę oraz znak specjalny. Jeśli zapomnisz hasła, wybierz „Nie pamiętasz hasła?”, a wyślemy Ci link do ustawienia nowego.
+Jeśli wybierzesz e-mail, zajrzyj potem do skrzynki: wyślemy Ci wiadomość z linkiem potwierdzającym. Hasło musi mieć od 8 do 30 znaków i zawierać małą literę, wielką literę, cyfrę oraz znak specjalny. Gdy zapomnisz hasła, wybierz „Nie pamiętasz hasła?”, a wyślemy Ci link do ustawienia nowego.
 
 ### Wprowadzenie
 
-Przy pierwszym uruchomieniu aplikacja w kilku krokach pokaże, jak działa, i poprosi Cię o kilka wyborów:
+Przy pierwszym uruchomieniu aplikacja w kilku krokach pokaże Ci, jak działa, i poprosi o kilka decyzji:
 
-1. Wybierasz język fiszek, czyli swój język bazowy, np. polski. W nim zobaczysz podpowiedzi i tłumaczenia.
-2. Wybierasz język nauki, np. angielski. Drugi język nauki możesz dodać później w ustawieniach.
-3. Wybierasz tempo nauki: intensywne albo zrównoważone (więcej w [sekcji 12](#12-ustawienia)).
-4. Akceptujesz regulamin i politykę prywatności. Obie zgody są wymagane, aby zacząć.
+- Język fiszek, czyli Twój język bazowy, np. polski. W nim zobaczysz podpowiedzi i tłumaczenia.
+- Język nauki, np. angielski. Drugi język nauki możesz dodać później w ustawieniach.
+- Tempo nauki: intensywne albo zrównoważone. Nie musisz się długo zastanawiać, różnicę opisujemy w [sekcji 7](#7-nauka-z-powtórkami).
+- Zgody: zaakceptuj regulamin i politykę prywatności. Bez nich nie da się zacząć.
 
-Wszystkie wybory poza zgodami możesz w każdej chwili zmienić w ustawieniach.
+Wszystko oprócz zgód zmienisz później w ustawieniach.
 
 ### Prezent na start
 
-Każde nowe konto dostaje jednorazowo darmowy okres Premium z pełnym dostępem do jego funkcji oraz pulę darmowych fiszek TripleTalk AI, dzięki którym od razu możesz tworzyć fiszki ze zdjęć i z pomocą AI. Darmowy okres nie odnawia się automatycznie i nie zamienia się w płatną subskrypcję.
+Na dobry początek każde nowe konto dostaje jednorazowo prezent: darmowy okres Premium z pełnym dostępem do jego funkcji oraz pulę darmowych fiszek TripleTalk AI. Dzięki nim od razu możesz tworzyć fiszki ze zdjęć i z pomocą AI. Darmowy okres nie odnawia się sam i nie zamienia się w płatną subskrypcję.
 
-Długość okresu próbnego i liczbę darmowych fiszek podaje regulamin. Prezent powitalny przysługuje raz na osobę i urządzenie. Po jego wygaśnięciu nadal korzystasz z podstawowych funkcji i z niewykorzystanych fiszek TripleTalk AI.
+Długość okresu próbnego i liczbę darmowych fiszek znajdziesz w regulaminie. Prezent powitalny przysługuje raz na osobę i urządzenie. Gdy się skończy, dalej korzystasz z podstawowych funkcji i ze wszystkich niewykorzystanych fiszek TripleTalk AI.
 
 ---
 
 ## 3. Panel
 
-Panel to ekran startowy aplikacji. Znajdziesz na nim:
+Panel to pierwszy ekran, który widzisz po otwarciu aplikacji. Najważniejszy jest na nim przycisk „Kontynuuj naukę”. Dotknij go, a od razu przejdziesz do lekcji, w której fiszki czekają na powtórkę. Gdy wszystko jest już powtórzone, aplikacja podpowie, żeby wybrać kolejną lekcję.
 
-- Przycisk „Kontynuuj naukę”, który zabiera Cię prosto do lekcji z fiszkami czekającymi na powtórkę. Gdy wszystko jest powtórzone, aplikacja podpowie, żeby wybrać kolejną lekcję.
-- Twoje postępy:
-  - lekcje w trakcie nauki,
-  - lekcje ukończone,
-  - fiszki powtórzone w tym tygodniu,
-  - wszystkie potwierdzone fiszki, czyli te, które już znasz.
-- Wykres „Postęp nauki” z ostatnich 7 dni.
+Na Panelu widzisz też swoje postępy:
 
-Do statystyk liczą się zarówno Twoje własne lekcje, jak i lekcje udostępnione przez nauczyciela w Szkole.
+- ile lekcji jest w trakcie nauki,
+- ile lekcji masz już ukończonych,
+- ile fiszek powtórzono w tym tygodniu,
+- ile fiszek jest potwierdzonych, czyli ile słówek już znasz.
+
+Wykres „Postęp nauki” pokazuje, jak szła Ci nauka przez ostatnie 7 dni.
+
+Do statystyk liczą się zarówno Twoje własne lekcje, jak i lekcje od nauczyciela w Szkole.
 
 ---
 
 ## 4. Lekcje
 
-Lekcja to zestaw fiszek na jeden temat, np. „Podróże” albo „Business English”.
+Lekcja to zestaw fiszek na jeden temat, np. „Podróże” albo „Business English”. Od lekcji zaczyna się cała nauka, więc najpierw utwórz swoją pierwszą.
 
 ### Tworzenie lekcji
 
-Na ekranie Lekcje wybierz „Dodaj lekcję” i wpisz nazwę. TripleTalk dobierze do niej pasującą ikonę.
+Przejdź do ekranu Lekcje, wybierz „Dodaj lekcję” i wpisz nazwę. Pasującą ikonę TripleTalk dobierze sam. Nowa lekcja jest pusta, więc w kolejnym kroku dodaj do niej fiszki (zobacz [sekcję 5](#5-dodawanie-fiszek)).
 
 ### Kafelek lekcji
 
-Kafelek pokazuje liczbę fiszek, ile z nich czeka na powtórkę i kiedy wypada następna powtórka. Oznaczenia, które możesz zobaczyć:
+Każda lekcja ma na liście swój kafelek. Od razu widać na nim, ile ma fiszek, ile z nich czeka na powtórkę i kiedy wypada następna powtórka. Czasem zobaczysz na kafelku etykietę:
 
-- Nierozpoczęta: nie zacząłeś jeszcze nauki tej lekcji.
-- Opanowana: znasz wszystkie fiszki i żadna nie wymaga teraz powtórki.
-- W przygotowaniu: TripleTalk AI kończy przygotowywać część fiszek albo nagrań. Nauka i odsłuch tej lekcji będą dostępne, gdy wszystkie fiszki będą gotowe. Zwykle trwa to od kilku sekund do kilku minut.
-- Aktualizacja: aplikacja pobiera nagrania do lekcji. Lekcję otworzysz za chwilę.
+- Nierozpoczęta: nauka tej lekcji jeszcze się nie zaczęła.
+- Opanowana: znasz wszystkie fiszki i żadna nie czeka teraz na powtórkę.
+- W przygotowaniu: TripleTalk AI kończy przygotowywać część fiszek albo nagrań. Naukę i odsłuch włączysz, gdy wszystkie fiszki będą gotowe. Zwykle trwa to od kilku sekund do kilku minut.
+- Aktualizacja: aplikacja pobiera nagrania do lekcji. Za chwilę będzie można ją otworzyć.
 
 ### Porządkowanie lekcji
 
-- Sortowanie: według daty dodania, nazwy, poziomu nauki, ostatniej nauki albo daty kolejnej powtórki, rosnąco lub malejąco.
-- Archiwum: przesuń kafelek w prawo, aby przenieść lekcję do archiwum. Zarchiwizowane lekcje znajdziesz po przełączeniu filtra na „Archiwum” i możesz je stamtąd przywrócić.
-- Usuwanie: przesuń kafelek w lewo, aby usunąć lekcję.
-- Zmiana nazwy i reset postępu są dostępne z poziomu lekcji.
+Gdy lekcji przybywa, łatwo utrzymać w nich porządek:
+
+- Sortuj je według daty dodania, nazwy, poziomu nauki, ostatniej nauki albo daty kolejnej powtórki, rosnąco lub malejąco.
+- Przesuń kafelek w prawo, a lekcja trafi do archiwum. Znajdziesz ją tam po przełączeniu filtra na „Archiwum” i w każdej chwili przywrócisz.
+- Przesuń kafelek w lewo, aby usunąć lekcję.
+- Nazwę zmienisz, a postęp zresetujesz po otwarciu lekcji.
 
 ### Ekran lekcji
 
 Po otwarciu lekcji masz pod ręką szybkie akcje:
 
-- Audio: odsłuch lekcji,
-- Szukaj: znajdź fiszkę w lekcji,
-- Sortuj: uporządkuj fiszki,
+- Audio: posłuchaj lekcji (więcej w [sekcji 8](#8-nauka-ze-słuchu-audio)),
+- Szukaj: znajdź konkretną fiszkę,
+- Sortuj: ułóż fiszki w wybranej kolejności,
 - Widok: przełącz między widokiem listy a widokiem kompaktowym.
 
 ---
 
 ## 5. Dodawanie fiszek
 
-W lekcji wybierz „Dodaj fiszki”. Masz trzy możliwości.
+Masz już lekcję, czas dodać do niej słówka. Otwórz lekcję i wybierz „Dodaj fiszki”. Do wyboru masz trzy sposoby.
 
 ### Zrób zdjęcie tekstu
 
-Otwórz aparat i zrób czytelne zdjęcie strony z podręcznika, notatek, menu albo dowolnego tekstu. TripleTalk AI:
+To najszybszy sposób, gdy masz słówka na papierze. Zrób aparatem czytelne zdjęcie strony z podręcznika, notatek, menu albo dowolnego innego tekstu. TripleTalk AI rozpozna jego język, wybierze z niego słówka i pokaże Ci ich listę do zatwierdzenia.
 
-- rozpozna język tekstu,
-- wybierze z niego słówka,
-- pokaże Ci listę kandydatów do zatwierdzenia.
+Zaznacz słówka, których chcesz się uczyć (albo od razu „Zaznacz wszystko”), i wybierz „Utwórz fiszki”. Na bieżąco widzisz, ile słówek znaleziono, ile z nich jest nowych, ile zaznaczono i ile fiszek TripleTalk AI masz do dyspozycji. Słówka, które już są w lekcji, są oznaczone jako duplikaty, więc nie dodasz ich dwa razy.
 
-Zaznacz słówka, które chcesz dodać (albo „Zaznacz wszystko”), i wybierz „Utwórz fiszki”. Aplikacja od razu pokazuje, ile słówek znaleziono, ile jest nowych, ile wybrałeś i ile fiszek TripleTalk AI masz do dyspozycji. Słówka, które już są w lekcji, są oznaczone jako duplikaty, więc nie dodasz ich dwa razy.
-
-Nie musisz czekać na ekranie analizy. Wróć do lekcji, a gotowe zdjęcie znajdziesz w sekcji „Fiszki oczekujące” ze statusem „W trakcie analizy” albo „Do akceptacji”.
+Analiza zdjęcia może chwilę potrwać, ale nie musisz na nią czekać. Wróć do lekcji, a zdjęcie znajdziesz w sekcji „Fiszki oczekujące”: najpierw ze statusem „W trakcie analizy”, a potem „Do akceptacji”.
 
 ### Dodaj z galerii
 
-Działa tak samo jak zdjęcie z aparatu, ale wybierasz gotowe zdjęcie z telefonu, np. zrzut ekranu.
+Masz już zdjęcie albo zrzut ekranu ze słówkami? Wybierz je z galerii telefonu. Dalej wszystko działa tak samo jak przy zdjęciu z aparatu.
 
 ### Dodaj ręcznie
 
-Wybierz język, w którym wpisujesz, i podaj:
+Chcesz dodać pojedyncze słowo? Wybierz język, w którym piszesz, i wpisz słowo lub zwrot. Jeśli chcesz, dopisz też własne przykładowe zdanie.
 
-- słowo lub zwrot,
-- opcjonalnie przykładowe zdanie.
-
-Wystarczy jedno słowo w jednym języku. TripleTalk AI uzupełni tłumaczenie, przykład, gramatykę i wymowę. Jeśli w ustawieniach włączysz „Korekta z TripleTalk AI”, AI poprawi też ewentualne błędy w tym, co wpiszesz.
+Wystarczy jedno słowo w jednym języku. Resztę, czyli tłumaczenie, przykład, gramatykę i wymowę, uzupełni TripleTalk AI. Gdy w ustawieniach włączysz „Korekta z TripleTalk AI”, AI poprawi też ewentualne błędy w tym, co wpiszesz.
 
 ### Ile to kosztuje
 
-Każda fiszka utworzona z pomocą AI zużywa 1 fiszkę TripleTalk AI z Twojego salda, niezależnie od tego, czy dodajesz ją ręcznie, ze zdjęcia, do własnej lekcji czy do lekcji w Szkole. Jeśli przygotowanie fiszki się nie uda, fiszka wraca na Twoje saldo. Saldo sprawdzisz w `Więcej > Fiszki TripleTalk AI`.
+Każda fiszka utworzona z pomocą AI zużywa 1 fiszkę TripleTalk AI z Twojego salda. Nie ma znaczenia, czy dodajesz ją ręcznie, czy ze zdjęcia, do własnej lekcji czy do lekcji w Szkole. Jeśli przygotowanie fiszki się nie uda, fiszka wraca na Twoje saldo. Ile fiszek Ci zostało, sprawdzisz w `Więcej > Fiszki TripleTalk AI`.
 
 ---
 
 ## 6. Co zawiera fiszka
 
-Każda fiszka to komplet materiału do nauki słowa:
+Każda fiszka to komplet materiału do nauki jednego słowa. Znajdziesz na niej:
 
 - słowo w języku fiszek i w językach nauki,
-- przykładowe zdanie w każdym z tych języków, pokazujące słowo w kontekście,
+- przykładowe zdanie w każdym z tych języków, żeby zobaczyć słowo w kontekście,
 - nagrania wymowy słowa i przykładu,
-- informacje gramatyczne: część mowy (rzeczownik, czasownik, przymiotnik), a dla czasowników odmiana (bezokolicznik, czas przeszły, imiesłów, a w niemieckim także czasownik posiłkowy),
-- postęp nauki: poziom (nowa, rozpoczęta, utrwalana, zaawansowana, opanowana), liczba powtórek, ile razy fiszka została zapomniana, data ostatniej i następnej powtórki.
+- gramatykę: część mowy (rzeczownik, czasownik, przymiotnik), a przy czasownikach ich formy (bezokolicznik, czas przeszły, imiesłów, a w niemieckim także czasownik posiłkowy),
+- Twój postęp: poziom (nowa, rozpoczęta, utrwalana, zaawansowana, opanowana), liczbę powtórek, ile razy słowo wypadło Ci z pamięci oraz datę ostatniej i następnej powtórki.
 
-Dotknij fiszki, aby zobaczyć szczegóły. Możesz tam edytować słówka i przykłady albo odsłuchać wymowę.
+Dotknij fiszki, aby zobaczyć szczegóły. Możesz tam poprawić słówka i przykłady albo odsłuchać wymowę.
 
-Przykładowe zdania możesz dopasować do swoich zainteresowań w ustawieniu „Kontekst przykładowych zdań” (np. biznes, podróże, IT).
+Chcesz, żeby przykładowe zdania były bliższe temu, czym się zajmujesz? W ustawieniu „Kontekst przykładowych zdań” wybierz swoje tematy, np. biznes, podróże albo IT.
 
 ---
 
@@ -172,119 +170,121 @@ Przykładowe zdania możesz dopasować do swoich zainteresowań w ustawieniu „
 
 ### Jak wygląda sesja
 
-1. Otwórz lekcję i wybierz „Rozpocznij” (albo „Kontynuuj naukę” na Panelu).
-2. Zobaczysz słowo. Spróbuj przypomnieć sobie odpowiedź.
-3. Wybierz „Pokaż odpowiedź”.
-4. Oceń, jak dobrze pamiętałeś:
-   - Nie znam: zobaczysz fiszkę ponownie za chwilę,
+To serce aplikacji. Sesja nauki przebiega tak:
+
+1. Otwórz lekcję i wybierz „Rozpocznij”. Możesz też po prostu dotknąć „Kontynuuj naukę” na Panelu.
+2. Zobaczysz słowo. Zanim spojrzysz na odpowiedź, spróbuj ją sobie przypomnieć.
+3. Wybierz „Pokaż odpowiedź” i sprawdź się.
+4. Szczerze oceń, jak Ci poszło:
+   - Nie znam: fiszka wróci za chwilę,
    - Trudne: wróci niedługo,
    - Znam: wróci później,
-   - Łatwe: wróci po dłuższej przerwie.
+   - Łatwe: wróci dopiero po dłuższej przerwie.
 
-Nie musisz niczego planować. Słówka, które dobrze znasz, będą pojawiać się coraz rzadziej, a te, z którymi masz kłopot, wrócą szybciej. Lekcję masz za sobą, gdy znasz już wszystkie fiszki i żadna nie czeka na powtórkę.
+Niczego nie musisz planować. Słówka, które dobrze znasz, będą pojawiać się coraz rzadziej, a te, z którymi masz kłopot, wrócą szybciej. Lekcja jest za Tobą, gdy znasz już wszystkie fiszki i żadna nie czeka na powtórkę.
 
 ### Po sesji
 
-Na koniec zobaczysz jeden z trzech komunikatów:
+Na koniec sesji zobaczysz jeden z trzech komunikatów:
 
-- Gdy pojawi się „Sesja zakończona”, wszystko jest zapisane, a aplikacja sama zaplanuje kolejne powtórki.
-- „Sesja wstrzymana, wróć wkrótce” oznacza, że kilka trudnych słówek wróci do Ciebie za kilka godzin.
-- „Na teraz wszystko powtórzone” oznacza, że w tej lekcji nic na Ciebie teraz nie czeka. Wróć później albo dodaj nowe fiszki.
+- „Sesja zakończona”: wszystko jest zapisane, a kolejne powtórki aplikacja zaplanuje sama.
+- „Sesja wstrzymana, wróć wkrótce”: kilka trudnych słówek wróci do Ciebie za kilka godzin.
+- „Na teraz wszystko powtórzone”: w tej lekcji nic teraz na Ciebie nie czeka. Wróć później albo dodaj nowe fiszki.
 
-Jeśli przerwiesz naukę w trakcie sesji, przy następnym otwarciu aplikacja zapyta, czy chcesz wrócić do miejsca, w którym skończyłeś.
+Możesz przerwać naukę w połowie sesji. Przy następnym otwarciu aplikacja zapyta, czy chcesz wrócić do przerwanej sesji.
 
 ### Tempo nauki
 
-W ustawieniach wybierasz tryb nauki:
+To, jak często wracają powtórki, zależy od trybu nauki, który wybierasz w ustawieniach:
 
-- Zrównoważony: spokojniejsze, rzadsze powtórki, dobre na co dzień.
-- Intensywny: częstsze powtórki, dla szybszego zapamiętywania, np. przed egzaminem albo wyjazdem.
+- Zrównoważony: spokojniejsze, rzadsze powtórki. Dobry na co dzień.
+- Intensywny: częstsze powtórki i szybsze zapamiętywanie, np. przed egzaminem albo wyjazdem.
 
 ---
 
 ## 8. Nauka ze słuchu (audio)
 
-Tryb audio zamienia lekcję w nagranie do słuchania. Aplikacja odtwarza po kolei słowa i przykładowe zdania we wszystkich Twoich językach, z krótką przerwą między nimi. To dobry sposób na powtórkę na spacerze, w samochodzie albo na siłowni.
+W trybie audio lekcja zamienia się w nagranie do słuchania. Aplikacja odtwarza po kolei słowa i przykładowe zdania we wszystkich Twoich językach, z krótką przerwą między nimi. To dobry sposób na powtórkę na spacerze, w samochodzie albo na siłowni.
 
-Uruchomisz go przyciskiem „Audio” w lekcji albo „Odtwórz audio lekcji”. Jeśli wcześniej przerwałeś odsłuch, możesz kontynuować albo zacząć od nowa.
+Włączysz go przyciskiem „Audio” w lekcji albo „Odtwórz audio lekcji”. Jeśli odsłuch został wcześniej przerwany, możesz go kontynuować albo zacząć od nowa.
 
-W `Więcej > Odtwarzanie audio` ustawisz:
+Sposób odtwarzania dopasujesz w `Więcej > Odtwarzanie audio`:
 
-- zakres fiszek: wszystkie fiszki w lekcji albo tylko nieopanowane,
-- pauzę między elementami: 0,5 s, 1 s albo 1,5 s,
+- zakres: wszystkie fiszki w lekcji albo tylko nieopanowane,
+- pauza między elementami: 0,5 s, 1 s albo 1,5 s,
 - prędkość: 0,75×, 1× albo 1,25×,
-- kolejność odtwarzania fiszek: po kolei albo losowo.
+- kolejność fiszek: po kolei albo losowo.
 
 ### Słuchanie w tle
 
-Odtwarzanie działa dalej, gdy wyjdziesz z aplikacji albo zablokujesz ekran. Na ekranie blokady widzisz bieżące zdanie, nazwę lekcji, czas i postęp całej lekcji oraz przyciski poprzedniego i następnego zdania.
+Możesz spokojnie wyjść z aplikacji albo zablokować ekran, a odtwarzanie będzie trwać dalej. Na ekranie blokady widzisz bieżące zdanie, nazwę lekcji, czas i postęp całej lekcji oraz przyciski poprzedniego i następnego zdania.
 
 ---
 
 ## 9. Kolekcje
 
-Zakładka Kolekcje to gotowe zestawy fiszek przygotowane przez TripleTalk. Nie musisz niczego tworzyć: wybierz zestaw, a pojawi się on jako nowa lekcja na Twojej liście.
+Nie chcesz układać lekcji od zera? Zajrzyj do zakładki Kolekcje. Znajdziesz tam gotowe zestawy fiszek przygotowane przez TripleTalk. Wybierz zestaw, a pojawi się na Twojej liście jako nowa lekcja.
 
-- Kolekcje możesz filtrować według różnych tematów, np. codzienne, biznes, podróże, podstawy, czasowniki.
+- Kolekcje przefiltrujesz według tematu, np. codzienne, biznes, podróże, podstawy, czasowniki.
 - Kolekcje oznaczone Free są dostępne dla wszystkich, a oznaczone Premium wymagają subskrypcji.
-- Lekcje utworzone z kolekcji mają nazwę zgodną z kolekcją i językiem aplikacji. Nie można dodawać do nich własnych fiszek.
+- Lekcja z kolekcji nosi nazwę kolekcji w języku aplikacji. Nie można dodawać do niej własnych fiszek.
 
 ---
 
 ## 10. Szkoła: nauka w klasie
 
-Szkoła to osobna zakładka, w której nauczyciel przygotowuje lekcje z fiszkami i nagraniami, a uczniowie uczą się z nich na swoich telefonach.
+Szkoła to osobna zakładka do nauki w klasie. Nauczyciel przygotowuje w niej lekcje z fiszkami i nagraniami, a uczniowie uczą się z nich na swoich telefonach.
 
-Przy pierwszym wejściu wybierasz rolę: Uczeń albo Nauczyciel. Jedno konto może mieć jedną rolę. Zmienisz ją tylko przez zresetowanie ustawień Szkoły.
+Przy pierwszym wejściu wybierasz rolę: Uczeń albo Nauczyciel. Jedno konto może mieć tylko jedną rolę, a zmienić ją można wyłącznie przez zresetowanie ustawień Szkoły.
 
 ### Uczeń
 
-- Na początku wybierasz rolę Uczeń i podajesz swoje imię. Potwierdzasz też, że masz co najmniej 16 lat albo zgodę rodzica lub opiekuna.
-- Dostajesz swoje ID w formacie `XXXX-XXXX`. Skopiuj je albo wyślij nauczycielowi, żeby mógł Cię zaprosić.
-- Nauczyciel wyśle Ci zaproszenie do klasy. Możesz je przyjąć albo odrzucić. Jeśli nie chcesz więcej zaproszeń od tej osoby, możesz ją też zablokować.
+- Wybierz rolę Uczeń i wpisz swoje imię. Potwierdź też, że masz co najmniej 16 lat albo zgodę rodzica lub opiekuna.
+- Dostaniesz swoje ID w formacie `XXXX-XXXX`. Skopiuj je albo wyślij nauczycielowi, żeby mógł zaprosić Cię do klasy.
+- Gdy przyjdzie zaproszenie, przyjmij je albo odrzuć. Jeśli nie chcesz więcej zaproszeń od tej osoby, możesz ją też zablokować.
 - W „Moich klasach” znajdziesz lekcje od nauczyciela i datę, do kiedy są dostępne.
-- Uczysz się, zaznaczając „Znam” albo „Nie znam”, i możesz odsłuchać wymowę. Jeśli chcesz przerobić lekcję od nowa, możesz zresetować swój postęp.
+- Ucz się, zaznaczając „Znam” albo „Nie znam”, i odsłuchuj wymowę. Jeśli chcesz przerobić lekcję jeszcze raz od początku, zresetuj swój postęp.
 
-Każde „Znam” w lekcji ze Szkoły wlicza się do Twoich statystyk na Panelu. Z klasy możesz wypisać się w każdej chwili.
+Każde „Znam” w lekcji ze Szkoły liczy się do Twoich statystyk na Panelu. Z klasy możesz wypisać się w każdej chwili.
 
-Nauczyciel widzi tylko Twoje imię i to, czy zacząłeś już naukę lekcji. Nie wie, które fiszki znasz. Uczniowie nie widzą siebie nawzajem, a w Szkole nie ma czatu ani komentarzy.
+Nauczyciel widzi tylko Twoje imię i to, czy nauka lekcji jest już rozpoczęta. Nie wie, które fiszki znasz. Uczniowie nie widzą siebie nawzajem, a w Szkole nie ma czatu ani komentarzy.
 
 ### Nauczyciel
 
-- Rola nauczyciela wymaga Premium. Po jej wybraniu podajesz nazwę, którą zobaczą uczniowie, np. „Pani Kowalska”.
-- Tworzysz klasę, np. „Angielski 3B”.
-- Uczniów dodajesz po ich ID. Każdy dostanie zaproszenie i sam zdecyduje, czy dołączyć. Na liście uczniów widzisz, kto już przyjął zaproszenie, a jeśli któreś wygaśnie, możesz wysłać je jeszcze raz.
-- Lekcję tworzysz tak samo jak własną: podajesz tytuł, język fiszek i język nauki, a potem dodajesz fiszki ręcznie albo ze zdjęcia. TripleTalk AI przygotuje tłumaczenia, przykłady i nagrania, a lekcja dostanie pasującą ikonę.
-- Zanim udostępnisz lekcję, możesz ją przejrzeć w trybie „Podgląd fiszek” albo „Odsłuch”.
-- Na koniec wybierasz jedną lub kilka klas i okres, w którym lekcja ma być dla nich dostępna.
+- Rola nauczyciela wymaga Premium. Po jej wybraniu wpisz nazwę, którą zobaczą uczniowie, np. „Pani Kowalska”.
+- Utwórz klasę, np. „Angielski 3B”.
+- Dodaj uczniów po ich ID. Każdy dostanie zaproszenie i sam zdecyduje, czy dołączyć. Na liście uczniów widać, kto już je przyjął. Jeśli zaproszenie wygaśnie, możesz wysłać je jeszcze raz.
+- Przygotuj lekcję tak samo jak własną: podaj tytuł, język fiszek i język nauki, a potem dodaj fiszki ręcznie albo ze zdjęcia. TripleTalk AI przygotuje tłumaczenia, przykłady i nagrania, a lekcja dostanie pasującą ikonę.
+- Zanim udostępnisz lekcję, przejrzyj ją w trybie „Podgląd fiszek” albo „Odsłuch”.
+- Na koniec wybierz jedną lub kilka klas i okres, w którym lekcja ma być dla nich dostępna.
 
-Ważne zasady:
+Warto pamiętać:
 
-- Po pierwszym udostępnieniu lekcji nie można już jej edytować. Nadal możesz udostępnić ją kolejnym klasom albo zmienić termin dostępności dla danej klasy.
-- Jedną lekcję udostępniasz danej klasie tylko raz. Aby zmienić daty, zmień dostępność istniejącego udostępnienia.
+- Po pierwszym udostępnieniu lekcji nie da się już jej edytować, więc sprawdź ją dokładnie wcześniej. Nadal możesz udostępnić ją kolejnym klasom albo zmienić termin dostępności dla wybranej klasy.
+- Danej klasie udostępniasz lekcję tylko raz. Jeśli chcesz zmienić daty, zmień dostępność istniejącego udostępnienia.
 - W każdej klasie widzisz lekcje aktywne, zaplanowane i zakończone oraz statystykę „Rozpoczęło naukę: X z Y uczniów”.
-- Lekcje, których już nie potrzebujesz, przenieś do Archiwum. Lekcja znika wtedy z klas, a postęp uczniów w niej jest usuwany, ale fiszki i nagrania zostają. Z archiwum możesz lekcję przywrócić (znowu da się ją edytować i udostępnić, np. w kolejnym roku szkolnym) albo usunąć na zawsze.
-- Fiszki w lekcjach Szkoły korzystają z tego samego salda fiszek TripleTalk AI co lekcje własne.
+- Lekcje, których już nie potrzebujesz, przenieś do Archiwum. Znikną wtedy z klas, a postęp uczniów w nich zostanie usunięty, ale fiszki i nagrania zostaną. Z archiwum możesz lekcję przywrócić (znów da się ją edytować i udostępnić, np. w kolejnym roku szkolnym) albo usunąć na zawsze.
+- Fiszki w lekcjach Szkoły korzystają z tego samego salda fiszek TripleTalk AI co Twoje własne lekcje.
 
 ### Ustawienia Szkoły
 
-W `Więcej > Ustawienia Szkoły`:
+W `Więcej > Ustawienia Szkoły` znajdziesz:
 
-- Zaproszenia (uczeń): włącz albo wyłącz możliwość zapraszania Cię do klas.
-- Zablokowani nauczyciele (uczeń): lista zablokowanych nauczycieli z możliwością odblokowania.
+- Zaproszenia (uczeń): zdecyduj, czy nauczyciele mogą zapraszać Cię do klas.
+- Zablokowani nauczyciele (uczeń): lista zablokowanych nauczycieli, których możesz tu odblokować.
 - Zresetuj ustawienia Szkoły:
-  - uczeń opuszcza wszystkie klasy, a jego postęp, imię i rola są usuwane (ID zostaje bez zmian),
-  - nauczyciel trwale usuwa wszystkie swoje klasy i lekcje, a uczniowie tracą do nich dostęp. Tego nie można cofnąć.
+  - uczeń opuszcza wszystkie klasy, a jego postęp, imię i rola są usuwane (ID się nie zmienia),
+  - nauczyciel trwale usuwa wszystkie swoje klasy i lekcje, a uczniowie tracą do nich dostęp. Tego nie da się cofnąć.
 
 ---
 
 ## 11. Premium i pakiety TripleTalk AI
 
-W TripleTalk są dwa niezależne rodzaje zakupów. Płatności obsługuje App Store albo Google Play, a ceny są pokazywane w Twojej lokalnej walucie.
+W TripleTalk możesz kupić dwie niezależne rzeczy: subskrypcję Premium i pakiety fiszek TripleTalk AI. Płatności obsługuje App Store albo Google Play, a ceny widzisz w swojej lokalnej walucie.
 
 ### TripleTalk Premium (subskrypcja)
 
-Premium odblokowuje:
+Z Premium dostajesz:
 
 - dwa języki nauki naraz na tych samych fiszkach,
 - znacznie więcej miejsca na lekcje niż na koncie darmowym,
@@ -293,38 +293,38 @@ Premium odblokowuje:
 - odtwarzanie lekcji w trybie audio,
 - rolę nauczyciela w Szkole.
 
-Do wyboru są trzy plany: miesięczny, kwartalny i roczny. Przy planach dłuższych aplikacja pokazuje, ile oszczędzasz w porównaniu z planem miesięcznym.
+Do wyboru są trzy plany: miesięczny, kwartalny i roczny. Przy dłuższych planach aplikacja pokazuje, ile oszczędzasz w porównaniu z planem miesięcznym.
 
-Subskrypcja odnawia się automatycznie. Anulujesz ją w ustawieniach sklepu (App Store albo Google Play), a na ekranie Premium znajdziesz skrót „Zarządzaj subskrypcją”. Po anulowaniu Premium działa do końca opłaconego okresu. Gdy Premium wygaśnie, Twoje lekcje nie znikają i wszystkie funkcje Premium wrócą po odnowieniu subskrypcji.
+Subskrypcja odnawia się automatycznie. Anulujesz ją w ustawieniach sklepu (App Store albo Google Play), a najszybciej trafisz tam skrótem „Zarządzaj subskrypcją” na ekranie Premium. Po anulowaniu Premium działa do końca opłaconego okresu. Gdy wygaśnie, Twoje lekcje zostają na miejscu, a funkcje Premium wrócą, gdy odnowisz subskrypcję.
 
 ### Pakiety fiszek TripleTalk AI
 
-Fiszki TripleTalk AI to Twoje saldo na tworzenie fiszek z pomocą AI: 1 fiszka TripleTalk AI = 1 utworzona fiszka, ze zdjęcia albo ręcznie.
+Fiszki TripleTalk AI to Twoje saldo na tworzenie fiszek z pomocą AI. Zasada jest prosta: 1 fiszka TripleTalk AI to 1 utworzona fiszka, ze zdjęcia albo ręcznie.
 
-Do wyboru są trzy pakiety różnej wielkości: S, L i XL. Liczbę fiszek w każdym pakiecie zobaczysz na ekranie zakupu, a także w regulaminie.
+Do wyboru są trzy pakiety różnej wielkości: S, L i XL. Ile fiszek zawiera każdy z nich, zobaczysz na ekranie zakupu i w regulaminie.
 
 Płacisz raz, a fiszki nie wygasają. Pakiety działają niezależnie od Premium, także na koncie darmowym.
 
 ### Przywracanie zakupów
 
-Jeśli zmieniłeś telefon albo przeinstalowałeś aplikację, wybierz „Przywróć zakupy” na ekranie Premium.
+Zmieniasz telefon albo instalujesz aplikację od nowa? Wybierz „Przywróć zakupy” na ekranie Premium.
 
 ---
 
 ## 12. Ustawienia
 
-Wszystkie ustawienia znajdziesz w zakładce Więcej. Zmiany zapisują się na Twoim koncie, więc są dostępne także na innych urządzeniach.
+Wszystkie ustawienia znajdziesz w zakładce Więcej. Zmiany zapisują się na Twoim koncie, więc obowiązują też na Twoich innych urządzeniach.
 
 ### Profil
 
-Na górze ekranu widzisz swój profil. Stąd przejdziesz do Danych konta (patrz [sekcja 13](#13-konto-i-prywatność)).
+Na górze ekranu jest Twój profil. Stąd przejdziesz do Danych konta (więcej w [sekcji 13](#13-konto-i-prywatność)).
 
 ### Zakupy
 
 | Ustawienie | Co robi |
 | --- | --- |
 | Premium | Pokazuje stan Twojej subskrypcji i otwiera wybór planów. |
-| Fiszki TripleTalk AI | Pokazuje saldo fiszek TripleTalk AI i pozwala kupić pakiet. |
+| Fiszki TripleTalk AI | Pokazuje, ile masz fiszek TripleTalk AI, i pozwala kupić pakiet. |
 
 ### Aplikacja
 
@@ -332,7 +332,7 @@ Na górze ekranu widzisz swój profil. Stąd przejdziesz do Danych konta (patrz 
 | --- | --- |
 | Język aplikacji | Język menu, przycisków i komunikatów. |
 | Motyw | Wygląd aplikacji: ciemny (domyślnie), jasny albo systemowy. |
-| Powiadomienia push | Powiadomienia push dla różnych funkcji aplikacji. |
+| Powiadomienia push | Włącza i wyłącza powiadomienia push dla różnych funkcji aplikacji. |
 
 ### Nauka
 
@@ -348,16 +348,16 @@ Na górze ekranu widzisz swój profil. Stąd przejdziesz do Danych konta (patrz 
 
 Dobrze wiedzieć:
 
-- Dodanie drugiego języka nauki nie wymaga tworzenia lekcji od nowa. TripleTalk sam przygotuje tłumaczenia i nagrania w nowym języku we wszystkich Twoich lekcjach. Przez ten czas lekcje mogą mieć etykietę „W przygotowaniu”.
-- Zmiana języka nauki na koncie darmowym resetuje postęp we wszystkich lekcjach, także zarchiwizowanych.
+- Dodanie drugiego języka nauki nie oznacza tworzenia lekcji od nowa. TripleTalk sam przygotuje tłumaczenia i nagrania w nowym języku we wszystkich Twoich lekcjach. W tym czasie lekcje mogą mieć etykietę „W przygotowaniu”.
+- Uwaga: zmiana języka nauki na koncie darmowym resetuje postęp we wszystkich lekcjach, także zarchiwizowanych.
 
 ### Szkoła
 
-Jeśli korzystasz ze Szkoły, znajdziesz tu jej ustawienia. Jako uczeń możesz tu też włączyć albo wyłączyć przyjmowanie zaproszeń do klas. Więcej o Szkole przeczytasz w [sekcji 10](#10-szkoła-nauka-w-klasie).
+Jeśli korzystasz ze Szkoły, tu znajdziesz jej ustawienia. Jako uczeń możesz tu też włączyć albo wyłączyć przyjmowanie zaproszeń do klas. Więcej o Szkole przeczytasz w [sekcji 10](#10-szkoła-nauka-w-klasie).
 
 ### Pomoc
 
-Tutaj możesz napisać do nas, gdy coś nie działa albo masz pomysł, co ulepszyć. Więcej o tym przeczytasz w [sekcji 14](#14-pomoc-i-kontakt). Na dole ekranu znajdziesz też numer wersji aplikacji, który przydaje się, gdy zgłaszasz błąd.
+Tutaj napiszesz do nas, gdy coś nie działa albo masz pomysł, co ulepszyć. Więcej przeczytasz w [sekcji 14](#14-pomoc-i-kontakt). Na dole ekranu znajdziesz też numer wersji aplikacji, który przydaje się przy zgłaszaniu błędu.
 
 ---
 
@@ -365,25 +365,25 @@ Tutaj możesz napisać do nas, gdy coś nie działa albo masz pomysł, co ulepsz
 
 ### Dane konta
 
-W `Więcej > Dane konta` sprawdzisz, na jaki adres e-mail jest założone Twoje konto oraz czy Twój e-mail jest potwierdzony. Jeśli logujesz się przez Apple, adres e-mail może być ukryty.
+W `Więcej > Dane konta` sprawdzisz, na jaki adres e-mail jest założone Twoje konto i czy ten adres jest potwierdzony. Jeśli logujesz się przez Apple, adres e-mail może być ukryty.
 
-Jeśli zakładałeś konto przez e-mail, możesz tu też zmienić ten adres (link potwierdzający przyjdzie na nowy adres e-mail) albo zresetować hasło. Przy logowaniu przez Google lub Apple adres i hasło zmieniasz na swoim koncie Google albo Apple.
+Jeśli Twoje konto jest założone na e-mail i hasło, możesz tu też zmienić adres (link potwierdzający przyjdzie na nowy adres) albo zresetować hasło. Jeśli logujesz się przez Google lub Apple, adres i hasło zmieniasz na swoim koncie Google albo Apple.
 
 ### Urządzenia
 
-W `Dane konta > Urządzenia` zobaczysz urządzenia, na których jesteś zalogowany, i kiedy ostatnio były używane. Jeśli np. zgubisz telefon, możesz go stąd wylogować.
+W `Dane konta > Urządzenia` zobaczysz urządzenia, na których korzystasz z konta, i to, kiedy ostatnio były używane. Jeśli np. zgubisz telefon, możesz go stąd wylogować.
 
-Z jednego konta możesz korzystać na kilku urządzeniach, np. na telefonie i tablecie, a lekcje i postępy będą na nich takie same. Liczba urządzeń jest ograniczona (szczegóły w regulaminie). Gdy zalogujesz się na kolejnym, aplikacja wyloguje to, którego najdłużej nie używałeś, i pokaże na nim komunikat. Żeby znów z niego korzystać, wystarczy się zalogować.
+Z jednego konta możesz korzystać na kilku urządzeniach, np. na telefonie i tablecie, a lekcje i postępy będą na nich takie same. Liczba urządzeń jest ograniczona (szczegóły w regulaminie). Gdy zalogujesz się na kolejnym, aplikacja wyloguje to, które najdłużej nie było używane, i pokaże na nim komunikat. Żeby znów z niego korzystać, wystarczy się zalogować.
 
 ### Wylogowanie i usunięcie konta
 
-Wylogowanie niczego nie usuwa. Po ponownym zalogowaniu wszystko będzie na swoim miejscu.
+Wylogowanie niczego nie usuwa. Gdy zalogujesz się ponownie, wszystko będzie na swoim miejscu.
 
-Jeśli usuniesz konto, nie da się go już odzyskać. Stracisz wszystkie lekcje, fiszki i postępy, a my usuniemy też zdjęcia, które przesłałeś do TripleTalk AI. Jeśli masz Premium, pamiętaj, żeby anulować subskrypcję w App Store albo Google Play. Usunięcie konta tego nie zrobi.
+Usunięcia konta nie da się cofnąć. Stracisz wszystkie lekcje, fiszki i postępy, a my usuniemy też zdjęcia przesłane przez Ciebie do TripleTalk AI. Jeśli masz Premium, pamiętaj, żeby anulować subskrypcję w App Store albo Google Play. Usunięcie konta tego nie zrobi.
 
 ### Jak dbamy o Twoje dane
 
-Zbieramy tylko to, czego aplikacja potrzebuje do działania. Zdjęcia, które przesyłasz do TripleTalk AI, służą wyłącznie do przygotowania fiszek i usuwamy je razem z lekcją albo kontem. Płatności obsługuje App Store albo Google Play, dlatego nie przechowujemy Twoich danych rozliczeniowych.
+Zbieramy tylko to, czego aplikacja potrzebuje do działania. Zdjęcia przesłane do TripleTalk AI służą wyłącznie do przygotowania fiszek i usuwamy je razem z lekcją albo kontem. Płatności obsługuje App Store albo Google Play, więc nie przechowujemy Twoich danych rozliczeniowych.
 
 Więcej przeczytasz w polityce prywatności.
 
@@ -391,13 +391,13 @@ Więcej przeczytasz w polityce prywatności.
 
 ## 14. Pomoc i kontakt
 
-Jeśli coś nie działa, masz pomysł na nową funkcję albo po prostu chcesz nam coś przekazać, napisz do nas prosto z aplikacji.
+Coś nie działa, masz pomysł na nową funkcję albo po prostu chcesz nam coś przekazać? Napisz do nas prosto z aplikacji.
 
-W `Więcej > Wyślij opinię` możesz:
+W `Więcej > Wyślij opinię`:
 
-- wybrać kategorię: Błąd, Usprawnienie, Nowa funkcja albo Inne,
-- wpisać tytuł i opis,
-- opcjonalnie dołączyć zrzut ekranu z galerii.
+- wybierz kategorię: Błąd, Usprawnienie, Nowa funkcja albo Inne,
+- wpisz tytuł i opis,
+- jeśli chcesz, dołącz zrzut ekranu z galerii.
 
 Czytamy każdą wiadomość.
 
@@ -409,22 +409,22 @@ Czytamy każdą wiadomość.
 Tak. Na koncie darmowym tworzysz własne lekcje, uczysz się jednego języka, korzystasz z powtórek, trybu audio i darmowych kolekcji. Do tworzenia fiszek z pomocą AI potrzebujesz fiszek TripleTalk AI. Ich określoną pulę dostajesz na start, a kolejne kupisz w pakiecie. Premium rozszerza możliwości aplikacji.
 
 **Czym różnią się Premium i pakiety AI?**
-Premium to subskrypcja, która odblokowuje funkcje, np. dwa języki, więcej lekcji, kolekcje, słuchanie w tle, przypomnienia, rolę nauczyciela. Pakiety AI to jednorazowy zakup fiszek do tworzenia ich z TripleTalk AI.
+Premium to subskrypcja, która odblokowuje funkcje, np. dwa języki, więcej lekcji, kolekcje, słuchanie w tle, przypomnienia i rolę nauczyciela. Pakiety AI to jednorazowy zakup fiszek, które tworzysz z TripleTalk AI.
 
 **Co się stanie z moimi lekcjami, gdy Premium wygaśnie?**
 Nic nie zniknie. Lekcje, fiszki i postępy zostają na koncie, a funkcje Premium wrócą po odnowieniu subskrypcji.
 
 **Dlaczego lekcja ma etykietę „W przygotowaniu”?**
-TripleTalk AI kończy przygotowywać tłumaczenia albo nagrania. Zwykle trwa to od kilku sekund do kilku minut. Nauka będzie dostępna, gdy wszystkie fiszki będą gotowe.
+TripleTalk AI kończy przygotowywać tłumaczenia albo nagrania. Zwykle trwa to od kilku sekund do kilku minut. Naukę zaczniesz, gdy wszystkie fiszki będą gotowe.
 
 **Czy stracę fiszkę TripleTalk AI, jeśli coś pójdzie nie tak?**
-Nie. Jeśli fiszki nie uda się przygotować, Twoje saldo nie jest zmniejszane.
+Nie. Jeśli fiszki nie uda się przygotować, Twoje saldo się nie zmniejsza.
 
 **Czy uczniowie płacą za Szkołę?**
 Nie. Rola ucznia jest całkowicie darmowa. Premium jest potrzebne tylko nauczycielowi.
 
 **Czy mogę korzystać z TripleTalk na kilku urządzeniach?**
-Tak. Zaloguj się na to samo konto, a Twoje lekcje, postępy i ustawienia będą dostępne na każdym urządzeniu. Liczba urządzeń zalogowanych jednocześnie jest ograniczona, a listę zalogowanych urządzeń znajdziesz w Danych konta.
+Tak. Zaloguj się na to samo konto, a Twoje lekcje, postępy i ustawienia będą dostępne na każdym urządzeniu. Liczba urządzeń zalogowanych jednocześnie jest ograniczona, a ich listę znajdziesz w Danych konta.
 
 **Dlaczego aplikacja mnie wylogowała?**
-Najczęściej dlatego, że na Twoim koncie zalogowano się na kolejnym urządzeniu, albo urządzenie zostało wylogowane w Danych konta na innym telefonie. Zaloguj się ponownie. Jeśli nie wiesz, kto korzysta z Twojego konta, sprawdź listę urządzeń i zmień hasło.
+Najczęściej dlatego, że na Twoje konto zalogowano się na kolejnym urządzeniu albo to urządzenie zostało wylogowane w Danych konta na innym telefonie. Zaloguj się ponownie. Jeśli nie wiesz, kto korzysta z Twojego konta, sprawdź listę urządzeń i zmień hasło.

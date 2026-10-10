@@ -6,13 +6,14 @@ import * as termsEn from "../documents/legal/terms.en.md";
 import * as termsPl from "../documents/legal/terms.pl.md";
 import { companyDetails } from "./company";
 import {
+  callouts,
   faqToDetails,
   fillPlaceholders,
+  guideCallouts,
   guideLinkRules,
   hasPlaceholder,
   linkReferences,
   prefixAnchors,
-  shiftHeadings,
   splitDocument,
   uiPaths,
   wrapTables,
@@ -51,7 +52,8 @@ export async function loadLegalDocument(
   return splitDocument(await compiled(kind, language));
 }
 
-// The guide sits under the Support page's own h1, so its headings move down one level.
+// The unnumbered section is the table of contents, shown as a grid of links; numbered lists in
+// the other sections are steps.
 export async function loadGuide(
   language: DocumentLanguage,
 ): Promise<SplitDocument> {
@@ -59,9 +61,15 @@ export async function loadGuide(
     linkReferences(await compiled("guide", language), guideLinkRules[language]),
   );
   const document = splitDocument(html);
+  for (const section of document.sections) {
+    section.html = section.number
+      ? callouts(
+          section.html.replaceAll("<ol>", '<ol class="doc-steps">'),
+          guideCallouts[language],
+        )
+      : section.html.replace("<ol>", '<ol class="doc-toc">');
+  }
   const faq = document.sections.at(-1);
   if (faq) faq.html = faqToDetails(faq.html);
-  for (const section of document.sections)
-    section.html = shiftHeadings(section.html, 1);
   return document;
 }

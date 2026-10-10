@@ -1,0 +1,113 @@
+---
+import "../styles/global.css";
+import MarkdownDocument from "../components/MarkdownDocument.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { loadGuide } from "../lib/documents";
+
+const documents = [
+  { language: "pl" as const, document: await loadGuide("pl") },
+  { language: "en" as const, document: await loadGuide("en") },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TripleTalk user guide: how to create lessons, add flashcards with TripleTalk AI and learn with spaced repetition."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tripletalk.app/guide/" />
+    <meta property="og:title" content="User Guide - TripleTalk" />
+    <meta property="og:description" content="How to use the TripleTalk mobile application, step by step." />
+    <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="User Guide - TripleTalk" />
+    <meta name="twitter:description" content="How to use the TripleTalk mobile application, step by step." />
+    <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
+    <title>User Guide - TripleTalk</title>
+    <link rel="canonical" href="https://tripletalk.app/guide/" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
+  </head>
+  <body>
+    <SiteHeader currentPage="guide" />
+    <main class="legal-page legal-page--guide">
+      <div class="container legal-shell">
+        <div class="legal-documents">
+          {
+            documents.map(({ language, document }) => (
+              <MarkdownDocument document={document} language={language} id={language} hidden={language !== "en"} />
+            ))
+          }
+        </div>
+      </div>
+    </main>
+    <SiteFooter currentPage="guide" />
+    <script>
+      import { getVisitorLanguage } from "../scripts/visitor-language";
+
+      const translations = {
+        pl: {
+          navFeatures: "Funkcje",
+          navDownload: "Pobierz",
+          navGuide: "Instrukcja",
+          footerPrivacy: "Polityka prywatności",
+          footerTerms: "Regulamin",
+          footerSupport: "Kontakt",
+          pageTitle: "Instrukcja - TripleTalk",
+        },
+        en: {
+          navFeatures: "Features",
+          navDownload: "Download",
+          navGuide: "Guide",
+          footerPrivacy: "Privacy Policy",
+          footerTerms: "Terms of Service",
+          footerSupport: "Contact",
+          pageTitle: "User Guide - TripleTalk",
+        },
+      };
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      const translatedNodes = document.querySelectorAll("[data-i18n]");
+      const legalDocuments = document.querySelectorAll<HTMLElement>(".legal-document");
+
+      function setLegalLanguage(language: "pl" | "en") {
+        document.documentElement.lang = language;
+        document.title = translations[language].pageTitle;
+
+        translatedNodes.forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          if (key && key in translations[language]) {
+            node.textContent = translations[language][key as keyof (typeof translations)["pl"]];
+          }
+        });
+
+        legalDocuments.forEach((document: HTMLElement) => {
+          document.hidden = document.id !== language;
+        });
+      }
+
+      menuToggle?.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+        navLinks?.classList.toggle("open", !expanded);
+      });
+
+      navLinks?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle?.setAttribute("aria-expanded", "false");
+          navLinks.classList.remove("open");
+        });
+      });
+
+      setLegalLanguage(await getVisitorLanguage());
+    </script>
+  </body>
+</html>

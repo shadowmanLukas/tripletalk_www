@@ -16,7 +16,7 @@ Node.js jest wymagany wyłącznie podczas instalacji zależności, testów i sta
 
 ## Regulamin, Polityka Prywatności i instrukcja
 
-Treść `/terms/`, `/privacy/` i instrukcji na `/support/` to niezmienione kopie plików z repo aplikacji (`../tripletalk`, gałąź `main`):
+Treść `/terms/`, `/privacy/` i instrukcji na `/guide/` to niezmienione kopie plików z repo aplikacji (`../tripletalk`, gałąź `main`):
 
 | Plik w tym repo                     | Źródło                                    |
 | ----------------------------------- | ----------------------------------------- |
