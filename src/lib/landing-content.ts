@@ -2,13 +2,13 @@ export type LandingLanguage = "pl" | "en";
 
 export const landingSeo = {
   pl: {
-    title: "TripleTalk: fiszki AI do nauki słówek",
+    title: "TripleTalk | Ucz się słówek z własnych materiałów",
     description:
       "Zrób zdjęcie podręcznika albo wklej tekst, a TripleTalk przygotuje fiszki z tłumaczeniami, przykładami i wymową. Inteligentne powtórki, lekcje audio i dwa języki naraz.",
     locale: "pl_PL",
   },
   en: {
-    title: "TripleTalk: AI flashcards for learning vocabulary",
+    title: "TripleTalk | Learn vocabulary from your own materials",
     description:
       "Snap a textbook page or paste text, and TripleTalk creates flashcards with translations, examples and pronunciation. Smart reviews, audio lessons and two languages at once.",
     locale: "en_US",

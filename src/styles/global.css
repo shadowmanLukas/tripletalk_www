@@ -6,8 +6,39 @@
   --radius-lg: 24px;
   --shadow-card: 0 10px 30px rgba(7, 22, 50, 0.05);
   --shadow-panel: 0 24px 60px rgba(7, 22, 50, 0.07);
-  color: #102033;
-  background: #ffffff;
+
+  /* Colour tokens for the public pages. Dark values follow the system setting below. */
+  --text-strong: #071632;
+  --text: #102033;
+  --text-2: #26374c;
+  --text-3: #334357;
+  --text-muted: #4b5c70;
+  --text-subtle: #66778a;
+  --text-faint: #8a99aa;
+  --accent-text: #057f72;
+  --accent-text-strong: #04695f;
+  --purple-text: #5b4bd8;
+  --warn-text: #6b3d00;
+  --warn-text-strong: #a35200;
+  --bg: #f6fafc;
+  --bg-2: #fbfdfe;
+  --surface: #ffffff;
+  --surface-2: #f1f5f8;
+  --line: #dfe8ef;
+  --accent-soft: #e3f5f2;
+  --purple-soft: #eeebfd;
+  --warn-soft: #fff4e5;
+  --border: #e3ebf1;
+  --border-soft: #eaf1f6;
+  --border-strong: #cfdde7;
+  --accent-border: #cfe8e3;
+  --inverse-bg: #071632;
+  --inverse-bg-hover: #14305c;
+  --inverse-text: #ffffff;
+  --header-bg: rgba(255, 255, 255, 0.94);
+
+  color: var(--text);
+  background: var(--surface);
   font-family:
     Inter,
     ui-sans-serif,
@@ -20,12 +51,107 @@
   text-rendering: optimizeLegibility;
 }
 
+/* Dark theme, picked automatically from the system or browser setting. The admin panel has its
+   own theme switch, so it is left out. */
+:root:not(:has(.admin-body)) {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(:has(.admin-body)) {
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.25);
+    --shadow-panel: 0 24px 60px rgba(0, 0, 0, 0.35);
+    --text-strong: #f1f5fb;
+    --text: #dfe6ef;
+    --text-2: #d2dae5;
+    --text-3: #c3cdd9;
+    --text-muted: #a3b0c1;
+    --text-subtle: #8796aa;
+    --text-faint: #75849a;
+    --accent-text: #3fd6c6;
+    --accent-text-strong: #6ae8dc;
+    --purple-text: #a99cff;
+    --warn-text: #f5c08a;
+    --warn-text-strong: #f0a35a;
+    --bg: #0a111e;
+    --bg-2: #0d1524;
+    --surface: #111b2c;
+    --surface-2: #1a2539;
+    --line: #26324a;
+    --accent-soft: rgba(14, 196, 182, 0.14);
+    --purple-soft: rgba(108, 92, 231, 0.18);
+    --warn-soft: rgba(240, 163, 90, 0.12);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-soft: rgba(255, 255, 255, 0.06);
+    --border-strong: rgba(255, 255, 255, 0.16);
+    --accent-border: rgba(14, 196, 182, 0.32);
+    --inverse-bg: #f1f5fb;
+    --inverse-bg-hover: #d9e3ef;
+    --inverse-text: #071632;
+    --header-bg: rgba(10, 17, 30, 0.86);
+  }
+}
+
+/* On a dark page the phone frames get thinner and a faint outline, and the Premium card a
+   light edge, so they stand out without looking heavy. */
+@media (prefers-color-scheme: dark) {
+  :root:not(:has(.admin-body))
+    :is(.phone-frame, .app-preview-screen, .school-phone) {
+    border-width: 4px;
+    border-color: #05080f;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  :root:not(:has(.admin-body)) .plan-featured {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  :root:not(:has(.admin-body)) .school-phone {
+    border-bottom-width: 0;
+  }
+
+  :root:not(:has(.admin-body)) .download {
+    position: relative;
+    background:
+      radial-gradient(
+        circle at 85% 0%,
+        rgba(108, 92, 231, 0.22),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 10% 100%,
+        rgba(14, 196, 182, 0.12),
+        transparent 40%
+      ),
+      var(--bg-2);
+  }
+
+  :root:not(:has(.admin-body)) .download::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(100% - 32px, 1200px);
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--line) 20%,
+      var(--line) 80%,
+      transparent
+    );
+    content: "";
+    transform: translateX(-50%);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
-  background: #ffffff;
+  background: var(--surface);
   scroll-behavior: smooth;
 }
 
@@ -70,7 +196,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  border-bottom: 1px solid #e5edf4;
+  border-bottom: 1px solid var(--border);
 }
 
 /* The blur sits on a pseudo-element: backdrop-filter on the header itself would make it the
@@ -79,7 +205,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--header-bg);
   backdrop-filter: blur(12px);
   content: "";
 }
@@ -107,7 +233,6 @@ a {
   display: block;
   width: 48px;
   height: 48px;
-  transform: translateY(-4px);
 }
 
 .brand > span {
@@ -116,7 +241,7 @@ a {
 }
 
 .brand span span:first-child {
-  color: #071632;
+  color: var(--text-strong);
 }
 
 .brand span span:last-child {
@@ -131,10 +256,10 @@ a {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  border: 1px solid #d8e4ec;
+  border: 1px solid var(--border-strong);
   border-radius: 8px;
-  background: #ffffff;
-  color: #102033;
+  background: var(--surface);
+  color: var(--text);
 }
 
 .menu-toggle span:not(.sr-only) {
@@ -157,7 +282,7 @@ a {
   gap: 4px;
   overflow-y: auto;
   padding: 20px 16px 28px;
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .nav-links.open {
@@ -169,10 +294,10 @@ body.menu-open {
 }
 
 .nav-links > a {
-  border-bottom: 1px solid #eef3f6;
+  border-bottom: 1px solid var(--border-soft);
   border-radius: 0;
   padding: 16px 4px;
-  color: #071632;
+  color: var(--text-strong);
   font-size: 1.3rem;
   font-weight: 700;
 }
@@ -180,7 +305,7 @@ body.menu-open {
 .nav-links > a:hover,
 .nav-links > a.is-active,
 .nav-links > a[aria-current="page"] {
-  color: #057f72;
+  color: var(--accent-text);
 }
 
 .nav-actions {
@@ -202,7 +327,7 @@ body.menu-open {
   border: 0;
   padding: 6px 8px;
   background: transparent;
-  color: #8a99aa;
+  color: var(--text-faint);
   cursor: pointer;
   font: inherit;
   font-size: 1rem;
@@ -217,20 +342,20 @@ body.menu-open {
   width: 1px;
   height: 0.9em;
   margin-left: 10px;
-  background: #d3dde6;
+  background: var(--line);
   content: "";
   vertical-align: -0.1em;
 }
 
 .language-switch a:hover,
 .language-switch button:hover {
-  color: #071632;
+  color: var(--text-strong);
 }
 
 .language-switch a[aria-current="true"],
 html[lang="pl"] .language-switch button[data-language="pl"],
 html[lang="en"] .language-switch button[data-language="en"] {
-  color: #071632;
+  color: var(--text-strong);
   font-weight: 750;
 }
 
@@ -278,7 +403,7 @@ html[lang="en"] .language-switch button[data-language="en"] {
 
 .eyebrow {
   margin: 0 0 12px;
-  color: #057f72;
+  color: var(--accent-text);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -296,7 +421,7 @@ h1,
 h2,
 h3 {
   margin: 0;
-  color: #071632;
+  color: var(--text-strong);
   line-height: 1.05;
   letter-spacing: 0;
 }
@@ -325,7 +450,7 @@ h3 {
 .hero-description {
   max-width: 620px;
   margin: 20px 0 0;
-  color: #4b5c70;
+  color: var(--text-muted);
   font-size: 1.12rem;
   line-height: 1.65;
 }
@@ -344,8 +469,8 @@ h3 {
   gap: 10px;
   border-radius: var(--radius-sm);
   padding: 9px 22px 9px 18px;
-  background: #071632;
-  color: #ffffff;
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
   box-shadow: 0 12px 28px rgba(7, 22, 50, 0.14);
 }
 
@@ -373,9 +498,9 @@ h3 {
 }
 
 .store-actions a:nth-child(2) {
-  border: 1px solid #cbd9e5;
-  background: #ffffff;
-  color: #071632;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-strong);
   box-shadow: none;
 }
 
@@ -430,10 +555,10 @@ h3 {
   min-height: 38px;
   align-items: center;
   gap: 9px;
-  border: 1px solid #e2ebf0;
+  border: 1px solid var(--border);
   border-radius: 999px;
   padding: 6px 7px 6px 15px;
-  background: #ffffff;
+  background: var(--surface);
   white-space: nowrap;
   box-shadow: 0 3px 12px rgba(7, 22, 50, 0.05);
   transition:
@@ -442,12 +567,12 @@ h3 {
 }
 
 .language-chip:hover {
-  border-color: #c9e6e1;
+  border-color: var(--accent-border);
   box-shadow: 0 6px 18px rgba(7, 22, 50, 0.1);
 }
 
 .language-chip-hello {
-  color: #071632;
+  color: var(--text-strong);
   font-size: 0.95rem;
   font-weight: 750;
 }
@@ -517,7 +642,7 @@ h3 {
   border: 10px solid #071632;
   border-radius: 34px;
   padding: 0;
-  background: #f7fbfd;
+  background: #0f1422;
   box-shadow: 0 24px 60px rgba(7, 22, 50, 0.16);
 }
 
@@ -533,10 +658,10 @@ h3 {
 .landing-main {
   background: linear-gradient(
     180deg,
-    #f6fafc 0%,
-    #fbfdfe 35%,
-    #f6fafc 70%,
-    #fbfdfe 100%
+    var(--bg) 0%,
+    var(--bg-2) 35%,
+    var(--bg) 70%,
+    var(--bg-2) 100%
   );
 }
 
@@ -554,8 +679,8 @@ h3 {
   background: linear-gradient(
     90deg,
     transparent,
-    #dbe6ee 20%,
-    #dbe6ee 80%,
+    var(--line) 20%,
+    var(--line) 80%,
     transparent
   );
   content: "";
@@ -570,7 +695,7 @@ h3 {
 .section-description {
   max-width: 680px;
   margin: 18px 0 0;
-  color: #4b5c70;
+  color: var(--text-muted);
   font-size: 1.04rem;
   line-height: 1.65;
 }
@@ -603,7 +728,7 @@ h3 {
   border-radius: 999px;
   padding: 8px 16px;
   background: transparent;
-  color: #4b5c70;
+  color: var(--text-muted);
   cursor: pointer;
   font-size: 0.88rem;
   font-weight: 700;
@@ -616,7 +741,7 @@ h3 {
 }
 
 .use-case-tabs button:hover {
-  color: #071632;
+  color: var(--text-strong);
 }
 
 .use-case-tabs button:focus-visible {
@@ -625,11 +750,11 @@ h3 {
 }
 
 .use-case-tabs button[aria-selected="true"] {
-  background: #ffffff;
+  background: var(--surface);
   box-shadow:
     0 1px 2px rgba(7, 22, 50, 0.08),
     0 4px 14px rgba(7, 22, 50, 0.08);
-  color: #057f72;
+  color: var(--accent-text);
 }
 
 .use-case-panel {
@@ -637,10 +762,10 @@ h3 {
   min-width: 0;
   gap: 24px;
   align-items: center;
-  border: 1px solid #e3ebf1;
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px 20px;
-  background: #ffffff;
+  background: var(--surface);
   box-shadow: var(--shadow-panel);
 }
 
@@ -660,7 +785,7 @@ h3 {
 
 .use-case-example > p:last-child {
   margin: 14px 0 0;
-  color: #4b5c70;
+  color: var(--text-muted);
   font-size: 1.04rem;
   line-height: 1.65;
 }
@@ -679,13 +804,13 @@ h3 {
       rgba(108, 92, 231, 0.1),
       transparent 50%
     ),
-    #f6fafc;
+    var(--bg);
 }
 
 .visual-label {
   display: block;
   margin-bottom: 10px;
-  color: #66778a;
+  color: var(--text-subtle);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -693,10 +818,10 @@ h3 {
 }
 
 .visual-doc {
-  border: 1px solid #e3ebf1;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 14px;
-  background: #ffffff;
+  background: var(--surface);
   box-shadow: 0 6px 18px rgba(7, 22, 50, 0.05);
 }
 
@@ -711,14 +836,14 @@ h3 {
   display: block;
   height: 7px;
   border-radius: 999px;
-  background: #dfe8ef;
+  background: var(--line);
 }
 
 .visual-doc-text mark {
   border-radius: 6px;
   padding: 2px 7px;
   background: rgba(14, 196, 182, 0.18);
-  color: #04695f;
+  color: var(--accent-text-strong);
   font-size: 0.74rem;
   font-weight: 700;
   line-height: 1.3;
@@ -751,11 +876,11 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  border: 1px solid #e3ebf1;
+  border: 1px solid var(--border);
   border-left: 3px solid #08a795;
   border-radius: 10px;
   padding: 9px 12px;
-  background: #ffffff;
+  background: var(--surface);
   box-shadow: 0 4px 12px rgba(7, 22, 50, 0.05);
 }
 
@@ -776,13 +901,13 @@ h3 {
 }
 
 .use-case-flashcards strong {
-  color: #071632;
+  color: var(--text-strong);
   font-size: 0.86rem;
 }
 
 .use-case-flashcards small {
   margin-top: 1px;
-  color: #66778a;
+  color: var(--text-subtle);
   font-size: 0.76rem;
 }
 
@@ -834,7 +959,7 @@ h3 {
   top: 64px;
   bottom: -20px;
   left: 27px;
-  border-left: 2px dashed #cfdde7;
+  border-left: 2px dashed var(--border-strong);
   content: "";
 }
 
@@ -856,10 +981,10 @@ h3 {
   border: 2px solid transparent;
   border-radius: 50%;
   background:
-    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(var(--surface), var(--surface)) padding-box,
     linear-gradient(135deg, #0ec4b6, #6c5ce7) border-box;
   box-shadow: 0 10px 24px rgba(7, 22, 50, 0.08);
-  color: #071632;
+  color: var(--text-strong);
   font-size: 1.1rem;
   font-weight: 800;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -881,7 +1006,7 @@ h3 {
 .step-copy p {
   max-width: 34ch;
   margin: 8px 0 0;
-  color: #4b5c70;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -967,7 +1092,7 @@ h3 {
 
 .app-preview-card figcaption p {
   margin: 8px 0 0;
-  color: #4b5c70;
+  color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -1071,12 +1196,12 @@ h3 {
   position: relative;
   min-height: 200px;
   overflow: hidden;
-  border: 1px solid #e3ebf1;
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 26px 26px 30px;
   background:
     radial-gradient(circle at 100% 100%, var(--tone-soft), transparent 55%),
-    #ffffff;
+    var(--surface);
   box-shadow: var(--shadow-card);
   transition:
     border-color 0.25s ease,
@@ -1101,7 +1226,7 @@ h3 {
 }
 
 .benefit-card:hover {
-  border-color: #d3e2ec;
+  border-color: var(--border-strong);
   box-shadow: 0 18px 44px rgba(7, 22, 50, 0.09);
   translate: 0 -3px;
 }
@@ -1120,7 +1245,7 @@ h3 {
   position: relative;
   max-width: 34ch;
   margin: 10px 0 0;
-  color: #4b5c70;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
@@ -1155,12 +1280,12 @@ h3 {
   align-items: center;
   gap: 6px;
   margin-top: 20px;
-  color: #057f72;
+  color: var(--accent-text);
   font-weight: 750;
 }
 
 .text-link:hover {
-  color: #04695f;
+  color: var(--accent-text-strong);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -1169,7 +1294,7 @@ h3 {
   display: grid;
   gap: 28px;
   overflow: hidden;
-  border: 1px solid #d6e9e5;
+  border: 1px solid var(--accent-border);
   border-radius: var(--radius-lg);
   padding: 28px 22px;
   background:
@@ -1183,7 +1308,7 @@ h3 {
       rgba(108, 92, 231, 0.12),
       transparent 45%
     ),
-    #ffffff;
+    var(--surface);
   box-shadow: var(--shadow-panel);
 }
 
@@ -1198,7 +1323,7 @@ h3 {
 .school-points li {
   position: relative;
   padding-left: 32px;
-  color: #26374c;
+  color: var(--text-2);
   font-weight: 600;
   line-height: 1.5;
 }
@@ -1213,8 +1338,8 @@ h3 {
   height: 22px;
   place-items: center;
   border-radius: 50%;
-  background: #e3f5f2;
-  color: #057f72;
+  background: var(--accent-soft);
+  color: var(--accent-text);
   content: "✓";
   font-size: 0.75rem;
   font-weight: 900;
@@ -1257,10 +1382,10 @@ h3 {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid #e3ebf1;
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 28px 24px;
-  background: #ffffff;
+  background: var(--surface);
   box-shadow: var(--shadow-card);
 }
 
@@ -1289,7 +1414,7 @@ h3 {
 }
 
 .plan-price strong {
-  color: #071632;
+  color: var(--text-strong);
   font-size: 2.6rem;
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -1297,7 +1422,7 @@ h3 {
 }
 
 .plan-price span {
-  color: #66778a;
+  color: var(--text-subtle);
   font-size: 0.92rem;
   font-weight: 600;
 }
@@ -1315,7 +1440,7 @@ h3 {
 
 .plan-description {
   margin: 10px 0 0;
-  color: #4b5c70;
+  color: var(--text-muted);
 }
 
 .plan-card ul {
@@ -1325,14 +1450,14 @@ h3 {
   gap: 12px;
   margin: 22px 0 0;
   padding: 22px 0 0;
-  border-top: 1px solid #eaf1f6;
+  border-top: 1px solid var(--border-soft);
   list-style: none;
 }
 
 .plan-card li {
   position: relative;
   padding-left: 32px;
-  color: #26374c;
+  color: var(--text-2);
   line-height: 1.45;
 }
 
@@ -1380,7 +1505,7 @@ h3 {
   gap: 16px;
   max-width: 780px;
   margin: 24px auto 0;
-  border: 1px solid #e3ebf1;
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 22px 24px;
   background:
@@ -1389,17 +1514,17 @@ h3 {
       rgba(14, 196, 182, 0.12),
       transparent 55%
     ),
-    #ffffff;
+    var(--surface);
 }
 
 .faq-contact strong {
-  color: #071632;
+  color: var(--text-strong);
   font-size: 1.05rem;
 }
 
 .faq-contact p {
   margin: 4px 0 0;
-  color: #4b5c70;
+  color: var(--text-muted);
 }
 
 .faq-more {
@@ -1419,15 +1544,15 @@ h3 {
   align-items: center;
   border-radius: 999px;
   padding: 9px 18px;
-  background: #071632;
-  color: #ffffff;
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
   font-size: 0.92rem;
   font-weight: 750;
   transition: background-color 0.2s ease;
 }
 
 .faq-contact-primary:hover {
-  background: #14305c;
+  background: var(--inverse-bg-hover);
 }
 
 .faq-list {
@@ -1439,9 +1564,9 @@ h3 {
 
 .faq-item {
   box-shadow: var(--shadow-card);
-  border: 1px solid #e3ebf1;
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  background: #ffffff;
+  background: var(--surface);
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
@@ -1449,7 +1574,7 @@ h3 {
 }
 
 .faq-item:hover {
-  border-color: #cfdde7;
+  border-color: var(--border-strong);
 }
 
 .faq-item[open] {
@@ -1463,7 +1588,7 @@ h3 {
   justify-content: space-between;
   gap: 16px;
   padding: 18px 20px;
-  color: #071632;
+  color: var(--text-strong);
   font-weight: 700;
   cursor: pointer;
   list-style: none;
@@ -1480,8 +1605,8 @@ h3 {
   flex: 0 0 auto;
   place-items: center;
   border-radius: 50%;
-  background: #eef4f8;
-  color: #057f72;
+  background: var(--surface-2);
+  color: var(--accent-text);
   content: "+";
   font-size: 1.15rem;
   font-weight: 600;
@@ -1514,7 +1639,7 @@ h3 {
 .faq-item p {
   margin: 0;
   padding: 0 20px 20px;
-  color: #4b5c70;
+  color: var(--text-muted);
   line-height: 1.65;
 }
 
@@ -1588,8 +1713,8 @@ h3 {
 
 .site-footer {
   padding: 32px 0;
-  border-top: 1px solid #e5edf4;
-  background: #ffffff;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .footer-inner {
@@ -1599,40 +1724,40 @@ h3 {
 
 .footer-inner p {
   margin: 0;
-  color: #66778a;
+  color: var(--text-subtle);
   font-size: 0.88rem;
   font-weight: 700;
 }
 
 .footer-inner p a:hover {
-  color: #057f72;
+  color: var(--accent-text);
 }
 
 .footer-inner nav {
   display: grid;
   gap: 12px;
-  color: #334357;
+  color: var(--text-3);
   font-size: 0.88rem;
   font-weight: 700;
 }
 
 .footer-inner nav a[aria-current="page"],
 .footer-inner nav a:hover {
-  color: #057f72;
+  color: var(--accent-text);
 }
 
 .legal-page {
   min-height: 100vh;
   padding: 18px 0 56px;
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .legal-content {
   max-width: 780px;
-  border: 1px solid #dfe9f0;
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 28px;
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .legal-content h1 {
@@ -1641,13 +1766,13 @@ h3 {
 }
 
 .legal-content p {
-  color: #4b5c70;
+  color: var(--text-muted);
   font-size: 1.05rem;
   line-height: 1.7;
 }
 
 .back-link {
-  color: #057f72;
+  color: var(--accent-text);
   font-weight: 800;
 }
 
@@ -1659,7 +1784,7 @@ h3 {
 
 .legal-document-header h1 {
   max-width: 720px;
-  color: #071632;
+  color: var(--text-strong);
   font-size: clamp(1.85rem, 7vw, 2.85rem);
   font-weight: 500;
   letter-spacing: 0;
@@ -1678,18 +1803,18 @@ h3 {
 .legal-document {
   min-width: 0;
   scroll-margin-top: 24px;
-  border-top: 1px solid #dfe9f0;
-  background: #ffffff;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .legal-document-header {
   padding: 24px 0;
-  border-bottom: 1px solid #eaf1f6;
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .legal-document-header p {
   margin: 8px 0 0;
-  color: #66778a;
+  color: var(--text-subtle);
   font-size: 0.84rem;
   font-weight: 700;
 }
@@ -1703,7 +1828,7 @@ h3 {
   min-width: 0;
   scroll-margin-top: 88px;
   padding: 24px 0;
-  border-top: 1px solid #eaf1f6;
+  border-top: 1px solid var(--border-soft);
 }
 
 .legal-section:first-child {
@@ -1727,7 +1852,7 @@ h3 {
 .legal-section-title span {
   display: block;
   padding-top: 2px;
-  color: #057f72;
+  color: var(--accent-text);
   font-size: 0.76rem;
   font-weight: 900;
   letter-spacing: 0.04em;
@@ -1735,7 +1860,7 @@ h3 {
 
 .legal-prose {
   min-width: 0;
-  color: #4b5c70;
+  color: var(--text-muted);
   font-size: 1.04rem;
   line-height: 1.65;
   overflow-wrap: break-word;
@@ -1754,11 +1879,11 @@ h3 {
 }
 
 .legal-prose strong {
-  color: #102033;
+  color: var(--text);
 }
 
 .legal-prose a {
-  color: #057f72;
+  color: var(--accent-text);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -1767,7 +1892,7 @@ h3 {
 .legal-prose h3,
 .legal-prose h4 {
   margin: 22px 0 0;
-  color: #102033;
+  color: var(--text);
   font-size: 1rem;
   line-height: 1.35;
 }
@@ -1799,7 +1924,7 @@ h3 {
 }
 
 .legal-prose ol > li::marker {
-  color: #057f72;
+  color: var(--accent-text);
   font-size: 0.9em;
   font-weight: 800;
 }
@@ -1818,13 +1943,13 @@ h3 {
 
 .legal-document-header .legal-intro p {
   margin: 8px 0 0;
-  color: #4b5c70;
+  color: var(--text-muted);
   font-size: 1.04rem;
   font-weight: 400;
 }
 
 .legal-intro em {
-  color: #66778a;
+  color: var(--text-subtle);
   font-size: 0.84rem;
   font-style: normal;
   font-weight: 700;
@@ -1834,7 +1959,7 @@ h3 {
   max-width: 100%;
   margin-top: 14px;
   overflow-x: auto;
-  border: 1px solid #dfe9f0;
+  border: 1px solid var(--border);
   border-radius: 8px;
   -webkit-overflow-scrolling: touch;
 }
@@ -1849,7 +1974,7 @@ h3 {
 .doc-table th,
 .doc-table td {
   padding: 9px 12px;
-  border-top: 1px solid #eaf1f6;
+  border-top: 1px solid var(--border-soft);
   overflow-wrap: normal;
   text-align: left;
   vertical-align: top;
@@ -1857,8 +1982,8 @@ h3 {
 
 .doc-table thead th {
   border-top: 0;
-  background: #f4f9fb;
-  color: #102033;
+  background: var(--surface-2);
+  color: var(--text);
   font-size: 0.8rem;
   font-weight: 800;
 }
@@ -1866,19 +1991,19 @@ h3 {
 .legal-prose code {
   border-radius: 5px;
   padding: 1px 5px;
-  background: #f1f5f8;
-  color: #102033;
+  background: var(--surface-2);
+  color: var(--text);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.9em;
 }
 
 .ui-path {
   display: inline;
-  border: 1px solid #cfe8e3;
+  border: 1px solid var(--accent-border);
   border-radius: 6px;
   padding: 1px 7px;
-  background: #eef8f6;
-  color: #04695f;
+  background: var(--accent-soft);
+  color: var(--accent-text-strong);
   font-size: 0.94em;
   font-weight: 700;
   -webkit-box-decoration-break: clone;
@@ -1896,20 +2021,20 @@ h3 {
 
 .doc-faq {
   margin-top: 10px;
-  border: 1px solid #dfe9f0;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .doc-faq summary {
   padding: 12px 14px;
-  color: #102033;
+  color: var(--text);
   font-weight: 800;
   cursor: pointer;
 }
 
 .doc-faq[open] summary {
-  border-bottom: 1px solid #eaf1f6;
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .doc-faq p {
@@ -1933,7 +2058,7 @@ h3 {
   gap: 12px;
   align-items: center;
   margin-bottom: 16px;
-  color: #071632;
+  color: var(--text-strong);
   font-size: clamp(1.25rem, 4vw, 1.45rem);
   font-weight: 700;
   line-height: 1.25;
@@ -1946,8 +2071,8 @@ h3 {
   padding: 0;
   place-items: center;
   border-radius: 50%;
-  background: #e3f5f2;
-  color: #057f72;
+  background: var(--accent-soft);
+  color: var(--accent-text);
   font-size: 0.8rem;
 }
 
@@ -1966,7 +2091,7 @@ h3 {
 
 .legal-page .legal-prose h3 {
   margin-top: 28px;
-  color: #071632;
+  color: var(--text-strong);
   font-size: 1.12rem;
   font-weight: 700;
 }
@@ -1990,10 +2115,10 @@ h3 {
   height: 100%;
   gap: 10px;
   align-items: baseline;
-  border: 1px solid #dfe9f0;
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 10px 12px;
-  color: #102033;
+  color: var(--text);
   font-weight: 600;
   text-decoration: none;
   transition:
@@ -2002,15 +2127,15 @@ h3 {
 }
 
 .doc-toc a::before {
-  color: #057f72;
+  color: var(--accent-text);
   content: counter(toc, decimal-leading-zero);
   font-size: 0.78rem;
   font-weight: 900;
 }
 
 .doc-toc a:hover {
-  border-color: #9fd9cf;
-  background: #f3fbf9;
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
 }
 
 .legal-prose ol.doc-steps {
@@ -2043,16 +2168,16 @@ h3 {
 
 .doc-callout {
   margin-top: 16px;
-  border: 1px solid #cfe8e3;
+  border: 1px solid var(--accent-border);
   border-left: 4px solid #08a795;
   border-radius: 8px;
   padding: 14px 16px;
-  background: #f3fbf9;
+  background: var(--accent-soft);
 }
 
 .legal-prose .doc-callout-title {
   margin: 0;
-  color: #04695f;
+  color: var(--accent-text-strong);
   font-weight: 800;
 }
 
@@ -2063,8 +2188,8 @@ h3 {
 .legal-prose li.doc-warning {
   border-radius: 6px;
   padding: 6px 10px;
-  background: #fff4e5;
-  color: #6b3d00;
+  background: var(--warn-soft);
+  color: var(--warn-text);
 }
 
 .legal-prose li.doc-warning::before {
@@ -2072,7 +2197,7 @@ h3 {
 }
 
 .legal-prose li.doc-warning strong {
-  color: #a35200;
+  color: var(--warn-text-strong);
 }
 
 @media (max-width: 619px) {
@@ -2098,7 +2223,7 @@ h3 {
   }
 
   .doc-table--stacked tr {
-    border: 1px solid #dfe9f0;
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 4px 0;
   }
@@ -2114,7 +2239,7 @@ h3 {
 
   .doc-table--stacked td::before {
     display: block;
-    color: #057f72;
+    color: var(--accent-text);
     content: attr(data-label);
     font-size: 0.72rem;
     font-weight: 800;
@@ -2123,7 +2248,7 @@ h3 {
   }
 
   .doc-table--stacked td:first-child {
-    color: #102033;
+    color: var(--text);
     font-weight: 700;
   }
 }
@@ -2140,7 +2265,7 @@ h3 {
   flex: 1;
   overflow: hidden;
   padding-bottom: 72px;
-  background: linear-gradient(180deg, #f6fafc 0%, #fbfdfe 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
 }
 
 .support-page::before {
@@ -2176,7 +2301,7 @@ h3 {
 
 .support-intro {
   margin: 16px 0 0;
-  color: #4b5c70;
+  color: var(--text-muted);
   font-size: 1.08rem;
   line-height: 1.65;
 }
@@ -2187,16 +2312,16 @@ h3 {
   justify-items: center;
   gap: 10px;
   margin: 36px auto 0;
-  border: 1px solid #e3ebf1;
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 30px 22px;
-  background: #ffffff;
+  background: var(--surface);
   box-shadow: var(--shadow-panel);
   text-align: center;
 }
 
 .support-mail-label {
-  color: #057f72;
+  color: var(--accent-text);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -2204,7 +2329,7 @@ h3 {
 }
 
 .support-email {
-  color: #071632;
+  color: var(--text-strong);
   font-size: clamp(1.35rem, 5.5vw, 2rem);
   font-weight: 800;
   letter-spacing: -0.01em;
@@ -2213,7 +2338,7 @@ h3 {
 }
 
 .support-email:hover {
-  color: #057f72;
+  color: var(--accent-text);
 }
 
 .support-email-row {
@@ -2230,10 +2355,10 @@ h3 {
   height: 40px;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid #dbe6ee;
+  border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: #ffffff;
-  color: #4b5c70;
+  background: var(--surface);
+  color: var(--text-muted);
   cursor: pointer;
   transition:
     background-color 0.2s ease,
@@ -2242,9 +2367,9 @@ h3 {
 }
 
 .support-copy:hover {
-  border-color: #9fd9cf;
-  background: #f3fbf9;
-  color: #057f72;
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-text);
 }
 
 .support-copy svg {
@@ -2336,7 +2461,9 @@ h3 {
 
   .legal-page {
     padding: 32px 0 72px;
-    background: linear-gradient(180deg, #f7fbfd 0%, #ffffff 360px), #ffffff;
+    background:
+      linear-gradient(180deg, var(--bg-2) 0%, var(--surface) 360px),
+      var(--surface);
   }
 
   .legal-shell {
@@ -2345,7 +2472,7 @@ h3 {
 
   .legal-document {
     overflow: hidden;
-    border: 1px solid #dfe9f0;
+    border: 1px solid var(--border);
     border-radius: 12px;
   }
 
@@ -2393,7 +2520,7 @@ h3 {
     margin: 0;
     border-radius: 999px;
     padding: 4px;
-    background: #e9f0f5;
+    background: var(--surface-2);
   }
 
   .use-case-panel {
@@ -2416,7 +2543,7 @@ h3 {
     top: 27px;
     right: calc(100% / 6);
     left: calc(100% / 6);
-    border-top: 2px dashed #cfdde7;
+    border-top: 2px dashed var(--border-strong);
     content: "";
   }
 
@@ -2512,24 +2639,24 @@ h3 {
     border: 0;
     border-radius: 8px;
     padding: 9px 11px;
-    color: #334357;
+    color: var(--text-3);
     font-size: 0.94rem;
   }
 
   .nav-links > a:hover {
-    background: #f4f8fb;
-    color: #071632;
+    background: var(--surface-2);
+    color: var(--text-strong);
   }
 
   .nav-links > a.is-active,
   .nav-links > a[aria-current="page"] {
-    background: #eef9f7;
-    color: #057f72;
+    background: var(--accent-soft);
+    color: var(--accent-text);
   }
 
   .nav-actions {
     margin: 0 0 0 10px;
-    border-left: 1px solid #e5edf4;
+    border-left: 1px solid var(--border);
     padding: 0 0 0 10px;
   }
 
