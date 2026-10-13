@@ -28,7 +28,7 @@ This guide walks you through the app step by step: from creating an account, thr
 
 With TripleTalk you learn words faster, and you never have to copy them out by hand.
 
-- Take a photo of a textbook page or a word list and the app turns it into flashcards. You just pick the ones you want to learn.
+- Take a photo of a textbook page or paste some text and the app turns it into flashcards. You just pick the ones you want to learn.
 - When you add a flashcard yourself, you type a single word. TripleTalk adds the translation, an example sentence and the pronunciation for you.
 - You can listen to every word and every sentence, spoken in a natural voice.
 - After each flashcard you mark how well you remembered it. Hard words come back more often and easy ones less often, so you don't waste time on what you already know.
@@ -124,7 +124,7 @@ When you open a lesson, quick actions are at hand:
 
 ## 5. Adding flashcards
 
-Now that you have a lesson, it's time to add some words. Open the lesson and tap "Add flashcards". There are three ways to do it.
+Now that you have a lesson, it's time to add some words. Open the lesson and tap "Add flashcards". There are four ways to do it.
 
 ### Take a text photo
 
@@ -137,6 +137,10 @@ Analysing a photo can take a moment, but you don't have to wait for it. Go back 
 ### Add from gallery
 
 Already have a photo or a screenshot with words on it? Pick it from your phone's gallery. Everything else works just like a camera photo.
+
+### Paste text
+
+Got words in an article, your notes, an email or a job description? Copy the text and paste it into the app. TripleTalk AI picks out the words and shows you a list to approve, just like with a photo.
 
 ### Add manually
 
@@ -406,7 +410,7 @@ We read every message.
 ## 15. Frequently asked questions
 
 **Is TripleTalk free?**
-Yes. On a free account you can create your own lessons, learn one language, and use reviews, audio mode and free collections. To create flashcards with AI you need TripleTalk AI flashcards. You get a set number of them when you start, and you can buy more in a pack. Premium extends what the app can do.
+Yes. On a free account you can create your own lessons, learn one language, and use reviews and free collections. To create flashcards with AI you need TripleTalk AI flashcards. You get a set number of them when you start, and you can buy more in a pack. Premium extends what the app can do.
 
 **What's the difference between Premium and AI packs?**
 Premium is a subscription that unlocks features, for example two languages, more lessons, collections, background listening, reminders and the teacher role. AI packs are a one-time purchase of flashcards you create with TripleTalk AI.

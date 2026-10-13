@@ -6,6 +6,7 @@ interface FooterContent {
   navigationLabel: string;
   privacy: string;
   terms: string;
+  guide: string;
   support: string;
 }
 
@@ -20,6 +21,7 @@ const labels = content ?? {
   navigationLabel: "Footer navigation",
   privacy: "Privacy Policy",
   terms: "Terms of Service",
+  guide: "Guide",
   support: "Contact",
 };
 ---
@@ -35,6 +37,9 @@ const labels = content ?? {
       </a>
       <a href="/terms" data-i18n="footerTerms" aria-current={currentPage === "terms" ? "page" : undefined}>
         {labels.terms}
+      </a>
+      <a href="/guide/" data-i18n="footerGuide" aria-current={currentPage === "guide" ? "page" : undefined}>
+        {labels.guide}
       </a>
       <a href="/support/" data-i18n="footerSupport" aria-current={currentPage === "support" ? "page" : undefined}>
         {labels.support}

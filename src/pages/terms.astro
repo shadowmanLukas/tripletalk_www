@@ -54,27 +54,29 @@ const documents = [
 
       const translations = {
         pl: {
-          navFeatures: "Funkcje",
-          navDownload: "Pobierz",
-          navGuide: "Instrukcja",
+          navFeatures: "O aplikacji",
+          navHow: "Jak to działa",
+          navTeachers: "Dla nauczycieli",
+          navPricing: "Premium",
           footerPrivacy: "Polityka prywatności",
           footerTerms: "Regulamin",
+          footerGuide: "Instrukcja",
           footerSupport: "Kontakt",
           pageTitle: "Regulamin - TripleTalk",
         },
         en: {
-          navFeatures: "Features",
-          navDownload: "Download",
-          navGuide: "Guide",
+          navFeatures: "About the app",
+          navHow: "How it works",
+          navTeachers: "For teachers",
+          navPricing: "Premium",
           footerPrivacy: "Privacy Policy",
           footerTerms: "Terms of Service",
+          footerGuide: "Guide",
           footerSupport: "Contact",
           pageTitle: "Terms of Service - TripleTalk",
         },
       };
 
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
       const translatedNodes = document.querySelectorAll("[data-i18n]");
       const legalDocuments = document.querySelectorAll<HTMLElement>(".legal-document");
 
@@ -94,17 +96,8 @@ const documents = [
         });
       }
 
-      menuToggle?.addEventListener("click", () => {
-        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-        menuToggle.setAttribute("aria-expanded", String(!expanded));
-        navLinks?.classList.toggle("open", !expanded);
-      });
-
-      navLinks?.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          menuToggle?.setAttribute("aria-expanded", "false");
-          navLinks.classList.remove("open");
-        });
+      document.addEventListener("tripletalk:language", (event) => {
+        setLegalLanguage((event as CustomEvent<"pl" | "en">).detail);
       });
 
       setLegalLanguage(await getVisitorLanguage());

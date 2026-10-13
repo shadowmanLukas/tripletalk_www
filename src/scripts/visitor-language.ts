@@ -1,11 +1,38 @@
 export type VisitorLanguage = "pl" | "en";
 
 const countryCacheKey = "tripletalk-visitor-country-v1";
+const preferenceKey = "tripletalk-language-v1";
+
+function isLanguage(value: string | null): value is VisitorLanguage {
+  return value === "pl" || value === "en";
+}
+
+// A language picked in the header wins over the country and browser guesses.
+export function setPreferredLanguage(language: VisitorLanguage) {
+  try {
+    localStorage.setItem(preferenceKey, language);
+  } catch {
+    // Storage can be blocked; the switch then only lasts for the current page.
+  }
+}
+
+function preferredLanguage(): VisitorLanguage | null {
+  try {
+    const stored = localStorage.getItem(preferenceKey);
+    return isLanguage(stored) ? stored : null;
+  } catch {
+    return null;
+  }
+}
 
 function browserFallback(): VisitorLanguage {
-  const browserLanguages = navigator.languages.length > 0 ? navigator.languages : [navigator.language];
-  const usesPolish = browserLanguages.some((language) => language.toLowerCase().split("-")[0] === "pl");
-  const isInPolandTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone === "Europe/Warsaw";
+  const browserLanguages =
+    navigator.languages.length > 0 ? navigator.languages : [navigator.language];
+  const usesPolish = browserLanguages.some(
+    (language) => language.toLowerCase().split("-")[0] === "pl",
+  );
+  const isInPolandTimezone =
+    Intl.DateTimeFormat().resolvedOptions().timeZone === "Europe/Warsaw";
 
   return usesPolish || isInPolandTimezone ? "pl" : "en";
 }
@@ -16,6 +43,9 @@ function languageForCountry(country: string | null): VisitorLanguage | null {
 }
 
 export async function getVisitorLanguage(): Promise<VisitorLanguage> {
+  const preferred = preferredLanguage();
+  if (preferred) return preferred;
+
   const cachedCountry = sessionStorage.getItem(countryCacheKey);
   const cachedLanguage = languageForCountry(cachedCountry);
   if (cachedLanguage) return cachedLanguage;

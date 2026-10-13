@@ -6,39 +6,64 @@ interface Props {
 }
 
 const { language } = Astro.props;
-const labels = {
-  pl: {
-    listLabel: "Dostępne języki nauki",
-    languages: [
-      ["🇩🇪", "Niemiecki"],
-      ["🇬🇧", "Angielski"],
-      ["🇵🇱", "Polski"],
-      ["🇪🇸", "Hiszpański"],
-      ["🇫🇷", "Francuski"],
-      ["🇮🇹", "Włoski"],
-      ["🇺🇦", "Ukraiński"],
-    ],
-  },
-  en: {
-    listLabel: "Available learning languages",
-    languages: [
-      ["🇩🇪", "German"],
-      ["🇬🇧", "English"],
-      ["🇵🇱", "Polish"],
-      ["🇪🇸", "Spanish"],
-      ["🇫🇷", "French"],
-      ["🇮🇹", "Italian"],
-      ["🇺🇦", "Ukrainian"],
-    ],
-  },
-} as const;
 
-const copy = labels[language];
+// Each language is shown by how it says hello and a round flag. The flags are drawn as SVG,
+// because Windows does not render flag emoji.
+const greetings = [
+  { code: "en", hello: "Hello", pl: "Angielski", en: "English" },
+  { code: "de", hello: "Hallo", pl: "Niemiecki", en: "German" },
+  { code: "es", hello: "Hola", pl: "Hiszpański", en: "Spanish" },
+  { code: "fr", hello: "Bonjour", pl: "Francuski", en: "French" },
+  { code: "it", hello: "Ciao", pl: "Włoski", en: "Italian" },
+  { code: "pl", hello: "Cześć", pl: "Polski", en: "Polish" },
+  { code: "uk", hello: "Привіт", pl: "Ukraiński", en: "Ukrainian" },
+] as const;
+const flags: Record<string, { viewBox: string; shapes: string }> = {
+  en: {
+    viewBox: "0 0 60 30",
+    shapes:
+      '<rect width="60" height="30" fill="#012169"/><path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30M60 0L0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>',
+  },
+  de: {
+    viewBox: "0 0 30 30",
+    shapes:
+      '<rect width="30" height="10" fill="#000"/><rect y="10" width="30" height="10" fill="#DD0000"/><rect y="20" width="30" height="10" fill="#FFCE00"/>',
+  },
+  es: {
+    viewBox: "0 0 30 30",
+    shapes:
+      '<rect width="30" height="30" fill="#AA151B"/><rect y="7.5" width="30" height="15" fill="#F1BF00"/>',
+  },
+  fr: {
+    viewBox: "0 0 30 30",
+    shapes:
+      '<rect width="10" height="30" fill="#0055A4"/><rect x="10" width="10" height="30" fill="#fff"/><rect x="20" width="10" height="30" fill="#EF4135"/>',
+  },
+  it: {
+    viewBox: "0 0 30 30",
+    shapes:
+      '<rect width="10" height="30" fill="#009246"/><rect x="10" width="10" height="30" fill="#fff"/><rect x="20" width="10" height="30" fill="#CE2B37"/>',
+  },
+  pl: {
+    viewBox: "0 0 30 30",
+    shapes:
+      '<rect width="30" height="15" fill="#fff"/><rect y="15" width="30" height="15" fill="#DC143C"/>',
+  },
+  uk: {
+    viewBox: "0 0 30 30",
+    shapes:
+      '<rect width="30" height="15" fill="#0057B7"/><rect y="15" width="30" height="15" fill="#FFD700"/>',
+  },
+};
+const listLabel = {
+  pl: "Dostępne języki nauki",
+  en: "Available learning languages",
+}[language];
 ---
 
 <div class="language-ticker">
   <p class="sr-only">
-    {copy.listLabel}: {copy.languages.map(([, name]) => name).join(", ")}.
+    {listLabel}: {greetings.map((item) => item[language]).join(", ")}.
   </p>
 
   <div class="language-ticker-viewport" aria-hidden="true">
@@ -46,10 +71,18 @@ const copy = labels[language];
       {
         [0, 1].map(() => (
           <div class="language-ticker-set">
-            {copy.languages.map(([flag, name]) => (
+            {greetings.map((item) => (
               <span class="language-chip">
-                <span class="language-chip-flag">{flag}</span>
-                <span>{name}</span>
+                <span class="language-chip-hello" lang={item.code}>
+                  {item.hello}
+                </span>
+                <span class="language-chip-flag">
+                  <svg
+                    viewBox={flags[item.code].viewBox}
+                    preserveAspectRatio="xMidYMid slice"
+                    set:html={flags[item.code].shapes}
+                  />
+                </span>
               </span>
             ))}
           </div>

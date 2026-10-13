@@ -7,8 +7,10 @@ interface NavigationContent {
   brandHome: string;
   menuOpen: string;
   features: string;
-  download: string;
-  guide: string;
+  how: string;
+  teachers: string;
+  pricing: string;
+  languageLabel: string;
 }
 
 interface Props {
@@ -18,21 +20,34 @@ interface Props {
 }
 
 const { currentPage = "home", language = "pl", navigation } = Astro.props;
+const isHome = currentPage === "home";
 const homeHref = language === "en" ? "/en/" : "/";
-const sectionPrefix = currentPage === "home" ? "" : homeHref;
+const sectionPrefix = isHome ? "" : homeHref;
 const labels = navigation ?? {
   label: "Main navigation",
   brandHome: "TripleTalk home",
   menuOpen: "Open menu",
-  features: "Features",
-  download: "Download",
-  guide: "Guide",
+  features: "About the app",
+  how: "How it works",
+  teachers: "For teachers",
+  pricing: "Premium",
+  languageLabel: "Language",
 };
+const sectionLinks = [
+  { id: "use-cases", key: "navFeatures", label: labels.features },
+  { id: "how-it-works", key: "navHow", label: labels.how },
+  { id: "teachers", key: "navTeachers", label: labels.teachers },
+  { id: "premium", key: "navPricing", label: labels.pricing },
+];
+const languages: { code: Language; label: string; href: string }[] = [
+  { code: "pl", label: "PL", href: "/" },
+  { code: "en", label: "EN", href: "/en/" },
+];
 ---
 
 <header class="site-header">
   <nav class="container nav" aria-label={labels.label}>
-    <a class="brand" href={homeHref} aria-label={labels.brandHome}>
+    <a class="brand" href={homeHref} aria-label={labels.brandHome} data-home-hash="">
       <img src="/assets/tripletalk-logo.png" alt="" width="40" height="40" />
       <span><span>Triple</span><span>Talk</span></span>
     </a>
@@ -45,11 +60,112 @@ const labels = navigation ?? {
     </button>
 
     <div class="nav-links" id="site-menu">
-      <a href={`${sectionPrefix}#features`} data-i18n="navFeatures">{labels.features}</a>
-      <a href={`${sectionPrefix}#download`} data-i18n="navDownload">{labels.download}</a>
-      <a href="/guide/" data-i18n="navGuide" aria-current={currentPage === "guide" ? "page" : undefined}>
-        {labels.guide}
-      </a>
+      {
+        sectionLinks.map((link) => (
+          <a
+            href={`${sectionPrefix}#${link.id}`}
+            data-i18n={link.key}
+            data-section-link={isHome ? link.id : undefined}
+            data-home-hash={isHome ? undefined : `#${link.id}`}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+
+      <div class="nav-actions">
+        <div class="language-switch" role="group" aria-label={labels.languageLabel}>
+          {
+            languages.map((item) =>
+              isHome ? (
+                <a
+                  href={item.href}
+                  lang={item.code}
+                  hreflang={item.code}
+                  data-language={item.code}
+                  aria-current={item.code === language ? "true" : undefined}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button type="button" lang={item.code} data-language={item.code}>
+                  {item.label}
+                </button>
+              ),
+            )
+          }
+        </div>
+      </div>
     </div>
   </nav>
 </header>
+
+<script>
+  import { setPreferredLanguage, type VisitorLanguage } from "../scripts/visitor-language";
+
+  const menuToggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const navLinks = document.querySelector<HTMLElement>(".nav-links");
+
+  function setMenuOpen(open: boolean) {
+    menuToggle?.setAttribute("aria-expanded", String(open));
+    navLinks?.classList.toggle("open", open);
+    document.body.classList.toggle("menu-open", open);
+  }
+
+  menuToggle?.addEventListener("click", () => {
+    setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  navLinks?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMenuOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuOpen(false);
+  });
+
+  // The landing pages switch language by URL; the other pages translate in place, so the
+  // buttons there remember the choice and ask the page to re-render.
+  document.querySelectorAll<HTMLElement>("[data-language]").forEach((control) => {
+    control.addEventListener("click", () => {
+      const language = control.dataset.language as VisitorLanguage;
+      setPreferredLanguage(language);
+      if (control instanceof HTMLButtonElement) {
+        document.dispatchEvent(new CustomEvent("tripletalk:language", { detail: language }));
+        setMenuOpen(false);
+      }
+    });
+  });
+
+  // Off the landing page, links to it follow the language the page is shown in.
+  const homeLinks = document.querySelectorAll<HTMLAnchorElement>("[data-home-hash]");
+  function syncHomeLinks() {
+    const home = document.documentElement.lang === "en" ? "/en/" : "/";
+    homeLinks.forEach((link) => {
+      link.href = `${home}${link.dataset.homeHash ?? ""}`;
+    });
+  }
+  if (!document.querySelector("[data-section-link]")) {
+    new MutationObserver(syncHomeLinks).observe(document.documentElement, {
+      attributeFilter: ["lang"],
+    });
+  }
+
+  // On the landing page the link of the section in view is highlighted.
+  const sectionLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>("[data-section-link]"));
+  if (sectionLinks.length > 0 && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          sectionLinks.forEach((link) => {
+            link.classList.toggle("is-active", link.dataset.sectionLink === entry.target.id);
+          });
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    // Sections without a link (preview, FAQ, download) clear the highlight when they reach the middle.
+    document.querySelectorAll<HTMLElement>("main > section[id]").forEach((section) => observer.observe(section));
+  }
+</script>

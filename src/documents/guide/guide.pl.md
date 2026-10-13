@@ -28,7 +28,7 @@ Ta instrukcja prowadzi Cię przez aplikację krok po kroku: od założenia konta
 
 Z TripleTalk uczysz się słówek szybciej i nie musisz ich nigdzie przepisywać.
 
-- Zrób zdjęcie strony z podręcznika albo listy słówek, a aplikacja zamieni je w fiszki. Ty wybierasz tylko te, których chcesz się uczyć.
+- Zrób zdjęcie strony z podręcznika albo wklej tekst, a aplikacja zamieni go w fiszki. Ty wybierasz tylko te, których chcesz się uczyć.
 - Gdy dodajesz fiszkę samodzielnie, wpisujesz jedno słowo. Tłumaczenie, przykładowe zdanie i wymowę TripleTalk dopisze za Ciebie.
 - Każde słowo i każde zdanie możesz odsłuchać, wymówione naturalnym głosem.
 - Po każdej fiszce zaznaczasz, jak dobrze ją pamiętasz. Trudne słowa wracają częściej, łatwe rzadziej, więc nie tracisz czasu na to, co już umiesz.
@@ -124,7 +124,7 @@ Po otwarciu lekcji masz pod ręką szybkie akcje:
 
 ## 5. Dodawanie fiszek
 
-Masz już lekcję, czas dodać do niej słówka. Otwórz lekcję i wybierz „Dodaj fiszki”. Do wyboru masz trzy sposoby.
+Masz już lekcję, czas dodać do niej słówka. Otwórz lekcję i wybierz „Dodaj fiszki”. Do wyboru masz cztery sposoby.
 
 ### Zrób zdjęcie tekstu
 
@@ -137,6 +137,10 @@ Analiza zdjęcia może chwilę potrwać, ale nie musisz na nią czekać. Wróć 
 ### Dodaj z galerii
 
 Masz już zdjęcie albo zrzut ekranu ze słówkami? Wybierz je z galerii telefonu. Dalej wszystko działa tak samo jak przy zdjęciu z aparatu.
+
+### Wklej tekst
+
+Masz słówka w artykule, notatkach, mailu albo opisie stanowiska? Skopiuj tekst i wklej go w aplikacji. TripleTalk AI wybierze z niego słówka i pokaże Ci listę do zatwierdzenia, tak samo jak przy zdjęciu.
 
 ### Dodaj ręcznie
 
@@ -406,7 +410,7 @@ Czytamy każdą wiadomość.
 ## 15. Najczęstsze pytania
 
 **Czy TripleTalk jest darmowy?**
-Tak. Na koncie darmowym tworzysz własne lekcje, uczysz się jednego języka, korzystasz z powtórek, trybu audio i darmowych kolekcji. Do tworzenia fiszek z pomocą AI potrzebujesz fiszek TripleTalk AI. Ich określoną pulę dostajesz na start, a kolejne kupisz w pakiecie. Premium rozszerza możliwości aplikacji.
+Tak. Na koncie darmowym tworzysz własne lekcje, uczysz się jednego języka, korzystasz z powtórek i darmowych kolekcji. Do tworzenia fiszek z pomocą AI potrzebujesz fiszek TripleTalk AI. Ich określoną pulę dostajesz na start, a kolejne kupisz w pakiecie. Premium rozszerza możliwości aplikacji.
 
 **Czym różnią się Premium i pakiety AI?**
 Premium to subskrypcja, która odblokowuje funkcje, np. dwa języki, więcej lekcji, kolekcje, słuchanie w tle, przypomnienia i rolę nauczyciela. Pakiety AI to jednorazowy zakup fiszek, które tworzysz z TripleTalk AI.
