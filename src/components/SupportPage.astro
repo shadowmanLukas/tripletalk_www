@@ -2,7 +2,6 @@
 // The contact page, one language per URL (/support/ and /en/support/).
 import "../styles/global.css";
 import { pagePath, type SiteLanguage } from "../lib/site-pages";
-import LanguageSuggestion from "./LanguageSuggestion.astro";
 import PageHead from "./PageHead.astro";
 import SiteFooter from "./SiteFooter.astro";
 import SiteHeader from "./SiteHeader.astro";
@@ -61,7 +60,6 @@ const content = {
   </head>
   <body class="support-body">
     <SiteHeader currentPage="support" language={language} />
-    <LanguageSuggestion page="support" language={language} />
 
     <main class="support-page">
       <section class="support-hero" aria-labelledby="support-title">

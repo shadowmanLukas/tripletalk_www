@@ -2796,65 +2796,6 @@ h3 {
   }
 }
 
-/* Offer of the other language version, shown under the header (src/components/LanguageSuggestion.astro). */
-.language-suggestion {
-  border-bottom: 1px solid var(--accent-border);
-  background: var(--accent-soft);
-  color: var(--text-2);
-  font-size: 0.92rem;
-}
-
-.language-suggestion[hidden] {
-  display: none;
-}
-
-.language-suggestion-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px 16px;
-  padding-block: 10px;
-}
-
-.language-suggestion p {
-  margin: 0;
-}
-
-.language-suggestion a {
-  color: var(--accent-text-strong);
-  font-weight: 750;
-}
-
-.language-suggestion a:hover {
-  text-decoration: underline;
-}
-
-.language-suggestion button {
-  display: grid;
-  width: 32px;
-  height: 32px;
-  margin-left: auto;
-  place-items: center;
-  border: 0;
-  border-radius: 999px;
-  background: none;
-  color: var(--text-muted);
-  cursor: pointer;
-}
-
-.language-suggestion button:hover {
-  background: var(--surface);
-}
-
-.language-suggestion svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-}
-
 /* Cookie consent banner for Google Analytics (src/components/CookieConsent.astro). */
 .cookie-consent {
   position: fixed;

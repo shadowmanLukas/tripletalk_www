@@ -5,7 +5,6 @@ import {
   landingSeo,
   type LandingLanguage,
 } from "../lib/landing-content";
-import LanguageSuggestion from "./LanguageSuggestion.astro";
 import LanguageTicker from "./LanguageTicker.astro";
 import SiteFooter from "./SiteFooter.astro";
 import SiteHeader from "./SiteHeader.astro";
@@ -115,7 +114,6 @@ const structuredData = [
   </head>
   <body>
     <SiteHeader currentPage="home" language={language} />
-    <LanguageSuggestion page="home" language={language} />
 
     <main class="landing-main">
       <section class="hero" id="top">

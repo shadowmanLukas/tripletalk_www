@@ -3,7 +3,6 @@
 import "../styles/global.css";
 import { loadGuide, loadLegalDocument } from "../lib/documents";
 import type { SiteLanguage } from "../lib/site-pages";
-import LanguageSuggestion from "./LanguageSuggestion.astro";
 import MarkdownDocument from "./MarkdownDocument.astro";
 import PageHead from "./PageHead.astro";
 import SiteFooter from "./SiteFooter.astro";
@@ -25,7 +24,6 @@ const document = page === "guide" ? await loadGuide(language) : await loadLegalD
   </head>
   <body>
     <SiteHeader currentPage={page} language={language} />
-    <LanguageSuggestion page={page} language={language} />
     <main class={`legal-page legal-page--${page}`}>
       <div class="container legal-shell">
         <div class="legal-documents">
