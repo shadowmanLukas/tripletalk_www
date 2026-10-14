@@ -81,7 +81,9 @@ Providing data is voluntary, but the App cannot be used without account data. We
    - Google Firebase and Google Cloud: sign-in (Authentication), database (Firestore), files (Cloud Storage), server functions (Cloud Functions), notifications (Cloud Messaging), App Check, Crashlytics, Analytics, Performance Monitoring,
    - Google Gemini: AI features,
    - Google Cloud Text-to-Speech: pronunciation audio,
-   - RevenueCat: handling and verifying in-app purchases (receives your account ID and store transaction data).
+   - RevenueCat: handling and verifying in-app purchases (receives your account ID and store transaction data),
+   - Cloudflare: serving the tripletalk.app website (section 14),
+   - Google Analytics: visit statistics for the tripletalk.app website, only with your consent (section 14).
 2. Apple and Google as operators of the app stores and sign-in services. Purchases and sign-in via Apple or Google are also subject to their privacy policies.
 3. Other users in School, as described in section 4(3).
 4. Public authorities, where required by law.
@@ -97,7 +99,7 @@ We may change the list of providers. The current list is always in this Policy.
 
 ## 9. Transfers outside the EEA
 
-Some providers (Google, RevenueCat, Apple) may process data outside the European Economic Area, in particular in the USA. In that case we rely on safeguards required by the GDPR: a European Commission adequacy decision (the EU-US Data Privacy Framework, where the provider is certified) or Standard Contractual Clauses. You can obtain a copy of the safeguards by contacting us.
+Some providers (Google, RevenueCat, Apple, Cloudflare) may process data outside the European Economic Area, in particular in the USA. In that case we rely on safeguards required by the GDPR: a European Commission adequacy decision (the EU-US Data Privacy Framework, where the provider is certified) or Standard Contractual Clauses. You can obtain a copy of the safeguards by contacting us.
 
 ## 10. How long we keep data
 
@@ -110,6 +112,7 @@ Some providers (Google, RevenueCat, Apple) may process data outside the European
 | Welcome bonus hashes | As described in section 5(3) |
 | Feedback and correspondence | Up to 3 years after the matter is closed (limitation period for claims) |
 | Crash reports and statistics | According to Firebase settings, no longer than 14 months |
+| Website visit statistics (Google Analytics) | 14 months |
 | Daily AI and audio usage counters | Until the account is deleted (earlier days' values are overwritten) |
 | List of signed-in devices | A device's entry until you sign out on it. The entry of a device signed out automatically or from another device stays until the account is deleted. The whole list is deleted with the account |
 | Backups | Deleted in the normal backup rotation cycle |
@@ -125,7 +128,7 @@ You have the right to:
 - restrict processing,
 - data portability for data you provided to us,
 - object to processing based on our legitimate interest (including analytics and welcome bonus safeguards),
-- withdraw consent at any time (e.g. by turning off notifications in your phone settings), without affecting the lawfulness of earlier processing,
+- withdraw consent at any time (e.g. by turning off notifications in your phone settings or changing your choice in "Cookie settings" on the website), without affecting the lawfulness of earlier processing,
 - lodge a complaint with the Polish supervisory authority (Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warsaw) or the supervisory authority in your country of residence.
 
 Write to support@tripletalk.app from the email address linked to your account. We reply within 14 days and may ask you to confirm your identity.
@@ -141,10 +144,17 @@ Write to support@tripletalk.app from the email address linked to your account. W
 1. The App may ask for access to: camera (photo of text), photo library (choosing a photo) and notifications (reminders, School invitations). You can turn off any permission in your device settings.
 2. On your device we store, among other things, settings, a cache of audio and flashcards, and the installation identifier described in section 5. Deleting the App removes most of this data. On iOS the secret in Keychain may remain after the App is deleted, as the system works this way.
 
-## 14. Security
+## 14. The tripletalk.app website
+
+1. The tripletalk.app website is served through Cloudflare. On every visit Cloudflare processes your IP address, browser details and the address of the page you open, to deliver the website and protect it from attacks. The website also uses this to recognise the visitor's country and show it in the right language. The legal basis is our legitimate interest (f).
+2. If you consent in the cookie banner, we use Google Analytics to understand how visitors use the website: which pages they view, how they scroll, which outbound links they click, their approximate country or city, and the device and browser they use. Google Analytics stores the `_ga` and `_ga_*` cookies with a pseudonymous identifier in your browser. The legal basis is your consent (a).
+3. Without consent, Google Analytics is not loaded and stores no cookies. We do not use website data for advertising and do not link it to your App account.
+4. You can change or withdraw your consent at any time with the "Cookie settings" button in the website footer. Withdrawing consent deletes the Google Analytics cookies. The website remembers your consent and language choice in your browser's storage and does not send them to us.
+
+## 15. Security
 
 We apply technical and organisational measures appropriate to the risk: encrypted connections, database access rules (e.g. a teacher's lessons are visible only to the teacher and their classes), App Check verification, rate limiting, and server-side enforcement of permissions and limits. If a personal data breach is likely to result in a high risk to you, we will inform you without undue delay.
 
-## 15. Changes to this Policy
+## 16. Changes to this Policy
 
 We will inform you of material changes in the App before they take effect. The current version is always available in the App and at tripletalk.app.

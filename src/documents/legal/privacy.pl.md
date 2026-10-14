@@ -81,7 +81,9 @@ Podanie danych jest dobrowolne, ale bez danych konta nie da się korzystać z Ap
    - Google Firebase i Google Cloud: logowanie (Authentication), baza danych (Firestore), pliki (Cloud Storage), funkcje serwerowe (Cloud Functions), powiadomienia (Cloud Messaging), App Check, Crashlytics, Analytics, Performance Monitoring,
    - Google Gemini: funkcje AI,
    - Google Cloud Text-to-Speech: nagrania wymowy,
-   - RevenueCat: obsługa i weryfikacja zakupów w aplikacji (otrzymuje identyfikator konta i dane transakcji ze sklepu).
+   - RevenueCat: obsługa i weryfikacja zakupów w aplikacji (otrzymuje identyfikator konta i dane transakcji ze sklepu),
+   - Cloudflare: udostępnianie strony tripletalk.app (pkt 14),
+   - Google Analytics: statystyki odwiedzin strony tripletalk.app, tylko za Twoją zgodą (pkt 14).
 2. Apple i Google jako operatorom sklepów i logowania. Zakupy i logowanie przez Apple lub Google podlegają także ich politykom prywatności.
 3. Innym użytkownikom w Szkole, w zakresie z pkt 4 ust. 3.
 4. Organom państwowym, gdy wymaga tego prawo.
@@ -97,7 +99,7 @@ Listę dostawców możemy zmieniać. Aktualna jest zawsze w tej Polityce.
 
 ## 9. Przekazywanie danych poza EOG
 
-Część dostawców (Google, RevenueCat, Apple) może przetwarzać dane poza Europejskim Obszarem Gospodarczym, w szczególności w USA. Wtedy korzystamy z zabezpieczeń wymaganych przez RODO: decyzji Komisji Europejskiej o odpowiednim stopniu ochrony (EU-US Data Privacy Framework, gdy dostawca jest nim objęty) lub standardowych klauzul umownych. Kopię zabezpieczeń możesz otrzymać, pisząc do nas.
+Część dostawców (Google, RevenueCat, Apple, Cloudflare) może przetwarzać dane poza Europejskim Obszarem Gospodarczym, w szczególności w USA. Wtedy korzystamy z zabezpieczeń wymaganych przez RODO: decyzji Komisji Europejskiej o odpowiednim stopniu ochrony (EU-US Data Privacy Framework, gdy dostawca jest nim objęty) lub standardowych klauzul umownych. Kopię zabezpieczeń możesz otrzymać, pisząc do nas.
 
 ## 10. Jak długo przechowujemy dane
 
@@ -110,6 +112,7 @@ Część dostawców (Google, RevenueCat, Apple) może przetwarzać dane poza Eur
 | Skróty bonusu powitalnego | Zgodnie z pkt 5 ust. 3 |
 | Zgłoszenia i korespondencja | Do 3 lat od zakończenia sprawy (okres przedawnienia roszczeń) |
 | Raporty awarii i statystyki | Zgodnie z ustawieniami usług Firebase, nie dłużej niż 14 miesięcy |
+| Statystyki odwiedzin strony (Google Analytics) | 14 miesięcy |
 | Dzienne liczniki użycia AI i nagrań | Do usunięcia konta (wartości z poprzednich dni są nadpisywane) |
 | Lista zalogowanych urządzeń | Wpis urządzenia do wylogowania się na nim, a wpis urządzenia wylogowanego automatycznie lub z innego urządzenia do usunięcia konta. Cała lista jest usuwana razem z kontem |
 | Kopie zapasowe | Usuwane w zwykłym cyklu rotacji kopii |
@@ -125,7 +128,7 @@ Masz prawo do:
 - ograniczenia przetwarzania,
 - przeniesienia danych, które nam przekazałeś,
 - sprzeciwu wobec przetwarzania opartego na naszym prawnie uzasadnionym interesie (w tym analityki i zabezpieczeń bonusu),
-- cofnięcia zgody w każdej chwili (np. wyłączając powiadomienia w ustawieniach telefonu), bez wpływu na zgodność z prawem wcześniejszego przetwarzania,
+- cofnięcia zgody w każdej chwili (np. wyłączając powiadomienia w ustawieniach telefonu albo zmieniając wybór w "Ustawieniach cookies" na stronie), bez wpływu na zgodność z prawem wcześniejszego przetwarzania,
 - skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa) lub organu nadzorczego w kraju, w którym mieszkasz.
 
 Napisz na support@tripletalk.app z adresu przypisanego do konta. Odpowiemy w ciągu 14 dni. Możemy poprosić o potwierdzenie tożsamości.
@@ -141,10 +144,17 @@ Napisz na support@tripletalk.app z adresu przypisanego do konta. Odpowiemy w ci�
 1. Aplikacja może prosić o dostęp do: aparatu (zdjęcie tekstu), galerii (wybór zdjęcia) i powiadomień (przypomnienia, zaproszenia Szkoły). Każde uprawnienie możesz wyłączyć w ustawieniach urządzenia.
 2. Na urządzeniu przechowujemy m.in. ustawienia, pamięć podręczną nagrań i fiszek oraz identyfikator instalacji z pkt 5. Usunięcie Aplikacji usuwa większość tych danych. Sekret w Keychain na iOS może pozostać po usunięciu Aplikacji, zgodnie z działaniem systemu.
 
-## 14. Bezpieczeństwo
+## 14. Strona internetowa tripletalk.app
+
+1. Stronę tripletalk.app udostępniamy za pośrednictwem Cloudflare. Przy każdej wizycie Cloudflare przetwarza adres IP, dane przeglądarki i adres odwiedzanej podstrony, aby dostarczyć stronę i chronić ją przed atakami. Na tej podstawie strona rozpoznaje też kraj odwiedzającego, aby wyświetlić ją w odpowiednim języku. Podstawą jest nasz prawnie uzasadniony interes (f).
+2. Jeśli wyrazisz zgodę w banerze cookies, korzystamy z Google Analytics, aby sprawdzać, jak odwiedzający korzystają ze strony: które podstrony oglądają, jak je przewijają, w które linki wychodzące klikają, z jakiego kraju lub miasta (w przybliżeniu), urządzenia i przeglądarki korzystają. Google Analytics zapisuje w przeglądarce pliki cookie `_ga` i `_ga_*` z pseudonimowym identyfikatorem. Podstawą jest Twoja zgoda (a).
+3. Bez zgody Google Analytics nie jest wczytywany i nie zapisuje plików cookie. Danych ze strony nie używamy do reklam i nie łączymy ich z kontem w Aplikacji.
+4. Zgodę możesz w każdej chwili zmienić lub cofnąć przyciskiem "Ustawienia cookies" w stopce strony. Cofnięcie zgody usuwa pliki cookie Google Analytics. Wybór zgody i języka strona zapamiętuje w pamięci przeglądarki i nie przesyła ich do nas.
+
+## 15. Bezpieczeństwo
 
 Stosujemy środki techniczne i organizacyjne odpowiednie do ryzyka: szyfrowanie połączeń, reguły dostępu do bazy danych (np. lekcje nauczyciela widzi tylko on i jego klasy), weryfikację App Check, ograniczenie liczby zapytań oraz egzekwowanie uprawnień i limitów po stronie serwera. O naruszeniu ochrony danych, które może powodować wysokie ryzyko dla Ciebie, poinformujemy Cię bez zbędnej zwłoki.
 
-## 15. Zmiany Polityki
+## 16. Zmiany Polityki
 
 O istotnych zmianach poinformujemy w Aplikacji przed ich wejściem w życie. Aktualna wersja jest zawsze dostępna w Aplikacji i na stronie tripletalk.app.
