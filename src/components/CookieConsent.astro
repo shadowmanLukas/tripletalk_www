@@ -1,5 +1,10 @@
 ---
 // Rendered only when a GA4 measurement ID is configured; without it the site has no analytics.
+interface Props {
+  privacyHref?: string;
+}
+
+const { privacyHref = "/privacy/" } = Astro.props;
 const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim();
 ---
 
@@ -19,7 +24,7 @@ const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim();
             We use Google Analytics to understand how visitors use this site. Analytics cookies are
             only stored if you agree.
           </span>{" "}
-          <a href="/privacy/" data-consent-i18n="privacy">
+          <a href={privacyHref} data-consent-i18n="privacy">
             Privacy Policy
           </a>
         </p>

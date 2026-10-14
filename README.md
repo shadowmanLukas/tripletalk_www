@@ -7,6 +7,8 @@ Statyczna strona Astro dla `tripletalk.app`, wraz ze statycznym panelem administ
 - Astro z routingiem plikowym w `src/pages`.
 - Tailwind CSS przez Vite oraz istniejące style projektu.
 - Wszystkie strony, łącznie z `/adminpanel`, są generowane do statycznych plików HTML/CSS/JS.
+- Każda strona publiczna ma osobny adres w każdym języku: polski bez prefiksu (`/`, `/guide/`, `/privacy/`, `/terms/`, `/support/`), angielski pod `/en/`. Wersje są połączone przez `hreflang` i `sitemap.xml`, a przełącznik języka w nagłówku prowadzi pod drugi adres. Adresy i tytuły podstron są w `src/lib/site-pages.ts`. Nie ma automatycznych przekierowań; gdy kraj lub przeglądarka wskazują na drugi język, pod nagłówkiem pojawia się propozycja przejścia na drugą wersję (`src/components/LanguageSuggestion.astro`). Aplikacja mobilna linkuje do polskich adresów (`/privacy/`, `/terms/`, `/support/`), więc anglojęzyczni użytkownicy trafiają tam na tę propozycję.
+- Strona 404 (`src/pages/404.astro`) jest jedyną dwujęzyczną stroną przełączaną w przeglądarce (`src/scripts/visitor-language.ts`).
 - Panel używa Firebase Web SDK bez SSR, własnego API, Firebase Admin SDK i procesu Node na produkcji.
 - Authentication chroni sesję użytkownika, a custom claim `admin: true` i Firebase Security Rules egzekwują dostęp do danych.
 - Firestore: projekt `lexigo-b2aee`, domyślna baza, kolekcja `feedback`.
@@ -16,7 +18,7 @@ Node.js jest wymagany wyłącznie podczas instalacji zależności, testów i sta
 
 ## Regulamin, Polityka Prywatności i instrukcja
 
-Treść `/terms/`, `/privacy/` i instrukcji na `/guide/` to niezmienione kopie plików z repo aplikacji (`../tripletalk`, gałąź `main`):
+Treść `/terms/`, `/privacy/` i instrukcji na `/guide/` (oraz ich wersji pod `/en/`) to niezmienione kopie plików z repo aplikacji (`../tripletalk`, gałąź `main`):
 
 | Plik w tym repo                     | Źródło                                        |
 | ----------------------------------- | --------------------------------------------- |
@@ -52,7 +54,7 @@ Claim należy nadać przez zaufane narzędzie administracyjne lub backend aplika
 
 ## Podglądy linków
 
-Obrazki podglądu (Open Graph, 1200×630, JPEG) leżą w `public/og/`: `home-pl`, `home-en` oraz po jednym dla `guide`, `privacy`, `terms` i `support`. Generuje je `npm run og` (`scripts/og-images.mjs`: szablony HTML renderowane przez headless Chrome i kompresowane przez sharp). Teksty na obrazkach zmienia się w tym skrypcie, a potem trzeba go uruchomić ponownie i zacommitować nowe pliki. Metatagi ustawia `src/components/SocialMeta.astro`; tytuły i opisy strony głównej są w `landingSeo` (`src/lib/landing-content.ts`), a podstron w ich plikach w `src/pages/`.
+Obrazki podglądu (Open Graph, 1200×630, JPEG) leżą w `public/og/`: `home-pl`, `home-en` oraz `guide`, `privacy`, `terms` i `support` w wersjach `-pl` i `-en`. Generuje je `npm run og` (`scripts/og-images.mjs`: szablony HTML renderowane przez headless Chrome i kompresowane przez sharp). Teksty na obrazkach zmienia się w tym skrypcie, a potem trzeba go uruchomić ponownie i zacommitować nowe pliki. Metatagi ustawia `src/components/SocialMeta.astro`; tytuły i opisy strony głównej są w `landingSeo` (`src/lib/landing-content.ts`), a podstron w `subPageMeta` (`src/lib/site-pages.ts`).
 
 ## Google Analytics
 

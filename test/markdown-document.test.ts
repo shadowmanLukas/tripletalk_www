@@ -118,7 +118,7 @@ describe("markdown document transforms", () => {
         guideLinkRules.en,
       ),
     ).toBe(
-      '<p>See the <a href="/terms/">Terms of Service</a> and <a href="/privacy/">Privacy Policy</a> on <a href="/">tripletalk.app</a>.</p>',
+      '<p>See the <a href="/en/terms/">Terms of Service</a> and <a href="/en/privacy/">Privacy Policy</a> on <a href="/en/">tripletalk.app</a>.</p>',
     );
   });
 });

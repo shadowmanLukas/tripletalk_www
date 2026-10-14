@@ -1,0 +1,38 @@
+---
+// The guide, Terms and Privacy pages, one language per URL (/guide/ and /en/guide/ etc.).
+import "../styles/global.css";
+import { loadGuide, loadLegalDocument } from "../lib/documents";
+import type { SiteLanguage } from "../lib/site-pages";
+import LanguageSuggestion from "./LanguageSuggestion.astro";
+import MarkdownDocument from "./MarkdownDocument.astro";
+import PageHead from "./PageHead.astro";
+import SiteFooter from "./SiteFooter.astro";
+import SiteHeader from "./SiteHeader.astro";
+
+interface Props {
+  page: "guide" | "terms" | "privacy";
+  language: SiteLanguage;
+}
+
+const { page, language } = Astro.props;
+const document = page === "guide" ? await loadGuide(language) : await loadLegalDocument(page, language);
+---
+
+<!doctype html>
+<html lang={language}>
+  <head>
+    <PageHead page={page} language={language} />
+  </head>
+  <body>
+    <SiteHeader currentPage={page} language={language} />
+    <LanguageSuggestion page={page} language={language} />
+    <main class={`legal-page legal-page--${page}`}>
+      <div class="container legal-shell">
+        <div class="legal-documents">
+          <MarkdownDocument document={document} language={language} id={language} />
+        </div>
+      </div>
+    </main>
+    <SiteFooter currentPage={page} language={language} />
+  </body>
+</html>

@@ -1,31 +1,24 @@
 ---
+import { landingContent } from "../lib/landing-content";
+import { pagePath, type SitePage } from "../lib/site-pages";
 import CookieConsent from "./CookieConsent.astro";
 
-type Page = "home" | "terms" | "privacy" | "support" | "guide" | "notFound";
+type Page = SitePage | "notFound";
 type Language = "pl" | "en";
-
-interface FooterContent {
-  navigationLabel: string;
-  privacy: string;
-  terms: string;
-  guide: string;
-  support: string;
-}
 
 interface Props {
   currentPage?: Page;
   language?: Language;
-  content?: FooterContent;
 }
 
-const { currentPage = "home", content } = Astro.props;
-const labels = content ?? {
-  navigationLabel: "Footer navigation",
-  privacy: "Privacy Policy",
-  terms: "Terms of Service",
-  guide: "Guide",
-  support: "Contact",
-};
+const { currentPage = "home", language = "pl" } = Astro.props;
+const labels = landingContent[language].footer;
+const links = [
+  { page: "privacy", key: "footerPrivacy", label: labels.privacy },
+  { page: "terms", key: "footerTerms", label: labels.terms },
+  { page: "guide", key: "footerGuide", label: labels.guide },
+  { page: "support", key: "footerSupport", label: labels.support },
+] as const;
 ---
 
 <footer class="site-footer">
@@ -34,22 +27,23 @@ const labels = content ?? {
       <p>© 2026 craftapp</p>
     </div>
     <nav aria-label={labels.navigationLabel}>
-      <a href="/privacy/" data-i18n="footerPrivacy" aria-current={currentPage === "privacy" ? "page" : undefined}>
-        {labels.privacy}
-      </a>
-      <a href="/terms/" data-i18n="footerTerms" aria-current={currentPage === "terms" ? "page" : undefined}>
-        {labels.terms}
-      </a>
-      <a href="/guide/" data-i18n="footerGuide" aria-current={currentPage === "guide" ? "page" : undefined}>
-        {labels.guide}
-      </a>
-      <a href="/support/" data-i18n="footerSupport" aria-current={currentPage === "support" ? "page" : undefined}>
-        {labels.support}
-      </a>
+      {
+        links.map((link) => (
+          <a
+            href={pagePath(link.page, language)}
+            data-i18n={link.key}
+            data-href-pl={pagePath(link.page, "pl")}
+            data-href-en={pagePath(link.page, "en")}
+            aria-current={currentPage === link.page ? "page" : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
       <button type="button" id="cookie-settings" class="footer-cookie-settings" data-consent-i18n="settings" hidden>
         Cookies
       </button>
     </nav>
   </div>
 </footer>
-<CookieConsent />
+<CookieConsent privacyHref={pagePath("privacy", language)} />

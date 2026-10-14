@@ -536,7 +536,7 @@ export const landingContent = {
         "Students save time by learning from ready-made materials",
       ],
       linkLabel: "How School works",
-      linkHref: "/guide/#en-10-school-learning-in-a-class",
+      linkHref: "/en/guide/#en-10-school-learning-in-a-class",
       imageAlt:
         "TripleTalk class screen with active and scheduled lessons for students",
     },

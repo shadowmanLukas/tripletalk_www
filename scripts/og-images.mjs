@@ -83,7 +83,7 @@ function pageImage({ title, subtitle, lead, icon, screenshot }) {
     ? `<div class="phone" style="right: 120px; top: 52px; transform: rotate(5deg)"><img src="${asset(screenshot)}" alt="" /></div>`
     : `<div class="tiles"><div class="tile back1"></div><div class="tile back2"></div><div class="tile front"><svg viewBox="0 0 24 24">${icons[icon]}</svg></div></div>`;
   return `
-    <div class="copy">${brand}<h1>${title}</h1><p class="subtitle">${subtitle}</p><p class="lead">${lead}</p></div>
+    <div class="copy">${brand}<h1>${title}</h1>${subtitle ? `<p class="subtitle">${subtitle}</p>` : ""}<p class="lead">${lead}</p></div>
     <div class="pills"><span class="pill">tripletalk.app</span></div>
     ${visual}`;
 }
@@ -99,28 +99,44 @@ const images = {
     lead: "TripleTalk turns textbooks, notes or any text into flashcards with translations, examples and pronunciation.",
     pills: ["Free on iOS and Android", "AI flashcards"],
   }),
-  guide: pageImage({
+  "guide-pl": pageImage({
     title: "Instrukcja",
-    subtitle: "User guide",
-    lead: "Jak zacząć, dodać fiszki z&nbsp;AI i&nbsp;uczyć się skuteczniej – krok po kroku.",
+    lead: "Jak zacząć, zrobić fiszki z&nbsp;AI i&nbsp;uczyć się skuteczniej – krok po kroku.",
     screenshot: "tripletalk-lesson.webp",
   }),
-  privacy: pageImage({
+  "guide-en": pageImage({
+    title: "User guide",
+    lead: "How to get started, make AI flashcards and learn more effectively – step by step.",
+    screenshot: "tripletalk-lesson.webp",
+  }),
+  "privacy-pl": pageImage({
     title: "Polityka prywatności",
-    subtitle: "Privacy Policy",
     lead: "Jakie dane zbieramy, po co i&nbsp;jakie masz prawa – prostym językiem.",
     icon: "shield",
   }),
-  terms: pageImage({
+  "privacy-en": pageImage({
+    title: "Privacy Policy",
+    lead: "What data we collect, why, and what your rights are – in plain language.",
+    icon: "shield",
+  }),
+  "terms-pl": pageImage({
     title: "Regulamin",
-    subtitle: "Terms of Service",
     lead: "Zasady korzystania z&nbsp;TripleTalk, Premium i&nbsp;fiszek AI – prostym językiem.",
     icon: "document",
   }),
-  support: pageImage({
+  "terms-en": pageImage({
+    title: "Terms of Service",
+    lead: "The rules for using TripleTalk, Premium and AI flashcards – in plain language.",
+    icon: "document",
+  }),
+  "support-pl": pageImage({
     title: "Kontakt",
-    subtitle: "Contact",
     lead: "Masz pytanie o&nbsp;aplikację, konto albo płatności? Napisz do nas, chętnie pomożemy.",
+    icon: "chat",
+  }),
+  "support-en": pageImage({
+    title: "Contact",
+    lead: "Questions about the app, your account or payments? Write to us, we're happy to help.",
     icon: "chat",
   }),
 };

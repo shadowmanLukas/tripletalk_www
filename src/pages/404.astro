@@ -97,11 +97,15 @@ import SiteHeader from "../components/SiteHeader.astro";
 
       const translatedNodes = document.querySelectorAll("[data-i18n]");
       const homeLink = document.querySelector<HTMLAnchorElement>("[data-home-link]");
+      const localizedLinks = document.querySelectorAll<HTMLAnchorElement>("[data-href-pl][data-href-en]");
 
       function setLanguage(language: "pl" | "en") {
         document.documentElement.lang = language;
         document.title = translations[language].pageTitle;
         if (homeLink) homeLink.href = language === "en" ? "/en/" : "/";
+        localizedLinks.forEach((link) => {
+          link.href = (language === "en" ? link.dataset.hrefEn : link.dataset.hrefPl) ?? link.href;
+        });
 
         translatedNodes.forEach((node) => {
           const key = node.getAttribute("data-i18n");

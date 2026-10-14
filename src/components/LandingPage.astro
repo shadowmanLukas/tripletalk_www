@@ -5,11 +5,13 @@ import {
   landingSeo,
   type LandingLanguage,
 } from "../lib/landing-content";
+import LanguageSuggestion from "./LanguageSuggestion.astro";
 import LanguageTicker from "./LanguageTicker.astro";
 import SiteFooter from "./SiteFooter.astro";
 import SiteHeader from "./SiteHeader.astro";
 import SocialMeta from "./SocialMeta.astro";
 import StoreButtons from "./StoreButtons.astro";
+import { pagePath } from "../lib/site-pages";
 
 interface Props {
   language: LandingLanguage;
@@ -18,7 +20,7 @@ interface Props {
 const { language } = Astro.props;
 const copy = landingContent[language];
 const seo = landingSeo[language];
-const guideHref = "/guide/";
+const guideHref = pagePath("guide", language);
 
 // Simple stroke icons for the benefit cards (24px grid, drawn with currentColor).
 const benefitIcons: Record<string, string> = {
@@ -112,11 +114,8 @@ const structuredData = [
     />
   </head>
   <body>
-    <SiteHeader
-      currentPage="home"
-      language={language}
-      navigation={copy.navigation}
-    />
+    <SiteHeader currentPage="home" language={language} />
+    <LanguageSuggestion page="home" language={language} />
 
     <main class="landing-main">
       <section class="hero" id="top">
@@ -458,7 +457,7 @@ const structuredData = [
               <strong>{copy.faq.contactTitle}</strong>
               <p>{copy.faq.contactText}</p>
             </div>
-            <a class="faq-contact-primary" href="/support/">
+            <a class="faq-contact-primary" href={pagePath("support", language)}>
               {copy.faq.contactLabel}
             </a>
           </div>
@@ -490,7 +489,7 @@ const structuredData = [
       </section>
     </main>
 
-    <SiteFooter currentPage="home" language={language} content={copy.footer} />
+    <SiteFooter currentPage="home" language={language} />
 
     <script>
       type Flashcard = { front: string; back: string };

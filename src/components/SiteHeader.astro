@@ -1,47 +1,33 @@
 ---
-type Page = "home" | "terms" | "privacy" | "support" | "guide" | "notFound";
-type Language = "pl" | "en";
+import { landingContent } from "../lib/landing-content";
+import { pagePath, type SitePage } from "../lib/site-pages";
 
-interface NavigationContent {
-  label: string;
-  brandHome: string;
-  menuOpen: string;
-  features: string;
-  how: string;
-  teachers: string;
-  pricing: string;
-  languageLabel: string;
-}
+type Page = SitePage | "notFound";
+type Language = "pl" | "en";
 
 interface Props {
   currentPage?: Page;
   language?: Language;
-  navigation?: NavigationContent;
 }
 
-const { currentPage = "home", language = "pl", navigation } = Astro.props;
+const { currentPage = "home", language = "pl" } = Astro.props;
 const isHome = currentPage === "home";
 const homeHref = language === "en" ? "/en/" : "/";
 const sectionPrefix = isHome ? "" : homeHref;
-const labels = navigation ?? {
-  label: "Main navigation",
-  brandHome: "TripleTalk home",
-  menuOpen: "Open menu",
-  features: "About the app",
-  how: "How it works",
-  teachers: "For teachers",
-  pricing: "Premium",
-  languageLabel: "Language",
-};
+const labels = landingContent[language].navigation;
 const sectionLinks = [
   { id: "use-cases", key: "navFeatures", label: labels.features },
   { id: "how-it-works", key: "navHow", label: labels.how },
   { id: "teachers", key: "navTeachers", label: labels.teachers },
   { id: "premium", key: "navPricing", label: labels.pricing },
 ];
+// Every page except the bilingual 404 has a separate URL per language.
+const switchesByUrl = currentPage !== "notFound";
+const languageHref = (code: Language) =>
+  currentPage === "notFound" ? pagePath("home", code) : pagePath(currentPage, code);
 const languages: { code: Language; label: string; href: string }[] = [
-  { code: "pl", label: "PL", href: "/" },
-  { code: "en", label: "EN", href: "/en/" },
+  { code: "pl", label: "PL", href: languageHref("pl") },
+  { code: "en", label: "EN", href: languageHref("en") },
 ];
 ---
 
@@ -77,7 +63,7 @@ const languages: { code: Language; label: string; href: string }[] = [
         <div class="language-switch" role="group" aria-label={labels.languageLabel}>
           {
             languages.map((item) =>
-              isHome ? (
+              switchesByUrl ? (
                 <a
                   href={item.href}
                   lang={item.code}
@@ -124,8 +110,8 @@ const languages: { code: Language; label: string; href: string }[] = [
     if (event.key === "Escape") setMenuOpen(false);
   });
 
-  // The landing pages switch language by URL; the other pages translate in place, so the
-  // buttons there remember the choice and ask the page to re-render.
+  // Pages switch language by URL; the bilingual 404 page translates in place, so its buttons
+  // remember the choice and ask the page to re-render.
   document.querySelectorAll<HTMLElement>("[data-language]").forEach((control) => {
     control.addEventListener("click", () => {
       const language = control.dataset.language as VisitorLanguage;
@@ -137,7 +123,7 @@ const languages: { code: Language; label: string; href: string }[] = [
     });
   });
 
-  // Off the landing page, links to it follow the language the page is shown in.
+  // On the 404 page, links to the landing page follow the language the page is shown in.
   const homeLinks = document.querySelectorAll<HTMLAnchorElement>("[data-home-hash]");
   function syncHomeLinks() {
     const home = document.documentElement.lang === "en" ? "/en/" : "/";

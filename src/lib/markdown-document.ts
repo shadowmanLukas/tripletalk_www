@@ -208,11 +208,11 @@ export const guideLinkRules: Record<DocumentLanguage, LinkRule[]> = {
     },
   ],
   en: [
-    { pattern: /Terms of Service/u, href: "/terms/" },
-    { pattern: /Privacy Policy/u, href: "/privacy/" },
+    { pattern: /Terms of Service/u, href: "/en/terms/" },
+    { pattern: /Privacy Policy/u, href: "/en/privacy/" },
     {
       pattern: /(?<![\p{L}\p{N}@.])tripletalk\.app(?![\p{L}\p{N}/])/u,
-      href: "/",
+      href: "/en/",
     },
   ],
 };
