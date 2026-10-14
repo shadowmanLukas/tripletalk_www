@@ -4,3 +4,10 @@
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
   Content-Security-Policy: default-src 'self'; connect-src 'self' https://*.googleapis.com; img-src 'self' blob: data:; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'
+
+# The pages.dev copies (production and previews) duplicate tripletalk.app; keep them out of search.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

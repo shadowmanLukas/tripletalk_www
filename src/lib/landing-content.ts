@@ -2,9 +2,9 @@ export type LandingLanguage = "pl" | "en";
 
 export const landingSeo = {
   pl: {
-    title: "TripleTalk | Ucz się słówek z własnych materiałów",
+    title: "Fiszki AI do nauki słówek z własnych materiałów | TripleTalk",
     description:
-      "Zrób zdjęcie podręcznika albo wklej tekst, a TripleTalk zrobi z niego fiszki z tłumaczeniem, przykładami i wymową. Inteligentne powtórki i lekcje audio. Za darmo na iOS i Androida.",
+      "Zrób zdjęcie podręcznika albo wklej tekst, a TripleTalk zrobi z niego fiszki z tłumaczeniem, przykładami i wymową. Za darmo na iOS i Androida.",
     shareTitle: "TripleTalk – fiszki AI z Twoich własnych materiałów",
     shareDescription:
       "Zrób zdjęcie podręcznika albo wklej tekst, a TripleTalk zrobi z niego fiszki z tłumaczeniem, przykładami i wymową. Za darmo na iOS i Androida.",
@@ -13,9 +13,9 @@ export const landingSeo = {
     locale: "pl_PL",
   },
   en: {
-    title: "TripleTalk | Learn vocabulary from your own materials",
+    title: "AI vocabulary flashcards from your own materials | TripleTalk",
     description:
-      "Snap a textbook page or paste any text, and TripleTalk turns it into flashcards with translations, examples and pronunciation. Smart reviews and audio lessons. Free on iOS and Android.",
+      "Snap a textbook page or paste any text, and TripleTalk turns it into flashcards with translations, examples and pronunciation. Free on iOS and Android.",
     shareTitle: "TripleTalk – AI flashcards from your own materials",
     shareDescription:
       "Snap a textbook page or paste any text, and TripleTalk turns it into flashcards with translations, examples and pronunciation. Free on iOS and Android.",
