@@ -2397,6 +2397,129 @@ h3 {
   display: block;
 }
 
+/* 404 page: a flashcard with the word "lost" next to the heading and links back. */
+.notfound-hero {
+  padding-top: 72px;
+}
+
+.notfound-layout {
+  display: grid;
+  justify-items: center;
+  gap: 40px;
+}
+
+.notfound-stack {
+  position: relative;
+  width: min(100%, 260px);
+  transform: rotate(-3deg);
+}
+
+.notfound-stack::before,
+.notfound-stack::after {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  content: "";
+}
+
+.notfound-stack::before {
+  background: linear-gradient(160deg, #9b7bff, #6c4ee6);
+  transform: rotate(-9deg) translate(-14px, 4px);
+}
+
+.notfound-stack::after {
+  background: linear-gradient(160deg, #22c3ff, #1488e8);
+  transform: rotate(-4deg) translate(-6px, 2px);
+}
+
+.notfound-card {
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-panel);
+}
+
+.notfound-card-code {
+  display: block;
+  color: var(--accent-text);
+  font-size: 3.4rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.notfound-card dl {
+  display: grid;
+  margin: 16px 0 0;
+}
+
+.notfound-card dl > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--border-soft);
+  padding: 10px 0;
+}
+
+.notfound-card dt {
+  color: var(--text-faint);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.notfound-card dd {
+  margin: 0;
+  color: var(--text-strong);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.notfound-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px 24px;
+  margin-top: 28px;
+}
+
+.notfound-actions .faq-contact-primary {
+  flex-basis: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .notfound-layout {
+    grid-template-columns: auto minmax(0, 560px);
+    align-items: center;
+    justify-content: center;
+    gap: 72px;
+  }
+
+  .notfound-heading {
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  .notfound-stack {
+    width: 300px;
+  }
+
+  .notfound-actions {
+    justify-content: flex-start;
+  }
+
+  .notfound-actions .faq-contact-primary {
+    flex-basis: auto;
+  }
+}
+
 .support-options {
   position: relative;
 }

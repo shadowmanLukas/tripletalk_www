@@ -1,0 +1,127 @@
+---
+// Served by Cloudflare Pages with a 404 status for every unknown path (dist/404.html).
+import "../styles/global.css";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Page not found | TripleTalk</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/tripletalk-logo.png" />
+  </head>
+  <body class="support-body">
+    <SiteHeader currentPage="notFound" />
+
+    <main class="support-page">
+      <section class="support-hero notfound-hero" aria-labelledby="notfound-title">
+        <div class="container notfound-layout">
+          <div class="notfound-stack" aria-hidden="true">
+            <div class="notfound-card">
+              <span class="notfound-card-code">404</span>
+              <dl>
+                <div>
+                  <dt>Polski</dt>
+                  <dd>zgubiony</dd>
+                </div>
+                <div>
+                  <dt>English</dt>
+                  <dd>lost</dd>
+                </div>
+                <div>
+                  <dt>Deutsch</dt>
+                  <dd>verloren</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+          <div class="support-heading notfound-heading">
+            <p class="eyebrow" data-i18n="eyebrow">Error 404</p>
+            <h1 id="notfound-title" data-i18n="title">This page got lost</h1>
+            <p class="support-intro" data-i18n="intro">
+              The address may have changed or contain a typo. Head back to the home page or find what you need below.
+            </p>
+            <div class="notfound-actions">
+              <a class="faq-contact-primary" href="/" data-home-link data-i18n="home">Go to the home page</a>
+              <a class="text-link" href="/guide/"><span data-i18n="guide">User guide</span> <span aria-hidden="true">→</span></a>
+              <a class="text-link" href="/support/"><span data-i18n="support">Contact</span> <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter currentPage="notFound" />
+
+    <script>
+      import { getVisitorLanguage } from "../scripts/visitor-language";
+
+      const translations = {
+        pl: {
+          navFeatures: "O aplikacji",
+          navHow: "Jak to działa",
+          navTeachers: "Dla nauczycieli",
+          navPricing: "Premium",
+          eyebrow: "Błąd 404",
+          title: "Ta strona się zgubiła",
+          intro:
+            "Adres mógł się zmienić albo ma literówkę. Wróć na stronę główną albo znajdź to, czego szukasz, poniżej.",
+          home: "Przejdź na stronę główną",
+          guide: "Instrukcja",
+          support: "Kontakt",
+          footerPrivacy: "Polityka prywatności",
+          footerTerms: "Regulamin",
+          footerGuide: "Instrukcja",
+          footerSupport: "Kontakt",
+          pageTitle: "Nie znaleziono strony | TripleTalk",
+        },
+        en: {
+          navFeatures: "About the app",
+          navHow: "How it works",
+          navTeachers: "For teachers",
+          navPricing: "Premium",
+          eyebrow: "Error 404",
+          title: "This page got lost",
+          intro:
+            "The address may have changed or contain a typo. Head back to the home page or find what you need below.",
+          home: "Go to the home page",
+          guide: "User guide",
+          support: "Contact",
+          footerPrivacy: "Privacy Policy",
+          footerTerms: "Terms of Service",
+          footerGuide: "Guide",
+          footerSupport: "Contact",
+          pageTitle: "Page not found | TripleTalk",
+        },
+      };
+
+      const translatedNodes = document.querySelectorAll("[data-i18n]");
+      const homeLink = document.querySelector<HTMLAnchorElement>("[data-home-link]");
+
+      function setLanguage(language: "pl" | "en") {
+        document.documentElement.lang = language;
+        document.title = translations[language].pageTitle;
+        if (homeLink) homeLink.href = language === "en" ? "/en/" : "/";
+
+        translatedNodes.forEach((node) => {
+          const key = node.getAttribute("data-i18n");
+          if (key && key in translations[language]) {
+            node.textContent = translations[language][key as keyof (typeof translations)["pl"]];
+          }
+        });
+      }
+
+      document.addEventListener("tripletalk:language", (event) => {
+        setLanguage((event as CustomEvent<"pl" | "en">).detail);
+      });
+
+      setLanguage(await getVisitorLanguage());
+    </script>
+  </body>
+</html>
