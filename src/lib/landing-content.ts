@@ -4,13 +4,23 @@ export const landingSeo = {
   pl: {
     title: "TripleTalk | Ucz się słówek z własnych materiałów",
     description:
-      "Zrób zdjęcie podręcznika albo wklej tekst, a TripleTalk przygotuje fiszki z tłumaczeniami, przykładami i wymową. Inteligentne powtórki, lekcje audio i dwa języki naraz.",
+      "Zrób zdjęcie podręcznika albo wklej tekst, a TripleTalk zrobi z niego fiszki z tłumaczeniem, przykładami i wymową. Inteligentne powtórki i lekcje audio. Za darmo na iOS i Androida.",
+    shareTitle: "TripleTalk – fiszki AI z Twoich własnych materiałów",
+    shareDescription:
+      "Zrób zdjęcie podręcznika albo wklej tekst, a TripleTalk zrobi z niego fiszki z tłumaczeniem, przykładami i wymową. Za darmo na iOS i Androida.",
+    imageAlt:
+      "TripleTalk: zrób zdjęcie i ucz się słówek. Ekrany aplikacji z fiszkami AI.",
     locale: "pl_PL",
   },
   en: {
     title: "TripleTalk | Learn vocabulary from your own materials",
     description:
-      "Snap a textbook page or paste text, and TripleTalk creates flashcards with translations, examples and pronunciation. Smart reviews, audio lessons and two languages at once.",
+      "Snap a textbook page or paste any text, and TripleTalk turns it into flashcards with translations, examples and pronunciation. Smart reviews and audio lessons. Free on iOS and Android.",
+    shareTitle: "TripleTalk – AI flashcards from your own materials",
+    shareDescription:
+      "Snap a textbook page or paste any text, and TripleTalk turns it into flashcards with translations, examples and pronunciation. Free on iOS and Android.",
+    imageAlt:
+      "TripleTalk: snap a photo and learn the words. App screens with AI flashcards.",
     locale: "en_US",
   },
 } as const;

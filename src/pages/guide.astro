@@ -3,6 +3,7 @@ import "../styles/global.css";
 import MarkdownDocument from "../components/MarkdownDocument.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import SocialMeta from "../components/SocialMeta.astro";
 import { loadGuide } from "../lib/documents";
 
 const documents = [
@@ -16,20 +17,15 @@ const documents = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="TripleTalk user guide: how to create lessons, add flashcards with TripleTalk AI and learn with spaced repetition."
-    />
+    <meta name="description" content="Jak zacząć, dodać fiszki z AI i uczyć się skuteczniej – krok po kroku. How to get started with TripleTalk, step by step." />
     <meta name="robots" content="index, follow" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tripletalk.app/guide/" />
-    <meta property="og:title" content="User Guide | TripleTalk" />
-    <meta property="og:description" content="How to use the TripleTalk mobile application, step by step." />
-    <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="User Guide | TripleTalk" />
-    <meta name="twitter:description" content="How to use the TripleTalk mobile application, step by step." />
-    <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
+    <SocialMeta
+      title="Instrukcja · User guide | TripleTalk"
+      description="Jak zacząć, dodać fiszki z AI i uczyć się skuteczniej – krok po kroku. How to get started with TripleTalk, step by step."
+      url="https://tripletalk.app/guide/"
+      image="guide"
+      imageAlt="Instrukcja obsługi TripleTalk / TripleTalk user guide"
+    />
     <title>User Guide | TripleTalk</title>
     <link rel="canonical" href="https://tripletalk.app/guide/" />
     <link rel="icon" href="/favicon.png" type="image/png" />

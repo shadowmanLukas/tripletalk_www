@@ -3,6 +3,7 @@ import "../styles/global.css";
 import MarkdownDocument from "../components/MarkdownDocument.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import SocialMeta from "../components/SocialMeta.astro";
 import { loadLegalDocument } from "../lib/documents";
 
 const documents = [
@@ -16,20 +17,15 @@ const documents = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="TripleTalk Terms of Service and Polish terms for the TripleTalk mobile application."
-    />
+    <meta name="description" content="Zasady korzystania z TripleTalk, Premium i fiszek AI – prostym językiem. The rules for TripleTalk, Premium and AI flashcards, in plain language." />
     <meta name="robots" content="index, follow" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tripletalk.app/terms/" />
-    <meta property="og:title" content="Terms of Service | TripleTalk" />
-    <meta property="og:description" content="Terms of Service for the TripleTalk mobile application." />
-    <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Terms of Service | TripleTalk" />
-    <meta name="twitter:description" content="Terms of Service for the TripleTalk mobile application." />
-    <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
+    <SocialMeta
+      title="Regulamin · Terms of Service | TripleTalk"
+      description="Zasady korzystania z TripleTalk, Premium i fiszek AI – prostym językiem. The rules for TripleTalk, Premium and AI flashcards, in plain language."
+      url="https://tripletalk.app/terms/"
+      image="terms"
+      imageAlt="Regulamin TripleTalk / TripleTalk Terms of Service"
+    />
     <title>Terms of Service | TripleTalk</title>
     <link rel="canonical" href="https://tripletalk.app/terms/" />
     <link rel="icon" href="/favicon.png" type="image/png" />

@@ -50,6 +50,10 @@ admin: true
 
 Claim należy nadać przez zaufane narzędzie administracyjne lub backend aplikacji mobilnej korzystający z Firebase Admin SDK — nie z tej strony. Po zmianie claimu wyloguj użytkownika, aby panel pobrał świeży token.
 
+## Podglądy linków
+
+Obrazki podglądu (Open Graph, 1200×630, JPEG) leżą w `public/og/`: `home-pl`, `home-en` oraz po jednym dla `guide`, `privacy`, `terms` i `support`. Generuje je `npm run og` (`scripts/og-images.mjs`: szablony HTML renderowane przez headless Chrome i kompresowane przez sharp). Teksty na obrazkach zmienia się w tym skrypcie, a potem trzeba go uruchomić ponownie i zacommitować nowe pliki. Metatagi ustawia `src/components/SocialMeta.astro`; tytuły i opisy strony głównej są w `landingSeo` (`src/lib/landing-content.ts`), a podstron w ich plikach w `src/pages/`.
+
 ## Google Analytics
 
 Strony publiczne (bez `/adminpanel`) mogą korzystać z Google Analytics 4. Wystarczy ustawić zmienną builda `PUBLIC_GA_MEASUREMENT_ID` (format `G-XXXXXXXXXX`, z **GA → Administracja → Strumienie danych → Sieć**). Bez niej strona buduje się bez analityki.

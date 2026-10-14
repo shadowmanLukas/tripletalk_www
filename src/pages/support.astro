@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import SocialMeta from "../components/SocialMeta.astro";
 ---
 
 <!doctype html>
@@ -9,26 +10,15 @@ import SiteHeader from "../components/SiteHeader.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Questions about the TripleTalk app, your account or your data? Email us, read the guide or report a problem from the app."
-    />
+    <meta name="description" content="Masz pytanie o aplikację, konto albo płatności? Napisz do nas, chętnie pomożemy. Questions about the app, your account or payments? We are happy to help." />
     <meta name="robots" content="index, follow" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tripletalk.app/support/" />
-    <meta property="og:title" content="Contact | TripleTalk" />
-    <meta
-      property="og:description"
-      content="Questions about the TripleTalk app, your account or your data? Email us, read the guide or report a problem from the app."
+    <SocialMeta
+      title="Kontakt · Contact | TripleTalk"
+      description="Masz pytanie o aplikację, konto albo płatności? Napisz do nas, chętnie pomożemy. Questions about the app, your account or payments? We are happy to help."
+      url="https://tripletalk.app/support/"
+      image="support"
+      imageAlt="Kontakt z TripleTalk / Contact TripleTalk"
     />
-    <meta property="og:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Contact | TripleTalk" />
-    <meta
-      name="twitter:description"
-      content="Questions about the TripleTalk app, your account or your data? Email us, read the guide or report a problem from the app."
-    />
-    <meta name="twitter:image" content="https://tripletalk.app/assets/tripletalk-logo-with-background.png" />
     <title>Contact | TripleTalk</title>
     <link rel="canonical" href="https://tripletalk.app/support/" />
     <link rel="icon" href="/favicon.png" type="image/png" />
