@@ -10,7 +10,7 @@ function render(lang = "en") {
   document.documentElement.lang = lang;
   document.head.innerHTML = "";
   document.body.innerHTML = `
-    <button id="cookie-settings" data-consent-i18n="settings" hidden>Cookie settings</button>
+    <button id="cookie-settings" data-consent-i18n="settings" hidden>Cookies</button>
     <div id="cookie-consent" data-measurement-id="G-TEST1234" hidden>
       <span data-consent-i18n="text"></span>
       <button data-consent-decline data-consent-i18n="decline">Decline</button>

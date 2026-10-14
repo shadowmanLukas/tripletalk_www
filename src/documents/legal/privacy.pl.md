@@ -128,7 +128,7 @@ Masz prawo do:
 - ograniczenia przetwarzania,
 - przeniesienia danych, które nam przekazałeś,
 - sprzeciwu wobec przetwarzania opartego na naszym prawnie uzasadnionym interesie (w tym analityki i zabezpieczeń bonusu),
-- cofnięcia zgody w każdej chwili (np. wyłączając powiadomienia w ustawieniach telefonu albo zmieniając wybór w "Ustawieniach cookies" na stronie), bez wpływu na zgodność z prawem wcześniejszego przetwarzania,
+- cofnięcia zgody w każdej chwili (np. wyłączając powiadomienia w ustawieniach telefonu albo zmieniając wybór pod przyciskiem "Cookies" w stopce strony), bez wpływu na zgodność z prawem wcześniejszego przetwarzania,
 - skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa) lub organu nadzorczego w kraju, w którym mieszkasz.
 
 Napisz na support@tripletalk.app z adresu przypisanego do konta. Odpowiemy w ciągu 14 dni. Możemy poprosić o potwierdzenie tożsamości.
@@ -149,7 +149,7 @@ Napisz na support@tripletalk.app z adresu przypisanego do konta. Odpowiemy w ci�
 1. Stronę tripletalk.app udostępniamy za pośrednictwem Cloudflare. Przy każdej wizycie Cloudflare przetwarza adres IP, dane przeglądarki i adres odwiedzanej podstrony, aby dostarczyć stronę i chronić ją przed atakami. Na tej podstawie strona rozpoznaje też kraj odwiedzającego, aby wyświetlić ją w odpowiednim języku. Podstawą jest nasz prawnie uzasadniony interes (f).
 2. Jeśli wyrazisz zgodę w banerze cookies, korzystamy z Google Analytics, aby sprawdzać, jak odwiedzający korzystają ze strony: które podstrony oglądają, jak je przewijają, w które linki wychodzące klikają, z jakiego kraju lub miasta (w przybliżeniu), urządzenia i przeglądarki korzystają. Google Analytics zapisuje w przeglądarce pliki cookie `_ga` i `_ga_*` z pseudonimowym identyfikatorem. Podstawą jest Twoja zgoda (a).
 3. Bez zgody Google Analytics nie jest wczytywany i nie zapisuje plików cookie. Danych ze strony nie używamy do reklam i nie łączymy ich z kontem w Aplikacji.
-4. Zgodę możesz w każdej chwili zmienić lub cofnąć przyciskiem "Ustawienia cookies" w stopce strony. Cofnięcie zgody usuwa pliki cookie Google Analytics. Wybór zgody i języka strona zapamiętuje w pamięci przeglądarki i nie przesyła ich do nas.
+4. Zgodę możesz w każdej chwili zmienić lub cofnąć przyciskiem "Cookies" w stopce strony. Cofnięcie zgody usuwa pliki cookie Google Analytics. Wybór zgody i języka strona zapamiętuje w pamięci przeglądarki i nie przesyła ich do nas.
 
 ## 15. Bezpieczeństwo
 

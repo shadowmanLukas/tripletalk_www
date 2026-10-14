@@ -128,7 +128,7 @@ You have the right to:
 - restrict processing,
 - data portability for data you provided to us,
 - object to processing based on our legitimate interest (including analytics and welcome bonus safeguards),
-- withdraw consent at any time (e.g. by turning off notifications in your phone settings or changing your choice in "Cookie settings" on the website), without affecting the lawfulness of earlier processing,
+- withdraw consent at any time (e.g. by turning off notifications in your phone settings or changing your choice with the "Cookies" button in the website footer), without affecting the lawfulness of earlier processing,
 - lodge a complaint with the Polish supervisory authority (Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warsaw) or the supervisory authority in your country of residence.
 
 Write to support@tripletalk.app from the email address linked to your account. We reply within 14 days and may ask you to confirm your identity.
@@ -149,7 +149,7 @@ Write to support@tripletalk.app from the email address linked to your account. W
 1. The tripletalk.app website is served through Cloudflare. On every visit Cloudflare processes your IP address, browser details and the address of the page you open, to deliver the website and protect it from attacks. The website also uses this to recognise the visitor's country and show it in the right language. The legal basis is our legitimate interest (f).
 2. If you consent in the cookie banner, we use Google Analytics to understand how visitors use the website: which pages they view, how they scroll, which outbound links they click, their approximate country or city, and the device and browser they use. Google Analytics stores the `_ga` and `_ga_*` cookies with a pseudonymous identifier in your browser. The legal basis is your consent (a).
 3. Without consent, Google Analytics is not loaded and stores no cookies. We do not use website data for advertising and do not link it to your App account.
-4. You can change or withdraw your consent at any time with the "Cookie settings" button in the website footer. Withdrawing consent deletes the Google Analytics cookies. The website remembers your consent and language choice in your browser's storage and does not send them to us.
+4. You can change or withdraw your consent at any time with the "Cookies" button in the website footer. Withdrawing consent deletes the Google Analytics cookies. The website remembers your consent and language choice in your browser's storage and does not send them to us.
 
 ## 15. Security
 

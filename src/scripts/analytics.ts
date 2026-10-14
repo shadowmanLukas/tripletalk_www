@@ -12,14 +12,14 @@ const bannerCopy: Record<BannerLanguage, Record<string, string>> = {
     privacy: "Polityka prywatności",
     accept: "Akceptuję",
     decline: "Odrzucam",
-    settings: "Ustawienia cookies",
+    settings: "Cookies",
   },
   en: {
     text: "We use Google Analytics to understand how visitors use this site. Analytics cookies are only stored if you agree.",
     privacy: "Privacy Policy",
     accept: "Accept",
     decline: "Decline",
-    settings: "Cookie settings",
+    settings: "Cookies",
   },
 };
 
