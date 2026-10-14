@@ -2397,7 +2397,7 @@ h3 {
   display: block;
 }
 
-/* 404 page: a flashcard with the word "lost" next to the heading and links back. */
+/* 404 page: a flashcard with the word "lost" next to the heading and a way back home. */
 .notfound-hero {
   padding-top: 72px;
 }
@@ -2482,16 +2482,8 @@ h3 {
 
 .notfound-actions {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  gap: 14px 24px;
   margin-top: 28px;
-}
-
-.notfound-actions .faq-contact-primary {
-  flex-basis: 100%;
-  justify-content: center;
 }
 
 @media (min-width: 900px) {
@@ -2513,10 +2505,6 @@ h3 {
 
   .notfound-actions {
     justify-content: flex-start;
-  }
-
-  .notfound-actions .faq-contact-primary {
-    flex-basis: auto;
   }
 }
 
