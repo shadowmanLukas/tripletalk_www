@@ -132,6 +132,8 @@ export function initAnalytics(doc: Document = document) {
 
   const consent = readConsent();
   if (consent === "granted") loadGoogleAnalytics(measurementId, doc);
+  // gtag.js can rewrite its cookies while the page unloads after a decline, so clear them again.
+  if (consent === "denied") clearAnalyticsCookies(doc);
   banner.hidden = consent !== null;
   if (settingsButton) settingsButton.hidden = false;
 

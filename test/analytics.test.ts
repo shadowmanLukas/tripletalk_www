@@ -70,6 +70,16 @@ describe("analytics consent", () => {
     expect(gtagScript()).toBeNull();
   });
 
+  it("clears leftover GA cookies on load after a decline", () => {
+    localStorage.setItem("tripletalk-analytics-consent-v1", "denied");
+    document.cookie = "_ga_TEST1234=GS1.1.1; path=/";
+    document.cookie = "other=1; path=/";
+    render();
+    initAnalytics();
+    expect(document.cookie).not.toContain("_ga_TEST1234");
+    expect(document.cookie).toContain("other=1");
+  });
+
   it("reopens the banner from the footer button", () => {
     localStorage.setItem("tripletalk-analytics-consent-v1", "denied");
     render();
