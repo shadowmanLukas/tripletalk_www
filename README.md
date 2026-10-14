@@ -50,6 +50,12 @@ admin: true
 
 Claim należy nadać przez zaufane narzędzie administracyjne lub backend aplikacji mobilnej korzystający z Firebase Admin SDK — nie z tej strony. Po zmianie claimu wyloguj użytkownika, aby panel pobrał świeży token.
 
+## Google Analytics
+
+Strony publiczne (bez `/adminpanel`) mogą korzystać z Google Analytics 4. Wystarczy ustawić zmienną builda `PUBLIC_GA_MEASUREMENT_ID` (format `G-XXXXXXXXXX`, z **GA → Administracja → Strumienie danych → Sieć**). Bez niej strona buduje się bez analityki.
+
+`gtag.js` ładuje się dopiero po kliknięciu „Akceptuję” w banerze cookies (`src/components/CookieConsent.astro`, logika w `src/scripts/analytics.ts`). Do tego czasu nic nie trafia do Google i nie są zapisywane żadne cookies. Wybór jest zapisywany w `localStorage`, a link „Ustawienia cookies” w stopce pozwala go zmienić; odrzucenie usuwa cookies `_ga*`. Sygnały reklamowe (`ad_storage`, `ad_user_data`, `ad_personalization`) są zawsze wyłączone przez Consent Mode.
+
 ## Security Rules
 
 Aktualne reguły i indeksy znajdują się w sąsiednim repozytorium `tripletalk`. Zmiany potrzebne panelowi są tu trzymane jako patche: zachowują istniejącą walidację i dodają tylko uprawnienia odczytu dla administratora.

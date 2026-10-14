@@ -1,4 +1,6 @@
 ---
+import CookieConsent from "./CookieConsent.astro";
+
 type Page = "home" | "terms" | "privacy" | "support" | "guide";
 type Language = "pl" | "en";
 
@@ -44,6 +46,10 @@ const labels = content ?? {
       <a href="/support/" data-i18n="footerSupport" aria-current={currentPage === "support" ? "page" : undefined}>
         {labels.support}
       </a>
+      <button type="button" id="cookie-settings" class="footer-cookie-settings" data-consent-i18n="settings" hidden>
+        Cookie settings
+      </button>
     </nav>
   </div>
 </footer>
+<CookieConsent />

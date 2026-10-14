@@ -1,0 +1,40 @@
+---
+// Rendered only when a GA4 measurement ID is configured; without it the site has no analytics.
+const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim();
+---
+
+{
+  measurementId && (
+    <>
+      <div
+        id="cookie-consent"
+        class="cookie-consent"
+        role="region"
+        aria-label="Cookies"
+        data-measurement-id={measurementId}
+        hidden
+      >
+        <p>
+          <span data-consent-i18n="text">
+            We use Google Analytics to understand how visitors use this site. Analytics cookies are
+            only stored if you agree.
+          </span>{" "}
+          <a href="/privacy" data-consent-i18n="privacy">
+            Privacy Policy
+          </a>
+        </p>
+        <div class="cookie-consent-actions">
+          <button type="button" class="cookie-consent-decline" data-consent-decline data-consent-i18n="decline">
+            Decline
+          </button>
+          <button type="button" class="cookie-consent-accept" data-consent-accept data-consent-i18n="accept">
+            Accept
+          </button>
+        </div>
+      </div>
+      <script>
+        import "../scripts/analytics";
+      </script>
+    </>
+  )
+}
