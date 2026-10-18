@@ -25,20 +25,80 @@ export function seriesColor(series: string[], name: string): string {
     : "var(--series-other)";
 }
 
+/** `label` gives series a readable name; without it names are shown as code. */
 export function renderChartLegend(
   container: HTMLElement,
   series: string[],
   hasOther: boolean,
+  label?: (name: string) => string,
 ): void {
   container.replaceChildren(
     ...[...series, ...(hasOther ? [OTHER_SERIES] : [])].map((name) => {
       const item = element("li");
       const swatch = element("span", "stats-swatch");
       swatch.style.background = seriesColor(series, name);
-      item.append(swatch, element("span", "mono", name));
+      item.append(
+        swatch,
+        label
+          ? element("span", undefined, label(name))
+          : element("span", "mono", name),
+      );
       return item;
     }),
   );
+}
+
+/** A value per day drawn as a line over the bars, on the same scale. */
+export interface ChartLine {
+  label: string;
+  /** One value per day; null where the day has no data. */
+  values: Array<number | null>;
+}
+
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+function renderChartLine(
+  container: HTMLElement,
+  line: ChartLine,
+  maximum: number,
+): void {
+  const count = line.values.length;
+  const svg = document.createElementNS(SVG_NS, "svg");
+  svg.setAttribute("class", "stats-chart-line");
+  svg.setAttribute("viewBox", `0 0 ${count} 100`);
+  svg.setAttribute("preserveAspectRatio", "none");
+  svg.setAttribute("aria-hidden", "true");
+  // Separate polylines so days without data leave a gap; a lone day gets a
+  // short dash so it stays visible.
+  let points: Array<[number, number]> = [];
+  const flush = () => {
+    if (points.length === 1) {
+      const [x, y] = points[0];
+      points = [
+        [x - 0.3, y],
+        [x + 0.3, y],
+      ];
+    }
+    if (points.length) {
+      const polyline = document.createElementNS(SVG_NS, "polyline");
+      polyline.setAttribute(
+        "points",
+        points.map(([x, y]) => `${x},${y}`).join(" "),
+      );
+      polyline.setAttribute("vector-effect", "non-scaling-stroke");
+      svg.append(polyline);
+    }
+    points = [];
+  };
+  line.values.forEach((value, index) => {
+    if (value === null) {
+      flush();
+      return;
+    }
+    points.push([index + 0.5, maximum ? 100 - (value / maximum) * 100 : 100]);
+  });
+  flush();
+  container.append(svg);
 }
 
 export function renderUsageChart(
@@ -46,8 +106,13 @@ export function renderUsageChart(
   days: ChartDay[],
   series: string[],
   format: (value: number) => string,
+  line?: ChartLine,
 ): void {
-  const maximum = Math.max(...days.map((day) => day.total), 0);
+  const maximum = Math.max(
+    ...days.map((day) => day.total),
+    ...(line?.values.map((value) => value ?? 0) || []),
+    0,
+  );
   const labelEvery = Math.max(1, Math.ceil(days.length / 8));
   container.style.setProperty("--stats-days", String(days.length));
   container.replaceChildren(
@@ -59,7 +124,9 @@ export function renderUsageChart(
       if (!day.aggregated && !day.live) column.classList.add("is-missing");
       column.setAttribute(
         "aria-label",
-        `${day.dayKey} UTC${day.live ? " (incomplete day)" : ""}: ${format(day.total)}${day.unpriced ? " plus usage without price" : ""}`,
+        !day.aggregated && !day.live
+          ? `${day.dayKey} UTC: no data`
+          : `${day.dayKey} UTC${day.live ? " (incomplete day)" : ""}: ${format(day.total)}${day.unpriced ? " plus usage without price" : ""}${line && line.values[index] !== null ? `, ${line.label}: ${format(line.values[index] ?? 0)}` : ""}`,
       );
       const stack = element("div", "stats-chart-stack");
       stack.style.height = maximum ? `${(day.total / maximum) * 100}%` : "0";
@@ -84,6 +151,7 @@ export function renderUsageChart(
       return column;
     }),
   );
+  if (line) renderChartLine(container, line, maximum);
   const axis =
     container.parentElement?.querySelector<HTMLElement>("[data-chart-max]");
   if (axis) axis.textContent = format(maximum);
@@ -94,6 +162,8 @@ export function renderChartTooltip(
   day: ChartDay,
   series: string[],
   format: (value: number) => string,
+  label?: (name: string) => string,
+  extra?: string,
 ): void {
   const nodes: Node[] = [element("strong", undefined, `${day.dayKey} UTC`)];
   if (day.live) nodes.push(element("span", "stats-tag", "Incomplete day"));
@@ -106,7 +176,9 @@ export function renderChartTooltip(
       swatch.style.background = seriesColor(series, segment.series);
       item.append(
         swatch,
-        element("span", "mono", segment.series),
+        label
+          ? element("span", "stats-tooltip-name", label(segment.series))
+          : element("span", "mono", segment.series),
         element("span", "numeric", format(segment.value)),
       );
       list.append(item);
@@ -120,6 +192,7 @@ export function renderChartTooltip(
       `Total: ${format(day.total)}${day.unpriced ? " + no price" : ""}`,
     ),
   );
+  if (extra) nodes.push(element("p", "stats-tooltip-extra", extra));
   tooltip.replaceChildren(...nodes);
 }
 

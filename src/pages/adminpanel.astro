@@ -139,6 +139,18 @@ import "../styles/admin.css";
               </svg>
               <span>Functions Stats</span>
             </a>
+            <a
+              class="admin-nav-item"
+              href="#ai-limits"
+              data-admin-view="ai-limits"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3 2.5 19.5h19L12 3Zm0 6v5m0 3v.01"
+                ></path>
+              </svg>
+              <span>AI Limits &amp; Errors</span>
+            </a>
           </nav>
         </aside>
 
@@ -667,6 +679,180 @@ import "../styles/admin.css";
               </section>
             </div>
           </section>
+          <section
+            data-admin-section="ai-limits"
+            aria-labelledby="ai-limits-title"
+            hidden
+          >
+            <div class="admin-title-row">
+              <div>
+                <p class="eyebrow">Cloud Functions</p>
+                <h1 id="ai-limits-title">AI Limits &amp; Errors</h1>
+              </div>
+              <button
+                class="admin-button secondary"
+                id="al-refresh-button"
+                type="button"
+              >
+                Refresh
+              </button>
+            </div>
+            <form class="stats-controls" id="al-controls">
+              <label>
+                From (UTC)
+                <input id="al-from" name="from" type="date" required />
+              </label>
+              <label>
+                To (UTC)
+                <input id="al-to" name="to" type="date" required />
+              </label>
+              <label class="stats-checkbox">
+                <input id="al-live" name="live" type="checkbox" />
+                Include today (live, incomplete day)
+              </label>
+              <button class="admin-button primary" type="submit">Show</button>
+            </form>
+            <details class="stats-thresholds">
+              <summary>Alert thresholds</summary>
+              <div class="stats-thresholds-grid">
+                <label>
+                  Final failures above (% of calls, per function and day)
+                  <input
+                    data-al-threshold="failureRatePercent"
+                    type="number"
+                    min="0.01"
+                    step="0.1"
+                    inputmode="decimal"
+                  />
+                </label>
+                <label>
+                  Retries above (× average of previous 7 days)
+                  <input
+                    data-al-threshold="retrySpikeFactor"
+                    type="number"
+                    min="0.1"
+                    step="0.5"
+                    inputmode="decimal"
+                  />
+                </label>
+                <label>
+                  Moderation: different users per code and day, at least
+                  <input
+                    data-al-threshold="moderationUsersPerDay"
+                    type="number"
+                    min="1"
+                    step="1"
+                    inputmode="numeric"
+                  />
+                </label>
+                <label>
+                  Moderation: rejections of one code by a single user per day,
+                  at least
+                  <input
+                    data-al-threshold="moderationSingleUserCount"
+                    type="number"
+                    min="1"
+                    step="1"
+                    inputmode="numeric"
+                  />
+                </label>
+              </div>
+              <p class="stats-muted">
+                Saved in this browser only. A retry spike needs at least one
+                earlier day with data, and the average counts as at least 1
+                retry a day.
+                <button
+                  class="stats-link-button"
+                  id="al-thresholds-reset"
+                  type="button">Restore defaults</button
+                >
+              </p>
+            </details>
+            <p class="stats-freshness" id="al-freshness" role="status" hidden></p>
+            <p class="stats-live-note" id="al-range-note" hidden></p>
+            <p class="stats-live-note" id="al-live-note" hidden></p>
+            <div id="al-message" class="admin-state" role="status">
+              Loading AI limits and errors…
+            </div>
+            <div id="al-content" hidden>
+              <div class="statistics-grid stats-summary" id="al-summary">
+                <article class="statistic-card statistic-card-primary">
+                  <p>Limit refusals</p>
+                  <strong data-al-total="limitRefusals">—</strong>
+                  <span data-al-delta="limitRefusals"></span>
+                </article>
+                <article class="statistic-card statistic-card-warning">
+                  <p>Final failures</p>
+                  <strong data-al-total="failures">—</strong>
+                  <span data-al-delta="failures"></span>
+                </article>
+                <article class="statistic-card">
+                  <p>Retries</p>
+                  <strong data-al-total="retries">—</strong>
+                  <span data-al-delta="retries"></span>
+                </article>
+                <article class="statistic-card">
+                  <p>Moderation rejections</p>
+                  <strong data-al-total="moderationRejections">—</strong>
+                  <span data-al-delta="moderationRejections"></span>
+                </article>
+              </div>
+              <p class="stats-muted stats-definition">
+                Counts are items, not users: one user can produce many. Limit
+                refusals happen before any call to Google, so they are not in
+                Cloud Console.
+              </p>
+              <section class="stats-alerts" id="al-alerts" hidden></section>
+              <div id="al-charts"></div>
+              <div id="al-tables"></div>
+              <section class="stats-functions" aria-labelledby="al-functions-title">
+                <h2 id="al-functions-title">Functions</h2>
+                <p class="stats-muted">
+                  Select a function to see its daily trend and codes.
+                </p>
+                <div class="stats-table-wrap">
+                  <table class="admin-table stats-table">
+                    <thead>
+                      <tr>
+                        <th>Function</th><th class="numeric">Limit refusals</th
+                        ><th class="numeric">Final failures</th><th
+                          class="numeric">Failure rate</th
+                        ><th class="numeric">Retries</th><th class="numeric"
+                          >Moderation</th
+                        ><th class="numeric">API calls</th>
+                      </tr>
+                    </thead>
+                    <tbody id="al-function-rows"></tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+            <p class="stats-pricing-note">
+              Technical errors on the Google and Cloud Run side (429 responses,
+              no available instance, timeouts) are not counted here. See Google
+              Cloud Console for project lexigo-b2aee:
+              <a
+                href="https://console.cloud.google.com/apis/dashboard?project=lexigo-b2aee"
+                target="_blank"
+                rel="noopener noreferrer">APIs &amp; Services</a
+              >,
+              <a
+                href="https://console.cloud.google.com/iam-admin/quotas?project=lexigo-b2aee"
+                target="_blank"
+                rel="noopener noreferrer">Quotas</a
+              >,
+              <a
+                href="https://console.cloud.google.com/run?project=lexigo-b2aee"
+                target="_blank"
+                rel="noopener noreferrer">Cloud Run</a
+              >,
+              <a
+                href="https://console.cloud.google.com/errors?project=lexigo-b2aee"
+                target="_blank"
+                rel="noopener noreferrer">Error Reporting</a
+              >.
+            </p>
+          </section>
         </main>
       </div>
     </div>
@@ -706,6 +892,24 @@ import "../styles/admin.css";
         </button>
       </div>
       <div id="fs-details-content"></div>
+    </dialog>
+    <dialog
+      class="admin-dialog stats-details-dialog"
+      id="al-details-dialog"
+      aria-labelledby="al-details-title"
+    >
+      <div class="dialog-header">
+        <h2 class="mono" id="al-details-title">Function</h2>
+        <button
+          class="icon-button"
+          id="al-close-details-button"
+          type="button"
+          aria-label="Close function details"
+        >
+          ×
+        </button>
+      </div>
+      <div class="stats-details-content" id="al-details-content"></div>
     </dialog>
     <div
       class="admin-toast"

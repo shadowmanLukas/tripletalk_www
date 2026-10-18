@@ -39,6 +39,7 @@ import {
   type FeedbackRecord,
 } from "../lib/feedback";
 import { initializeAdminTheme } from "./admin-theme";
+import { createAiOutcomeStatsView } from "./ai-outcome-stats";
 import { createFunctionStatsView } from "./function-stats";
 import { createSchoolStatsView } from "./school-stats";
 import { createUserStatsView } from "./user-stats";
@@ -321,6 +322,10 @@ function initializePanel(): void {
     )!,
     () => Boolean(currentAdmin),
   );
+  const aiOutcomeStats = createAiOutcomeStatsView(
+    document.querySelector<HTMLElement>('[data-admin-section="ai-limits"]')!,
+    () => Boolean(currentAdmin),
+  );
   let cursor: QueryDocumentSnapshot<DocumentData> | null = null;
   let currentAdmin: User | null = null;
 
@@ -334,6 +339,7 @@ function initializePanel(): void {
     if (view === "user-stats") return userStats.load();
     if (view === "school-stats") return schoolStats.load();
     if (view === "functions-stats") return functionStats.load();
+    if (view === "ai-limits") return aiOutcomeStats.load();
     return Promise.resolve();
   };
   const showSection = (requestedHash: string): string => {
@@ -565,6 +571,7 @@ function initializePanel(): void {
         userStats.reset();
         schoolStats.reset();
         functionStats.reset();
+        aiOutcomeStats.reset();
         showLogin();
         return;
       }

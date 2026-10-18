@@ -1,16 +1,4 @@
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  getFirestore,
-  limit,
-  orderBy,
-  query,
-  where,
-} from "firebase/firestore";
 import { AI_PRICING, type AiPricing } from "../lib/ai-pricing";
-import { getFirebaseApp } from "../lib/firebase/client";
 import {
   SERIES_COUNT,
   attachChartTooltip,
@@ -20,7 +8,13 @@ import {
   renderUsageChart,
   seriesColor,
 } from "./admin-chart";
-import { errorCode, timestampToDate } from "./admin-stats";
+import { errorCode } from "./admin-stats";
+import {
+  MAX_LIVE_EVENTS_PER_DAY,
+  clearAiUsageCache,
+  loadAiUsage,
+  renderAggregationFreshness,
+} from "./ai-usage-data";
 import {
   FUNCTION_SORT_KEYS,
   aggregateEvents,
@@ -28,7 +22,6 @@ import {
   dayKeysBetween,
   detectUsageAlerts,
   estimateCost,
-  isAggregationStale,
   isDayKey,
   mapDailyFunctionRow,
   modelCost,
@@ -54,15 +47,8 @@ const PERCENT_FORMAT = new Intl.NumberFormat("pl-PL", {
   style: "percent",
   maximumFractionDigits: 1,
 });
-const UTC_DATE_TIME = new Intl.DateTimeFormat("pl-PL", {
-  dateStyle: "medium",
-  timeStyle: "short",
-  timeZone: "UTC",
-});
 const DEFAULT_RANGE_DAYS = 30;
 const MAX_RANGE_DAYS = 180;
-const MAX_LIVE_DAYS = 3;
-const MAX_LIVE_EVENTS_PER_DAY = 5000;
 const DEFAULT_COST_THRESHOLD_USD = 1;
 const THRESHOLD_STORAGE_KEY = "tripletalk-admin-function-cost-threshold";
 
@@ -574,88 +560,35 @@ async function fetchStatistics(
   toDayKey: string,
   includeLive: boolean,
 ): Promise<LoadedStatistics> {
-  const db = getFirestore(getFirebaseApp());
-  const root = doc(db, "statistics", "aiUsage");
-  const [summarySnapshot, dailySnapshot, functionSnapshot] = await Promise.all([
-    getDoc(root),
-    getDocs(
-      query(
-        collection(root, "daily"),
-        where("dayKey", ">=", fromDayKey),
-        where("dayKey", "<=", toDayKey),
-        orderBy("dayKey"),
-      ),
-    ),
-    // Seven extra days give the first days of the range an alert baseline.
-    getDocs(
-      query(
-        collection(root, "dailyByFunction"),
-        where("dayKey", ">=", shiftDayKey(fromDayKey, -7)),
-        where("dayKey", "<=", toDayKey),
-        orderBy("dayKey"),
-      ),
-    ),
-  ]);
-  const summary = summarySnapshot.data() || {};
-  const lastAggregatedDayKey =
-    typeof summary.lastAggregatedDayKey === "string"
-      ? summary.lastAggregatedDayKey
-      : null;
+  const data = await loadAiUsage(fromDayKey, toDayKey, includeLive);
   const aggregatedDays = new Set(
-    dailySnapshot.docs.map((item) => String(item.data().dayKey || item.id)),
+    data.daily
+      .map((item) => String(item.dayKey))
+      .filter((dayKey) => dayKey >= fromDayKey),
   );
-  const rows = functionSnapshot.docs.flatMap((item) => {
-    const mapped = mapDailyFunctionRow(item.data());
+  const rows = data.dailyByFunction.flatMap((item) => {
+    const mapped = mapDailyFunctionRow(item);
     return mapped ? [mapped] : [];
   });
-
-  const liveDays: string[] = [];
-  const truncatedDays: string[] = [];
-  if (includeLive) {
-    // Days after the last aggregation are built from raw events. Only the
-    // most recent few: older raw events are not needed once aggregated.
-    const candidates = dayKeysBetween(fromDayKey, toDayKey)
-      .filter(
-        (dayKey) =>
-          !aggregatedDays.has(dayKey) &&
-          (!lastAggregatedDayKey || dayKey > lastAggregatedDayKey),
-      )
-      .slice(-MAX_LIVE_DAYS);
-    const snapshots = await Promise.all(
-      candidates.map((dayKey) =>
-        getDocs(
-          query(
-            collection(root, "events"),
-            where("dayKey", "==", dayKey),
-            limit(MAX_LIVE_EVENTS_PER_DAY + 1),
-          ),
-        ),
-      ),
-    );
-    candidates.forEach((dayKey, index) => {
-      const documents = snapshots[index].docs.slice(0, MAX_LIVE_EVENTS_PER_DAY);
-      if (snapshots[index].docs.length > MAX_LIVE_EVENTS_PER_DAY) {
-        truncatedDays.push(dayKey);
-      }
-      liveDays.push(dayKey);
-      for (const [functionName, totals] of Object.entries(
-        aggregateEvents(documents.map((item) => item.data())),
-      )) {
-        rows.push({ dayKey, functionName, live: true, totals });
-      }
-    });
+  for (const { dayKey, events } of data.live) {
+    for (const [functionName, totals] of Object.entries(
+      aggregateEvents(events),
+    )) {
+      rows.push({ dayKey, functionName, live: true, totals });
+    }
   }
-
   return {
     fromDayKey,
     toDayKey,
     dayKeys: dayKeysBetween(fromDayKey, toDayKey),
     rows,
     aggregatedDays,
-    liveDays,
-    truncatedDays,
-    lastAggregatedAt: timestampToDate(summary.lastAggregatedAt),
-    lastAggregatedDayKey,
+    liveDays: data.live.map((day) => day.dayKey),
+    truncatedDays: data.live
+      .filter((day) => day.truncated)
+      .map((day) => day.dayKey),
+    lastAggregatedAt: data.lastAggregatedAt,
+    lastAggregatedDayKey: data.lastAggregatedDayKey,
   };
 }
 
@@ -739,12 +672,7 @@ export function createFunctionStatsView(
   };
 
   const renderFreshness = (data: LoadedStatistics) => {
-    freshness.hidden = false;
-    const stale = isAggregationStale(data.lastAggregatedAt);
-    freshness.classList.toggle("is-stale", stale);
-    freshness.textContent = data.lastAggregatedAt
-      ? `Last aggregation: ${UTC_DATE_TIME.format(data.lastAggregatedAt)} UTC, day ${data.lastAggregatedDayKey || "—"}.${stale ? " Warning: older than 36 hours, the daily job may not be running." : ""}`
-      : "No aggregation has run yet. Warning: the daily job may not be running.";
+    renderAggregationFreshness(freshness, data);
     const notes: string[] = [];
     if (data.liveDays.length) {
       notes.push(
@@ -836,7 +764,10 @@ export function createFunctionStatsView(
       return;
     }
     const key = `${fromDayKey}|${toDayKey}|${liveInput.checked}`;
-    if (force) cache.clear();
+    if (force) {
+      cache.clear();
+      clearAiUsageCache();
+    }
     const cached = cache.get(key);
     if (cached) {
       current = cached;
@@ -945,6 +876,7 @@ export function createFunctionStatsView(
     load,
     reset() {
       cache.clear();
+      clearAiUsageCache();
       current = null;
       content.hidden = true;
       freshness.hidden = true;

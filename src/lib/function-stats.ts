@@ -208,12 +208,14 @@ export function sumUsage(rows: DailyFunctionRow[]): UsageTotals {
 }
 
 /** Aggregates raw `events` documents per function, the same way the
- * backend `aggregateAiUsageStatistics` job does. */
+ * backend `aggregateAiUsageStatistics` job does. Outcome events (limits,
+ * failures, retries, moderation) are not API usage and are skipped. */
 export function aggregateEvents(
   events: Array<Record<string, unknown>>,
 ): Record<string, UsageTotals> {
   const byFunction = dictionary<UsageTotals>();
   for (const event of events) {
+    if (event.type === "outcome") continue;
     const totals = bucket(
       byFunction,
       String(event.functionName || "unknown"),

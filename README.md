@@ -153,6 +153,18 @@ Zakładka `/adminpanel#functions-stats` pokazuje dzienne zużycie płatnych API 
 
 Odczyt wymaga reguły `match /statistics/{document=**} { allow read: if isAdmin(); }`, która jest już w `firestore.rules` repozytorium `tripletalk`. Ten panel nie potrzebuje do tego osobnego patcha i nigdy nie zapisuje do `statistics`.
 
+## AI Limits & Errors
+
+Zakładka `/adminpanel#ai-limits` pokazuje dziennie, ile razy limity aplikacji odmówiły użytkownikom pracy AI (`limit`), ile pracy AI skończyło się ostatecznym błędem (`failure`), ile razy triggery backendu były ponawiane (`retry`) i ile treści odrzuciła moderacja Szkoły (`moderation`). Dane zbiera backend od 2026-10-18, opis pól i kodów jest w sekcji „Limity, błędy i ponowienia” w `docs/functions/STATISTICS.md` repozytorium `tripletalk`.
+
+- Czyta te same dokumenty co Functions Stats (`daily`, `dailyByFunction`, dla dzisiejszego dnia `events` z `type == "outcome"`, filtrowane w przeglądarce), przez wspólny moduł [src/scripts/ai-usage-data.ts](src/scripts/ai-usage-data.ts) z jednym cache na sesję. Dodatkowo pobiera dokumenty `daily` poprzedniego zakresu tej samej długości, do porównania w kafelkach.
+- Dni bez nowych pól (zagregowane przed 2026-10-18 albo jeszcze niezagregowane) są pokazywane jako „No data”, nie jako 0. Zakres zaczynający się wcześniej jest domyślnie przycinany do 2026-10-18, z widoczną informacją.
+- Sumy to suma pola `count` (elementy, nie użytkownicy). Liczba użytkowników jest pokazywana jako zakres dziennych `users` (min–max, średnia w podpowiedzi), nigdy jako suma między dniami. Dla ponowień jest „–”. `userHash` nie jest wyświetlany ani przechowywany; dla dzisiejszego dnia panel liczy tylko liczbę różnych wartości.
+- Wyróżnienia: `moderation_failed_open` zawsze, gdy wystąpił; ostateczne błędy funkcji powyżej 2% jej wywołań w danym dniu (albo błędy bez żadnego wywołania); ponowienia ponad 3 razy powyżej średniej z 7 poprzednich dni z danymi (średnia liczona jako co najmniej 1); kod moderacji odrzucony dla co najmniej 5 różnych użytkowników w dniu (możliwe fałszywe odrzucenia) albo co najmniej 10 razy w dniu z jednym użytkownikiem (możliwe nadużycie). Progi ustawia się w panelu, są zapamiętywane tylko w tej przeglądarce.
+- Kliknięcie funkcji otwiera jej dzienny trend i kody. Błędy techniczne Google i Cloud Run są w Google Cloud Console, do której zakładka linkuje.
+
+Nie wymaga nowych reguł ani indeksów: odczyt `statistics/**` dla admina już jest w `firestore.rules`, a widok funkcji korzysta z danych zakresu pobranych jednym zapytaniem.
+
 Panel ma tryb jasny i ciemny. Domyślnie działa według ustawienia systemu, a przycisk w nagłówku zapamiętuje wybór w tej przeglądarce.
 
 ## Lokalna weryfikacja
