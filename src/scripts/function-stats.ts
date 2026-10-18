@@ -30,6 +30,7 @@ import {
   sumUsage,
   summarizeFunctions,
   utcDayKey,
+  weekStartDayKey,
   voiceCost,
   voiceType,
   type ChartDay,
@@ -47,7 +48,6 @@ const PERCENT_FORMAT = new Intl.NumberFormat("pl-PL", {
   style: "percent",
   maximumFractionDigits: 1,
 });
-const DEFAULT_RANGE_DAYS = 30;
 const MAX_RANGE_DAYS = 180;
 const DEFAULT_COST_THRESHOLD_USD = 1;
 const THRESHOLD_STORAGE_KEY = "tripletalk-admin-function-cost-threshold";
@@ -643,10 +643,10 @@ export function createFunctionStatsView(
 
   const today = () => utcDayKey(new Date());
   const resetRange = () => {
-    const yesterday = shiftDayKey(today(), -1);
-    fromInput.value = shiftDayKey(yesterday, -(DEFAULT_RANGE_DAYS - 1));
-    toInput.value = yesterday;
-    liveInput.checked = false;
+    // Default: the current UTC week, Monday through today (live).
+    fromInput.value = weekStartDayKey(today());
+    toInput.value = today();
+    liveInput.checked = true;
   };
   const syncRangeInputs = () => {
     const now = today();

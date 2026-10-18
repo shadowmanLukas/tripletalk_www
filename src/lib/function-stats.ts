@@ -577,6 +577,12 @@ export function shiftDayKey(dayKey: string, days: number): string {
   return utcDayKey(new Date(Date.parse(`${dayKey}T00:00:00Z`) + days * DAY_MS));
 }
 
+/** Monday of the UTC week that contains `dayKey`. */
+export function weekStartDayKey(dayKey: string): string {
+  const weekday = new Date(`${dayKey}T00:00:00Z`).getUTCDay();
+  return shiftDayKey(dayKey, -((weekday + 6) % 7));
+}
+
 export function dayKeysBetween(fromDayKey: string, toDayKey: string): string[] {
   const keys: string[] = [];
   for (let key = fromDayKey; key <= toDayKey; key = shiftDayKey(key, 1)) {

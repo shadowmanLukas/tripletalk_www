@@ -33,6 +33,7 @@ import {
   isDayKey,
   shiftDayKey,
   utcDayKey,
+  weekStartDayKey,
 } from "../lib/function-stats";
 import {
   OTHER_SERIES,
@@ -62,7 +63,6 @@ const PERCENT_FORMAT = new Intl.NumberFormat("pl-PL", {
   style: "percent",
   maximumFractionDigits: 2,
 });
-const DEFAULT_RANGE_DAYS = 30;
 const MAX_RANGE_DAYS = 180;
 const THRESHOLDS_STORAGE_KEY = "tripletalk-admin-ai-outcome-thresholds";
 
@@ -799,10 +799,10 @@ export function createAiOutcomeStatsView(
 
   const today = () => utcDayKey(new Date());
   const resetRange = () => {
-    const yesterday = shiftDayKey(today(), -1);
-    fromInput.value = shiftDayKey(yesterday, -(DEFAULT_RANGE_DAYS - 1));
-    toInput.value = yesterday;
-    liveInput.checked = false;
+    // Default: the current UTC week, Monday through today (live).
+    fromInput.value = weekStartDayKey(today());
+    toInput.value = today();
+    liveInput.checked = true;
     showEarlier = false;
   };
   const syncRangeInputs = () => {

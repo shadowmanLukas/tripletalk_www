@@ -11,6 +11,7 @@ import {
   isAggregationStale,
   isDayKey,
   mapDailyFunctionRow,
+  weekStartDayKey,
   sortFunctionSummaries,
   sumUsage,
   summarizeFunctions,
@@ -253,6 +254,10 @@ describe("function statistics", () => {
     expect(isDayKey("2026-10-01")).toBe(true);
     expect(isDayKey("2026-02-30")).toBe(false);
     expect(dayKeysBetween("2026-09-30", "2026-10-02")).toHaveLength(3);
+    // Default ranges start on Monday of the current UTC week.
+    expect(weekStartDayKey("2026-10-18")).toBe("2026-10-12"); // Sunday
+    expect(weekStartDayKey("2026-10-12")).toBe("2026-10-12"); // Monday
+    expect(weekStartDayKey("2026-10-01")).toBe("2026-09-28"); // Thursday
     const now = new Date("2026-10-02T12:00:00Z");
     expect(isAggregationStale(new Date("2026-10-02T01:30:00Z"), now)).toBe(
       false,

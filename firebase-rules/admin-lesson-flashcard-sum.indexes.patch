@@ -1,0 +1,54 @@
+diff --git a/firestore.indexes.json b/firestore.indexes.json
+index 4099f80..170608e 100644
+--- a/firestore.indexes.json
++++ b/firestore.indexes.json
+@@ -45,6 +45,20 @@
+           "order": "DESCENDING"
+         }
+       ]
++    },
++    {
++      "collectionGroup": "lessons",
++      "queryScope": "COLLECTION_GROUP",
++      "fields": [
++        {
++          "fieldPath": "createdFromCommonCollection",
++          "order": "ASCENDING"
++        },
++        {
++          "fieldPath": "flashcardCount",
++          "order": "ASCENDING"
++        }
++      ]
+     }
+   ],
+   "fieldOverrides": [
+@@ -101,6 +115,28 @@
+           "queryScope": "COLLECTION_GROUP"
+         }
+       ]
++    },
++    {
++      "collectionGroup": "lessons",
++      "fieldPath": "flashcardCount",
++      "indexes": [
++        {
++          "order": "ASCENDING",
++          "queryScope": "COLLECTION"
++        },
++        {
++          "order": "DESCENDING",
++          "queryScope": "COLLECTION"
++        },
++        {
++          "arrayConfig": "CONTAINS",
++          "queryScope": "COLLECTION"
++        },
++        {
++          "order": "ASCENDING",
++          "queryScope": "COLLECTION_GROUP"
++        }
++      ]
+     }
+   ]
+ }

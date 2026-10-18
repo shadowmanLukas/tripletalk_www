@@ -292,8 +292,10 @@ import "../styles/admin.css";
                 <p class="stats-live-note" id="us-activity-note" hidden></p>
                 <p class="stats-live-note" id="us-scan-note" hidden>
                   Lessons were counted by reading every lesson document, because
-                  Firestore is missing an index for counting them. The browser
-                  console shows the error with a link that creates the index.
+                  Firestore is missing the collection-group indexes for counting
+                  lessons and summing their flashcards. Apply and deploy
+                  firebase-rules/admin-lesson-flashcard-sum.indexes.patch (see
+                  README); the browser console shows the exact error.
                 </p>
               </div>
               <section class="stats-chart-card" aria-labelledby="us-chart-title">

@@ -17,6 +17,7 @@ import {
   isDayKey,
   shiftDayKey,
   utcDayKey,
+  weekStartDayKey,
 } from "../lib/function-stats";
 import {
   ACTIVE_LEARNERS_SERIES,
@@ -68,7 +69,6 @@ const UTC_DATE_TIME = new Intl.DateTimeFormat("pl-PL", {
   timeStyle: "short",
   timeZone: "UTC",
 });
-const DEFAULT_RANGE_DAYS = 30;
 const MAX_RANGE_DAYS = 180;
 // Firestore's maximum query limit.
 const MAX_LEARNING_DAYS = 10000;
@@ -233,8 +233,9 @@ async function fetchSnapshot(db: Firestore): Promise<LoadedSnapshot> {
     ]);
   } catch (error) {
     // Aggregating a collection group needs collection-group indexes (see
-    // firebase-rules/admin-user-stats.indexes.patch). Until they exist, fall
-    // back to reading every lesson.
+    // firebase-rules/admin-user-stats.indexes.patch and
+    // admin-lesson-flashcard-sum.indexes.patch). Until they exist, fall back
+    // to reading every lesson.
     if (errorCode(error) !== "failed-precondition") throw error;
     console.warn("[admin] Counting lessons by reading every lesson", error);
     const snapshot = await labelled("all lessons", getDocs(lessons));
@@ -353,7 +354,8 @@ export function createUserStatsView(
   fromInput.max = today();
   toInput.max = today();
   toInput.value = today();
-  fromInput.value = shiftDayKey(today(), -(DEFAULT_RANGE_DAYS - 1));
+  // Default: the current UTC week, Monday through today.
+  fromInput.value = weekStartDayKey(today());
 
   const showMessage = (text: string, kind = "") => {
     message.hidden = false;

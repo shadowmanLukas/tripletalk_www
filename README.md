@@ -73,24 +73,34 @@ Już zastosowane w `tripletalk` (historia):
 - [firebase-rules/admin-statistics.rules.patch](firebase-rules/admin-statistics.rules.patch): odczyt `users` i `users/*/lessons`.
 - [firebase-rules/admin-statistics-collection-group.rules.patch](firebase-rules/admin-statistics-collection-group.rules.patch): odczyt `collectionGroup("lessons")`.
 
-Do zastosowania, w tej kolejności (sprawdzone na `tripletalk` `main` z 2026-10-01, testy reguł 79/79):
+Te patche są już w `tripletalk` `main` (commit `ab6f6dd` z 2026-10-01, testy reguł 79/79):
 
 1. [firebase-rules/remove-admin-ai-uploads.rules.patch](firebase-rules/remove-admin-ai-uploads.rules.patch) usuwa nieużywany już odczyt `collectionGroup("lexiAiUploads")` przez admina (po usunięciu zakładki Costs).
 2. [firebase-rules/admin-learning-activity.rules.patch](firebase-rules/admin-learning-activity.rules.patch) pozwala adminowi czytać `collectionGroup("learningStats")` (miara aktywności w User Stats).
 3. [firebase-rules/admin-school-stats.rules.patch](firebase-rules/admin-school-stats.rules.patch) pozwala adminowi czytać `schoolUsers`, `schoolClasses`, `schoolLessons`, `schoolMemberships`, `schoolAssignments` i `schoolProgress` (School Stats). Kody uczniów, blokady, liczniki limitów i karty pozostają niedostępne.
 4. [firebase-rules/admin-user-stats.indexes.patch](firebase-rules/admin-user-stats.indexes.patch) (indeksy, nie reguły) włącza indeksy collection group dla `lessons.createdFromCommonCollection` i `learningStats.date`, z zachowaniem domyślnych indeksów kolekcji tych pól.
 
-Patche 1–3 dodają też testy w `rules-tests/admin-panel.rules.test.js` (emulator). Sprawdzenie, zastosowanie i testy, uruchamiane z katalogu `tripletalk_www`:
+Nie nakładaj ich ponownie: `git apply` patcha 4 przeszedłby z przesunięciem i zdublował wpisy w `firestore.indexes.json`.
+
+Do zastosowania (wygenerowany na `tripletalk` `main` z 2026-10-18):
+
+5. [firebase-rules/admin-lesson-flashcard-sum.indexes.patch](firebase-rules/admin-lesson-flashcard-sum.indexes.patch) (indeksy) dodaje indeks collection group dla `lessons.flashcardCount` (z zachowaniem domyślnych indeksów kolekcji) i indeks złożony collection group `createdFromCommonCollection` + `flashcardCount`. Bez nich User Stats nie może zsumować fiszek zapytaniem `sum()` i liczy lekcje, czytając każdy dokument lekcji (komunikat „Lessons were counted by reading every lesson document…”).
+
+Sprawdzenie i zastosowanie, z katalogu `tripletalk_www`:
 
 ```bash
-for patch in remove-admin-ai-uploads.rules admin-learning-activity.rules admin-school-stats.rules admin-user-stats.indexes; do git -C ../tripletalk apply ../tripletalk_www/firebase-rules/$patch.patch || break; done
+git -C ../tripletalk apply --check ../tripletalk_www/firebase-rules/admin-lesson-flashcard-sum.indexes.patch
 ```
+
+```bash
+git -C ../tripletalk apply ../tripletalk_www/firebase-rules/admin-lesson-flashcard-sum.indexes.patch
+```
+
+Testy reguł (patche 1–3 dodały je do `rules-tests/admin-panel.rules.test.js`; patch 5 zmienia tylko indeksy):
 
 ```bash
 cd ../tripletalk/rules-tests && npm test
 ```
-
-Patche trzeba nakładać po kolei, bo każdy kolejny zakłada stan po poprzednim. Pojedynczo: `git -C ../tripletalk apply --check ../tripletalk_www/firebase-rules/<plik>.patch`.
 
 Po przeglądzie zmian reguły można wdrożyć z repozytorium mobilnym:
 
@@ -98,6 +108,8 @@ Po przeglądzie zmian reguły można wdrożyć z repozytorium mobilnym:
 cd ../tripletalk
 firebase deploy --only firestore:rules,firestore:indexes,storage
 ```
+
+Sam patch indeksów wystarczy wdrożyć poleceniem `firebase deploy --only firestore:indexes`. Budowa indeksów w Firebase trwa od kilku minut wzwyż; do tego czasu panel nadal liczy lekcje, czytając dokumenty.
 
 Pobieranie załączników przez `getBlob()` wymaga także CORS bucketu. Gotowa konfiguracja znajduje się w [firebase-rules/storage.cors.json](firebase-rules/storage.cors.json). Zastosuj ją osobno dopiero po przeglądzie:
 
@@ -124,7 +136,7 @@ Zakładka `/adminpanel#user-stats` (dawniej Statistics; stary adres `#statistics
 
 - **Users now:** liczbę kont, aktywne premium (`premiumIsActive`) oraz aktywnych uczących się z ostatnich 7 i 30 dni. Aktywny uczący się to użytkownik, który danego dnia oznaczył co najmniej jedną fiszkę jako znaną (`users/{uid}/learningStats/{dzień}`, lokalna data urządzenia). `lastSignInAt` nie jest używane, bo zmienia się tylko przy jawnym logowaniu, a nie przy otwarciu aplikacji.
 - **Content now:** lekcje i fiszki tworzone przez użytkowników (bez gotowych kolekcji) oraz średnie.
-- **Wykres dzienny** dla wybranego zakresu (domyślnie 30 dni, najwyżej 180) z przełącznikiem: nowi użytkownicy (po `createdAt`, dzień UTC) albo aktywni uczący się (dokumenty `learningStats` z danego dnia; lokalną datę dopasowuje okno ±12 h wokół północy UTC).
+- **Wykres dzienny** dla wybranego zakresu (domyślnie bieżący tydzień UTC od poniedziałku do dziś, najwyżej 180 dni) z przełącznikiem: nowi użytkownicy (po `createdAt`, dzień UTC) albo aktywni uczący się (dokumenty `learningStats` z danego dnia; lokalną datę dopasowuje okno ±12 h wokół północy UTC).
 - Podział kont na metodę logowania (`authProvider`) i aktywnego premium na źródło (`premiumSource`).
 
 Wszystko jest liczone zapytaniami `count()`/`sum()`, bez pobierania dokumentów użytkowników. Jedynym wyjątkiem są liczby różnych aktywnych użytkowników z 7 i 30 dni: tego nie da się policzyć po stronie serwera, więc panel czyta dokumenty `learningStats` z ostatnich 30 dni (jeden mały dokument na użytkownika i dzień, najwyżej 10 000, czyli maksymalny limit zapytania Firestore). Wyniki są cache'owane do odświeżenia albo wylogowania, a dzisiejszy dzień jest zawsze liczony od nowa.
@@ -145,7 +157,7 @@ Panel używa wyłącznie zapytań `count()`/`sum()` i nie pobiera imion, kodów 
 
 Zakładka `/adminpanel#functions-stats` pokazuje dzienne zużycie płatnych API (tokeny Gemini i znaki Google Text-to-Speech) w podziale na Cloud Functions. Źródłem prawdy o danych jest `docs/functions/STATISTICS.md` w repozytorium `tripletalk`.
 
-- Raporty są budowane z agregatów `statistics/aiUsage/daily` i `statistics/aiUsage/dailyByFunction` (zakres do 180 dni, plus 7 dni wcześniej jako punkt odniesienia dla alertów). Surowe `events` są czytane tylko po włączeniu „Include today”, dla dni po ostatniej agregacji (najwyżej 3 dni, do 5000 zdarzeń na dzień).
+- Raporty są budowane z agregatów `statistics/aiUsage/daily` i `statistics/aiUsage/dailyByFunction` (zakres do 180 dni, plus 7 dni wcześniej jako punkt odniesienia dla alertów). Surowe `events` są czytane tylko po włączeniu „Include today”, dla dni po ostatniej agregacji (najwyżej 3 dni, do 5000 zdarzeń na dzień). Domyślny zakres to bieżący tydzień UTC od poniedziałku do dziś, z włączonym „Include today”; tak samo w School Stats i AI Limits & Errors.
 - Wszystkie daty to dni UTC. Panel pokazuje czas ostatniej agregacji i ostrzega, gdy jest starsza niż 36 godzin.
 - Koszt jest szacunkiem liczonym w przeglądarce z cennika w [src/lib/ai-pricing.ts](src/lib/ai-pricing.ts) (ceny za 1M tokenów dla modeli Gemini i za 1M znaków dla typów głosów TTS, z datą obowiązywania i linkami do cenników Google). Model albo głos bez ceny jest pokazywany jako „no price”, nie jako 0. Przy zmianie cen Google zaktualizuj ten plik.
 - Alerty: średnie wyjście na wywołanie operacji Gemini ponad 2 razy wyższe niż średnia z poprzednich 7 dni oraz dzienny koszt funkcji powyżej progu. Próg ustawia się w panelu i jest zapamiętywany tylko w tej przeglądarce.
