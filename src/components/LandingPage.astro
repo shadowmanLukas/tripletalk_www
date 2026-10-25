@@ -572,8 +572,65 @@ const structuredData = [
         revealItems.forEach((item) => observer.observe(item));
       }
 
+      // Tabs rotate every 2.5 seconds from page load. Hovering or focusing the section pauses
+      // the rotation, choosing a tab stops it for good, and reduced motion disables it.
+      const USE_CASE_ROTATION_MS = 2500;
+      const useCasesLayout =
+        document.querySelector<HTMLElement>(".use-cases-layout");
+      let useCaseTimer: number | undefined;
+      let useCasesPaused = false;
+      let useCaseRotationStopped = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      function showNextUseCase() {
+        const activeIndex = useCaseTabs.findIndex(
+          (tab) => tab.getAttribute("aria-selected") === "true",
+        );
+        const nextTab = useCaseTabs[(activeIndex + 1) % useCaseTabs.length];
+        if (nextTab) renderUseCase(nextTab);
+      }
+
+      function updateUseCaseRotation() {
+        const shouldRun =
+          !useCaseRotationStopped &&
+          !useCasesPaused &&
+          !document.hidden &&
+          useCaseTabs.length > 1;
+        if (shouldRun && useCaseTimer === undefined) {
+          useCaseTimer = window.setInterval(
+            showNextUseCase,
+            USE_CASE_ROTATION_MS,
+          );
+        } else if (!shouldRun && useCaseTimer !== undefined) {
+          window.clearInterval(useCaseTimer);
+          useCaseTimer = undefined;
+        }
+      }
+
+      function stopUseCaseRotation() {
+        useCaseRotationStopped = true;
+        updateUseCaseRotation();
+      }
+
+      if (useCasesLayout) {
+        const pause = (paused: boolean) => () => {
+          useCasesPaused = paused;
+          updateUseCaseRotation();
+        };
+        useCasesLayout.addEventListener("pointerenter", pause(true));
+        useCasesLayout.addEventListener("pointerleave", pause(false));
+        useCasesLayout.addEventListener("focusin", pause(true));
+        useCasesLayout.addEventListener("focusout", pause(false));
+        document.addEventListener("visibilitychange", updateUseCaseRotation);
+        updateUseCaseRotation();
+      }
+
       useCaseTabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => renderUseCase(tab));
+        tab.addEventListener("click", () => {
+          stopUseCaseRotation();
+          renderUseCase(tab);
+        });
         tab.addEventListener("keydown", (event) => {
           let nextIndex: number | null = null;
 
@@ -587,6 +644,7 @@ const structuredData = [
 
           if (nextIndex !== null) {
             event.preventDefault();
+            stopUseCaseRotation();
             const nextTab = useCaseTabs[nextIndex];
             if (nextTab) renderUseCase(nextTab, true);
           }
