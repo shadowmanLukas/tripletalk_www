@@ -413,17 +413,42 @@ const structuredData = [
                   <h3>{plan.name}</h3>
                   <p class="plan-price">
                     {plan.price && <strong>{plan.price}</strong>}
-                    <span>{plan.priceNote}</span>
+                    <span>
+                      {plan.priceNote.endsWith("*") ? (
+                        <>
+                          {plan.priceNote.slice(0, -1)}
+                          <span class="plan-mark">*</span>
+                        </>
+                      ) : (
+                        plan.priceNote
+                      )}
+                    </span>
                   </p>
                   <p class="plan-description">{plan.description}</p>
                   <ul>
-                    {plan.features.map((feature) => (
-                      <li>{feature}</li>
-                    ))}
+                    {plan.features.map((feature) =>
+                      feature.endsWith(":") ? (
+                        <li class="plan-includes">{feature}</li>
+                      ) : feature.endsWith("*") ? (
+                        <li>
+                          {feature.slice(0, -1)}
+                          <sup class="plan-mark">*</sup>
+                        </li>
+                      ) : (
+                        <li>{feature}</li>
+                      ),
+                    )}
                   </ul>
-                  {plan.featured && (
-                    <p class="plan-store-note">{copy.pricing.storeNote}</p>
-                  )}
+                  <p class="plan-store-note">
+                    {plan.note.startsWith("* ") ? (
+                      <>
+                        <span class="plan-mark">*</span>
+                        {plan.note.slice(1)}
+                      </>
+                    ) : (
+                      plan.note
+                    )}
+                  </p>
                 </article>
               ))
             }

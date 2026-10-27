@@ -1433,7 +1433,21 @@ h3 {
   margin: 20px 0 0;
   color: #8fa0b3;
   font-size: 0.78rem;
-  text-align: center;
+}
+
+sup.plan-mark {
+  margin-left: 2px;
+  color: #8fa0b3;
+  font-size: 0.7em;
+}
+
+.plan-card li.plan-includes {
+  padding-left: 0;
+  font-weight: 700;
+}
+
+.plan-card li.plan-includes::before {
+  content: none;
 }
 
 .plan-description {
