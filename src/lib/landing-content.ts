@@ -49,7 +49,7 @@ export const landingContent = {
       googlePlayCaption: "Pobierz z",
       previewLabel: "Podgląd aplikacji TripleTalk",
       imageAlt:
-        "Ekran lekcji w TripleTalk z liczbą fiszek, przyciskiem rozpoczęcia nauki i szybkimi akcjami",
+        "Ekran Kolekcje w TripleTalk z gotowymi zestawami fiszek według tematu i poziomu",
     },
     useCases: {
       eyebrow: "Twój materiał. Twoja lekcja.",
@@ -209,20 +209,20 @@ export const landingContent = {
             "TripleTalk AI znajduje słówka w tekście, a Ty zaznaczasz te, których chcesz się uczyć.",
         },
         {
-          image: "/assets/tripletalk-flashcard-details.webp",
-          imageAlt:
-            "Szczegóły fiszki TripleTalk z tłumaczeniem na niemiecki i hiszpański, przykładami i wymową",
-          title: "Dwa języki na jednej fiszce",
-          description:
-            "Tłumaczenia, przykładowe zdania i nagrania wymowy w wybranych przez Ciebie językach.",
-        },
-        {
           image: "/assets/tripletalk-review-session.webp",
           imageAlt:
             "Sesja nauki TripleTalk z fiszką, przykładowymi zdaniami i przyciskami oceny",
           title: "Powtarzaj we właściwym momencie",
           description:
             "Oceń, jak dobrze pamiętasz słowo, a aplikacja sama zaplanuje kolejną powtórkę.",
+        },
+        {
+          image: "/assets/tripletalk-dashboard.webp",
+          imageAlt:
+            "Dashboard TripleTalk z serią dni nauki, liczbą fiszek i wykresem z ostatnich 7 dni",
+          title: "Śledź swoje postępy",
+          description:
+            "Każdy dzień nauki przybliża Cię do celu. Zobacz, jak rośnie Twoja wiedza, i zachowaj motywację na dłużej.",
         },
       ],
     },
@@ -355,7 +355,7 @@ export const landingContent = {
       googlePlayCaption: "Get it on",
       previewLabel: "TripleTalk app preview",
       imageAlt:
-        "TripleTalk lesson screen with flashcard totals, a start button and quick actions",
+        "TripleTalk Collections screen with ready-made flashcard sets by topic and level",
     },
     useCases: {
       eyebrow: "Your material. Your lesson.",
@@ -515,20 +515,20 @@ export const landingContent = {
             "TripleTalk AI finds the words in your text, and you tick the ones you want to learn.",
         },
         {
-          image: "/assets/tripletalk-flashcard-details.webp",
-          imageAlt:
-            "TripleTalk flashcard details with German and Spanish translations, examples and pronunciation",
-          title: "Two languages on one flashcard",
-          description:
-            "Translations, example sentences and pronunciation in the languages you choose.",
-        },
-        {
           image: "/assets/tripletalk-review-session.webp",
           imageAlt:
             "TripleTalk study session with a flashcard, example sentences and rating buttons",
           title: "Review at the right moment",
           description:
             "Rate how well you remember a word, and the app schedules the next review for you.",
+        },
+        {
+          image: "/assets/tripletalk-dashboard.webp",
+          imageAlt:
+            "TripleTalk dashboard with a learning streak, flashcard totals and a chart of the last 7 days",
+          title: "Track your progress",
+          description:
+            "Every day of learning brings you closer to your goal. Watch your knowledge grow and stay motivated for longer.",
         },
       ],
     },
