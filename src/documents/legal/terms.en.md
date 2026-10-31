@@ -118,7 +118,7 @@ _Effective from October 1, 2026._
 ### 9.3. Teacher
 
 - A teacher provides a display name that invited students will see. The teacher creates classes, invites students by their code, creates lessons and shares them with classes for a chosen period.
-- About a student, the teacher sees only: first name, code, invitation or membership status, and the total number of students who have started a given lesson. The teacher does not see which flashcards a particular student knows. School is not a grading tool.
+- About a student, the teacher sees only: first name, code, invitation or membership status. About progress in a lesson, the teacher sees only data for the class as a whole: how many students started and finished it, the average share of known flashcards, the spread of results, the number of starts per day, and the flashcards known best and worst. Some of this data appears only once the required number of students has started the lesson. The teacher does not see which flashcards a particular student knows. School is not a grading tool.
 - Sharing locks a lesson. Once a lesson is shared with any class, its name can no longer be changed and flashcards can no longer be added, edited or deleted. The lock stays even after all shares are deleted and is lifted only when the lesson goes through the archive (see "Deletion" below). A locked lesson can still be shared with other classes and its availability period can be changed. The App warns before the first share.
 - A lesson can be shared with a given class only once. To set a new date, change the availability period of the existing share.
 - Deletion:

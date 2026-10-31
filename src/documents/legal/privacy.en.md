@@ -42,10 +42,10 @@ Providing data is voluntary, but the App cannot be used without account data. We
 
 ## 4. School
 
-1. A student provides a first name (a nickname is fine) and receives a permanent student code. We also process: class list, invitation statuses (pending, accepted, declined, expired) with dates, the list of blocked teachers, lesson progress (which flashcards were marked as known; each "Know" also adds to the study statistics on the student's account, which the teacher does not see) and the date the student confirmed being at least 16 or having a parent's or guardian's consent.
+1. A student provides a first name (a nickname is fine) and receives a permanent student code. We also process: class list, invitation statuses (pending, accepted, declined, expired) with dates, the list of blocked teachers, lesson progress (which flashcards were marked as known and when the lesson was first finished; each "Know" also adds to the study statistics on the student's account, which the teacher does not see) and the date the student confirmed being at least 16 or having a parent's or guardian's consent.
 2. A teacher provides a display name. We also process: the teacher's classes, lessons (including those in the teacher's archive), flashcards, audio, shares and counters needed for limits (e.g. invitations per day, lessons in the archive).
 3. Who sees what:
-   - the teacher sees a student's first name, code and status in the class, and the total number of students who have started a lesson. The teacher does not see a student's detailed progress,
+   - the teacher sees a student's first name, code and status in the class, and the total number of students who have started a lesson. Once the required number of students has started a lesson, the teacher also sees statistics for the class as a whole: how many students finished it, the average share of known flashcards, the spread of results, the number of starts per day, and the flashcards known best and worst, based on the total number of "Know" and "Don't know" answers of the whole class. These counts are not linked to any student. The teacher does not see a student's detailed progress,
    - the student sees the teacher's name, the class name and shared lessons,
    - students cannot see each other,
    - when looking up a student by code, the teacher sees only the first name linked to that code.

@@ -132,7 +132,7 @@ To najszybszy sposób, gdy masz słówka na papierze. Zrób aparatem czytelne zd
 
 Zaznacz słówka, których chcesz się uczyć (albo od razu „Zaznacz wszystko”), i wybierz „Utwórz fiszki”. Na bieżąco widzisz, ile słówek znaleziono, ile z nich jest nowych, ile zaznaczono i ile fiszek TripleTalk AI masz do dyspozycji. Słówka, które już są w lekcji, są oznaczone jako duplikaty, więc nie dodasz ich dwa razy.
 
-Analiza zdjęcia może chwilę potrwać, ale nie musisz na nią czekać. Wróć do lekcji, a zdjęcie znajdziesz w sekcji „Fiszki oczekujące”: najpierw ze statusem „W trakcie analizy”, a potem „Do akceptacji”.
+Analiza zdjęcia może chwilę potrwać, ale nie musisz na nią czekać. W lekcji zdjęcie znajdziesz w sekcji „Fiszki w przygotowaniu”: najpierw jako „Analizowanie zdjęcia…”, a potem jako baner „Gotowe: wybierz słówka”. Dotknij banera, aby wybrać słówka, albo przesuń go w lewo, aby usunąć zdjęcie.
 
 ### Dodaj z galerii
 
@@ -247,11 +247,11 @@ Przy pierwszym wejściu wybierasz rolę: Uczeń albo Nauczyciel. Jedno konto mo�
 - Dostaniesz swoje ID w formacie `XXXX-XXXX`. Skopiuj je albo wyślij nauczycielowi, żeby mógł zaprosić Cię do klasy.
 - Gdy przyjdzie zaproszenie, przyjmij je albo odrzuć. Jeśli nie chcesz więcej zaproszeń od tej osoby, możesz ją też zablokować.
 - W „Moich klasach” znajdziesz lekcje od nauczyciela i datę, do kiedy są dostępne.
-- Ucz się, zaznaczając „Znam” albo „Nie znam”, i odsłuchuj wymowę. Jeśli chcesz przerobić lekcję jeszcze raz od początku, zresetuj swój postęp.
+- Ucz się, zaznaczając „Znam” albo „Nie znam”, i odsłuchuj wymowę. Fiszka oznaczona dwa razy jako „Nie znam” wróci w następnej sesji nauki. Jeśli chcesz przerobić lekcję jeszcze raz od początku, zresetuj swój postęp.
 
 Każde „Znam” w lekcji ze Szkoły liczy się do Twoich statystyk na Panelu. Z klasy możesz wypisać się w każdej chwili.
 
-Nauczyciel widzi tylko Twoje imię i to, czy nauka lekcji jest już rozpoczęta. Nie wie, które fiszki znasz. Uczniowie nie widzą siebie nawzajem, a w Szkole nie ma czatu ani komentarzy.
+Nauczyciel widzi Twoje imię i wyniki całej klasy, np. ile osób zaczęło i ukończyło lekcję oraz które fiszki klasa zna najlepiej i najsłabiej. Nie wie, które fiszki znasz Ty. Uczniowie nie widzą siebie nawzajem, a w Szkole nie ma czatu ani komentarzy.
 
 ### Nauczyciel
 
@@ -266,9 +266,20 @@ Warto pamiętać:
 
 - Po pierwszym udostępnieniu lekcji nie da się już jej edytować, więc sprawdź ją dokładnie wcześniej. Nadal możesz udostępnić ją kolejnym klasom albo zmienić termin dostępności dla wybranej klasy.
 - Danej klasie udostępniasz lekcję tylko raz. Jeśli chcesz zmienić daty, zmień dostępność istniejącego udostępnienia.
-- W każdej klasie widzisz lekcje aktywne, zaplanowane i zakończone oraz statystykę „Rozpoczęło naukę: X z Y uczniów”.
+- W każdej klasie widzisz lekcje aktywne, zaplanowane i zakończone.
 - Lekcje, których już nie potrzebujesz, przenieś do Archiwum. Znikną wtedy z klas, a postęp uczniów w nich zostanie usunięty, ale fiszki i nagrania zostaną. Z archiwum możesz lekcję przywrócić (znów da się ją edytować i udostępnić, np. w kolejnym roku szkolnym) albo usunąć na zawsze.
 - Fiszki w lekcjach Szkoły korzystają z tego samego salda fiszek TripleTalk AI co Twoje własne lekcje.
+
+### Statystyki klasy
+
+Przy udostępnionej lekcji otwórz menu z trzema kropkami i wybierz „Statystyki”. Na ekranie zobaczysz wyniki całej klasy:
+
+- ilu uczniów rozpoczęło i ukończyło lekcję oraz jaki procent fiszek znają średnio,
+- jak nauka rozkładała się w czasie i jak rozkładają się wyniki w klasie,
+- fiszki znane najlepiej,
+- fiszki, przy których uczniowie mylą się najczęściej, czyli to, co warto powtórzyć na zajęciach.
+
+Statystyki pojawią się, gdy lekcję rozpocznie wymagana liczba uczniów. Wcześniej zobaczysz, ilu uczniów już ją rozpoczęło. Nigdy nie pokazujemy wyników pojedynczego ucznia, a „Znam” i „Nie znam” to samoocena uczniów, a nie wynik testu.
 
 ### Ustawienia Szkoły
 

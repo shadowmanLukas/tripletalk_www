@@ -234,12 +234,15 @@ export const landingContent = {
       points: [
         "Utwórz klasę i zaproś do niej uczniów",
         "Przygotuj lekcję i udostępnij ją klasie w wybranym terminie",
+        "Przeglądaj statystyki nauki twoich klas",
         "Uczniowie oszczędzają czas i uczą się z gotowych materiałów",
       ],
       linkLabel: "Jak działa Szkoła",
       linkHref: "/guide/#pl-10-szkoła-nauka-w-klasie",
       imageAlt:
         "Ekran klasy w TripleTalk z aktywnymi i zaplanowanymi lekcjami dla uczniów",
+      statsImageAlt:
+        "Ekran statystyk lekcji w TripleTalk z rozkładem wyników klasy oraz fiszkami znanymi najlepiej i najsłabiej",
     },
     pricing: {
       eyebrow: "Za darmo i Premium",
@@ -537,12 +540,15 @@ export const landingContent = {
       points: [
         "Create a class and invite your students",
         "Prepare a lesson and share it with the class for the dates you choose",
+        "Review your classes' learning statistics",
         "Students save time by learning from ready-made materials",
       ],
       linkLabel: "How School works",
       linkHref: "/en/guide/#en-10-school-learning-in-a-class",
       imageAlt:
         "TripleTalk class screen with active and scheduled lessons for students",
+      statsImageAlt:
+        "TripleTalk lesson statistics screen with the class's results and the flashcards known best and worst",
     },
     pricing: {
       eyebrow: "Free and Premium",

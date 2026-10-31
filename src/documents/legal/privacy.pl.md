@@ -42,10 +42,10 @@ Podanie danych jest dobrowolne, ale bez danych konta nie da się korzystać z Ap
 
 ## 4. Szkoła
 
-1. Uczeń podaje imię (może to być pseudonim) i otrzymuje stały kod ucznia. Przetwarzamy też: listę klas, statusy zaproszeń (oczekuje, zaakceptowano, odrzucono, wygasło) z datami, listę zablokowanych nauczycieli, postęp w lekcjach (które fiszki oznaczył jako znane; każde oznaczenie "Znam" zwiększa też statystyki nauki na jego koncie, których nauczyciel nie widzi) oraz datę potwierdzenia, że ma co najmniej 16 lat albo zgodę rodzica lub opiekuna.
+1. Uczeń podaje imię (może to być pseudonim) i otrzymuje stały kod ucznia. Przetwarzamy też: listę klas, statusy zaproszeń (oczekuje, zaakceptowano, odrzucono, wygasło) z datami, listę zablokowanych nauczycieli, postęp w lekcjach (które fiszki oznaczył jako znane i kiedy pierwszy raz ukończył lekcję; każde oznaczenie "Znam" zwiększa też statystyki nauki na jego koncie, których nauczyciel nie widzi) oraz datę potwierdzenia, że ma co najmniej 16 lat albo zgodę rodzica lub opiekuna.
 2. Nauczyciel podaje nazwę wyświetlaną. Przetwarzamy też: jego klasy, lekcje (także te w jego archiwum), fiszki, nagrania, udostępnienia oraz liczniki potrzebne do limitów (np. liczba zaproszeń dziennie, liczba lekcji w archiwum).
 3. Kto co widzi:
-   - nauczyciel widzi imię ucznia, jego kod i status w klasie oraz zbiorczą liczbę uczniów, którzy zaczęli daną lekcję. Nie widzi szczegółowych postępów ucznia,
+   - nauczyciel widzi imię ucznia, jego kod i status w klasie oraz zbiorczą liczbę uczniów, którzy zaczęli daną lekcję. Gdy lekcję rozpocznie wymagana liczba uczniów, widzi też zbiorcze statystyki całej klasy: ilu uczniów ukończyło lekcję, średni procent znanych fiszek, rozkład wyników, liczbę rozpoczęć w kolejnych dniach oraz fiszki znane najlepiej i najsłabiej, policzone z łącznej liczby odpowiedzi „Znam” i „Nie znam” całej klasy. Te liczniki nie są powiązane z żadnym uczniem. Nie widzi szczegółowych postępów ucznia,
    - uczeń widzi nazwę nauczyciela, nazwę klasy i udostępnione lekcje,
    - uczniowie nie widzą się nawzajem,
    - przy wyszukiwaniu ucznia po kodzie nauczyciel widzi tylko imię przypisane do kodu.

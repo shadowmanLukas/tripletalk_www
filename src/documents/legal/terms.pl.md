@@ -118,7 +118,7 @@ _Obowiązuje od 1 października 2026._
 ### 9.3. Nauczyciel
 
 - Nauczyciel podaje nazwę wyświetlaną, którą zobaczą zaproszeni uczniowie. Tworzy klasy, zaprasza uczniów po ich kodzie, tworzy lekcje i udostępnia je klasom na wybrany okres.
-- Nauczyciel widzi o uczniu tylko: imię, kod, status zaproszenia lub członkostwa oraz zbiorczą liczbę uczniów, którzy zaczęli naukę danej lekcji. Nie widzi, które fiszki zna konkretny uczeń. Szkoła nie służy do oceniania uczniów.
+- Nauczyciel widzi o uczniu tylko: imię, kod, status zaproszenia lub członkostwa. O postępach w lekcji widzi wyłącznie dane zbiorcze całej klasy: ilu uczniów zaczęło i ukończyło lekcję, średni procent znanych fiszek, rozkład wyników, liczbę rozpoczęć w kolejnych dniach oraz fiszki znane najlepiej i najsłabiej. Część tych danych pojawia się dopiero wtedy, gdy lekcję rozpocznie wymagana liczba uczniów. Nie widzi, które fiszki zna konkretny uczeń. Szkoła nie służy do oceniania uczniów.
 - Udostępnienie blokuje lekcję. Po pierwszym udostępnieniu lekcji jakiejkolwiek klasie nie można już zmienić jej nazwy ani dodać, zmienić lub usunąć fiszek. Blokada zostaje także po usunięciu wszystkich udostępnień i znika dopiero, gdy lekcja przejdzie przez archiwum (zob. punkt "Usuwanie" poniżej). Zablokowaną lekcję można dalej udostępniać innym klasom i zmieniać okres jej dostępności. Przed pierwszym udostępnieniem Aplikacja o tym ostrzega.
 - Daną lekcję można udostępnić jednej klasie tylko raz. Nowy termin ustawiasz, zmieniając okres dostępności istniejącego udostępnienia.
 - Usuwanie:

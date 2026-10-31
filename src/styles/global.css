@@ -1346,13 +1346,17 @@ h3 {
 /* The phone rises from the bottom edge of the card. */
 .school-visual {
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
   justify-self: center;
   align-self: end;
   margin-bottom: -28px;
 }
 
 .school-phone {
-  width: min(70vw, 280px);
+  flex: none;
+  width: min(44vw, 280px);
   height: 340px;
   overflow: hidden;
   border: 10px solid #071632;
@@ -1366,6 +1370,13 @@ h3 {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.school-phone-small {
+  width: min(30vw, 170px);
+  height: 230px;
+  border-width: 7px;
+  border-radius: 24px 24px 0 0;
 }
 
 /* Plans: two cards of equal height. */
@@ -1693,7 +1704,7 @@ sup.plan-mark {
   }
 
   .school-card {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: center;
     gap: 48px;
     padding: 48px 48px 0;
@@ -1704,12 +1715,18 @@ sup.plan-mark {
   }
 
   .school-visual {
+    justify-self: end;
     margin-bottom: 0;
   }
 
   .school-phone {
-    width: 290px;
+    width: min(24vw, 270px);
     height: 460px;
+  }
+
+  .school-phone-small {
+    width: min(16vw, 170px);
+    height: 300px;
   }
 
   .faq-contact {

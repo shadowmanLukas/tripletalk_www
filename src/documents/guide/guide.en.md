@@ -132,7 +132,7 @@ This is the fastest way when your words are on paper. Take a clear photo of a te
 
 Tick the words you want to learn (or just tap "Select all") and tap "Create flashcards". As you go, you can see how many words were found, how many are new, how many are selected and how many TripleTalk AI flashcards you have available. Words that are already in the lesson are marked as duplicates, so you won't add them twice.
 
-Analysing a photo can take a moment, but you don't have to wait for it. Go back to the lesson, and you'll find the photo in "Pending flashcards": first with the status "Processing", then "Ready to review".
+Analysing a photo can take a moment, but you don't have to wait for it. In the lesson you'll find the photo under "Flashcards in preparation": first as "Analyzing the photo…", then as the banner "Ready: choose the words". Tap the banner to choose the words, or swipe it left to remove the photo.
 
 ### Add from gallery
 
@@ -247,11 +247,11 @@ The first time you open it, you choose a role: Student or Teacher. An account ca
 - You get your own ID in the format `XXXX-XXXX`. Copy it or send it to your teacher so they can invite you to a class.
 - When an invitation arrives, accept or decline it. If you don't want any more invitations from that person, you can also block them.
 - In "My classes" you'll find the lessons from your teacher and the date they're available until.
-- Learn by marking "Know" or "Don't know", and listen to the pronunciation. If you want to go through a lesson again from the start, reset your progress.
+- Learn by marking "Know" or "Don't know", and listen to the pronunciation. A flashcard marked "Don't know" twice comes back in your next session. If you want to go through a lesson again from the start, reset your progress.
 
 Every "Know" in a School lesson counts towards your stats on the Dashboard. You can leave a class at any time.
 
-Your teacher only sees your first name and whether you've started a lesson. They don't know which flashcards you know. Students can't see each other, and School has no chat or comments.
+Your teacher sees your first name and results for the whole class, such as how many students started and finished a lesson and which flashcards the class knows best and worst. They don't know which flashcards you know. Students can't see each other, and School has no chat or comments.
 
 ### Teacher
 
@@ -266,9 +266,20 @@ Worth remembering:
 
 - Once a lesson has been shared, it can no longer be edited, so check it carefully beforehand. You can still share it with more classes or change the availability dates for a given class.
 - You share a lesson with a given class only once. To change the dates, change the availability of the existing share.
-- In each class you see Active, Scheduled and Ended lessons, plus a "Started: X of Y students" stat.
+- In each class you see Active, Scheduled and Ended lessons.
 - Move lessons you no longer need to the Archive. They disappear from classes and students' progress in them is deleted, but the flashcards and recordings stay. From the archive you can restore a lesson (it becomes editable and shareable again, for example next school year) or delete it for good.
 - Flashcards in School lessons use the same TripleTalk AI flashcard balance as your own lessons.
+
+### Class statistics
+
+On a shared lesson, open the three-dot menu and choose "Statistics". The screen shows results for the whole class:
+
+- how many students started and finished the lesson, and the average share of flashcards they know,
+- how learning went over time and how results are spread across the class,
+- the flashcards known best,
+- the flashcards students get wrong most often, which are worth going over in class.
+
+Statistics appear once the required number of students has started the lesson. Until then, you see how many have started so far. We never show an individual student's results, and "Know" and "Don't know" are students' own assessment, not a test result.
 
 ### School settings
 
