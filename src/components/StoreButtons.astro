@@ -5,6 +5,7 @@ interface Props {
   googlePlayLabel: string;
   appStoreCaption: string;
   googlePlayCaption: string;
+  language: "pl" | "en";
 }
 
 const {
@@ -13,7 +14,12 @@ const {
   googlePlayLabel,
   appStoreCaption,
   googlePlayCaption,
+  language,
 } = Astro.props;
+
+// On Android this https link opens the listing in the Play Store app, and the
+// referrer shows up as the traffic source in Play Console.
+const googlePlayUrl = `https://play.google.com/store/apps/details?id=com.craftapp.tripletalk&hl=${language}&referrer=utm_source%3Dtripletalk.app%26utm_medium%3Dwebsite`;
 ---
 
 <div class="store-actions" aria-label={label}>
@@ -29,7 +35,7 @@ const {
       <span>App Store</span>
     </span>
   </a>
-  <a aria-label={googlePlayLabel} aria-disabled="true">
+  <a href={googlePlayUrl} aria-label={googlePlayLabel}>
     <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true">
       <path
         fill="currentColor"

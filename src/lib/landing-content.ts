@@ -270,8 +270,8 @@ export const landingContent = {
         },
         {
           name: "Premium",
-          price: "6,67 zł",
-          priceNote: "miesięcznie*",
+          price: "Plany dopasowane do Ciebie",
+          priceNote: "",
           badge: "Najwięcej możliwości",
           description: "Dla tych, którzy chcą więcej.",
           features: [
@@ -283,7 +283,7 @@ export const landingContent = {
             "Przypomnienia, kiedy czas na powtórkę",
             "Rola nauczyciela w Szkole",
           ],
-          note: "* Przy planie rocznym. Dokładną cenę pokaże App Store lub Google Play.",
+          note: "Plan miesięczny, kwartalny lub roczny. Cenę zobaczysz w App Store lub Google Play.",
           featured: true,
         },
       ],
@@ -576,8 +576,8 @@ export const landingContent = {
         },
         {
           name: "Premium",
-          price: "",
-          priceNote: "monthly, quarterly or yearly plan",
+          price: "Plans that fit you",
+          priceNote: "",
           badge: "Get the most",
           description: "For when you want more.",
           features: [
@@ -589,7 +589,7 @@ export const landingContent = {
             "Reminders when it's time to review",
             "The teacher role in School",
           ],
-          note: "You'll see the price in your currency in the App Store or Google Play.",
+          note: "Monthly, quarterly or yearly plan. You'll see the price in the App Store or Google Play.",
           featured: true,
         },
       ],

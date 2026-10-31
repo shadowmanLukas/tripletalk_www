@@ -1424,10 +1424,10 @@ h3 {
 
 .plan-price strong {
   color: var(--text-strong);
-  font-size: 2.6rem;
+  font-size: 1.7rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1;
+  line-height: 1.15;
 }
 
 .plan-price span {
@@ -1436,9 +1436,6 @@ h3 {
   font-weight: 600;
 }
 
-.plan-featured .plan-price {
-  min-height: 2.6rem;
-}
 
 .plan-store-note {
   margin: 20px 0 0;
