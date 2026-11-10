@@ -19,11 +19,16 @@ const {
 
 // On Android this https link opens the listing in the Play Store app, and the
 // referrer shows up as the traffic source in Play Console.
+// Campaign link from App Store Connect: without a country code Apple redirects
+// to the visitor's own storefront, and ct=website shows up under Acquisition >
+// Campaigns in App Analytics.
+const appStoreUrl =
+  "https://apps.apple.com/app/apple-store/id6785264376?pt=128482616&ct=website&mt=8";
 const googlePlayUrl = `https://play.google.com/store/apps/details?id=com.craftapp.tripletalk&hl=${language}&referrer=utm_source%3Dtripletalk.app%26utm_medium%3Dwebsite`;
 ---
 
 <div class="store-actions" aria-label={label}>
-  <a aria-label={appStoreLabel} aria-disabled="true">
+  <a href={appStoreUrl} aria-label={appStoreLabel}>
     <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true">
       <path
         fill="currentColor"
