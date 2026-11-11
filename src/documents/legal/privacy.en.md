@@ -10,7 +10,7 @@ _Effective from October 1, 2026._
 ## 2. Key points
 
 - We collect only the data needed to run the App.
-- We do not sell data, show ads or track you for advertising.
+- We do not sell data and do not show ads in the App. We share data about how you use the App with Google and Meta to measure our ads only if you agree (section 15).
 - In School a student provides only a first name, and the teacher does not see students' detailed progress.
 - Content you send to AI features goes to the AI provider only to perform the selected feature.
 - You can delete your account and data at any time in the App.
@@ -34,6 +34,7 @@ Legal bases under Art. 6(1) GDPR: **(b)** performance of the contract (Terms), *
 | Push notification token | Study reminders (Premium), School notifications (invitations, replies) and a notice when Premium is moved to another account | (b); you give consent to notifications in your system settings (a) |
 | Feedback sent via "Send feedback": category, title, description, attachments, app version, operating system | Handling reports and complaints, improving the App | (b), (f) |
 | Crash reports, performance data, usage statistics (device model, OS and app version, in-app events, pseudonymous installation ID) | Detecting errors, stability, developing the App | (f) |
+| Data for measuring our ads (section 15) and a record of your consent choice | Seeing which of our ads work and matching them better | (a) |
 | Correspondence with us | Replying, handling complaints, defending against claims | (f) |
 
 We do not process special categories of data (e.g. health data) unless you put them in your own content. Please do not.
@@ -85,8 +86,9 @@ Providing data is voluntary, but the App cannot be used without account data. We
    - Cloudflare: serving the tripletalk.app website (section 14),
    - Google Analytics: visit statistics for the tripletalk.app website, only with your consent (section 14).
 2. Apple and Google as operators of the app stores and sign-in services. Purchases and sign-in via Apple or Google are also subject to their privacy policies.
-3. Other users in School, as described in section 4(3).
-4. Public authorities, where required by law.
+3. Google (Google Ads) and Meta (Facebook), to measure our ads, only with your consent (section 15).
+4. Other users in School, as described in section 4(3).
+5. Public authorities, where required by law.
 
 We may change the list of providers. The current list is always in this Policy.
 
@@ -99,7 +101,7 @@ We may change the list of providers. The current list is always in this Policy.
 
 ## 9. Transfers outside the EEA
 
-Some providers (Google, RevenueCat, Apple, Cloudflare) may process data outside the European Economic Area, in particular in the USA. In that case we rely on safeguards required by the GDPR: a European Commission adequacy decision (the EU-US Data Privacy Framework, where the provider is certified) or Standard Contractual Clauses. You can obtain a copy of the safeguards by contacting us.
+Some providers (Google, Meta, RevenueCat, Apple, Cloudflare) may process data outside the European Economic Area, in particular in the USA. In that case we rely on safeguards required by the GDPR: a European Commission adequacy decision (the EU-US Data Privacy Framework, where the provider is certified) or Standard Contractual Clauses. You can obtain a copy of the safeguards by contacting us.
 
 ## 10. How long we keep data
 
@@ -113,6 +115,7 @@ Some providers (Google, RevenueCat, Apple, Cloudflare) may process data outside 
 | Feedback and correspondence | Up to 3 years after the matter is closed (limitation period for claims) |
 | Crash reports and statistics | According to Firebase settings, no longer than 14 months |
 | Website visit statistics (Google Analytics) | 14 months |
+| Data for measuring ads | Shared while your consent is on. Google and Meta keep it under their own rules. We keep the record of your consent choice until the account is deleted |
 | Daily AI and audio usage counters | Until the account is deleted (earlier days' values are overwritten) |
 | List of signed-in devices | A device's entry until you sign out on it. The entry of a device signed out automatically or from another device stays until the account is deleted. The whole list is deleted with the account |
 | Backups | Deleted in the normal backup rotation cycle |
@@ -128,7 +131,7 @@ You have the right to:
 - restrict processing,
 - data portability for data you provided to us,
 - object to processing based on our legitimate interest (including analytics and welcome bonus safeguards),
-- withdraw consent at any time (e.g. by turning off notifications in your phone settings or changing your choice with the "Cookies" button in the website footer), without affecting the lawfulness of earlier processing,
+- withdraw consent at any time (e.g. by turning off "Analytics data" in the App's Settings, turning off notifications in your phone settings, or changing your choice with the "Cookies" button in the website footer), without affecting the lawfulness of earlier processing,
 - lodge a complaint with the Polish supervisory authority (Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warsaw) or the supervisory authority in your country of residence.
 
 Write to support@tripletalk.app from the email address linked to your account. We reply within 14 days and may ask you to confirm your identity.
@@ -141,7 +144,7 @@ Write to support@tripletalk.app from the email address linked to your account. W
 
 ## 13. App permissions and data on your device
 
-1. The App may ask for access to: camera (photo of text), photo library (choosing a photo) and notifications (reminders, School invitations). You can turn off any permission in your device settings.
+1. The App may ask for access to: camera (photo of text), photo library (choosing a photo) and notifications (reminders, School invitations). On iPhone, if you agree to ad measurement, it also asks for permission to track (section 15). You can turn off any permission in your device settings.
 2. On your device we store, among other things, settings, a cache of audio and flashcards, and the installation identifier described in section 5. Deleting the App removes most of this data. On iOS the secret in Keychain may remain after the App is deleted, as the system works this way.
 
 ## 14. The tripletalk.app website
@@ -151,10 +154,18 @@ Write to support@tripletalk.app from the email address linked to your account. W
 3. Without consent, Google Analytics is not loaded and stores no cookies. We do not use website data for advertising and do not link it to your App account.
 4. You can change or withdraw your consent at any time with the "Cookies" button in the website footer. Withdrawing consent deletes the Google Analytics cookies. The website remembers your consent and language choice in your browser's storage and does not send them to us.
 
-## 15. Security
+## 15. Measuring our ads
+
+1. We advertise TripleTalk on Google and Facebook. To know which ads work and which are a waste of money, with your consent we let Google (Google Ads) and Meta (Facebook) know that the App was installed and how you use it.
+2. We share: pseudonymous device and installation identifiers (including the advertising identifier, if your system allows it), device model, OS and App version, and in-app events such as creating an account, finishing the introduction, completing your first study session, reaching your daily goal, or a purchase and its amount. We do not share the content of your lessons and flashcards, your email address or your name.
+3. Google and Meta use this data to show us how many people came from a given ad and to match our ads better. For this they are separate controllers and follow their own privacy policies. Purchase information may also reach Meta through RevenueCat, likewise only with your consent.
+4. On iPhone we also ask for permission in Apple's system prompt. If you decline there, the advertising identifier is not shared.
+5. The legal basis is your consent (a). You give it by ticking the box when you create your account. It is voluntary and does not affect access to any App features. You can turn it off at any time in the App's Settings ("Analytics data"). We record your choice on your account together with its date.
+
+## 16. Security
 
 We apply technical and organisational measures appropriate to the risk: encrypted connections, database access rules (e.g. a teacher's lessons are visible only to the teacher and their classes), App Check verification, rate limiting, and server-side enforcement of permissions and limits. If a personal data breach is likely to result in a high risk to you, we will inform you without undue delay.
 
-## 16. Changes to this Policy
+## 17. Changes to this Policy
 
 We will inform you of material changes in the App before they take effect. The current version is always available in the App and at tripletalk.app.

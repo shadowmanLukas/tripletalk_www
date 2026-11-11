@@ -10,7 +10,7 @@ _Obowiązuje od 1 października 2026._
 ## 2. Najważniejsze w skrócie
 
 - Zbieramy tylko dane potrzebne do działania Aplikacji.
-- Nie sprzedajemy danych, nie wyświetlamy reklam i nie śledzimy Cię w celach reklamowych.
+- Nie sprzedajemy danych i nie wyświetlamy reklam w Aplikacji. Dane o korzystaniu z Aplikacji przekazujemy Google i Mecie do mierzenia naszych reklam tylko wtedy, gdy się na to zgodzisz (pkt 15).
 - W Szkole uczeń podaje tylko imię, a nauczyciel nie widzi szczegółowych postępów uczniów.
 - Treści przesyłane do funkcji AI trafiają do dostawcy AI tylko po to, aby wykonać wybraną funkcję.
 - Konto i dane możesz usunąć w każdej chwili w Aplikacji.
@@ -34,6 +34,7 @@ Podstawy prawne z art. 6 ust. 1 RODO: **(b)** wykonanie umowy (Regulaminu), **(a
 | Token powiadomień push | Wysyłanie przypomnień o nauce (Premium), powiadomień Szkoły (zaproszenia, odpowiedzi) oraz informacji o przeniesieniu Premium na inne konto | (b), a zgodę na powiadomienia wyrażasz w systemie (a) |
 | Zgłoszenia z funkcji "Wyślij opinię": kategoria, tytuł, opis, załączniki, wersja aplikacji, system | Obsługa zgłoszeń i reklamacji, poprawa Aplikacji | (b), (f) |
 | Raporty awarii, dane o wydajności, statystyki użycia (model urządzenia, wersja systemu i aplikacji, zdarzenia w aplikacji, pseudonimowy identyfikator instalacji) | Wykrywanie błędów, stabilność, rozwój Aplikacji | (f) |
+| Dane do pomiaru naszych reklam (pkt 15) i zapis Twojej decyzji o zgodzie | Sprawdzanie, które nasze reklamy działają, i lepsze ich dopasowanie | (a) |
 | Korespondencja z nami | Odpowiedź, obsługa reklamacji, obrona przed roszczeniami | (f) |
 
 Nie przetwarzamy szczególnych kategorii danych (np. o zdrowiu), chyba że sam umieścisz je w swoich treściach. Prosimy, nie rób tego.
@@ -85,8 +86,9 @@ Podanie danych jest dobrowolne, ale bez danych konta nie da się korzystać z Ap
    - Cloudflare: udostępnianie strony tripletalk.app (pkt 14),
    - Google Analytics: statystyki odwiedzin strony tripletalk.app, tylko za Twoją zgodą (pkt 14).
 2. Apple i Google jako operatorom sklepów i logowania. Zakupy i logowanie przez Apple lub Google podlegają także ich politykom prywatności.
-3. Innym użytkownikom w Szkole, w zakresie z pkt 4 ust. 3.
-4. Organom państwowym, gdy wymaga tego prawo.
+3. Google (Google Ads) i Meta (Facebook), do mierzenia naszych reklam, tylko za Twoją zgodą (pkt 15).
+4. Innym użytkownikom w Szkole, w zakresie z pkt 4 ust. 3.
+5. Organom państwowym, gdy wymaga tego prawo.
 
 Listę dostawców możemy zmieniać. Aktualna jest zawsze w tej Polityce.
 
@@ -99,7 +101,7 @@ Listę dostawców możemy zmieniać. Aktualna jest zawsze w tej Polityce.
 
 ## 9. Przekazywanie danych poza EOG
 
-Część dostawców (Google, RevenueCat, Apple, Cloudflare) może przetwarzać dane poza Europejskim Obszarem Gospodarczym, w szczególności w USA. Wtedy korzystamy z zabezpieczeń wymaganych przez RODO: decyzji Komisji Europejskiej o odpowiednim stopniu ochrony (EU-US Data Privacy Framework, gdy dostawca jest nim objęty) lub standardowych klauzul umownych. Kopię zabezpieczeń możesz otrzymać, pisząc do nas.
+Część dostawców (Google, Meta, RevenueCat, Apple, Cloudflare) może przetwarzać dane poza Europejskim Obszarem Gospodarczym, w szczególności w USA. Wtedy korzystamy z zabezpieczeń wymaganych przez RODO: decyzji Komisji Europejskiej o odpowiednim stopniu ochrony (EU-US Data Privacy Framework, gdy dostawca jest nim objęty) lub standardowych klauzul umownych. Kopię zabezpieczeń możesz otrzymać, pisząc do nas.
 
 ## 10. Jak długo przechowujemy dane
 
@@ -113,6 +115,7 @@ Część dostawców (Google, RevenueCat, Apple, Cloudflare) może przetwarzać d
 | Zgłoszenia i korespondencja | Do 3 lat od zakończenia sprawy (okres przedawnienia roszczeń) |
 | Raporty awarii i statystyki | Zgodnie z ustawieniami usług Firebase, nie dłużej niż 14 miesięcy |
 | Statystyki odwiedzin strony (Google Analytics) | 14 miesięcy |
+| Dane do pomiaru reklam | Przekazujemy je, dopóki zgoda jest włączona. Google i Meta przechowują je zgodnie ze swoimi zasadami. Zapis Twojej decyzji o zgodzie trzymamy do usunięcia konta |
 | Dzienne liczniki użycia AI i nagrań | Do usunięcia konta (wartości z poprzednich dni są nadpisywane) |
 | Lista zalogowanych urządzeń | Wpis urządzenia do wylogowania się na nim, a wpis urządzenia wylogowanego automatycznie lub z innego urządzenia do usunięcia konta. Cała lista jest usuwana razem z kontem |
 | Kopie zapasowe | Usuwane w zwykłym cyklu rotacji kopii |
@@ -128,7 +131,7 @@ Masz prawo do:
 - ograniczenia przetwarzania,
 - przeniesienia danych, które nam przekazałeś,
 - sprzeciwu wobec przetwarzania opartego na naszym prawnie uzasadnionym interesie (w tym analityki i zabezpieczeń bonusu),
-- cofnięcia zgody w każdej chwili (np. wyłączając powiadomienia w ustawieniach telefonu albo zmieniając wybór pod przyciskiem "Cookies" w stopce strony), bez wpływu na zgodność z prawem wcześniejszego przetwarzania,
+- cofnięcia zgody w każdej chwili (np. wyłączając „Dane analityczne” w Ustawieniach Aplikacji, powiadomienia w ustawieniach telefonu albo zmieniając wybór pod przyciskiem "Cookies" w stopce strony), bez wpływu na zgodność z prawem wcześniejszego przetwarzania,
 - skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa) lub organu nadzorczego w kraju, w którym mieszkasz.
 
 Napisz na support@tripletalk.app z adresu przypisanego do konta. Odpowiemy w ciągu 14 dni. Możemy poprosić o potwierdzenie tożsamości.
@@ -141,7 +144,7 @@ Napisz na support@tripletalk.app z adresu przypisanego do konta. Odpowiemy w ci�
 
 ## 13. Uprawnienia aplikacji i dane na urządzeniu
 
-1. Aplikacja może prosić o dostęp do: aparatu (zdjęcie tekstu), galerii (wybór zdjęcia) i powiadomień (przypomnienia, zaproszenia Szkoły). Każde uprawnienie możesz wyłączyć w ustawieniach urządzenia.
+1. Aplikacja może prosić o dostęp do: aparatu (zdjęcie tekstu), galerii (wybór zdjęcia) i powiadomień (przypomnienia, zaproszenia Szkoły). Na iPhonie, jeśli zgodzisz się na pomiar reklam, zapyta też o zgodę na śledzenie (pkt 15). Każde uprawnienie możesz wyłączyć w ustawieniach urządzenia.
 2. Na urządzeniu przechowujemy m.in. ustawienia, pamięć podręczną nagrań i fiszek oraz identyfikator instalacji z pkt 5. Usunięcie Aplikacji usuwa większość tych danych. Sekret w Keychain na iOS może pozostać po usunięciu Aplikacji, zgodnie z działaniem systemu.
 
 ## 14. Strona internetowa tripletalk.app
@@ -151,10 +154,18 @@ Napisz na support@tripletalk.app z adresu przypisanego do konta. Odpowiemy w ci�
 3. Bez zgody Google Analytics nie jest wczytywany i nie zapisuje plików cookie. Danych ze strony nie używamy do reklam i nie łączymy ich z kontem w Aplikacji.
 4. Zgodę możesz w każdej chwili zmienić lub cofnąć przyciskiem "Cookies" w stopce strony. Cofnięcie zgody usuwa pliki cookie Google Analytics. Wybór zgody i języka strona zapamiętuje w pamięci przeglądarki i nie przesyła ich do nas.
 
-## 15. Bezpieczeństwo
+## 15. Pomiar naszych reklam
+
+1. Reklamujemy TripleTalk w Google i na Facebooku. Żeby wiedzieć, które reklamy działają, a na które szkoda pieniędzy, za Twoją zgodą przekazujemy Google (Google Ads) i Mecie (Facebook) informację, że Aplikacja została zainstalowana, i jak z niej korzystasz.
+2. Przekazujemy: pseudonimowe identyfikatory urządzenia i instalacji (w tym identyfikator reklamowy, jeśli system na to pozwala), model urządzenia, wersję systemu i Aplikacji oraz zdarzenia w Aplikacji, np. założenie konta, ukończenie wprowadzenia, pierwszą ukończoną sesję nauki, osiągnięty cel dnia albo zakup z jego kwotą. Nie przekazujemy treści Twoich lekcji i fiszek, adresu e-mail ani imienia.
+3. Google i Meta wykorzystują te dane, żeby pokazać nam, ile osób przyszło z danej reklamy, i żeby lepiej dopasować nasze reklamy. W tym zakresie są odrębnymi administratorami danych i stosują własne polityki prywatności. Informacje o zakupach mogą trafiać do Mety także przez RevenueCat, również tylko za Twoją zgodą.
+4. Na iPhonie dodatkowo pytamy o zgodę w systemowym oknie Apple. Jeśli tam odmówisz, identyfikator reklamowy nie jest przekazywany.
+5. Podstawą jest Twoja zgoda (a). Wyrażasz ją, zaznaczając pole przy zakładaniu konta. Zgoda jest dobrowolna i nie wpływa na dostęp do funkcji Aplikacji. Możesz ją w każdej chwili wyłączyć w Ustawieniach Aplikacji („Dane analityczne”). Twoją decyzję zapisujemy na koncie razem z datą.
+
+## 16. Bezpieczeństwo
 
 Stosujemy środki techniczne i organizacyjne odpowiednie do ryzyka: szyfrowanie połączeń, reguły dostępu do bazy danych (np. lekcje nauczyciela widzi tylko on i jego klasy), weryfikację App Check, ograniczenie liczby zapytań oraz egzekwowanie uprawnień i limitów po stronie serwera. O naruszeniu ochrony danych, które może powodować wysokie ryzyko dla Ciebie, poinformujemy Cię bez zbędnej zwłoki.
 
-## 16. Zmiany Polityki
+## 17. Zmiany Polityki
 
 O istotnych zmianach poinformujemy w Aplikacji przed ich wejściem w życie. Aktualna wersja jest zawsze dostępna w Aplikacji i na stronie tripletalk.app.
