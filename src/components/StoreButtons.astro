@@ -28,7 +28,7 @@ const googlePlayUrl = `https://play.google.com/store/apps/details?id=com.craftap
 ---
 
 <div class="store-actions" aria-label={label}>
-  <a href={appStoreUrl} aria-label={appStoreLabel}>
+  <a href={appStoreUrl} aria-label={appStoreLabel} data-store="app_store">
     <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true">
       <path
         fill="currentColor"
@@ -40,7 +40,7 @@ const googlePlayUrl = `https://play.google.com/store/apps/details?id=com.craftap
       <span>App Store</span>
     </span>
   </a>
-  <a href={googlePlayUrl} aria-label={googlePlayLabel}>
+  <a href={googlePlayUrl} aria-label={googlePlayLabel} data-store="google_play">
     <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true">
       <path
         fill="currentColor"

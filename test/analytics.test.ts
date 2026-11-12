@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   initAnalytics,
   isValidMeasurementId,
@@ -101,5 +101,56 @@ describe("analytics consent", () => {
     expect(banner().querySelector("[data-consent-accept]")!.textContent).toBe(
       "Accept",
     );
+  });
+
+  describe("store button clicks", () => {
+    function renderWithStoreButtons() {
+      render();
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        `<a href="https://apps.apple.com/app/id1" data-store="app_store"><span>App Store</span></a>
+         <a href="https://play.google.com/store/apps/details?id=x" data-store="google_play">Google Play</a>`,
+      );
+      // jsdom cannot navigate, so keep the click on the page.
+      document.addEventListener("click", (event) => event.preventDefault());
+    }
+
+    it("sends an event per store after consent", () => {
+      localStorage.setItem("tripletalk-analytics-consent-v1", "granted");
+      renderWithStoreButtons();
+      initAnalytics();
+      const gtag = vi.fn();
+      window.gtag = gtag;
+
+      document
+        .querySelector<HTMLElement>("[data-store='app_store'] span")!
+        .click();
+      document
+        .querySelector<HTMLElement>("[data-store='google_play']")!
+        .click();
+
+      expect(gtag).toHaveBeenCalledTimes(2);
+      expect(gtag).toHaveBeenNthCalledWith(
+        1,
+        "event",
+        "click_app_store",
+        expect.objectContaining({ store: "app_store" }),
+      );
+      expect(gtag).toHaveBeenNthCalledWith(
+        2,
+        "event",
+        "click_google_play",
+        expect.objectContaining({ store: "google_play" }),
+      );
+    });
+
+    it("sends nothing without consent", () => {
+      renderWithStoreButtons();
+      initAnalytics();
+      expect(window.gtag).toBeUndefined();
+      document.querySelector<HTMLElement>("[data-store='app_store']")!.click();
+      expect(window.gtag).toBeUndefined();
+      expect(window.dataLayer).toBeUndefined();
+    });
   });
 });

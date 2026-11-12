@@ -102,6 +102,32 @@ export function clearAnalyticsCookies(doc: Document = document) {
     });
 }
 
+// Store button clicks are the site's conversions (GA4 key events, imported into Google Ads).
+// gtag only exists after consent, so without it nothing is sent.
+const storeEvents: Record<string, string> = {
+  app_store: "click_app_store",
+  google_play: "click_google_play",
+};
+
+const trackedDocuments = new WeakSet<Document>();
+
+export function trackStoreClicks(doc: Document = document) {
+  if (trackedDocuments.has(doc)) return;
+  trackedDocuments.add(doc);
+  doc.addEventListener("click", (event) => {
+    const target = event.target as Element | null;
+    const link = target?.closest?.<HTMLAnchorElement>("a[data-store]");
+    const eventName = link && storeEvents[link.dataset.store ?? ""];
+    const gtag = doc.defaultView?.gtag;
+    if (!link || !eventName || !gtag) return;
+    gtag("event", eventName, {
+      store: link.dataset.store,
+      link_url: link.href,
+      transport_type: "beacon",
+    });
+  });
+}
+
 function pageLanguage(doc: Document): BannerLanguage {
   return doc.documentElement.lang.toLowerCase().startsWith("pl") ? "pl" : "en";
 }
@@ -129,6 +155,8 @@ export function initAnalytics(doc: Document = document) {
     attributes: true,
     attributeFilter: ["lang"],
   });
+
+  trackStoreClicks(doc);
 
   const consent = readConsent();
   if (consent === "granted") loadGoogleAnalytics(measurementId, doc);
