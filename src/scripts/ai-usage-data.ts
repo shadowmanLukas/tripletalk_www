@@ -17,8 +17,8 @@ import {
 } from "../lib/function-stats";
 import { labelled, timestampToDate } from "./admin-stats";
 
-// Reads statistics/aiUsage for the Functions Stats and AI Limits & Errors
-// views, read only, with one session cache shared by both. Layout:
+// Reads statistics/aiUsage for Functions Stats and its Limits & errors
+// block, read only, with one session cache shared by both. Layout:
 // tripletalk/docs/functions/STATISTICS.md.
 
 export const MAX_LIVE_DAYS = 3;

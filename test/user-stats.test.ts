@@ -10,6 +10,7 @@ import {
 import {
   breakdownRows,
   buildDailyCountChart,
+  unaggregatedPastDays,
   utcDayStart,
 } from "../src/lib/stats";
 import {
@@ -83,6 +84,13 @@ describe("user statistics", () => {
     ]);
     expect(rows.reduce((sum, row) => sum + (row.share || 0), 0)).toBeCloseTo(1);
     expect(breakdownRows({}, AUTH_PROVIDERS, 0)[0].share).toBeNull();
+  });
+
+  it("notes live days only when an earlier day is not aggregated", () => {
+    expect(unaggregatedPastDays(["2026-11-15"], "2026-11-15")).toEqual([]);
+    expect(
+      unaggregatedPastDays(["2026-11-14", "2026-11-15"], "2026-11-15"),
+    ).toEqual(["2026-11-14"]);
   });
 
   it("marks today as an incomplete day in the new users chart", () => {

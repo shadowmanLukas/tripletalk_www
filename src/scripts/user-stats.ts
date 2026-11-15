@@ -1,7 +1,9 @@
 import {
   collection,
   collectionGroup,
+  doc,
   getAggregateFromServer,
+  getDoc,
   getDocs,
   getFirestore,
   limit,
@@ -27,9 +29,11 @@ import {
   countActiveLearners,
   deriveUserTotals,
   learningDayWindow,
+  mapPremiumSummary,
   summarizeUserCreatedLessons,
   type ActiveLearners,
   type LessonTotals,
+  type PremiumSummary,
   type UserStatsSnapshot,
   type UserTotals,
 } from "../lib/user-stats";
@@ -188,36 +192,39 @@ interface LoadedSnapshot {
   /** Lessons were counted by reading every lesson (index missing). */
   lessonsFromScan: boolean;
   activity: LoadedActivity;
+  /** When countActivePremium counted; null when it has not run yet. */
+  premiumCountedAt: Date | null;
   countedAt: Date;
+}
+
+/** Active premium is counted by the countActivePremium Cloud Function: the
+ * entitlement (users/{uid}/private/monetization) is not readable here, and
+ * "active" depends on its expiry time, not on a stored flag. */
+async function fetchPremium(db: Firestore): Promise<PremiumSummary> {
+  const summary = await labelled(
+    "statistics/premium",
+    getDoc(doc(db, "statistics", "premium")),
+  );
+  const data = summary.data();
+  return mapPremiumSummary(data, timestampToDate(data?.countedAt));
 }
 
 async function fetchSnapshot(db: Firestore): Promise<LoadedSnapshot> {
   const users = collection(db, "users");
-  const active = query(users, where("premiumIsActive", "==", true));
-  const premiumSources = Object.keys(PREMIUM_SOURCES);
   const providers = Object.keys(AUTH_PROVIDERS);
-  const [usersCount, activity, premium, premiumCounts, providerCounts] =
-    await Promise.all([
-      countOf(users, "count of users"),
-      fetchActiveLearners(db),
-      countOf(active, "count of users where premiumIsActive == true"),
-      Promise.all(
-        premiumSources.map((source) =>
-          countOf(
-            query(active, where("premiumSource", "==", source)),
-            `count of active premium users where premiumSource == ${source}`,
-          ),
+  const [usersCount, activity, premium, providerCounts] = await Promise.all([
+    countOf(users, "count of users"),
+    fetchActiveLearners(db),
+    fetchPremium(db),
+    Promise.all(
+      providers.map((provider) =>
+        countOf(
+          query(users, where("authProvider", "==", provider)),
+          `count of users where authProvider == ${provider}`,
         ),
       ),
-      Promise.all(
-        providers.map((provider) =>
-          countOf(
-            query(users, where("authProvider", "==", provider)),
-            `count of users where authProvider == ${provider}`,
-          ),
-        ),
-      ),
-    ]);
+    ),
+  ]);
 
   const lessons = collectionGroup(db, "lessons");
   let allLessons: LessonTotals;
@@ -250,10 +257,8 @@ async function fetchSnapshot(db: Firestore): Promise<LoadedSnapshot> {
     snapshot: {
       users: usersCount,
       activeLearners: activity.activeLearners,
-      premium,
-      premiumBySource: Object.fromEntries(
-        premiumSources.map((source, index) => [source, premiumCounts[index]]),
-      ),
+      premium: premium.premium,
+      premiumBySource: premium.premiumBySource,
       authProviders: Object.fromEntries(
         providers.map((provider, index) => [provider, providerCounts[index]]),
       ),
@@ -262,6 +267,7 @@ async function fetchSnapshot(db: Firestore): Promise<LoadedSnapshot> {
     },
     lessonsFromScan,
     activity,
+    premiumCountedAt: premium.countedAt,
     countedAt: new Date(),
   };
 }
@@ -342,6 +348,7 @@ export function createUserStatsView(
   );
   const providerRows = find<HTMLElement>("#us-provider-rows");
   const premiumRows = find<HTMLElement>("#us-premium-rows");
+  const premiumNote = find<HTMLElement>("#us-premium-note");
 
   let snapshot: LoadedSnapshot | null = null;
   const ranges = new Map<string, RangeCounts>();
@@ -426,6 +433,9 @@ export function createUserStatsView(
     renderChart();
     freshness.hidden = false;
     freshness.textContent = `Totals counted ${UTC_DATE_TIME.format(snapshot.countedAt)} UTC. Daily chart ${dayKeys[0]} – ${dayKeys.at(-1)} (UTC).`;
+    premiumNote.textContent = snapshot.premiumCountedAt
+      ? `Counted every 30 minutes from trial and subscription expiry dates; last count ${UTC_DATE_TIME.format(snapshot.premiumCountedAt)} UTC.`
+      : "Not counted yet: the countActivePremium Cloud Function has not written statistics/premium.";
     scanNote.hidden = !snapshot.lessonsFromScan;
     const { problem, truncated } = snapshot.activity;
     activityNote.hidden = !problem && !truncated;

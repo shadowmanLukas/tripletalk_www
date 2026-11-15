@@ -1,3 +1,4 @@
+import { unaggregatedPastDays } from "../lib/stats";
 import { AI_PRICING, type AiPricing } from "../lib/ai-pricing";
 import {
   SERIES_COUNT,
@@ -674,9 +675,10 @@ export function createFunctionStatsView(
   const renderFreshness = (data: LoadedStatistics) => {
     renderAggregationFreshness(freshness, data);
     const notes: string[] = [];
-    if (data.liveDays.length) {
+    const pastLive = unaggregatedPastDays(data.liveDays, today());
+    if (pastLive.length) {
       notes.push(
-        `Live from raw events (incomplete): ${data.liveDays.join(", ")}.`,
+        `Not aggregated yet, counted live from raw events: ${pastLive.join(", ")}.`,
       );
     }
     if (data.truncatedDays.length) {

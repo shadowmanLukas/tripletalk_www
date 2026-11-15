@@ -22,6 +22,7 @@ import { aggregateEvents, dayKeysBetween } from "../src/lib/function-stats";
 import {
   formatComparison,
   formatUsersPerDay,
+  renderRetriesTooltip,
   renderCodeRows,
   renderOutcomeAlerts,
   renderOutcomeFunctionDetails,
@@ -446,5 +447,24 @@ describe("AI outcome statistics", () => {
     expect(details.querySelector("img")).toBeNull();
     expect(details.textContent).toContain(hostile);
     expect(details.textContent).toContain("No data");
+  });
+});
+
+describe("retries-only tooltip", () => {
+  it("shows the retries without a failure total", () => {
+    const tooltip = document.createElement("div");
+    renderRetriesTooltip(
+      tooltip,
+      {
+        dayKey: "2026-11-13",
+        live: false,
+        aggregated: true,
+        unpriced: false,
+        total: 0,
+        segments: [],
+      },
+      11,
+    );
+    expect(tooltip.textContent).toBe("2026-11-13 UTCRetries: 11");
   });
 });

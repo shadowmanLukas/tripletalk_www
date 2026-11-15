@@ -134,10 +134,11 @@ Indeks `lessons.createdFromCommonCollection` pozwala User Stats liczyć lekcje i
 
 Zakładka `/adminpanel#user-stats` (dawniej Statistics; stary adres `#statistics` przekierowuje) pokazuje:
 
-- **Users now:** liczbę kont, aktywne premium (`premiumIsActive`) oraz aktywnych uczących się z ostatnich 7 i 30 dni. Aktywny uczący się to użytkownik, który danego dnia oznaczył co najmniej jedną fiszkę jako znaną (`users/{uid}/learningStats/{dzień}`, lokalna data urządzenia). `lastSignInAt` nie jest używane, bo zmienia się tylko przy jawnym logowaniu, a nie przy otwarciu aplikacji.
+- **Users now:** liczbę kont, aktywne premium oraz aktywnych uczących się z ostatnich 7 i 30 dni. Aktywny uczący się to użytkownik, który danego dnia oznaczył co najmniej jedną fiszkę jako znaną (`users/{uid}/learningStats/{dzień}`, lokalna data urządzenia). `lastSignInAt` nie jest używane, bo zmienia się tylko przy jawnym logowaniu, a nie przy otwarciu aplikacji.
 - **Content now:** lekcje i fiszki tworzone przez użytkowników (bez gotowych kolekcji) oraz średnie.
 - **Wykres dzienny** dla wybranego zakresu (domyślnie bieżący tydzień UTC od poniedziałku do dziś, najwyżej 180 dni) z przełącznikiem: nowi użytkownicy (po `createdAt`, dzień UTC) albo aktywni uczący się (dokumenty `learningStats` z danego dnia; lokalną datę dopasowuje okno ±12 h wokół północy UTC).
-- Podział kont na metodę logowania (`authProvider`) i aktywnego premium na źródło (`premiumSource`).
+- Podział kont na metodę logowania (`authProvider`) i aktywnego premium na źródło (trial, App Store, Google Play).
+- Aktywne premium czyta z `statistics/premium`, które co 30 minut zapisuje funkcja `countActivePremium` z repozytorium `tripletalk`: liczy użytkowników, których `users/{uid}/private/monetization` ma `premiumExpiresAt` albo `trialExpiresAt` w przyszłości (subskrypcja ma pierwszeństwo przed trialem). Panel nie może czytać `private/monetization`, a backend nie zapisuje `users.premiumIsActive`, więc to pole nie jest używane. Zakupy z sandboxu Apple (np. konto App Review) są liczone jak subskrypcje.
 
 Wszystko jest liczone zapytaniami `count()`/`sum()`, bez pobierania dokumentów użytkowników. Jedynym wyjątkiem są liczby różnych aktywnych użytkowników z 7 i 30 dni: tego nie da się policzyć po stronie serwera, więc panel czyta dokumenty `learningStats` z ostatnich 30 dni (jeden mały dokument na użytkownika i dzień, najwyżej 10 000, czyli maksymalny limit zapytania Firestore). Wyniki są cache'owane do odświeżenia albo wylogowania, a dzisiejszy dzień jest zawsze liczony od nowa.
 
@@ -157,7 +158,7 @@ Panel używa wyłącznie zapytań `count()`/`sum()` i nie pobiera imion, kodów 
 
 Zakładka `/adminpanel#functions-stats` pokazuje dzienne zużycie płatnych API (tokeny Gemini i znaki Google Text-to-Speech) w podziale na Cloud Functions. Źródłem prawdy o danych jest `docs/functions/STATISTICS.md` w repozytorium `tripletalk`.
 
-- Raporty są budowane z agregatów `statistics/aiUsage/daily` i `statistics/aiUsage/dailyByFunction` (zakres do 180 dni, plus 7 dni wcześniej jako punkt odniesienia dla alertów). Surowe `events` są czytane tylko po włączeniu „Include today”, dla dni po ostatniej agregacji (najwyżej 3 dni, do 5000 zdarzeń na dzień). Domyślny zakres to bieżący tydzień UTC od poniedziałku do dziś, z włączonym „Include today”; tak samo w School Stats i AI Limits & Errors.
+- Raporty są budowane z agregatów `statistics/aiUsage/daily` i `statistics/aiUsage/dailyByFunction` (zakres do 180 dni, plus 7 dni wcześniej jako punkt odniesienia dla alertów). Surowe `events` są czytane tylko po włączeniu „Include today”, dla dni po ostatniej agregacji (najwyżej 3 dni, do 5000 zdarzeń na dzień). Domyślny zakres to bieżący tydzień UTC od poniedziałku do dziś, z włączonym „Include today”; tak samo w School Stats, a App Check bez „Include today”.
 - Wszystkie daty to dni UTC. Panel pokazuje czas ostatniej agregacji i ostrzega, gdy jest starsza niż 36 godzin.
 - Koszt jest szacunkiem liczonym w przeglądarce z cennika w [src/lib/ai-pricing.ts](src/lib/ai-pricing.ts) (ceny za 1M tokenów dla modeli Gemini i za 1M znaków dla typów głosów TTS, z datą obowiązywania i linkami do cenników Google). Model albo głos bez ceny jest pokazywany jako „no price”, nie jako 0. Przy zmianie cen Google zaktualizuj ten plik.
 - Alerty: średnie wyjście na wywołanie operacji Gemini ponad 2 razy wyższe niż średnia z poprzednich 7 dni oraz dzienny koszt funkcji powyżej progu. Próg ustawia się w panelu i jest zapamiętywany tylko w tej przeglądarce.
@@ -165,17 +166,26 @@ Zakładka `/adminpanel#functions-stats` pokazuje dzienne zużycie płatnych API 
 
 Odczyt wymaga reguły `match /statistics/{document=**} { allow read: if isAdmin(); }`, która jest już w `firestore.rules` repozytorium `tripletalk`. Ten panel nie potrzebuje do tego osobnego patcha i nigdy nie zapisuje do `statistics`.
 
-## AI Limits & Errors
+### Limits & errors
 
-Zakładka `/adminpanel#ai-limits` pokazuje dziennie, ile razy limity aplikacji odmówiły użytkownikom pracy AI (`limit`), ile pracy AI skończyło się ostatecznym błędem (`failure`), ile razy triggery backendu były ponawiane (`retry`) i ile treści odrzuciła moderacja Szkoły (`moderation`). Dane zbiera backend od 2026-10-18, opis pól i kodów jest w sekcji „Limity, błędy i ponowienia” w `docs/functions/STATISTICS.md` repozytorium `tripletalk`.
+Blok na dole Functions Stats (do 2026-11-15 osobna zakładka; stary link `/adminpanel#ai-limits` otwiera Functions Stats) używa tego samego zakresu dat, „Include today” i przycisku Refresh. Pokazuje dziennie, ile razy limity aplikacji odmówiły użytkownikom pracy AI (`limit`), ile pracy AI skończyło się ostatecznym błędem (`failure`), ile razy triggery backendu były ponawiane (`retry`) i ile treści odrzuciła moderacja Szkoły (`moderation`). Dane zbiera backend od 2026-10-18, opis pól i kodów jest w sekcji „Limity, błędy i ponowienia” w `docs/functions/STATISTICS.md` repozytorium `tripletalk`.
 
 - Czyta te same dokumenty co Functions Stats (`daily`, `dailyByFunction`, dla dzisiejszego dnia `events` z `type == "outcome"`, filtrowane w przeglądarce), przez wspólny moduł [src/scripts/ai-usage-data.ts](src/scripts/ai-usage-data.ts) z jednym cache na sesję. Dodatkowo pobiera dokumenty `daily` poprzedniego zakresu tej samej długości, do porównania w kafelkach.
 - Dni bez nowych pól (zagregowane przed 2026-10-18 albo jeszcze niezagregowane) są pokazywane jako „No data”, nie jako 0. Zakres zaczynający się wcześniej jest domyślnie przycinany do 2026-10-18, z widoczną informacją.
 - Sumy to suma pola `count` (elementy, nie użytkownicy). Liczba użytkowników jest pokazywana jako zakres dziennych `users` (min–max, średnia w podpowiedzi), nigdy jako suma między dniami. Dla ponowień jest „–”. `userHash` nie jest wyświetlany ani przechowywany; dla dzisiejszego dnia panel liczy tylko liczbę różnych wartości.
 - Wyróżnienia: `moderation_failed_open` zawsze, gdy wystąpił; ostateczne błędy funkcji powyżej 2% jej wywołań w danym dniu (albo błędy bez żadnego wywołania); ponowienia ponad 3 razy powyżej średniej z 7 poprzednich dni z danymi (średnia liczona jako co najmniej 1); kod moderacji odrzucony dla co najmniej 5 różnych użytkowników w dniu (możliwe fałszywe odrzucenia) albo co najmniej 10 razy w dniu z jednym użytkownikiem (możliwe nadużycie). Progi ustawia się w panelu, są zapamiętywane tylko w tej przeglądarce.
-- Kliknięcie funkcji otwiera jej dzienny trend i kody. Błędy techniczne Google i Cloud Run są w Google Cloud Console, do której zakładka linkuje.
+- Zawsze widoczne są kafelki, alerty i tabela funkcji. Wykres i tabela kodów danej kategorii pojawiają się tylko wtedy, gdy w zakresie coś się wydarzyło; wykres błędów przy samych ponowieniach nazywa się „Retries per day”.
+- Kliknięcie funkcji otwiera jej dzienny trend i kody. Błędy techniczne Google i Cloud Run są w Google Cloud Console, do której blok linkuje.
 
 Nie wymaga nowych reguł ani indeksów: odczyt `statistics/**` dla admina już jest w `firestore.rules`, a widok funkcji korzysta z danych zakresu pobranych jednym zapytaniem.
+
+## App Check
+
+Zakładka `/adminpanel#app-check` pokazuje odrzucenia App Check, czyli 401 z funkcji z `enforceAppCheck: true` (wpis Cloud Logging „Callable request verification failed: AppCheck token was rejected.”, bez uid). Czyta `statistics/appCheck/daily/{dzień UTC}`, które co godzinę zapisuje funkcja `countAppCheckRejections` z repozytorium `tripletalk`; przeglądarka nie ma dostępu do Cloud Logging.
+
+- Zakres dat jak w innych zakładkach, domyślnie bieżący tydzień UTC od poniedziałku do dziś. Cloud Logging trzyma logi 30 dni, a liczenie ruszyło 2026-11-15, więc starsze dni są pokazywane jako „No data”.
+- Kafelki: odrzucenia, serie (odrzucenia tej samej platformy i wersji aplikacji bez przerwy ponad 5 minut, przybliżona liczba prób), dni z odrzuceniami, ostatnie odrzucenie.
+- Wykres dzienny według funkcji, tabele według funkcji, platformy i wersji aplikacji (wersje od najnowszej; Android nie wysyła wersji) oraz lista dni z godzinami pierwszego i ostatniego odrzucenia.
 
 Panel ma tryb jasny i ciemny. Domyślnie działa według ustawienia systemu, a przycisk w nagłówku zapamiętuje wybór w tej przeglądarce.
 

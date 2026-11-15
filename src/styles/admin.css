@@ -1164,6 +1164,11 @@ input:focus {
 .stats-muted-inline {
   color: var(--admin-text-muted);
 }
+/* A list of names that may wrap instead of widening the table. */
+.stats-table td.stats-wrap-cell {
+  min-width: 260px;
+  white-space: normal;
+}
 .stats-table td.stats-muted-cell {
   color: var(--admin-text-subtle);
 }
@@ -1271,6 +1276,9 @@ input:focus {
 }
 .stats-tables-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.stats-tables-1 {
+  grid-template-columns: minmax(0, 1fr);
 }
 .stats-tables .stats-section-title {
   margin-top: 18px;

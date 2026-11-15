@@ -54,12 +54,43 @@ export const AUTH_PROVIDERS: Record<string, string> = {
   password: "Email and password",
 };
 
-/** Values of `users.premiumSource` while `premiumIsActive` is true. */
+/** Sources in `statistics/premium.bySource`, counted by the
+ * countActivePremium Cloud Function from `users/{uid}/private/monetization`
+ * (an active `premiumExpiresAt` or `trialExpiresAt`). Any other source is
+ * shown as the remainder row. */
 export const PREMIUM_SOURCES: Record<string, string> = {
   trial: "Trial",
   apple: "App Store subscription",
   google: "Google Play subscription",
 };
+
+export interface PremiumSummary {
+  premium: number;
+  premiumBySource: Record<string, number>;
+  /** When the function counted; null when the summary is missing. */
+  countedAt: Date | null;
+}
+
+/** Maps `statistics/premium`; a missing document gives zero counts. */
+export function mapPremiumSummary(
+  data: Record<string, unknown> | undefined,
+  countedAt: Date | null,
+): PremiumSummary {
+  const bySource =
+    data?.bySource && typeof data.bySource === "object"
+      ? (data.bySource as Record<string, unknown>)
+      : {};
+  return {
+    premium: nonNegative(Number(data?.active) || 0),
+    premiumBySource: Object.fromEntries(
+      Object.entries(bySource).map(([source, count]) => [
+        source,
+        nonNegative(Number(count) || 0),
+      ]),
+    ),
+    countedAt: data ? countedAt : null,
+  };
+}
 
 function nonNegative(value: number): number {
   return Number.isFinite(value) && value > 0 ? value : 0;

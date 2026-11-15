@@ -1,7 +1,7 @@
 import { OTHER_SERIES, type ChartDay } from "./stats";
 import { shiftDayKey } from "./function-stats";
 
-// Pure helpers for the AI Limits & Errors view: limit refusals, final
+// Pure helpers for the Limits & errors block of Functions Stats: limit refusals, final
 // failures, trigger retries and moderation rejections recorded by the
 // backend since 2026-10-18. Data layout: tripletalk/docs/functions/STATISTICS.md
 // ("Limity, błędy i ponowienia"). Day keys are UTC dates (YYYY-MM-DD).

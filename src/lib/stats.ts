@@ -74,3 +74,13 @@ export function buildDailyCountChart(
 export function utcDayStart(dayKey: string): Date {
   return new Date(`${dayKey}T00:00:00.000Z`);
 }
+
+/** Live (raw-event) days worth a note: today is always live and already
+ * marked on the chart, so only earlier days count, which means the nightly
+ * aggregation has not covered them. */
+export function unaggregatedPastDays(
+  liveDays: string[],
+  todayKey: string,
+): string[] {
+  return liveDays.filter((dayKey) => dayKey < todayKey);
+}

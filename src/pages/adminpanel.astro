@@ -93,6 +93,18 @@ import "../styles/admin.css";
           <nav class="admin-nav">
             <a
               class="admin-nav-item"
+              href="#app-check"
+              data-admin-view="app-check"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3 5 6v5c0 4.4 3 8.3 7 9.5 4-1.2 7-5.1 7-9.5V6l-7-3Zm-3 6 6 6m0-6-6 6"
+                ></path>
+              </svg>
+              <span>App Check</span>
+            </a>
+            <a
+              class="admin-nav-item"
               href="#app-feedback"
               data-admin-view="app-feedback"
             >
@@ -102,30 +114,6 @@ import "../styles/admin.css";
                 ></path>
               </svg>
               <span>App Feedback</span>
-            </a>
-            <a
-              class="admin-nav-item"
-              href="#user-stats"
-              data-admin-view="user-stats"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-6 9a6 6 0 0 1 12 0m1-9a3 3 0 1 0 0-6m2 15h3a5 5 0 0 0-4-4.9"
-                ></path>
-              </svg>
-              <span>User Stats</span>
-            </a>
-            <a
-              class="admin-nav-item"
-              href="#school-stats"
-              data-admin-view="school-stats"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="m3 9 9-5 9 5-9 5-9-5Zm4 2.2V16c0 1.7 2.2 3 5 3s5-1.3 5-3v-4.8M21 9v6"
-                ></path>
-              </svg>
-              <span>School Stats</span>
             </a>
             <a
               class="admin-nav-item"
@@ -141,15 +129,27 @@ import "../styles/admin.css";
             </a>
             <a
               class="admin-nav-item"
-              href="#ai-limits"
-              data-admin-view="ai-limits"
+              href="#school-stats"
+              data-admin-view="school-stats"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path
-                  d="M12 3 2.5 19.5h19L12 3Zm0 6v5m0 3v.01"
+                  d="m3 9 9-5 9 5-9 5-9-5Zm4 2.2V16c0 1.7 2.2 3 5 3s5-1.3 5-3v-4.8M21 9v6"
                 ></path>
               </svg>
-              <span>AI Limits &amp; Errors</span>
+              <span>School Stats</span>
+            </a>
+            <a
+              class="admin-nav-item"
+              href="#user-stats"
+              data-admin-view="user-stats"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-6 9a6 6 0 0 1 12 0m1-9a3 3 0 1 0 0-6m2 15h3a5 5 0 0 0-4-4.9"
+                ></path>
+              </svg>
+              <span>User Stats</span>
             </a>
           </nav>
         </aside>
@@ -358,6 +358,7 @@ import "../styles/admin.css";
                       <tbody id="us-premium-rows"></tbody>
                     </table>
                   </div>
+                  <p class="stats-muted" id="us-premium-note"></p>
                 </section>
               </div>
             </div>
@@ -680,180 +681,306 @@ import "../styles/admin.css";
                 </div>
               </section>
             </div>
+            <section class="stats-outcomes" id="al-block" aria-labelledby="al-title">
+              <h2 class="stats-section-title" id="al-title">Limits &amp; errors</h2>
+              <p class="stats-muted">
+                Same range as above. Limit refusals, AI work that failed for
+                good, trigger retries and School moderation rejections, recorded
+                since 2026-10-18. Charts and tables appear only for what
+                happened in the range.
+              </p>
+              <p class="stats-live-note" id="al-range-note" hidden></p>
+              <p class="stats-live-note" id="al-live-note" hidden></p>
+              <div id="al-message" class="admin-state" role="status">
+                Loading AI limits and errors…
+              </div>
+              <div id="al-content" hidden>
+                <div class="statistics-grid stats-summary" id="al-summary">
+                  <article class="statistic-card statistic-card-primary">
+                    <p>Limit refusals</p>
+                    <strong data-al-total="limitRefusals">—</strong>
+                    <span data-al-delta="limitRefusals"></span>
+                  </article>
+                  <article class="statistic-card statistic-card-warning">
+                    <p>Final failures</p>
+                    <strong data-al-total="failures">—</strong>
+                    <span data-al-delta="failures"></span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Retries</p>
+                    <strong data-al-total="retries">—</strong>
+                    <span data-al-delta="retries"></span>
+                  </article>
+                  <article class="statistic-card">
+                    <p>Moderation rejections</p>
+                    <strong data-al-total="moderationRejections">—</strong>
+                    <span data-al-delta="moderationRejections"></span>
+                  </article>
+                </div>
+                <p class="stats-muted stats-definition">
+                  Counts are items, not users: one user can produce many. Limit
+                  refusals happen before any call to Google, so they are not in
+                  Cloud Console.
+                </p>
+                <p class="stats-muted" id="al-nothing-note" hidden>
+                  No limit refusals, failures, retries or moderation rejections
+                  in this range.
+                </p>
+                <section class="stats-alerts" id="al-alerts" hidden></section>
+                <div id="al-charts"></div>
+                <div id="al-tables"></div>
+                <section class="stats-functions" aria-labelledby="al-functions-title">
+                  <h2 id="al-functions-title">Limits &amp; errors by function</h2>
+                  <p class="stats-muted">
+                    Select a function to see its daily trend and codes.
+                  </p>
+                  <div class="stats-table-wrap">
+                    <table class="admin-table stats-table">
+                      <thead>
+                        <tr>
+                          <th>Function</th><th class="numeric">Limit refusals</th
+                          ><th class="numeric">Final failures</th><th
+                            class="numeric">Failure rate</th
+                          ><th class="numeric">Retries</th><th class="numeric"
+                            >Moderation</th
+                          ><th class="numeric">API calls</th>
+                        </tr>
+                      </thead>
+                      <tbody id="al-function-rows"></tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+              <details class="stats-thresholds">
+                <summary>Alert thresholds</summary>
+                <div class="stats-thresholds-grid">
+                  <label>
+                    Final failures above (% of calls, per function and day)
+                    <input
+                      data-al-threshold="failureRatePercent"
+                      type="number"
+                      min="0.01"
+                      step="0.1"
+                      inputmode="decimal"
+                    />
+                  </label>
+                  <label>
+                    Retries above (× average of previous 7 days)
+                    <input
+                      data-al-threshold="retrySpikeFactor"
+                      type="number"
+                      min="0.1"
+                      step="0.5"
+                      inputmode="decimal"
+                    />
+                  </label>
+                  <label>
+                    Moderation: different users per code and day, at least
+                    <input
+                      data-al-threshold="moderationUsersPerDay"
+                      type="number"
+                      min="1"
+                      step="1"
+                      inputmode="numeric"
+                    />
+                  </label>
+                  <label>
+                    Moderation: rejections of one code by a single user per day,
+                    at least
+                    <input
+                      data-al-threshold="moderationSingleUserCount"
+                      type="number"
+                      min="1"
+                      step="1"
+                      inputmode="numeric"
+                    />
+                  </label>
+                </div>
+                <p class="stats-muted">
+                  Saved in this browser only. A retry spike needs at least one
+                  earlier day with data, and the average counts as at least 1
+                  retry a day.
+                  <button
+                    class="stats-link-button"
+                    id="al-thresholds-reset"
+                    type="button">Restore defaults</button
+                  >
+                </p>
+              </details>
+              <p class="stats-pricing-note">
+                Technical errors on the Google and Cloud Run side (429 responses,
+                no available instance, timeouts) are not counted here. See Google
+                Cloud Console for project lexigo-b2aee:{" "}
+                <a
+                  href="https://console.cloud.google.com/apis/dashboard?project=lexigo-b2aee"
+                  target="_blank"
+                  rel="noopener noreferrer">APIs &amp; Services</a
+                >,{" "}
+                <a
+                  href="https://console.cloud.google.com/iam-admin/quotas?project=lexigo-b2aee"
+                  target="_blank"
+                  rel="noopener noreferrer">Quotas</a
+                >,{" "}
+                <a
+                  href="https://console.cloud.google.com/run?project=lexigo-b2aee"
+                  target="_blank"
+                  rel="noopener noreferrer">Cloud Run</a
+                >,{" "}
+                <a
+                  href="https://console.cloud.google.com/errors?project=lexigo-b2aee"
+                  target="_blank"
+                  rel="noopener noreferrer">Error Reporting</a
+                >.
+              </p>
+            </section>
           </section>
           <section
-            data-admin-section="ai-limits"
-            aria-labelledby="ai-limits-title"
+            data-admin-section="app-check"
+            aria-labelledby="app-check-title"
             hidden
           >
             <div class="admin-title-row">
               <div>
                 <p class="eyebrow">Cloud Functions</p>
-                <h1 id="ai-limits-title">AI Limits &amp; Errors</h1>
+                <h1 id="app-check-title">App Check</h1>
               </div>
               <button
                 class="admin-button secondary"
-                id="al-refresh-button"
+                id="ac-refresh-button"
                 type="button"
               >
                 Refresh
               </button>
             </div>
-            <form class="stats-controls" id="al-controls">
+            <form class="stats-controls" id="ac-controls">
               <label>
                 From (UTC)
-                <input id="al-from" name="from" type="date" required />
+                <input id="ac-from" name="from" type="date" required />
               </label>
               <label>
                 To (UTC)
-                <input id="al-to" name="to" type="date" required />
-              </label>
-              <label class="stats-checkbox">
-                <input id="al-live" name="live" type="checkbox" />
-                Include today (live, incomplete day)
+                <input id="ac-to" name="to" type="date" required />
               </label>
               <button class="admin-button primary" type="submit">Show</button>
             </form>
-            <details class="stats-thresholds">
-              <summary>Alert thresholds</summary>
-              <div class="stats-thresholds-grid">
-                <label>
-                  Final failures above (% of calls, per function and day)
-                  <input
-                    data-al-threshold="failureRatePercent"
-                    type="number"
-                    min="0.01"
-                    step="0.1"
-                    inputmode="decimal"
-                  />
-                </label>
-                <label>
-                  Retries above (× average of previous 7 days)
-                  <input
-                    data-al-threshold="retrySpikeFactor"
-                    type="number"
-                    min="0.1"
-                    step="0.5"
-                    inputmode="decimal"
-                  />
-                </label>
-                <label>
-                  Moderation: different users per code and day, at least
-                  <input
-                    data-al-threshold="moderationUsersPerDay"
-                    type="number"
-                    min="1"
-                    step="1"
-                    inputmode="numeric"
-                  />
-                </label>
-                <label>
-                  Moderation: rejections of one code by a single user per day,
-                  at least
-                  <input
-                    data-al-threshold="moderationSingleUserCount"
-                    type="number"
-                    min="1"
-                    step="1"
-                    inputmode="numeric"
-                  />
-                </label>
-              </div>
-              <p class="stats-muted">
-                Saved in this browser only. A retry spike needs at least one
-                earlier day with data, and the average counts as at least 1
-                retry a day.
-                <button
-                  class="stats-link-button"
-                  id="al-thresholds-reset"
-                  type="button">Restore defaults</button
-                >
-              </p>
-            </details>
-            <p class="stats-freshness" id="al-freshness" role="status" hidden></p>
-            <p class="stats-live-note" id="al-range-note" hidden></p>
-            <p class="stats-live-note" id="al-live-note" hidden></p>
-            <div id="al-message" class="admin-state" role="status">
-              Loading AI limits and errors…
+            <p class="stats-freshness" id="ac-freshness" role="status" hidden></p>
+            <div id="ac-message" class="admin-state" role="status">
+              Loading App Check rejections…
             </div>
-            <div id="al-content" hidden>
-              <div class="statistics-grid stats-summary" id="al-summary">
+            <div id="ac-content" hidden>
+              <div class="statistics-grid stats-summary" id="ac-summary">
                 <article class="statistic-card statistic-card-primary">
-                  <p>Limit refusals</p>
-                  <strong data-al-total="limitRefusals">—</strong>
-                  <span data-al-delta="limitRefusals"></span>
-                </article>
-                <article class="statistic-card statistic-card-warning">
-                  <p>Final failures</p>
-                  <strong data-al-total="failures">—</strong>
-                  <span data-al-delta="failures"></span>
+                  <p>Rejections</p>
+                  <strong data-ac-total="rejections">—</strong>
+                  <span>401 from functions with enforced App Check</span>
                 </article>
                 <article class="statistic-card">
-                  <p>Retries</p>
-                  <strong data-al-total="retries">—</strong>
-                  <span data-al-delta="retries"></span>
+                  <p>Bursts</p>
+                  <strong data-ac-total="bursts">—</strong>
+                  <span>Approximate attempts</span>
                 </article>
                 <article class="statistic-card">
-                  <p>Moderation rejections</p>
-                  <strong data-al-total="moderationRejections">—</strong>
-                  <span data-al-delta="moderationRejections"></span>
+                  <p>Days with rejections</p>
+                  <strong data-ac-total="days">—</strong>
+                  <span data-ac-total="days-note">—</span>
+                </article>
+                <article class="statistic-card">
+                  <p>Last rejection (UTC)</p>
+                  <strong data-ac-total="last">—</strong>
+                  <span>Time of the latest log entry</span>
                 </article>
               </div>
-              <p class="stats-muted stats-definition">
-                Counts are items, not users: one user can produce many. Limit
-                refusals happen before any call to Google, so they are not in
-                Cloud Console.
-              </p>
-              <section class="stats-alerts" id="al-alerts" hidden></section>
-              <div id="al-charts"></div>
-              <div id="al-tables"></div>
-              <section class="stats-functions" aria-labelledby="al-functions-title">
-                <h2 id="al-functions-title">Functions</h2>
-                <p class="stats-muted">
-                  Select a function to see its daily trend and codes.
-                </p>
+              <section class="stats-chart-card" aria-labelledby="ac-chart-title">
+                <div class="stats-chart-header">
+                  <h2 id="ac-chart-title">Daily rejections per function (UTC)</h2>
+                </div>
+                <ul class="stats-legend" id="ac-legend"></ul>
+                <div class="stats-chart-body">
+                  <span class="stats-chart-max" data-chart-max></span>
+                  <div class="stats-chart" id="ac-chart"></div>
+                </div>
+                <div class="stats-tooltip" id="ac-tooltip" hidden></div>
+              </section>
+              <div class="stats-tables stats-tables-1">
+                <section aria-labelledby="ac-function-title">
+                  <h2 class="stats-section-title" id="ac-function-title">
+                    By function
+                  </h2>
+                  <div class="stats-table-wrap">
+                    <table class="admin-table stats-table">
+                      <thead>
+                        <tr>
+                          <th>Function</th><th class="numeric">Rejections</th><th
+                            class="numeric">Share</th
+                          >
+                        </tr>
+                      </thead>
+                      <tbody id="ac-function-rows"></tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+              <div class="stats-tables">
+                <section aria-labelledby="ac-platform-title">
+                  <h2 class="stats-section-title" id="ac-platform-title">
+                    By platform
+                  </h2>
+                  <div class="stats-table-wrap">
+                    <table class="admin-table stats-table">
+                      <thead>
+                        <tr>
+                          <th>Platform</th><th class="numeric">Rejections</th><th
+                            class="numeric">Share</th
+                          >
+                        </tr>
+                      </thead>
+                      <tbody id="ac-platform-rows"></tbody>
+                    </table>
+                  </div>
+                </section>
+                <section aria-labelledby="ac-version-title">
+                  <h2 class="stats-section-title" id="ac-version-title">
+                    By app version
+                  </h2>
+                  <div class="stats-table-wrap">
+                    <table class="admin-table stats-table">
+                      <thead>
+                        <tr>
+                          <th>Version</th><th class="numeric">Rejections</th><th
+                            class="numeric">Share</th
+                          >
+                        </tr>
+                      </thead>
+                      <tbody id="ac-version-rows"></tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+              <section class="stats-functions" aria-labelledby="ac-days-title">
+                <h2 id="ac-days-title">Days with rejections</h2>
                 <div class="stats-table-wrap">
                   <table class="admin-table stats-table">
                     <thead>
                       <tr>
-                        <th>Function</th><th class="numeric">Limit refusals</th
-                        ><th class="numeric">Final failures</th><th
-                          class="numeric">Failure rate</th
-                        ><th class="numeric">Retries</th><th class="numeric"
-                          >Moderation</th
-                        ><th class="numeric">API calls</th>
+                        <th>Day (UTC)</th><th class="numeric">Rejections</th><th
+                          class="numeric">Bursts</th
+                        ><th>Functions</th><th>First – last (UTC)</th>
                       </tr>
                     </thead>
-                    <tbody id="al-function-rows"></tbody>
+                    <tbody id="ac-day-rows"></tbody>
                   </table>
                 </div>
               </section>
+              <p class="stats-muted stats-definition">
+                Counted from the Cloud Logging entry "Callable request
+                verification failed: AppCheck token was rejected." (no uid). A
+                burst is a run of rejections from the same platform and app
+                version with no gap over 5 minutes, so a client retrying on
+                start-up counts once; two devices at the same time merge into one
+                burst. Platform and version come from the request's user agent;
+                Android does not send the app version.
+              </p>
             </div>
-            <p class="stats-pricing-note">
-              Technical errors on the Google and Cloud Run side (429 responses,
-              no available instance, timeouts) are not counted here. See Google
-              Cloud Console for project lexigo-b2aee:
-              <a
-                href="https://console.cloud.google.com/apis/dashboard?project=lexigo-b2aee"
-                target="_blank"
-                rel="noopener noreferrer">APIs &amp; Services</a
-              >,
-              <a
-                href="https://console.cloud.google.com/iam-admin/quotas?project=lexigo-b2aee"
-                target="_blank"
-                rel="noopener noreferrer">Quotas</a
-              >,
-              <a
-                href="https://console.cloud.google.com/run?project=lexigo-b2aee"
-                target="_blank"
-                rel="noopener noreferrer">Cloud Run</a
-              >,
-              <a
-                href="https://console.cloud.google.com/errors?project=lexigo-b2aee"
-                target="_blank"
-                rel="noopener noreferrer">Error Reporting</a
-              >.
-            </p>
           </section>
         </main>
       </div>

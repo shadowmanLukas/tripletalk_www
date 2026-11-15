@@ -42,6 +42,7 @@ import { initializeAdminTheme } from "./admin-theme";
 import { createAiOutcomeStatsView } from "./ai-outcome-stats";
 import { createFunctionStatsView } from "./function-stats";
 import { createSchoolStatsView } from "./school-stats";
+import { createAppCheckStatsView } from "./app-check-stats";
 import { createUserStatsView } from "./user-stats";
 
 const PAGE_SIZE = 50;
@@ -323,7 +324,11 @@ function initializePanel(): void {
     () => Boolean(currentAdmin),
   );
   const aiOutcomeStats = createAiOutcomeStatsView(
-    document.querySelector<HTMLElement>('[data-admin-section="ai-limits"]')!,
+    document.querySelector<HTMLElement>("#al-block")!,
+    () => Boolean(currentAdmin),
+  );
+  const appCheckStats = createAppCheckStatsView(
+    document.querySelector<HTMLElement>('[data-admin-section="app-check"]')!,
     () => Boolean(currentAdmin),
   );
   let cursor: QueryDocumentSnapshot<DocumentData> | null = null;
@@ -338,14 +343,20 @@ function initializePanel(): void {
   const loadView = (view: string) => {
     if (view === "user-stats") return userStats.load();
     if (view === "school-stats") return schoolStats.load();
-    if (view === "functions-stats") return functionStats.load();
-    if (view === "ai-limits") return aiOutcomeStats.load();
+    if (view === "functions-stats") {
+      // Limits & errors sits at the bottom of Functions Stats, same range.
+      return Promise.all([functionStats.load(), aiOutcomeStats.load()]);
+    }
+    if (view === "app-check") return appCheckStats.load();
     return Promise.resolve();
   };
   const showSection = (requestedHash: string): string => {
-    // Old bookmarks of the former Statistics tab.
-    const requestedView =
-      requestedHash === "statistics" ? "user-stats" : requestedHash;
+    // Old bookmarks of the former Statistics and AI Limits & Errors tabs.
+    const formerViews: Record<string, string> = {
+      statistics: "user-stats",
+      "ai-limits": "functions-stats",
+    };
+    const requestedView = formerViews[requestedHash] || requestedHash;
     const view = sections.some(
       (section) => section.dataset.adminSection === requestedView,
     )
@@ -572,6 +583,7 @@ function initializePanel(): void {
         schoolStats.reset();
         functionStats.reset();
         aiOutcomeStats.reset();
+        appCheckStats.reset();
         showLogin();
         return;
       }

@@ -1,3 +1,4 @@
+import { unaggregatedPastDays } from "../lib/stats";
 import {
   OUTCOMES_SINCE,
   OUTCOME_COUNTERS,
@@ -33,7 +34,6 @@ import {
   isDayKey,
   shiftDayKey,
   utcDayKey,
-  weekStartDayKey,
 } from "../lib/function-stats";
 import {
   OTHER_SERIES,
@@ -52,7 +52,6 @@ import {
   MAX_LIVE_EVENTS_PER_DAY,
   clearAiUsageCache,
   loadAiUsage,
-  renderAggregationFreshness,
 } from "./ai-usage-data";
 
 const NUMBER_FORMAT = new Intl.NumberFormat("pl-PL");
@@ -696,6 +695,8 @@ interface KindView {
   chart?: ReturnType<typeof chartCard>;
   head: HTMLElement;
   body: HTMLElement;
+  /** The code table with its title, hidden when nothing happened. */
+  block: HTMLElement;
   sortKey: CodeSortKey;
   sortDirection: "asc" | "desc";
   series: string[];
@@ -703,28 +704,51 @@ interface KindView {
   line?: ChartLine;
 }
 
+/** Tooltip of the failures chart when the range has no failures and the
+ * chart only shows the retries line. */
+export function renderRetriesTooltip(
+  tooltip: HTMLElement,
+  day: ChartDay,
+  retries: number | null,
+): void {
+  const nodes: Node[] = [element("strong", undefined, `${day.dayKey} UTC`)];
+  if (day.live) nodes.push(element("span", "stats-tag", "Incomplete day"));
+  else if (!day.aggregated) nodes.push(element("span", "stats-tag", "No data"));
+  if (retries !== null) {
+    nodes.push(
+      element("p", "stats-tooltip-total", `Retries: ${format(retries)}`),
+    );
+  }
+  tooltip.replaceChildren(...nodes);
+}
+
 export interface AiOutcomeStatsView {
   load(force?: boolean): Promise<void>;
   reset(): void;
 }
 
+/** The Limits & errors block at the bottom of Functions Stats. It has no
+ * range controls of its own: it reads and follows the Functions Stats ones
+ * (`#fs-from`, `#fs-to`, `#fs-live`, Show and Refresh), which also keep the
+ * default range (current UTC week, live). */
 export function createAiOutcomeStatsView(
   section: HTMLElement,
   isSignedIn: () => boolean,
 ): AiOutcomeStatsView {
   const find = <T extends HTMLElement>(selector: string) =>
     section.querySelector<T>(selector)!;
-  const form = find<HTMLFormElement>("#al-controls");
-  const fromInput = find<HTMLInputElement>("#al-from");
-  const toInput = find<HTMLInputElement>("#al-to");
-  const liveInput = find<HTMLInputElement>("#al-live");
-  const refresh = find<HTMLButtonElement>("#al-refresh-button");
+  const findInPage = <T extends HTMLElement>(selector: string) =>
+    document.querySelector<T>(selector)!;
+  const form = findInPage<HTMLFormElement>("#fs-controls");
+  const fromInput = findInPage<HTMLInputElement>("#fs-from");
+  const toInput = findInPage<HTMLInputElement>("#fs-to");
+  const liveInput = findInPage<HTMLInputElement>("#fs-live");
+  const refresh = findInPage<HTMLButtonElement>("#fs-refresh-button");
   const thresholdInputs = Array.from(
     section.querySelectorAll<HTMLInputElement>("[data-al-threshold]"),
   );
   const message = find<HTMLElement>("#al-message");
   const content = find<HTMLElement>("#al-content");
-  const freshness = find<HTMLElement>("#al-freshness");
   const rangeNote = find<HTMLElement>("#al-range-note");
   const liveNote = find<HTMLElement>("#al-live-note");
   const summary = find<HTMLElement>("#al-summary");
@@ -732,6 +756,7 @@ export function createAiOutcomeStatsView(
   const charts = find<HTMLElement>("#al-charts");
   const tables = find<HTMLElement>("#al-tables");
   const functionRows = find<HTMLElement>("#al-function-rows");
+  const nothingNote = find<HTMLElement>("#al-nothing-note");
   const dialog =
     document.querySelector<HTMLDialogElement>("#al-details-dialog")!;
   const dialogTitle = document.querySelector<HTMLElement>("#al-details-title")!;
@@ -762,7 +787,9 @@ export function createAiOutcomeStatsView(
   };
   const views = (["limit", "failure", "moderation", "retry"] as const).map(
     (kind): KindView => {
+      const block = element("section", "stats-functions");
       const view: KindView = {
+        block,
         kind,
         head: element("tr"),
         body: element("tbody"),
@@ -775,7 +802,6 @@ export function createAiOutcomeStatsView(
         view.chart = chartCard(chartTitles[kind]!);
         charts.append(view.chart.card);
       }
-      const block = element("section", "stats-functions");
       block.append(
         element("h2", undefined, tableTitles[kind]),
         element("p", "stats-muted", tableNotes[kind]),
@@ -798,20 +824,6 @@ export function createAiOutcomeStatsView(
   let loading = false;
 
   const today = () => utcDayKey(new Date());
-  const resetRange = () => {
-    // Default: the current UTC week, Monday through today (live).
-    fromInput.value = weekStartDayKey(today());
-    toInput.value = today();
-    liveInput.checked = true;
-    showEarlier = false;
-  };
-  const syncRangeInputs = () => {
-    const now = today();
-    fromInput.max = now;
-    toInput.max = liveInput.checked ? now : shiftDayKey(now, -1);
-    if (liveInput.checked) toInput.value = now;
-    toInput.disabled = liveInput.checked;
-  };
   const syncThresholdInputs = () => {
     for (const input of thresholdInputs) {
       input.value = String(
@@ -819,8 +831,6 @@ export function createAiOutcomeStatsView(
       );
     }
   };
-  resetRange();
-  syncRangeInputs();
   syncThresholdInputs();
 
   const showMessage = (text: string, kind = "") => {
@@ -867,9 +877,10 @@ export function createAiOutcomeStatsView(
 
   const renderLiveNote = (data: LoadedOutcomes) => {
     const notes: string[] = [];
-    if (data.liveDays.length) {
+    const pastLive = unaggregatedPastDays(data.liveDays, today());
+    if (pastLive.length) {
       notes.push(
-        `Live from raw events (incomplete day): ${data.liveDays.join(", ")}.`,
+        `Not aggregated yet, counted live from raw events: ${pastLive.join(", ")}.`,
       );
     }
     if (data.truncatedDays.length) {
@@ -910,6 +921,8 @@ export function createAiOutcomeStatsView(
     tags: Map<string, string[]>,
   ) => {
     const summaries = summarizeCodes(days, rows, view.kind);
+    // Only what happened in the range is shown.
+    view.block.hidden = !summaries.some((item) => item.count > 0);
     view.series = summaries
       .filter((item) => item.count > 0)
       .slice(0, SERIES_COUNT)
@@ -943,15 +956,24 @@ export function createAiOutcomeStatsView(
       format,
       view.line,
     );
-    const empty = view.chartDays.every((day) => !day.total);
-    view.chart.note.hidden = !empty;
-    view.chart.note.textContent = empty ? "None in this range." : "";
+    const empty =
+      view.chartDays.every((day) => !day.total) &&
+      !view.line?.values.some((value) => value);
+    view.chart.card.hidden = empty;
+    if (view.kind === "failure") {
+      // With no failures the chart only carries the retries line.
+      const title = view.chart.card.querySelector("h2");
+      if (title) {
+        title.textContent = view.chartDays.some((day) => day.total)
+          ? chartTitles.failure!
+          : "Retries per day (UTC)";
+      }
+    }
   };
 
   const render = () => {
     if (!current) return;
     const data = current;
-    renderAggregationFreshness(freshness, data);
     renderLiveNote(data);
     const inRange = <T extends OutcomeDay>(item: T) =>
       item.dayKey >= data.fromDayKey && item.dayKey <= data.toDayKey;
@@ -967,6 +989,14 @@ export function createAiOutcomeStatsView(
     }
     message.hidden = true;
     content.hidden = false;
+    nothingNote.hidden = days.some(
+      (day) =>
+        day.hasData &&
+        (day.totals.limitRefusals ||
+          day.totals.failures ||
+          day.totals.retries ||
+          day.totals.moderationRejections),
+    );
 
     renderOutcomeSummary(
       summary,
@@ -1027,9 +1057,9 @@ export function createAiOutcomeStatsView(
     );
   };
 
-  const load = async (force = false) => {
+  // Refresh clears the shared cache in Functions Stats, which loads first.
+  const load = async () => {
     if (!isSignedIn() || loading) return;
-    syncRangeInputs();
     const requestedFrom = fromInput.value;
     const toDayKey = liveInput.checked ? today() : toInput.value;
     if (
@@ -1049,7 +1079,6 @@ export function createAiOutcomeStatsView(
     renderRangeNote(clip.clipped ? fromDayKey : null);
     if (fromDayKey > toDayKey) {
       content.hidden = true;
-      freshness.hidden = true;
       liveNote.hidden = true;
       showMessage(
         `No outcome data in this range: recording started on ${OUTCOMES_SINCE} (UTC).${liveInput.checked ? "" : " Turn on “Include today” or choose later days."}`,
@@ -1062,9 +1091,7 @@ export function createAiOutcomeStatsView(
       showMessage(`Choose a range of at most ${MAX_RANGE_DAYS} days.`, "error");
       return;
     }
-    if (force) clearAiUsageCache();
     loading = true;
-    refresh.disabled = true;
     content.hidden = true;
     showMessage("Loading AI limits and errors…");
     try {
@@ -1075,20 +1102,14 @@ export function createAiOutcomeStatsView(
       showMessage(loadFailureMessage("AI limits and errors", error), "error");
     } finally {
       loading = false;
-      refresh.disabled = false;
     }
   };
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    void load();
-  });
-  liveInput.addEventListener("change", () => {
-    if (!liveInput.checked) toInput.value = shiftDayKey(today(), -1);
-    syncRangeInputs();
-    void load();
-  });
-  refresh.addEventListener("click", () => void load(true));
+  // Functions Stats handles these first (it was created first) and sets the
+  // range inputs; this block then loads the same range.
+  form.addEventListener("submit", () => void load());
+  liveInput.addEventListener("change", () => void load());
+  refresh.addEventListener("click", () => void load());
   for (const input of thresholdInputs) {
     input.addEventListener("change", () => {
       thresholds = parseOutcomeThresholds({
@@ -1133,6 +1154,14 @@ export function createAiOutcomeStatsView(
         const day = view.chartDays[index];
         if (!day) return false;
         const lineValue = view.line?.values[index];
+        if (
+          view.kind === "failure" &&
+          !view.chartDays.some((item) => item.total)
+        ) {
+          // Retries-only chart: no failure total to show.
+          renderRetriesTooltip(tooltip, day, lineValue ?? null);
+          return true;
+        }
         renderChartTooltip(
           tooltip,
           day,
@@ -1164,7 +1193,6 @@ export function createAiOutcomeStatsView(
       clearAiUsageCache();
       current = null;
       content.hidden = true;
-      freshness.hidden = true;
       liveNote.hidden = true;
       rangeNote.hidden = true;
       showMessage("Loading AI limits and errors…");
