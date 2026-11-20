@@ -2,7 +2,9 @@
 import { describe, expect, it } from "vitest";
 import {
   AUTH_PROVIDERS,
+  PREMIUM_SOURCES,
   countActiveLearners,
+  mapPremiumSummary,
   learningDayWindow,
   deriveUserTotals,
   summarizeUserCreatedLessons,
@@ -54,6 +56,25 @@ describe("user statistics", () => {
       premiumShare: 0.3,
     });
     expect(totals.flashcardsPerLesson).toBeCloseTo(54.57, 2);
+  });
+
+  it("shows Premium won with streak badges as its own source", () => {
+    const summary = mapPremiumSummary(
+      {
+        active: 4,
+        bySource: { trial: 1, reward: 2, apple: 1 },
+        rewardBanked: 1,
+      },
+      new Date("2026-11-20T12:00:00Z"),
+    );
+    expect(summary.premiumBySource.reward).toBe(2);
+    expect(summary.rewardBanked).toBe(1);
+    expect(PREMIUM_SOURCES.reward).toBe("Premium from streak badges");
+    const rows = breakdownRows(summary.premiumBySource, PREMIUM_SOURCES, 4);
+    expect(rows.map((row) => row.label)).toContain(
+      "Premium from streak badges",
+    );
+    expect(mapPremiumSummary(undefined, null).rewardBanked).toBe(0);
   });
 
   it("never reports negative or impossible totals", () => {
