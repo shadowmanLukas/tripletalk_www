@@ -159,6 +159,7 @@ describe("active premium summary", () => {
     ).toEqual({
       premium: 12,
       premiumBySource: { trial: 9, apple: 2, google: 1, other: 0 },
+      rewardBanked: 0,
       countedAt,
     });
   });
@@ -167,6 +168,7 @@ describe("active premium summary", () => {
     expect(mapPremiumSummary(undefined, null)).toEqual({
       premium: 0,
       premiumBySource: {},
+      rewardBanked: 0,
       countedAt: null,
     });
   });

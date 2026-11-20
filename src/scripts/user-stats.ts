@@ -194,6 +194,7 @@ interface LoadedSnapshot {
   activity: LoadedActivity;
   /** When countActivePremium counted; null when it has not run yet. */
   premiumCountedAt: Date | null;
+  premiumRewardBanked: number;
   countedAt: Date;
 }
 
@@ -268,6 +269,7 @@ async function fetchSnapshot(db: Firestore): Promise<LoadedSnapshot> {
     lessonsFromScan,
     activity,
     premiumCountedAt: premium.countedAt,
+    premiumRewardBanked: premium.rewardBanked,
     countedAt: new Date(),
   };
 }
@@ -434,7 +436,10 @@ export function createUserStatsView(
     freshness.hidden = false;
     freshness.textContent = `Totals counted ${UTC_DATE_TIME.format(snapshot.countedAt)} UTC. Daily chart ${dayKeys[0]} – ${dayKeys.at(-1)} (UTC).`;
     premiumNote.textContent = snapshot.premiumCountedAt
-      ? `Counted every 30 minutes from trial and subscription expiry dates; last count ${UTC_DATE_TIME.format(snapshot.premiumCountedAt)} UTC.`
+      ? `Counted every 30 minutes from trial, badge reward and subscription expiry dates; last count ${UTC_DATE_TIME.format(snapshot.premiumCountedAt)} UTC.` +
+        (snapshot.premiumRewardBanked > 0
+          ? ` ${NUMBER_FORMAT.format(snapshot.premiumRewardBanked)} paying ${snapshot.premiumRewardBanked === 1 ? "user has" : "users have"} badge days waiting for the subscription to end.`
+          : "")
       : "Not counted yet: the countActivePremium Cloud Function has not written statistics/premium.";
     scanNote.hidden = !snapshot.lessonsFromScan;
     const { problem, truncated } = snapshot.activity;

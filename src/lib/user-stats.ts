@@ -56,10 +56,12 @@ export const AUTH_PROVIDERS: Record<string, string> = {
 
 /** Sources in `statistics/premium.bySource`, counted by the
  * countActivePremium Cloud Function from `users/{uid}/private/monetization`
- * (an active `premiumExpiresAt` or `trialExpiresAt`). Any other source is
- * shown as the remainder row. */
+ * (an active `premiumExpiresAt`, `trialExpiresAt` or Premium won with
+ * streak badges, in that order). Any other source is shown as the
+ * remainder row. */
 export const PREMIUM_SOURCES: Record<string, string> = {
   trial: "Trial",
+  reward: "Premium from streak badges",
   apple: "App Store subscription",
   google: "Google Play subscription",
 };
@@ -67,6 +69,9 @@ export const PREMIUM_SOURCES: Record<string, string> = {
 export interface PremiumSummary {
   premium: number;
   premiumBySource: Record<string, number>;
+  /** Paying users whose badge Premium days wait for the subscription to
+   * end (counted as App Store / Google Play above). */
+  rewardBanked: number;
   /** When the function counted; null when the summary is missing. */
   countedAt: Date | null;
 }
@@ -88,6 +93,7 @@ export function mapPremiumSummary(
         nonNegative(Number(count) || 0),
       ]),
     ),
+    rewardBanked: nonNegative(Number(data?.rewardBanked) || 0),
     countedAt: data ? countedAt : null,
   };
 }
